@@ -15,14 +15,16 @@ from src.utils import config
 from src.dataloaders.uva_dar_dataset import *
 import time
 
+
 class ResNet50Bottom(nn.Module):
     def __init__(self, original_model):
         super(ResNet50Bottom, self).__init__()
         self.features = nn.Sequential(*list(original_model.children())[:-2])
-        
+
     def forward(self, x):
         x = self.features(x)
         return x
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-sfn", "--start_file_num", help="start_file_num",
@@ -38,12 +40,12 @@ data_dir_base_path = args.data_dir_base_path
 embed_dir_base_path = args.embed_dir_base_path
 
 rgb_transforms = transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=[0.485, 0.456, 0.406],
-                std=[0.229, 0.224, 0.225]
-            )])
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize(
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225]
+    )])
 
 original_model = models.resnet50(pretrained=True)
 feature_extractor = ResNet50Bottom(original_model)
@@ -51,8 +53,8 @@ device = torch.device(f'cuda:{args.cuda_device_no}')
 feature_extractor.to(device)
 feature_extractor.eval()
 # print(feature_extractor)
-activity_types=['change_lane','checking_mirror_middle','checking_speed_stack',
-                'checking_mirror_driver','checking_mirror_passenger']
+activity_types = ['change_lane', 'checking_mirror_middle', 'checking_speed_stack',
+                  'checking_mirror_driver', 'checking_mirror_passenger']
 for activity_type in activity_types:
     data_dir_path = f'{data_dir_base_path}/{activity_type}'
     total_parsing = 0
@@ -77,7 +79,7 @@ for activity_type in activity_types:
             os.makedirs(embed_dir_path)
         except:
             pass
-        filename = filename.split('.')[0]
+        filename = filename[:-4]
         torch.save(embed, f'{embed_dir_path}/{filename}.pt')
         total_parsing += 1
         # if(total_parsing%100==0):
