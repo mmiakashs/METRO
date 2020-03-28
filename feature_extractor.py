@@ -59,25 +59,25 @@ for activity_type in activity_types:
     print(f'start parsing {activity_type}')
     for count, filename in enumerate(sorted(os.listdir(data_dir_path), reverse=False)):
         # print('filename',filename)
-        tm_filename = filename.split('.')[0]
-        if(total_parsing<=args.start_file_num and args.start_file_num!=-1):
-            total_parsing += 1
-            continue
-        if(os.path.exists(f'{embed_dir_base_path}/{tm_filename}.pt')):
-            total_parsing += 1
-            continue
+        # tm_filename = filename.split('.')[0]
+        # if(total_parsing<=args.start_file_num and args.start_file_num!=-1):
+        #     total_parsing += 1
+        #     continue
+        # if(os.path.exists(f'{embed_dir_base_path}/{tm_filename}.pt')):
+        #     total_parsing += 1
+        #     continue
         video = Video(f'{data_dir_path}/{filename}', transforms=rgb_transforms)
         seq, seq_len = video.get_all_frames()
         seq = seq.to(device)
         embed = feature_extractor(seq)
         embed = embed.detach()
-        filename = filename.split('.')[0]
 
         embed_dir_path = f'{embed_dir_base_path}/{activity_type}'
         try:
             os.makedirs(embed_dir_path)
         except:
             pass
+        filename = filename.split('.')[0]
         torch.save(embed, f'{embed_dir_path}/{filename}.pt')
         total_parsing += 1
         # if(total_parsing%100==0):
