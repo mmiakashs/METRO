@@ -51,11 +51,12 @@ device = torch.device(f'cuda:{args.cuda_device_no}')
 feature_extractor.to(device)
 feature_extractor.eval()
 # print(feature_extractor)
-total_parsing = 0
 activity_types=['change_lane','checking_mirror_middle','checking_speed_stack',
                 'checking_mirror_driver','checking_mirror_passenger']
 for activity_type in activity_types:
     data_dir_path = f'{data_dir_base_path}/{activity_type}'
+    total_parsing = 0
+    print(f'start parsing {activity_type}')
     for count, filename in enumerate(sorted(os.listdir(data_dir_path), reverse=False)):
         # print('filename',filename)
         tm_filename = filename.split('.')[0]
@@ -71,7 +72,14 @@ for activity_type in activity_types:
         embed = feature_extractor(seq)
         embed = embed.detach()
         filename = filename.split('.')[0]
-        torch.save(embed, f'{embed_dir_base_path}/{filename}.pt')
+
+        embed_dir_path = f'{embed_dir_base_path}/{activity_type}'
+        try:
+            os.makedirs(embed_dir_path)
+        except:
+            pass
+        torch.save(embed, f'{embed_dir_path}/{filename}.pt')
         total_parsing += 1
-        if(total_parsing%100==0):
-            print(f'parsing completed:{total_parsing}')
+        # if(total_parsing%100==0):
+        #     print(f'parsing completed:{total_parsing}')
+    print(f'Total parsed files: {total_parsing}')
