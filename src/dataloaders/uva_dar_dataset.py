@@ -69,25 +69,30 @@ class Video:
         return self.length
 
 
-class DeepFakeDataset(Dataset):
+class UVA_DAR_Dataset(Dataset):
 
     def __init__(self, data_dir_base_path,
-                 modalities, dataset_type='train',
+                 embed_dir_base_path,
+                 modalities,
                  window_size=1, window_stride=1,
-                 seq_max_len=300, transforms_modalities=None,
+                 seq_max_len=60, transforms_modalities=None,
                  restricted_ids=None, restricted_labels=None,
-                 metadata_filename='metadata.json', is_fake=False):
+                 allowed_ids=None, allowed_labels=None,
+                 metadata_filename='train.csv',
+                 is_pretrained_fe=False):
 
         self.data_dir_base_path = data_dir_base_path
-        self.dataset_type = dataset_type
+        self.embed_dir_base_path = embed_dir_base_path
         self.transforms_modalities = transforms_modalities
         self.restricted_ids = restricted_ids
         self.restricted_labels = restricted_labels
+        self.allowed_ids = allowed_ids
+        self.allowed_labels = allowed_labels
 
         self.modalities = modalities
         self.seq_max_len = seq_max_len
         self.metadata_filename = metadata_filename
-        self.is_fake = is_fake
+        self.is_pretrained_fe = is_pretrained_fe
 
         self.window_size = window_size
         if (window_stride == None):
@@ -96,17 +101,36 @@ class DeepFakeDataset(Dataset):
             self.window_stride = window_stride
 
         self.load_data()
-        self.label_names = self.data.label.unique()
-        self.num_labels, self.label_name_id, self.label_id_name = self.get_label_name_id(self.label_names)
+        self.activity_names = self.data.activity.unique()
+        self.num_activities, self.activity_name_id, self.activity_id_name = self.get_activity_name_id(self.activity_names)
 
     def load_data(self):
-        # self.data = pd.read_json(self.data_dir_base_path+'/'+self.metadata_filename, orient='index')
         self.data = pd.read_csv(self.data_dir_base_path+'/'+self.metadata_filename)
-        self.data = self.data[self.data[config.dataset_split_tag] == self.dataset_type]
-        if(self.is_fake):
-            self.data = self.data[self.data['label'] == config.fake_label_tag]
+        if(self.is_pretrained_fe):
+            data_dir_base_path = self.embed_dir_base_path
+            file_ext = '.pt'
+        else:
+            data_dir_base_path=self.data_dir_base_path
+            file_ext = '.MP4'
 
-        # self.data.index.name = 'filename'
+        for i, row in self.data.iterrows():
+            tm_filename = row[config.inside_modality_tag][:-4]
+            tm_filename = f'{tm_filename}{file_ext}'
+            if (not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+
+            tm_filename = row[config.inside_modality_tag][:-4]
+            tm_filename = f'{tm_filename}{file_ext}'
+            if ((not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+
+        self.data = self.data[self.data[config.activity_tag] != 'MISSING']
+        if (self.restricted_ids != None):
+            self.data = self.data[~self.data[self.restricted_labels].isin(self.restricted_ids)]
+
+        if (self.allowed_ids != None):
+            self.data = self.data[self.data[self.allowed_labels].isin(self.allowed_ids)]
+
         self.data.reset_index(inplace=True)
 
     def __len__(self):
@@ -115,18 +139,25 @@ class DeepFakeDataset(Dataset):
     def gen_mask(self, seq_len, max_len):
         return torch.arange(max_len) > seq_len
     
-    def get_video_data(self, idx, modality, filename_tag):
-        data_filepath = f'{self.data_dir_base_path}/{self.data.loc[idx, filename_tag]}'
-        
-        if (not pd.isna(self.data.loc[idx, filename_tag]) and os.path.exists(data_filepath)):
-            video = Video(data_filepath, self.seq_max_len, self.transforms_modalities[modality])
-            seq, seq_len = video.get_all_frames()
+    def get_video_data(self, idx, modality):
+        if (self.is_pretrained_fe):
+            filename = f'{self.data.loc[idx, modality][:-4]}.pt'
+            activity = self.data.loc[idx, config.activity_tag]
+            data_filepath = f'{self.embed_dir_base_path}/{activity}/{filename}'
+            seq = torch.load(data_filepath).detach()
+            seq_len = seq.size(0)
         else:
-            print(f'########## {modality}, {filename_tag}, {data_filepath}')
-            seq = np.zeros((self.seq_max_len, config.image_channels,
-                                 config.image_width, config.image_height))
-            seq = torch.from_numpy(seq).float()
-            seq_len = 0
+            filename = self.data.loc[idx, modality]
+            activity = self.data.loc[idx, config.activity_tag]
+            data_filepath = f'{self.data_dir_base_path}/{activity}/{filename}'
+            frame_parser = Video(path=data_filepath,
+                                 transforms=self.transforms_modalities[modality],
+                                 seq_max_len=self.seq_max_len)
+
+            seq, seq_len = frame_parser.get_all_frames()
+        if ((self.seq_max_len is not None) and (seq_len > self.seq_max_len)):
+            seq = seq[:self.seq_max_len, :]
+            seq_len = self.seq_max_len
 
         return seq, seq_len
 
@@ -134,58 +165,35 @@ class DeepFakeDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        data_label = self.data.loc[idx, config.label_tag]
+        data_label = self.data.loc[idx, config.activity_tag]
         data = {}
         modality_mask = []
         
         # print(f'************ Start Data Loader for {idx} ************')
-        if(data_label==config.real_label_tag):
-            modality = config.real_modality_tag
-            seq, seq_len = self.get_video_data(idx, modality, config.filename_tag)
+        for modality in self.modalities:
+            seq, seq_len = self.get_video_data(idx, modality)
             data[modality] = seq
             data[modality + config.modality_seq_len_tag] = seq_len
             modality_mask.append(True if seq_len == 0 else False)
-            data['real_filename'] = self.data.loc[idx, config.filename_tag]
-            
-            modality = config.fake_modality_tag
-            data[modality] = torch.zeros_like(seq)
-            data[modality + config.modality_seq_len_tag] = 0
-            modality_mask.append(True)
-            data['fake_filename'] = 'none'
-
-        else:
-            modality = config.real_modality_tag
-            seq, seq_len = self.get_video_data(idx, modality, config.original_filename_tag)
-            data[modality] = seq
-            data[modality + config.modality_seq_len_tag] = seq_len
-            modality_mask.append(True if seq_len == 0 else False)
-            data['real_filename'] = self.data.loc[idx, config.original_filename_tag]
-
-            modality = config.fake_modality_tag
-            seq, seq_len = self.get_video_data(idx, modality, config.filename_tag)
-            data[modality] = seq
-            data[modality + config.modality_seq_len_tag] = seq_len
-            modality_mask.append(True if seq_len == 0 else False)
-            data['fake_filename'] = self.data.loc[idx, config.filename_tag]
 
         modality_mask = torch.from_numpy(np.array(modality_mask)).bool()
-        data[config.label_tag] = self.label_name_id[str(data_label)]
+        data[config.activity_tag] = self.activity_name_id[str(data_label)]
         data[config.modality_mask_tag] = modality_mask
 
         # print(f'************ End Data Loader for {idx} ************')
         return data
 
-    def get_label_name_id(self, label_names):
+    def get_activity_name_id(self, activity_names):
 
-        label_names = sorted(label_names)
-        num_labels = len(label_names)
+        activity_names = sorted(activity_names)
+        num_labels = len(activity_names)
 
-        temp_dict_type_id = {label_names[i]: i for i in range(len(label_names))}
-        temp_dict_id_type = { i : label_names[i] for i in range(len(label_names))}
+        temp_dict_type_id = {activity_names[i]: i for i in range(len(activity_names))}
+        temp_dict_id_type = {i : activity_names[i] for i in range(len(activity_names))}
         return num_labels, temp_dict_type_id, temp_dict_id_type
 
-modalities = [config.real_modality_tag,
-              config.fake_modality_tag]
+modalities = [config.outside_modality_tag,
+              config.inside_modality_tag]
 
 def gen_mask(seq_len, max_len):
     return torch.arange(max_len) > seq_len
@@ -207,30 +215,7 @@ def pad_collate(batch):
             [gen_mask(seq_len, seq_max_len)  for seq_len in data[modality + config.modality_seq_len_tag]], dim=0)
         data[modality + config.modality_mask_suffix_tag] = seq_mask
     
-    data['fake_filename'] = [batch[bin]['fake_filename'] for bin in range(batch_size)]
-    data['real_filename'] = [batch[bin]['real_filename'] for bin in range(batch_size)]
     data['label'] = torch.tensor([batch[bin]['label'] for bin in range(batch_size)],
                                 dtype=torch.long)
-    data['modality_mask'] = torch.stack([batch[bin]['modality_mask'] for bin in range(batch_size)], dim=0).bool()
-    return data
-
-
-def pad_collate_fake(batch):
-    batch_size = len(batch)
-    data = {}
-
-    for modality in modalities:
-        data[modality] = pad_sequence([batch[bin][modality] for bin in range(batch_size)], batch_first=True)
-        data[modality + config.modality_seq_len_tag] = torch.tensor(
-            [batch[bin][modality + config.modality_seq_len_tag] for bin in range(batch_size)],
-            dtype=torch.float)
-
-        seq_max_len = data[modality + config.modality_seq_len_tag].max()
-        seq_mask = torch.stack(
-            [gen_mask(seq_len, seq_max_len) for seq_len in data[modality + config.modality_seq_len_tag]], dim=0)
-        data[modality + config.modality_mask_suffix_tag] = seq_mask
-
-    data['label'] = torch.tensor([batch[bin]['label'] for bin in range(batch_size)],
-                                 dtype=torch.long)
     data['modality_mask'] = torch.stack([batch[bin]['modality_mask'] for bin in range(batch_size)], dim=0).bool()
     return data
