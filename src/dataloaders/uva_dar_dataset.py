@@ -118,17 +118,19 @@ class UVA_DAR_Dataset(Dataset):
             tm_filename = f'{tm_filename}{file_ext}'
             if (not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')):
                 self.data.at[i, config.activity_tag] = 'MISSING'
+                # print('missing inside file:',row[config.inside_modality_tag], row[config.activity_tag])
 
-            tm_filename = row[config.inside_modality_tag][:-4]
+            tm_filename = row[config.outside_modality_tag][:-4]
             tm_filename = f'{tm_filename}{file_ext}'
             if ((not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}'))):
                 self.data.at[i, config.activity_tag] = 'MISSING'
+                # print('missing outside file:',row[config.outside_modality_tag], row[config.activity_tag])
 
         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
-        if (self.restricted_ids != None):
+        if (self.restricted_ids is not None):
             self.data = self.data[~self.data[self.restricted_labels].isin(self.restricted_ids)]
 
-        if (self.allowed_ids != None):
+        if (self.allowed_ids is not None):
             self.data = self.data[self.data[self.allowed_labels].isin(self.allowed_ids)]
 
         self.data.reset_index(inplace=True)
@@ -215,7 +217,7 @@ def pad_collate(batch):
             [gen_mask(seq_len, seq_max_len)  for seq_len in data[modality + config.modality_seq_len_tag]], dim=0)
         data[modality + config.modality_mask_suffix_tag] = seq_mask
     
-    data['label'] = torch.tensor([batch[bin]['label'] for bin in range(batch_size)],
+    data[config.activity_tag] = torch.tensor([batch[bin][config.activity_tag] for bin in range(batch_size)],
                                 dtype=torch.long)
     data['modality_mask'] = torch.stack([batch[bin]['modality_mask'] for bin in range(batch_size)], dim=0).bool()
     return data

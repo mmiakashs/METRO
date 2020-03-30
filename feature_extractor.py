@@ -68,7 +68,10 @@ for activity_type in activity_types:
         # if(os.path.exists(f'{embed_dir_base_path}/{tm_filename}.pt')):
         #     total_parsing += 1
         #     continue
-        video = Video(f'{data_dir_path}/{filename}', transforms=rgb_transforms)
+        try:
+            video = Video(f'{data_dir_path}/{filename}', transforms=rgb_transforms)
+        except:
+            continue
         seq, seq_len = video.get_all_frames()
         seq = seq.to(device)
         embed = feature_extractor(seq)

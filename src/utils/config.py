@@ -1,6 +1,6 @@
 
 inside_modality_tag = 'inside'
-outside_modality_tag = 'real'
+outside_modality_tag = 'outside'
 
 activity_tag = 'activity'
 

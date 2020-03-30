@@ -13,8 +13,8 @@ from torch.utils.data.sampler import SubsetRandomSampler
 from src.dataloaders.uva_dar_dataset import *
 from src.utils import config
 
-# data_dir_base_path = '/data/research_data/dfdc_sample_data/train_sample_videos'
-data_dir_base_path = '/data/research_data/dfdc_train_data'
+data_dir_base_path = '/data/research_data/driver_activity/data/train'
+embed_dir_base_path='/data/research_data/driver_activity/fe_embed'
 
 # Debugging
 # rgb_transforms = transforms.Compose([
@@ -40,8 +40,8 @@ data_dir_base_path = '/data/research_data/dfdc_train_data'
 #                                 seq_max_len=300, window_size=5, window_stride=5,
 #                                 metadata_filename='metadata.csv',
 #                                 is_fake=True)
-train_dataset = UVA_DAR_Dataset(data_dir_base_path='/data/research_data/driver_activity/data/train',
-                                embed_dir_base_path='/data/research_data/driver_activity/fe_embed',
+train_dataset = UVA_DAR_Dataset(data_dir_base_path=data_dir_base_path,
+                                embed_dir_base_path=embed_dir_base_path,
                                 modalities=modalities,
                                 metadata_filename='train.csv',
                                 is_pretrained_fe=True)
@@ -49,16 +49,19 @@ train_dataset = UVA_DAR_Dataset(data_dir_base_path='/data/research_data/driver_a
 
 train_dataloader = DataLoader(train_dataset, batch_size=5,
                               collate_fn=pad_collate, num_workers=2)
+print('Total data sample', len(train_dataloader.dataset))
+
 for  batch_id, batch in enumerate(train_dataloader, 0):
-    print(batch[config.activity_tag])
-    for modality in modalities:
-        if(batch[modality] is not None):
-            print(f'{modality} size:',batch[modality].size())
-            print(f'{modality} mask size:', batch[modality+'_mask'].size())
-        else:
-            print(f'{modality} size: None')
-            print(f'{modality} mask size: 0')
+    pass
+#     print(batch[config.activity_tag])
+#     for modality in modalities:
+#         if(batch[modality] is not None):
+#             print(f'{modality} size:',batch[modality].size())
+#             print(f'{modality} mask size:', batch[modality+'_mask'].size())
+#         else:
+#             print(f'{modality} size: None')
+#             print(f'{modality} mask size: 0')
             
-    print(f'modality mask size:', batch['modality_mask'].size())
-    print(f'label size:', batch['label'].size())
-    print(batch["modality_mask"])
+#     print(f'modality mask size:', batch['modality_mask'].size())
+#     print(f'acativity size:', batch[config.activity_tag].size())
+#     print(batch["modality_mask"])
