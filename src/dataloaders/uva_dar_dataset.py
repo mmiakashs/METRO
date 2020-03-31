@@ -194,8 +194,14 @@ class UVA_DAR_Dataset(Dataset):
         temp_dict_id_type = {i : activity_names[i] for i in range(len(activity_names))}
         return num_labels, temp_dict_type_id, temp_dict_id_type
 
-modalities = [config.outside_modality_tag,
-              config.inside_modality_tag]
+def get_ids_from_split(split_ids, split_index):
+    person_ids = []
+    for id in split_index:
+        person_ids.append(split_ids[id])
+    return person_ids
+
+modalities = [config.inside_modality_tag,
+              config.outside_modality_tag]
 
 def gen_mask(seq_len, max_len):
     return torch.arange(max_len) > seq_len
