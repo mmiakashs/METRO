@@ -29,34 +29,7 @@ if (debug_mode):
     sys.argv = [''];
     del sys
 
-modalities = [config.inside_modality_tag,
-              config.outside_modality_tag]
 checkpoint_attribs = ['train_loss', 'valid_loss', 'train_acc', 'valid_acc', 'epoch']
-
-
-def gen_mask(seq_len, max_len):
-    return torch.arange(max_len) > seq_len
-
-
-def pad_collate(batch):
-    batch_size = len(batch)
-    data = {}
-    for modality in modalities:
-        data[modality] = pad_sequence([batch[bin][modality] for bin in range(batch_size)], batch_first=True)
-        data[modality + config.modality_seq_len_tag] = torch.tensor(
-            [batch[bin][modality + config.modality_seq_len_tag] for bin in range(batch_size)],
-            dtype=torch.float)
-
-        seq_max_len = data[modality + config.modality_seq_len_tag].max()
-        seq_mask = torch.stack(
-            [gen_mask(seq_len, seq_max_len) for seq_len in data[modality + config.modality_seq_len_tag]],
-            dim=0)
-        data[modality + config.modality_mask_tag] = seq_mask
-
-    data['label'] = torch.tensor([batch[bin]['label'] for bin in range(batch_size)],
-                                 dtype=torch.long)
-    data['modality_mask'] = torch.stack([batch[bin]['modality_mask'] for bin in range(batch_size)], dim=0).bool()
-    return data
 
 
 parser = argparse.ArgumentParser()
@@ -122,6 +95,8 @@ parser.add_argument("-mcf", "--model_checkpoint_filename", help="model checkpoin
 parser.add_argument("-rcf", "--resume_checkpoint_filename", help="resume checkpoint filename",
                     default=None)
 
+parser.add_argument("-mattn", "--is_module_attention", help="is_module_attention",
+                    action="store_true", default=False)
 parser.add_argument("-mmattn_type", "--mm_embedding_attn_merge_type",
                     help="mm_embedding_attn_merge_type [concat/sum]",
                     default='sum')
@@ -229,7 +204,7 @@ log_execution(log_base_dir, log_filename,
               f'lower_layer_dropout:{lower_layer_dropout}, upper_layer_dropout: {upper_layer_dropout}\n')
 log_execution(log_base_dir, log_filename, f'module_embedding_nhead:{module_embedding_nhead}\n')
 log_execution(log_base_dir, log_filename,
-              f'mm_embedding_attention_type:{mm_embedding_attn_merge_type}\n')
+              f'is_module_attention:{args.is_module_attention},mm_embedding_attention_type:{mm_embedding_attn_merge_type}\n')
 log_execution(log_base_dir, log_filename,
               f'encoder_num_layers: {lstm_encoder_num_layers}, '
               f'resume training:{resume_training}\n')
@@ -269,6 +244,7 @@ transforms_modalities[config.outside_modality_tag] = rgb_transforms
 
 mm_module_properties = defaultdict(dict)
 for modality in modalities:
+    mm_module_properties[modality]['cnn_in_channel'] = config.image_channels
     mm_module_properties[modality]['cnn_out_channel'] = cnn_out_channel
     mm_module_properties[modality]['kernel_size'] = kernel_size
     mm_module_properties[modality]['feature_embed_size'] = feature_embed_size
@@ -279,10 +255,11 @@ for modality in modalities:
     mm_module_properties[modality]['dropout'] = lower_layer_dropout
     mm_module_properties[modality]['activation'] = 'relu'
     mm_module_properties[modality]['fine_tune'] = True
-    mm_module_properties[modality]['feature_pooling_kernel'] = 3
-    mm_module_properties[modality]['feature_pooling_stride'] = 3
+    mm_module_properties[modality]['feature_pooling_kernel'] = None
+    mm_module_properties[modality]['feature_pooling_stride'] = None
     mm_module_properties[modality]['feature_pooling_type'] = 'max'
     mm_module_properties[modality]['lstm_dropout'] = 0.0
+    mm_module_properties[modality]['is_attention'] = args.is_module_attention
 
 Dataset = UVA_DAR_Dataset
 
@@ -297,7 +274,7 @@ mm_har_train = Dataset(data_dir_base_path=data_file_dir_base_path,
                        is_pretrained_fe=args.is_pretrained_fe)
 
 person_ids = mm_har_train.data.person_ID.unique()
-num_activity_types = mm_har_train.num_activity_types
+num_activity_types = mm_har_train.num_activities
 log_execution(log_base_dir, log_filename, f'total_activities: {num_activity_types}')
 log_execution(log_base_dir, log_filename, f'train person_ids: {person_ids}')
 mm_har_train = None
@@ -343,7 +320,7 @@ for train_ids, test_ids in loov.split(split_ids):
     restricted_ids.append(split_ids[train_ids[valid_person_index]])
     if (total_valid_persons == 2):
         restricted_ids.append(split_ids[train_ids[valid_person_index + 1]])
-    restricted_labels = 'performer_id'
+    restricted_labels = 'person_ID'
 
     mm_har_train = Dataset(data_dir_base_path=data_file_dir_base_path,
                            embed_dir_base_path=args.embed_dir_base_path,
@@ -371,7 +348,7 @@ for train_ids, test_ids in loov.split(split_ids):
                            embed_dir_base_path=args.embed_dir_base_path,
                            modalities=modalities,
                            allowed_ids=allowed_valid_ids,
-                           allowed_labels='performer_id',
+                           allowed_labels='person_ID',
                            seq_max_len=seq_max_len,
                            window_size=window_size,
                            window_stride=window_stride,
@@ -389,7 +366,7 @@ for train_ids, test_ids in loov.split(split_ids):
                           embed_dir_base_path=args.embed_dir_base_path,
                           modalities=modalities,
                           allowed_ids=allowed_test_id,
-                          allowed_labels='performer_id',
+                          allowed_labels='person_ID',
                           seq_max_len=seq_max_len,
                           window_size=window_size,
                           window_stride=window_stride,
@@ -409,11 +386,11 @@ for train_ids, test_ids in loov.split(split_ids):
     log_execution(log_base_dir, log_filename, f'valid_dataloader len: {len(valid_dataloader)}\n')
     log_execution(log_base_dir, log_filename, f'test_dataloader len: {len(test_dataloader)}\n')
     log_execution(log_base_dir, log_filename,
-                  f'train performers ids: {sorted(mm_har_train.data.performer_id.unique())}\n')
+                  f'train performers ids: {sorted(mm_har_train.data.person_ID.unique())}\n')
     log_execution(log_base_dir, log_filename,
-                  f'valid performers ids: {sorted(mm_har_valid.data.performer_id.unique())}\n')
+                  f'valid performers ids: {sorted(mm_har_valid.data.person_ID.unique())}\n')
     log_execution(log_base_dir, log_filename,
-                  f'test performers ids: {sorted(mm_har_test.data.performer_id.unique())}\n')
+                  f'test performers ids: {sorted(mm_har_test.data.person_ID.unique())}\n')
     log_execution(log_base_dir, log_filename,
                   f'train dataset len: {len(train_dataloader.dataset)}, train dataloader len: {len(train_dataloader)}\n')
     log_execution(log_base_dir, log_filename,

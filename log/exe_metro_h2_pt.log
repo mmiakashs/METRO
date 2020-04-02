@@ -1,0 +1,1155 @@
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:60
+is_pretrained_fe:True,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:500, batch_size:2
+cnn_out_channel: 64, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.3, upper_layer_dropout: 0.3
+module_embedding_nhead:2
+mm_embedding_attention_type:concat
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_metro_h2_pt.log
+model_checkpoint_prefix:metro_h2_pt
+model_checkpoint_filename:metro_h2_pt_1585634521.943179.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: True
+tb_writer_name: tb_runs/metro_h2_pt, wandb_log_name: metro_h2_pt
+pytorch version: 1.4.0
+GPU Availability: cuda:1, no_gpus: 1
+total_activities: 5train person_ids: [1 2 4 5 6]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 421
+valid_dataloader len: 444
+test_dataloader len: 113
+train performers ids: [4, 5, 6]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 842, train dataloader len: 421
+valid dataset len: 888, valid dataloader len: 444
+valid dataset len: 226, test dataloader len: 444
+====> Epoch: 1 Train Avg loss: 0.70709, Acc: 0.53919, F1: 0.53919#####> Valid Avg loss: 0.66910, Acc:0.47185, F1: 0.47185
+===> Epoch: 1: Training loss decreased (inf --> 0.70709), Acc: (0.00000 --> 0.53919), F1: (0.00000 --> 0.53919).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+
+####> Epoch: 1: validation loss decreased (inf --> 0.66910), Acc: (0.00000 --> 0.47185), F1: (0.00000 --> 0.47185).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_1
+
+####> Epoch: 1: validation acc increase (inf --> 0.66910), Acc: (0.00000 --> 0.47185), F1: (0.00000 --> 0.47185).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 2 Train Avg loss: 0.63582, Acc: 0.56651, F1: 0.56651#####> Valid Avg loss: 0.79629, Acc:0.46622, F1: 0.46622
+===> Epoch: 2: Training loss decreased (0.70709 --> 0.63582), Acc: (0.53919 --> 0.56651), F1: (0.53919 --> 0.56651).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 3 Train Avg loss: 0.63800, Acc: 0.58195, F1: 0.58195#####> Valid Avg loss: 0.67919, Acc:0.47185, F1: 0.47185
+====> Epoch: 4 Train Avg loss: 0.59554, Acc: 0.57482, F1: 0.57482#####> Valid Avg loss: 0.84608, Acc:0.47185, F1: 0.47185
+===> Epoch: 4: Training loss decreased (0.63582 --> 0.59554), Acc: (0.56651 --> 0.57482), F1: (0.56651 --> 0.57482).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 5 Train Avg loss: 0.59121, Acc: 0.57838, F1: 0.57838#####> Valid Avg loss: 0.69530, Acc:0.47185, F1: 0.47185
+===> Epoch: 5: Training loss decreased (0.59554 --> 0.59121), Acc: (0.57482 --> 0.57838), F1: (0.57482 --> 0.57838).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 6 Train Avg loss: 0.57892, Acc: 0.59501, F1: 0.59501#####> Valid Avg loss: 0.77807, Acc:0.47185, F1: 0.47185
+===> Epoch: 6: Training loss decreased (0.59121 --> 0.57892), Acc: (0.57838 --> 0.59501), F1: (0.57838 --> 0.59501).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 7 Train Avg loss: 0.57458, Acc: 0.58670, F1: 0.58670#####> Valid Avg loss: 0.73673, Acc:0.47185, F1: 0.47185
+===> Epoch: 7: Training loss decreased (0.57892 --> 0.57458), Acc: (0.59501 --> 0.58670), F1: (0.59501 --> 0.58670).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 8 Train Avg loss: 0.56761, Acc: 0.60214, F1: 0.60214#####> Valid Avg loss: 0.81711, Acc:0.47072, F1: 0.47072
+===> Epoch: 8: Training loss decreased (0.57458 --> 0.56761), Acc: (0.58670 --> 0.60214), F1: (0.58670 --> 0.60214).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 9 Train Avg loss: 0.56183, Acc: 0.58314, F1: 0.58314#####> Valid Avg loss: 0.76245, Acc:0.47185, F1: 0.47185
+===> Epoch: 9: Training loss decreased (0.56761 --> 0.56183), Acc: (0.60214 --> 0.58314), F1: (0.60214 --> 0.58314).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 10 Train Avg loss: 0.55358, Acc: 0.59501, F1: 0.59501#####> Valid Avg loss: 0.80191, Acc:0.47185, F1: 0.47185
+===> Epoch: 10: Training loss decreased (0.56183 --> 0.55358), Acc: (0.58314 --> 0.59501), F1: (0.58314 --> 0.59501).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 11 Train Avg loss: 0.54320, Acc: 0.60808, F1: 0.60808#####> Valid Avg loss: 0.70659, Acc:0.40878, F1: 0.40878
+===> Epoch: 11: Training loss decreased (0.55358 --> 0.54320), Acc: (0.59501 --> 0.60808), F1: (0.59501 --> 0.60808).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 12 Train Avg loss: 0.53480, Acc: 0.60570, F1: 0.60570#####> Valid Avg loss: 0.74150, Acc:0.37500, F1: 0.37500
+===> Epoch: 12: Training loss decreased (0.54320 --> 0.53480), Acc: (0.60808 --> 0.60570), F1: (0.60808 --> 0.60570).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 13 Train Avg loss: 0.53364, Acc: 0.61401, F1: 0.61401#####> Valid Avg loss: 0.79986, Acc:0.47185, F1: 0.47185
+===> Epoch: 13: Training loss decreased (0.53480 --> 0.53364), Acc: (0.60570 --> 0.61401), F1: (0.60570 --> 0.61401).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 14 Train Avg loss: 0.52502, Acc: 0.62352, F1: 0.62352#####> Valid Avg loss: 0.68629, Acc:0.45045, F1: 0.45045
+===> Epoch: 14: Training loss decreased (0.53364 --> 0.52502), Acc: (0.61401 --> 0.62352), F1: (0.61401 --> 0.62352).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 15 Train Avg loss: 0.56125, Acc: 0.61401, F1: 0.61401#####> Valid Avg loss: 0.70560, Acc:0.47297, F1: 0.47297
+
+####> Epoch: 15: validation acc increase (0.66910 --> 0.70560), Acc: (0.47185 --> 0.47297), F1: (0.47185 --> 0.47297).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 16 Train Avg loss: 0.53596, Acc: 0.61876, F1: 0.61876#####> Valid Avg loss: 0.77117, Acc:0.46847, F1: 0.46847
+====> Epoch: 17 Train Avg loss: 0.50959, Acc: 0.62114, F1: 0.62114#####> Valid Avg loss: 0.96088, Acc:0.46622, F1: 0.46622
+===> Epoch: 17: Training loss decreased (0.52502 --> 0.50959), Acc: (0.62352 --> 0.62114), F1: (0.62352 --> 0.62114).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 18 Train Avg loss: 0.49861, Acc: 0.62827, F1: 0.62827#####> Valid Avg loss: 0.72855, Acc:0.46509, F1: 0.46509
+===> Epoch: 18: Training loss decreased (0.50959 --> 0.49861), Acc: (0.62114 --> 0.62827), F1: (0.62114 --> 0.62827).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 19 Train Avg loss: 0.49073, Acc: 0.64846, F1: 0.64846#####> Valid Avg loss: 0.71905, Acc:0.45495, F1: 0.45495
+===> Epoch: 19: Training loss decreased (0.49861 --> 0.49073), Acc: (0.62827 --> 0.64846), F1: (0.62827 --> 0.64846).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 20 Train Avg loss: 0.46702, Acc: 0.64846, F1: 0.64846#####> Valid Avg loss: 0.74963, Acc:0.46847, F1: 0.46847
+===> Epoch: 20: Training loss decreased (0.49073 --> 0.46702), Acc: (0.64846 --> 0.64846), F1: (0.64846 --> 0.64846).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 21 Train Avg loss: 0.46595, Acc: 0.65083, F1: 0.65083#####> Valid Avg loss: 0.75935, Acc:0.44369, F1: 0.44369
+===> Epoch: 21: Training loss decreased (0.46702 --> 0.46595), Acc: (0.64846 --> 0.65083), F1: (0.64846 --> 0.65083).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 22 Train Avg loss: 0.45107, Acc: 0.66152, F1: 0.66152#####> Valid Avg loss: 0.76109, Acc:0.44595, F1: 0.44595
+===> Epoch: 22: Training loss decreased (0.46595 --> 0.45107), Acc: (0.65083 --> 0.66152), F1: (0.65083 --> 0.66152).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 23 Train Avg loss: 0.43950, Acc: 0.66152, F1: 0.66152#####> Valid Avg loss: 0.92000, Acc:0.40653, F1: 0.40653
+===> Epoch: 23: Training loss decreased (0.45107 --> 0.43950), Acc: (0.66152 --> 0.66152), F1: (0.66152 --> 0.66152).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 24 Train Avg loss: 0.43225, Acc: 0.67577, F1: 0.67577#####> Valid Avg loss: 0.78283, Acc:0.41104, F1: 0.41104
+===> Epoch: 24: Training loss decreased (0.43950 --> 0.43225), Acc: (0.66152 --> 0.67577), F1: (0.66152 --> 0.67577).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 25 Train Avg loss: 0.42144, Acc: 0.68409, F1: 0.68409#####> Valid Avg loss: 0.71814, Acc:0.45158, F1: 0.45158
+===> Epoch: 25: Training loss decreased (0.43225 --> 0.42144), Acc: (0.67577 --> 0.68409), F1: (0.67577 --> 0.68409).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 26 Train Avg loss: 0.42472, Acc: 0.67815, F1: 0.67815#####> Valid Avg loss: 0.82925, Acc:0.33446, F1: 0.33446
+====> Epoch: 27 Train Avg loss: 0.41103, Acc: 0.66865, F1: 0.66865#####> Valid Avg loss: 0.76786, Acc:0.36036, F1: 0.36036
+===> Epoch: 27: Training loss decreased (0.42144 --> 0.41103), Acc: (0.68409 --> 0.66865), F1: (0.68409 --> 0.66865).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 28 Train Avg loss: 0.36900, Acc: 0.72328, F1: 0.72328#####> Valid Avg loss: 0.92303, Acc:0.27703, F1: 0.27703
+===> Epoch: 28: Training loss decreased (0.41103 --> 0.36900), Acc: (0.66865 --> 0.72328), F1: (0.66865 --> 0.72328).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 29 Train Avg loss: 0.36414, Acc: 0.72209, F1: 0.72209#####> Valid Avg loss: 0.85911, Acc:0.40428, F1: 0.40428
+===> Epoch: 29: Training loss decreased (0.36900 --> 0.36414), Acc: (0.72328 --> 0.72209), F1: (0.72328 --> 0.72209).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 30 Train Avg loss: 0.34442, Acc: 0.71734, F1: 0.71734#####> Valid Avg loss: 0.98824, Acc:0.35698, F1: 0.35698
+===> Epoch: 30: Training loss decreased (0.36414 --> 0.34442), Acc: (0.72209 --> 0.71734), F1: (0.72209 --> 0.71734).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 31 Train Avg loss: 0.33712, Acc: 0.74822, F1: 0.74822#####> Valid Avg loss: 0.85401, Acc:0.31306, F1: 0.31306
+===> Epoch: 31: Training loss decreased (0.34442 --> 0.33712), Acc: (0.71734 --> 0.74822), F1: (0.71734 --> 0.74822).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 32 Train Avg loss: 0.30962, Acc: 0.76010, F1: 0.76010#####> Valid Avg loss: 0.89335, Acc:0.38626, F1: 0.38626
+===> Epoch: 32: Training loss decreased (0.33712 --> 0.30962), Acc: (0.74822 --> 0.76010), F1: (0.74822 --> 0.76010).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 33 Train Avg loss: 0.29200, Acc: 0.77316, F1: 0.77316#####> Valid Avg loss: 1.03810, Acc:0.28716, F1: 0.28716
+===> Epoch: 33: Training loss decreased (0.30962 --> 0.29200), Acc: (0.76010 --> 0.77316), F1: (0.76010 --> 0.77316).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 34 Train Avg loss: 0.29961, Acc: 0.77078, F1: 0.77078#####> Valid Avg loss: 0.97716, Acc:0.39414, F1: 0.39414
+====> Epoch: 35 Train Avg loss: 0.26553, Acc: 0.79691, F1: 0.79691#####> Valid Avg loss: 0.95333, Acc:0.35698, F1: 0.35698
+===> Epoch: 35: Training loss decreased (0.29200 --> 0.26553), Acc: (0.77316 --> 0.79691), F1: (0.77316 --> 0.79691).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 36 Train Avg loss: 0.25269, Acc: 0.81235, F1: 0.81235#####> Valid Avg loss: 1.06545, Acc:0.35923, F1: 0.35923
+===> Epoch: 36: Training loss decreased (0.26553 --> 0.25269), Acc: (0.79691 --> 0.81235), F1: (0.79691 --> 0.81235).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 37 Train Avg loss: 0.27749, Acc: 0.76841, F1: 0.76841#####> Valid Avg loss: 0.96557, Acc:0.39189, F1: 0.39189
+====> Epoch: 38 Train Avg loss: 0.23576, Acc: 0.81116, F1: 0.81116#####> Valid Avg loss: 1.17139, Acc:0.31081, F1: 0.31081
+===> Epoch: 38: Training loss decreased (0.25269 --> 0.23576), Acc: (0.81235 --> 0.81116), F1: (0.81235 --> 0.81116).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 39 Train Avg loss: 0.20930, Acc: 0.83848, F1: 0.83848#####> Valid Avg loss: 1.10239, Acc:0.32995, F1: 0.32995
+===> Epoch: 39: Training loss decreased (0.23576 --> 0.20930), Acc: (0.81116 --> 0.83848), F1: (0.81116 --> 0.83848).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 40 Train Avg loss: 0.21149, Acc: 0.83254, F1: 0.83254#####> Valid Avg loss: 0.99823, Acc:0.36261, F1: 0.36261
+====> Epoch: 41 Train Avg loss: 0.19577, Acc: 0.84323, F1: 0.84323#####> Valid Avg loss: 1.15881, Acc:0.28153, F1: 0.28153
+===> Epoch: 41: Training loss decreased (0.20930 --> 0.19577), Acc: (0.83848 --> 0.84323), F1: (0.83848 --> 0.84323).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 42 Train Avg loss: 0.18990, Acc: 0.85273, F1: 0.85273#####> Valid Avg loss: 1.18401, Acc:0.31532, F1: 0.31532
+===> Epoch: 42: Training loss decreased (0.19577 --> 0.18990), Acc: (0.84323 --> 0.85273), F1: (0.84323 --> 0.85273).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 43 Train Avg loss: 0.16673, Acc: 0.85273, F1: 0.85273#####> Valid Avg loss: 1.28515, Acc:0.35473, F1: 0.35473
+===> Epoch: 43: Training loss decreased (0.18990 --> 0.16673), Acc: (0.85273 --> 0.85273), F1: (0.85273 --> 0.85273).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 44 Train Avg loss: 0.13716, Acc: 0.89192, F1: 0.89192#####> Valid Avg loss: 1.31610, Acc:0.26577, F1: 0.26577
+===> Epoch: 44: Training loss decreased (0.16673 --> 0.13716), Acc: (0.85273 --> 0.89192), F1: (0.85273 --> 0.89192).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 45 Train Avg loss: 0.15283, Acc: 0.87648, F1: 0.87648#####> Valid Avg loss: 1.53118, Acc:0.34347, F1: 0.34347
+====> Epoch: 46 Train Avg loss: 0.13756, Acc: 0.89786, F1: 0.89786#####> Valid Avg loss: 1.53103, Acc:0.30068, F1: 0.30068
+====> Epoch: 47 Train Avg loss: 0.13646, Acc: 0.88717, F1: 0.88717#####> Valid Avg loss: 1.51846, Acc:0.30856, F1: 0.30856
+===> Epoch: 47: Training loss decreased (0.13716 --> 0.13646), Acc: (0.89192 --> 0.88717), F1: (0.89192 --> 0.88717).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 48 Train Avg loss: 0.12695, Acc: 0.89549, F1: 0.89549#####> Valid Avg loss: 1.34682, Acc:0.28153, F1: 0.28153
+===> Epoch: 48: Training loss decreased (0.13646 --> 0.12695), Acc: (0.88717 --> 0.89549), F1: (0.88717 --> 0.89549).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 49 Train Avg loss: 0.11932, Acc: 0.90024, F1: 0.90024#####> Valid Avg loss: 1.60686, Acc:0.30968, F1: 0.30968
+===> Epoch: 49: Training loss decreased (0.12695 --> 0.11932), Acc: (0.89549 --> 0.90024), F1: (0.89549 --> 0.90024).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 50 Train Avg loss: 0.09392, Acc: 0.92518, F1: 0.92518#####> Valid Avg loss: 1.60328, Acc:0.26014, F1: 0.26014
+===> Epoch: 50: Training loss decreased (0.11932 --> 0.09392), Acc: (0.90024 --> 0.92518), F1: (0.90024 --> 0.92518).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 51 Train Avg loss: 0.09168, Acc: 0.92399, F1: 0.92399#####> Valid Avg loss: 1.67745, Acc:0.30743, F1: 0.30743
+===> Epoch: 51: Training loss decreased (0.09392 --> 0.09168), Acc: (0.92518 --> 0.92399), F1: (0.92518 --> 0.92399).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 52 Train Avg loss: 0.08161, Acc: 0.94062, F1: 0.94062#####> Valid Avg loss: 1.63852, Acc:0.29617, F1: 0.29617
+===> Epoch: 52: Training loss decreased (0.09168 --> 0.08161), Acc: (0.92399 --> 0.94062), F1: (0.92399 --> 0.94062).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 53 Train Avg loss: 0.08127, Acc: 0.92993, F1: 0.92993#####> Valid Avg loss: 1.74937, Acc:0.28829, F1: 0.28829
+===> Epoch: 53: Training loss decreased (0.08161 --> 0.08127), Acc: (0.94062 --> 0.92993), F1: (0.94062 --> 0.92993).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 54 Train Avg loss: 0.07040, Acc: 0.93943, F1: 0.93943#####> Valid Avg loss: 2.08971, Acc:0.25113, F1: 0.25113
+===> Epoch: 54: Training loss decreased (0.08127 --> 0.07040), Acc: (0.92993 --> 0.93943), F1: (0.92993 --> 0.93943).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 55 Train Avg loss: 0.09465, Acc: 0.91330, F1: 0.91330#####> Valid Avg loss: 1.93014, Acc:0.27027, F1: 0.27027
+====> Epoch: 56 Train Avg loss: 0.06627, Acc: 0.94774, F1: 0.94774#####> Valid Avg loss: 1.99365, Acc:0.28153, F1: 0.28153
+===> Epoch: 56: Training loss decreased (0.07040 --> 0.06627), Acc: (0.93943 --> 0.94774), F1: (0.93943 --> 0.94774).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 57 Train Avg loss: 0.05718, Acc: 0.95012, F1: 0.95012#####> Valid Avg loss: 1.93946, Acc:0.35923, F1: 0.35923
+===> Epoch: 57: Training loss decreased (0.06627 --> 0.05718), Acc: (0.94774 --> 0.95012), F1: (0.94774 --> 0.95012).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 58 Train Avg loss: 0.04524, Acc: 0.95724, F1: 0.95724#####> Valid Avg loss: 2.18817, Acc:0.27477, F1: 0.27477
+===> Epoch: 58: Training loss decreased (0.05718 --> 0.04524), Acc: (0.95012 --> 0.95724), F1: (0.95012 --> 0.95724).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 59 Train Avg loss: 0.04479, Acc: 0.95724, F1: 0.95724#####> Valid Avg loss: 2.33974, Acc:0.27252, F1: 0.27252
+===> Epoch: 59: Training loss decreased (0.04524 --> 0.04479), Acc: (0.95724 --> 0.95724), F1: (0.95724 --> 0.95724).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 60 Train Avg loss: 0.04999, Acc: 0.96200, F1: 0.96200#####> Valid Avg loss: 2.18239, Acc:0.30180, F1: 0.30180
+====> Epoch: 61 Train Avg loss: 0.05711, Acc: 0.95012, F1: 0.95012#####> Valid Avg loss: 1.93849, Acc:0.34685, F1: 0.34685
+====> Epoch: 62 Train Avg loss: 0.03774, Acc: 0.96793, F1: 0.96793#####> Valid Avg loss: 2.45173, Acc:0.25113, F1: 0.25113
+===> Epoch: 62: Training loss decreased (0.04479 --> 0.03774), Acc: (0.95724 --> 0.96793), F1: (0.95724 --> 0.96793).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 63 Train Avg loss: 0.03229, Acc: 0.96912, F1: 0.96912#####> Valid Avg loss: 2.37822, Acc:0.30293, F1: 0.30293
+===> Epoch: 63: Training loss decreased (0.03774 --> 0.03229), Acc: (0.96793 --> 0.96912), F1: (0.96793 --> 0.96912).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+====> Epoch: 64 Train Avg loss: 0.02492, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 2.35594, Acc:0.31757, F1: 0.31757
+===> Epoch: 64: Training loss decreased (0.03229 --> 0.02492), Acc: (0.96912 --> 0.98100), F1: (0.96912 --> 0.98100).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_1
+
+##### Epoch: 64: Training cycle break due to early stop, patience51
+#####> Valid Avg loss: 3.59888, Acc:0.41150, F1: 0.41150
+
+
+$$$$$$> Test it 1: (from train best model) Final Test Avg loss:3.59888, Acc:0.41150, F1:0.41150\n
+#####> Valid Avg loss: 0.80301, Acc:0.46018, F1: 0.46018
+
+
+$$$$$$> Test it 1: (from max acc valid model) Final Test Avg loss:0.80301, Acc:0.46018, F1:0.46018\n
+#####> Valid Avg loss: 0.72163, Acc:0.47345, F1: 0.47345
+
+
+$$$$$$> Test it 1: (from min loss valid model) Final Test Avg loss:0.72163, Acc:0.47345, F1:0.47345\n
+
+
+	Start execution training validation it 2 
+
+train_dataloader len: 421
+valid_dataloader len: 113
+test_dataloader len: 444
+train performers ids: [4, 5, 6]
+valid performers ids: [1]
+test performers ids: [2]
+train dataset len: 842, train dataloader len: 421
+valid dataset len: 226, valid dataloader len: 113
+valid dataset len: 888, test dataloader len: 113
+====> Epoch: 1 Train Avg loss: 0.74003, Acc: 0.53444, F1: 0.53444#####> Valid Avg loss: 0.72761, Acc:0.47345, F1: 0.47345
+===> Epoch: 1: Training loss decreased (inf --> 0.74003), Acc: (0.00000 --> 0.53444), F1: (0.00000 --> 0.53444).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+
+####> Epoch: 1: validation loss decreased (inf --> 0.72761), Acc: (0.00000 --> 0.47345), F1: (0.00000 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_2
+
+####> Epoch: 1: validation acc increase (inf --> 0.72761), Acc: (0.00000 --> 0.47345), F1: (0.00000 --> 0.47345).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 2 Train Avg loss: 0.64543, Acc: 0.57126, F1: 0.57126#####> Valid Avg loss: 0.75086, Acc:0.47345, F1: 0.47345
+===> Epoch: 2: Training loss decreased (0.74003 --> 0.64543), Acc: (0.53444 --> 0.57126), F1: (0.53444 --> 0.57126).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 3 Train Avg loss: 0.62907, Acc: 0.57126, F1: 0.57126#####> Valid Avg loss: 0.75804, Acc:0.48230, F1: 0.48230
+===> Epoch: 3: Training loss decreased (0.64543 --> 0.62907), Acc: (0.57126 --> 0.57126), F1: (0.57126 --> 0.57126).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+
+####> Epoch: 3: validation acc increase (0.72761 --> 0.75804), Acc: (0.47345 --> 0.48230), F1: (0.47345 --> 0.48230).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 4 Train Avg loss: 0.61408, Acc: 0.58195, F1: 0.58195#####> Valid Avg loss: 0.72632, Acc:0.47345, F1: 0.47345
+===> Epoch: 4: Training loss decreased (0.62907 --> 0.61408), Acc: (0.57126 --> 0.58195), F1: (0.57126 --> 0.58195).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+
+####> Epoch: 4: validation loss decreased (0.72761 --> 0.72632), Acc: (0.47345 --> 0.47345), F1: (0.47345 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 5 Train Avg loss: 0.60451, Acc: 0.58076, F1: 0.58076#####> Valid Avg loss: 0.85696, Acc:0.47345, F1: 0.47345
+===> Epoch: 5: Training loss decreased (0.61408 --> 0.60451), Acc: (0.58195 --> 0.58076), F1: (0.58195 --> 0.58076).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 6 Train Avg loss: 0.58289, Acc: 0.57245, F1: 0.57245#####> Valid Avg loss: 0.82994, Acc:0.47345, F1: 0.47345
+===> Epoch: 6: Training loss decreased (0.60451 --> 0.58289), Acc: (0.58076 --> 0.57245), F1: (0.58076 --> 0.57245).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 7 Train Avg loss: 0.58551, Acc: 0.57601, F1: 0.57601#####> Valid Avg loss: 0.68775, Acc:0.46903, F1: 0.46903
+
+####> Epoch: 7: validation loss decreased (0.72632 --> 0.68775), Acc: (0.47345 --> 0.46903), F1: (0.47345 --> 0.46903).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 8 Train Avg loss: 0.56482, Acc: 0.60451, F1: 0.60451#####> Valid Avg loss: 0.85889, Acc:0.47345, F1: 0.47345
+===> Epoch: 8: Training loss decreased (0.58289 --> 0.56482), Acc: (0.57245 --> 0.60451), F1: (0.57245 --> 0.60451).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 9 Train Avg loss: 0.56598, Acc: 0.59976, F1: 0.59976#####> Valid Avg loss: 0.91822, Acc:0.47345, F1: 0.47345
+====> Epoch: 10 Train Avg loss: 0.55643, Acc: 0.60333, F1: 0.60333#####> Valid Avg loss: 0.83985, Acc:0.47345, F1: 0.47345
+===> Epoch: 10: Training loss decreased (0.56482 --> 0.55643), Acc: (0.60451 --> 0.60333), F1: (0.60451 --> 0.60333).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 11 Train Avg loss: 0.55382, Acc: 0.60689, F1: 0.60689#####> Valid Avg loss: 0.74671, Acc:0.47788, F1: 0.47788
+===> Epoch: 11: Training loss decreased (0.55643 --> 0.55382), Acc: (0.60333 --> 0.60689), F1: (0.60333 --> 0.60689).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 12 Train Avg loss: 0.54336, Acc: 0.59382, F1: 0.59382#####> Valid Avg loss: 0.74337, Acc:0.42035, F1: 0.42035
+===> Epoch: 12: Training loss decreased (0.55382 --> 0.54336), Acc: (0.60689 --> 0.59382), F1: (0.60689 --> 0.59382).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 13 Train Avg loss: 0.53795, Acc: 0.62589, F1: 0.62589#####> Valid Avg loss: 0.76803, Acc:0.47788, F1: 0.47788
+===> Epoch: 13: Training loss decreased (0.54336 --> 0.53795), Acc: (0.59382 --> 0.62589), F1: (0.59382 --> 0.62589).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 14 Train Avg loss: 0.52397, Acc: 0.61045, F1: 0.61045#####> Valid Avg loss: 0.81620, Acc:0.42478, F1: 0.42478
+===> Epoch: 14: Training loss decreased (0.53795 --> 0.52397), Acc: (0.62589 --> 0.61045), F1: (0.62589 --> 0.61045).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 15 Train Avg loss: 0.50725, Acc: 0.62470, F1: 0.62470#####> Valid Avg loss: 0.78041, Acc:0.40265, F1: 0.40265
+===> Epoch: 15: Training loss decreased (0.52397 --> 0.50725), Acc: (0.61045 --> 0.62470), F1: (0.61045 --> 0.62470).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 16 Train Avg loss: 0.49979, Acc: 0.62827, F1: 0.62827#####> Valid Avg loss: 1.00373, Acc:0.47345, F1: 0.47345
+===> Epoch: 16: Training loss decreased (0.50725 --> 0.49979), Acc: (0.62470 --> 0.62827), F1: (0.62470 --> 0.62827).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 17 Train Avg loss: 0.49295, Acc: 0.62233, F1: 0.62233#####> Valid Avg loss: 1.01194, Acc:0.47345, F1: 0.47345
+===> Epoch: 17: Training loss decreased (0.49979 --> 0.49295), Acc: (0.62827 --> 0.62233), F1: (0.62827 --> 0.62233).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 18 Train Avg loss: 0.48376, Acc: 0.64608, F1: 0.64608#####> Valid Avg loss: 0.83692, Acc:0.37611, F1: 0.37611
+===> Epoch: 18: Training loss decreased (0.49295 --> 0.48376), Acc: (0.62233 --> 0.64608), F1: (0.62233 --> 0.64608).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 19 Train Avg loss: 0.46447, Acc: 0.64608, F1: 0.64608#####> Valid Avg loss: 0.80555, Acc:0.35398, F1: 0.35398
+===> Epoch: 19: Training loss decreased (0.48376 --> 0.46447), Acc: (0.64608 --> 0.64608), F1: (0.64608 --> 0.64608).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 20 Train Avg loss: 0.47400, Acc: 0.64489, F1: 0.64489#####> Valid Avg loss: 0.78176, Acc:0.43805, F1: 0.43805
+====> Epoch: 21 Train Avg loss: 0.45600, Acc: 0.66508, F1: 0.66508#####> Valid Avg loss: 0.91573, Acc:0.43363, F1: 0.43363
+===> Epoch: 21: Training loss decreased (0.46447 --> 0.45600), Acc: (0.64608 --> 0.66508), F1: (0.64608 --> 0.66508).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 22 Train Avg loss: 0.43805, Acc: 0.65677, F1: 0.65677#####> Valid Avg loss: 0.87776, Acc:0.45575, F1: 0.45575
+===> Epoch: 22: Training loss decreased (0.45600 --> 0.43805), Acc: (0.66508 --> 0.65677), F1: (0.66508 --> 0.65677).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 23 Train Avg loss: 0.43774, Acc: 0.65558, F1: 0.65558#####> Valid Avg loss: 0.84898, Acc:0.41150, F1: 0.41150
+===> Epoch: 23: Training loss decreased (0.43805 --> 0.43774), Acc: (0.65677 --> 0.65558), F1: (0.65677 --> 0.65558).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 24 Train Avg loss: 0.40214, Acc: 0.67933, F1: 0.67933#####> Valid Avg loss: 0.87489, Acc:0.44690, F1: 0.44690
+===> Epoch: 24: Training loss decreased (0.43774 --> 0.40214), Acc: (0.65558 --> 0.67933), F1: (0.65558 --> 0.67933).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 25 Train Avg loss: 0.40179, Acc: 0.69359, F1: 0.69359#####> Valid Avg loss: 1.03209, Acc:0.39823, F1: 0.39823
+===> Epoch: 25: Training loss decreased (0.40214 --> 0.40179), Acc: (0.67933 --> 0.69359), F1: (0.67933 --> 0.69359).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 26 Train Avg loss: 0.38362, Acc: 0.69596, F1: 0.69596#####> Valid Avg loss: 1.00339, Acc:0.41150, F1: 0.41150
+===> Epoch: 26: Training loss decreased (0.40179 --> 0.38362), Acc: (0.69359 --> 0.69596), F1: (0.69359 --> 0.69596).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 27 Train Avg loss: 0.35929, Acc: 0.71378, F1: 0.71378#####> Valid Avg loss: 1.17879, Acc:0.41150, F1: 0.41150
+===> Epoch: 27: Training loss decreased (0.38362 --> 0.35929), Acc: (0.69596 --> 0.71378), F1: (0.69596 --> 0.71378).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 28 Train Avg loss: 0.35362, Acc: 0.70665, F1: 0.70665#####> Valid Avg loss: 1.31462, Acc:0.39381, F1: 0.39381
+===> Epoch: 28: Training loss decreased (0.35929 --> 0.35362), Acc: (0.71378 --> 0.70665), F1: (0.71378 --> 0.70665).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 29 Train Avg loss: 0.35373, Acc: 0.72209, F1: 0.72209#####> Valid Avg loss: 1.08100, Acc:0.42035, F1: 0.42035
+====> Epoch: 30 Train Avg loss: 0.32433, Acc: 0.76247, F1: 0.76247#####> Valid Avg loss: 1.11223, Acc:0.42920, F1: 0.42920
+===> Epoch: 30: Training loss decreased (0.35362 --> 0.32433), Acc: (0.70665 --> 0.76247), F1: (0.70665 --> 0.76247).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 31 Train Avg loss: 0.33306, Acc: 0.74347, F1: 0.74347#####> Valid Avg loss: 1.12917, Acc:0.41150, F1: 0.41150
+====> Epoch: 32 Train Avg loss: 0.29957, Acc: 0.77553, F1: 0.77553#####> Valid Avg loss: 1.08900, Acc:0.35841, F1: 0.35841
+===> Epoch: 32: Training loss decreased (0.32433 --> 0.29957), Acc: (0.76247 --> 0.77553), F1: (0.76247 --> 0.77553).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 33 Train Avg loss: 0.28112, Acc: 0.76841, F1: 0.76841#####> Valid Avg loss: 1.24498, Acc:0.42035, F1: 0.42035
+===> Epoch: 33: Training loss decreased (0.29957 --> 0.28112), Acc: (0.77553 --> 0.76841), F1: (0.77553 --> 0.76841).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 34 Train Avg loss: 0.26827, Acc: 0.78147, F1: 0.78147#####> Valid Avg loss: 1.32270, Acc:0.38053, F1: 0.38053
+===> Epoch: 34: Training loss decreased (0.28112 --> 0.26827), Acc: (0.76841 --> 0.78147), F1: (0.76841 --> 0.78147).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 35 Train Avg loss: 0.25755, Acc: 0.79097, F1: 0.79097#####> Valid Avg loss: 1.47309, Acc:0.42035, F1: 0.42035
+===> Epoch: 35: Training loss decreased (0.26827 --> 0.25755), Acc: (0.78147 --> 0.79097), F1: (0.78147 --> 0.79097).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 36 Train Avg loss: 0.25195, Acc: 0.80166, F1: 0.80166#####> Valid Avg loss: 1.33212, Acc:0.44690, F1: 0.44690
+===> Epoch: 36: Training loss decreased (0.25755 --> 0.25195), Acc: (0.79097 --> 0.80166), F1: (0.79097 --> 0.80166).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 37 Train Avg loss: 0.23835, Acc: 0.81116, F1: 0.81116#####> Valid Avg loss: 1.63213, Acc:0.43805, F1: 0.43805
+===> Epoch: 37: Training loss decreased (0.25195 --> 0.23835), Acc: (0.80166 --> 0.81116), F1: (0.80166 --> 0.81116).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 38 Train Avg loss: 0.20486, Acc: 0.84204, F1: 0.84204#####> Valid Avg loss: 1.79273, Acc:0.41593, F1: 0.41593
+===> Epoch: 38: Training loss decreased (0.23835 --> 0.20486), Acc: (0.81116 --> 0.84204), F1: (0.81116 --> 0.84204).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 39 Train Avg loss: 0.19463, Acc: 0.83610, F1: 0.83610#####> Valid Avg loss: 1.57934, Acc:0.40708, F1: 0.40708
+===> Epoch: 39: Training loss decreased (0.20486 --> 0.19463), Acc: (0.84204 --> 0.83610), F1: (0.84204 --> 0.83610).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 40 Train Avg loss: 0.16614, Acc: 0.85748, F1: 0.85748#####> Valid Avg loss: 1.79658, Acc:0.44690, F1: 0.44690
+===> Epoch: 40: Training loss decreased (0.19463 --> 0.16614), Acc: (0.83610 --> 0.85748), F1: (0.83610 --> 0.85748).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 41 Train Avg loss: 0.19128, Acc: 0.85511, F1: 0.85511#####> Valid Avg loss: 1.75215, Acc:0.37168, F1: 0.37168
+====> Epoch: 42 Train Avg loss: 0.14658, Acc: 0.89192, F1: 0.89192#####> Valid Avg loss: 1.91233, Acc:0.39381, F1: 0.39381
+===> Epoch: 42: Training loss decreased (0.16614 --> 0.14658), Acc: (0.85748 --> 0.89192), F1: (0.85748 --> 0.89192).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 43 Train Avg loss: 0.16051, Acc: 0.87648, F1: 0.87648#####> Valid Avg loss: 1.86148, Acc:0.35841, F1: 0.35841
+====> Epoch: 44 Train Avg loss: 0.15669, Acc: 0.87530, F1: 0.87530#####> Valid Avg loss: 1.71262, Acc:0.40708, F1: 0.40708
+====> Epoch: 45 Train Avg loss: 0.13958, Acc: 0.88836, F1: 0.88836#####> Valid Avg loss: 2.16662, Acc:0.43805, F1: 0.43805
+===> Epoch: 45: Training loss decreased (0.14658 --> 0.13958), Acc: (0.89192 --> 0.88836), F1: (0.89192 --> 0.88836).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 46 Train Avg loss: 0.10578, Acc: 0.92280, F1: 0.92280#####> Valid Avg loss: 2.03120, Acc:0.40708, F1: 0.40708
+===> Epoch: 46: Training loss decreased (0.13958 --> 0.10578), Acc: (0.88836 --> 0.92280), F1: (0.88836 --> 0.92280).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 47 Train Avg loss: 0.13064, Acc: 0.89311, F1: 0.89311#####> Valid Avg loss: 2.74095, Acc:0.43805, F1: 0.43805
+====> Epoch: 48 Train Avg loss: 0.13533, Acc: 0.90261, F1: 0.90261#####> Valid Avg loss: 1.86033, Acc:0.42920, F1: 0.42920
+====> Epoch: 49 Train Avg loss: 0.09634, Acc: 0.92993, F1: 0.92993#####> Valid Avg loss: 1.99142, Acc:0.34513, F1: 0.34513
+===> Epoch: 49: Training loss decreased (0.10578 --> 0.09634), Acc: (0.92280 --> 0.92993), F1: (0.92280 --> 0.92993).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 50 Train Avg loss: 0.08895, Acc: 0.93349, F1: 0.93349#####> Valid Avg loss: 3.13440, Acc:0.44248, F1: 0.44248
+===> Epoch: 50: Training loss decreased (0.09634 --> 0.08895), Acc: (0.92993 --> 0.93349), F1: (0.92993 --> 0.93349).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 51 Train Avg loss: 0.08020, Acc: 0.93112, F1: 0.93112#####> Valid Avg loss: 2.48172, Acc:0.41150, F1: 0.41150
+===> Epoch: 51: Training loss decreased (0.08895 --> 0.08020), Acc: (0.93349 --> 0.93112), F1: (0.93349 --> 0.93112).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 52 Train Avg loss: 0.09028, Acc: 0.93230, F1: 0.93230#####> Valid Avg loss: 2.05373, Acc:0.38053, F1: 0.38053
+====> Epoch: 53 Train Avg loss: 0.07436, Acc: 0.93943, F1: 0.93943#####> Valid Avg loss: 2.82546, Acc:0.43363, F1: 0.43363
+===> Epoch: 53: Training loss decreased (0.08020 --> 0.07436), Acc: (0.93112 --> 0.93943), F1: (0.93112 --> 0.93943).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 54 Train Avg loss: 0.07550, Acc: 0.93468, F1: 0.93468#####> Valid Avg loss: 2.49019, Acc:0.40265, F1: 0.40265
+====> Epoch: 55 Train Avg loss: 0.08405, Acc: 0.93468, F1: 0.93468#####> Valid Avg loss: 2.62849, Acc:0.40708, F1: 0.40708
+====> Epoch: 56 Train Avg loss: 0.06409, Acc: 0.94774, F1: 0.94774#####> Valid Avg loss: 2.55571, Acc:0.39381, F1: 0.39381
+===> Epoch: 56: Training loss decreased (0.07436 --> 0.06409), Acc: (0.93943 --> 0.94774), F1: (0.93943 --> 0.94774).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 57 Train Avg loss: 0.04701, Acc: 0.96793, F1: 0.96793#####> Valid Avg loss: 2.83370, Acc:0.41150, F1: 0.41150
+===> Epoch: 57: Training loss decreased (0.06409 --> 0.04701), Acc: (0.94774 --> 0.96793), F1: (0.94774 --> 0.96793).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 58 Train Avg loss: 0.05522, Acc: 0.95368, F1: 0.95368#####> Valid Avg loss: 3.06744, Acc:0.41150, F1: 0.41150
+====> Epoch: 59 Train Avg loss: 0.04151, Acc: 0.96081, F1: 0.96081#####> Valid Avg loss: 3.09539, Acc:0.42478, F1: 0.42478
+===> Epoch: 59: Training loss decreased (0.04701 --> 0.04151), Acc: (0.96793 --> 0.96081), F1: (0.96793 --> 0.96081).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 60 Train Avg loss: 0.04301, Acc: 0.96556, F1: 0.96556#####> Valid Avg loss: 3.22319, Acc:0.42035, F1: 0.42035
+====> Epoch: 61 Train Avg loss: 0.04430, Acc: 0.96200, F1: 0.96200#####> Valid Avg loss: 3.24962, Acc:0.42478, F1: 0.42478
+====> Epoch: 62 Train Avg loss: 0.04522, Acc: 0.96081, F1: 0.96081#####> Valid Avg loss: 3.53532, Acc:0.42478, F1: 0.42478
+====> Epoch: 63 Train Avg loss: 0.04404, Acc: 0.95843, F1: 0.95843#####> Valid Avg loss: 3.65961, Acc:0.42478, F1: 0.42478
+====> Epoch: 64 Train Avg loss: 0.06121, Acc: 0.95487, F1: 0.95487#####> Valid Avg loss: 3.51602, Acc:0.42035, F1: 0.42035
+====> Epoch: 65 Train Avg loss: 0.03617, Acc: 0.96912, F1: 0.96912#####> Valid Avg loss: 3.04536, Acc:0.41150, F1: 0.41150
+===> Epoch: 65: Training loss decreased (0.04151 --> 0.03617), Acc: (0.96081 --> 0.96912), F1: (0.96081 --> 0.96912).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 66 Train Avg loss: 0.02126, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 3.27433, Acc:0.42478, F1: 0.42478
+===> Epoch: 66: Training loss decreased (0.03617 --> 0.02126), Acc: (0.96912 --> 0.98100), F1: (0.96912 --> 0.98100).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 67 Train Avg loss: 0.02238, Acc: 0.97862, F1: 0.97862#####> Valid Avg loss: 3.42245, Acc:0.41150, F1: 0.41150
+====> Epoch: 68 Train Avg loss: 0.01913, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 2.93301, Acc:0.42035, F1: 0.42035
+===> Epoch: 68: Training loss decreased (0.02126 --> 0.01913), Acc: (0.98100 --> 0.98100), F1: (0.98100 --> 0.98100).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 69 Train Avg loss: 0.02585, Acc: 0.97506, F1: 0.97506#####> Valid Avg loss: 3.76009, Acc:0.42920, F1: 0.42920
+====> Epoch: 70 Train Avg loss: 0.01850, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 3.68828, Acc:0.42920, F1: 0.42920
+===> Epoch: 70: Training loss decreased (0.01913 --> 0.01850), Acc: (0.98100 --> 0.98100), F1: (0.98100 --> 0.98100).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 71 Train Avg loss: 0.01453, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 3.79785, Acc:0.42478, F1: 0.42478
+===> Epoch: 71: Training loss decreased (0.01850 --> 0.01453), Acc: (0.98100 --> 0.98337), F1: (0.98100 --> 0.98337).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 72 Train Avg loss: 0.01642, Acc: 0.98219, F1: 0.98219#####> Valid Avg loss: 3.30995, Acc:0.40265, F1: 0.40265
+====> Epoch: 73 Train Avg loss: 0.01773, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 3.67598, Acc:0.41593, F1: 0.41593
+====> Epoch: 74 Train Avg loss: 0.02690, Acc: 0.97625, F1: 0.97625#####> Valid Avg loss: 3.66267, Acc:0.41150, F1: 0.41150
+====> Epoch: 75 Train Avg loss: 0.02613, Acc: 0.97625, F1: 0.97625#####> Valid Avg loss: 3.42740, Acc:0.39823, F1: 0.39823
+====> Epoch: 76 Train Avg loss: 0.01458, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 3.73333, Acc:0.40265, F1: 0.40265
+====> Epoch: 77 Train Avg loss: 0.01294, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 3.99856, Acc:0.40708, F1: 0.40708
+===> Epoch: 77: Training loss decreased (0.01453 --> 0.01294), Acc: (0.98337 --> 0.98337), F1: (0.98337 --> 0.98337).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 78 Train Avg loss: 0.01209, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 3.57304, Acc:0.40265, F1: 0.40265
+===> Epoch: 78: Training loss decreased (0.01294 --> 0.01209), Acc: (0.98337 --> 0.98337), F1: (0.98337 --> 0.98337).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 79 Train Avg loss: 0.01140, Acc: 0.97981, F1: 0.97981#####> Valid Avg loss: 4.29441, Acc:0.41150, F1: 0.41150
+===> Epoch: 79: Training loss decreased (0.01209 --> 0.01140), Acc: (0.98337 --> 0.97981), F1: (0.98337 --> 0.97981).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 80 Train Avg loss: 0.01041, Acc: 0.98456, F1: 0.98456#####> Valid Avg loss: 3.70958, Acc:0.41150, F1: 0.41150
+===> Epoch: 80: Training loss decreased (0.01140 --> 0.01041), Acc: (0.97981 --> 0.98456), F1: (0.97981 --> 0.98456).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 81 Train Avg loss: 0.01067, Acc: 0.98575, F1: 0.98575#####> Valid Avg loss: 3.72696, Acc:0.42035, F1: 0.42035
+====> Epoch: 82 Train Avg loss: 0.01260, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 3.81399, Acc:0.40708, F1: 0.40708
+====> Epoch: 83 Train Avg loss: 0.01186, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 3.74873, Acc:0.40265, F1: 0.40265
+====> Epoch: 84 Train Avg loss: 0.01149, Acc: 0.98219, F1: 0.98219#####> Valid Avg loss: 4.06336, Acc:0.40708, F1: 0.40708
+====> Epoch: 85 Train Avg loss: 0.01058, Acc: 0.98100, F1: 0.98100#####> Valid Avg loss: 4.08319, Acc:0.41593, F1: 0.41593
+====> Epoch: 86 Train Avg loss: 0.01302, Acc: 0.98337, F1: 0.98337#####> Valid Avg loss: 4.00409, Acc:0.40708, F1: 0.40708
+====> Epoch: 87 Train Avg loss: 0.00998, Acc: 0.98575, F1: 0.98575#####> Valid Avg loss: 4.14273, Acc:0.43363, F1: 0.43363
+===> Epoch: 87: Training loss decreased (0.01041 --> 0.00998), Acc: (0.98456 --> 0.98575), F1: (0.98456 --> 0.98575).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 88 Train Avg loss: 0.01036, Acc: 0.98219, F1: 0.98219#####> Valid Avg loss: 3.94181, Acc:0.41150, F1: 0.41150
+====> Epoch: 89 Train Avg loss: 0.00965, Acc: 0.98575, F1: 0.98575#####> Valid Avg loss: 4.10711, Acc:0.41150, F1: 0.41150
+===> Epoch: 89: Training loss decreased (0.00998 --> 0.00965), Acc: (0.98575 --> 0.98575), F1: (0.98575 --> 0.98575).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+====> Epoch: 90 Train Avg loss: 0.01213, Acc: 0.98456, F1: 0.98456#####> Valid Avg loss: 4.11705, Acc:0.41150, F1: 0.41150
+====> Epoch: 91 Train Avg loss: 0.00858, Acc: 0.98931, F1: 0.98931#####> Valid Avg loss: 3.68072, Acc:0.41150, F1: 0.41150
+===> Epoch: 91: Training loss decreased (0.00965 --> 0.00858), Acc: (0.98575 --> 0.98931), F1: (0.98575 --> 0.98931).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_2
+
+##### Epoch: 91: Training cycle break due to early stop, patience51
+#####> Valid Avg loss: 2.69279, Acc:0.30068, F1: 0.30068
+
+
+$$$$$$> Test it 2: (from train best model) Final Test Avg loss:2.69279, Acc:0.30068, F1:0.30068\n
+#####> Valid Avg loss: 0.79737, Acc:0.46959, F1: 0.46959
+
+
+$$$$$$> Test it 2: (from max acc valid model) Final Test Avg loss:0.79737, Acc:0.46959, F1:0.46959\n
+#####> Valid Avg loss: 0.68600, Acc:0.46284, F1: 0.46284
+
+
+$$$$$$> Test it 2: (from min loss valid model) Final Test Avg loss:0.68600, Acc:0.46284, F1:0.46284\n
+
+
+	Start execution training validation it 3 
+
+train_dataloader len: 663
+valid_dataloader len: 113
+test_dataloader len: 202
+train performers ids: [2, 5, 6]
+valid performers ids: [1]
+test performers ids: [4]
+train dataset len: 1326, train dataloader len: 663
+valid dataset len: 226, valid dataloader len: 113
+valid dataset len: 404, test dataloader len: 113
+====> Epoch: 1 Train Avg loss: 0.70237, Acc: 0.48643, F1: 0.48643#####> Valid Avg loss: 0.74372, Acc:0.46903, F1: 0.46903
+===> Epoch: 1: Training loss decreased (inf --> 0.70237), Acc: (0.00000 --> 0.48643), F1: (0.00000 --> 0.48643).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+
+####> Epoch: 1: validation loss decreased (inf --> 0.74372), Acc: (0.00000 --> 0.46903), F1: (0.00000 --> 0.46903).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_3
+
+####> Epoch: 1: validation acc increase (inf --> 0.74372), Acc: (0.00000 --> 0.46903), F1: (0.00000 --> 0.46903).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 2 Train Avg loss: 0.63628, Acc: 0.52413, F1: 0.52413#####> Valid Avg loss: 0.70233, Acc:0.46903, F1: 0.46903
+===> Epoch: 2: Training loss decreased (0.70237 --> 0.63628), Acc: (0.48643 --> 0.52413), F1: (0.48643 --> 0.52413).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+
+####> Epoch: 2: validation loss decreased (0.74372 --> 0.70233), Acc: (0.46903 --> 0.46903), F1: (0.46903 --> 0.46903).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 3 Train Avg loss: 0.60764, Acc: 0.53695, F1: 0.53695#####> Valid Avg loss: 0.87536, Acc:0.47345, F1: 0.47345
+===> Epoch: 3: Training loss decreased (0.63628 --> 0.60764), Acc: (0.52413 --> 0.53695), F1: (0.52413 --> 0.53695).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+
+####> Epoch: 3: validation acc increase (0.74372 --> 0.87536), Acc: (0.46903 --> 0.47345), F1: (0.46903 --> 0.47345).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 4 Train Avg loss: 0.59972, Acc: 0.53771, F1: 0.53771#####> Valid Avg loss: 0.83679, Acc:0.47345, F1: 0.47345
+===> Epoch: 4: Training loss decreased (0.60764 --> 0.59972), Acc: (0.53695 --> 0.53771), F1: (0.53695 --> 0.53771).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 5 Train Avg loss: 0.59690, Acc: 0.55053, F1: 0.55053#####> Valid Avg loss: 0.77519, Acc:0.47345, F1: 0.47345
+===> Epoch: 5: Training loss decreased (0.59972 --> 0.59690), Acc: (0.53771 --> 0.55053), F1: (0.53771 --> 0.55053).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 6 Train Avg loss: 0.59312, Acc: 0.54977, F1: 0.54977#####> Valid Avg loss: 0.87200, Acc:0.47345, F1: 0.47345
+===> Epoch: 6: Training loss decreased (0.59690 --> 0.59312), Acc: (0.55053 --> 0.54977), F1: (0.55053 --> 0.54977).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 7 Train Avg loss: 0.58481, Acc: 0.55204, F1: 0.55204#####> Valid Avg loss: 0.83786, Acc:0.45575, F1: 0.45575
+===> Epoch: 7: Training loss decreased (0.59312 --> 0.58481), Acc: (0.54977 --> 0.55204), F1: (0.54977 --> 0.55204).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 8 Train Avg loss: 0.58010, Acc: 0.54751, F1: 0.54751#####> Valid Avg loss: 0.80864, Acc:0.47345, F1: 0.47345
+===> Epoch: 8: Training loss decreased (0.58481 --> 0.58010), Acc: (0.55204 --> 0.54751), F1: (0.55204 --> 0.54751).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 9 Train Avg loss: 0.57248, Acc: 0.56109, F1: 0.56109#####> Valid Avg loss: 0.85992, Acc:0.47345, F1: 0.47345
+===> Epoch: 9: Training loss decreased (0.58010 --> 0.57248), Acc: (0.54751 --> 0.56109), F1: (0.54751 --> 0.56109).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 10 Train Avg loss: 0.56823, Acc: 0.56938, F1: 0.56938#####> Valid Avg loss: 0.74945, Acc:0.46460, F1: 0.46460
+===> Epoch: 10: Training loss decreased (0.57248 --> 0.56823), Acc: (0.56109 --> 0.56938), F1: (0.56109 --> 0.56938).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 11 Train Avg loss: 0.56198, Acc: 0.56787, F1: 0.56787#####> Valid Avg loss: 0.74205, Acc:0.47345, F1: 0.47345
+===> Epoch: 11: Training loss decreased (0.56823 --> 0.56198), Acc: (0.56938 --> 0.56787), F1: (0.56938 --> 0.56787).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 12 Train Avg loss: 0.55666, Acc: 0.56712, F1: 0.56712#####> Valid Avg loss: 0.88188, Acc:0.47345, F1: 0.47345
+===> Epoch: 12: Training loss decreased (0.56198 --> 0.55666), Acc: (0.56787 --> 0.56712), F1: (0.56787 --> 0.56712).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 13 Train Avg loss: 0.55737, Acc: 0.57240, F1: 0.57240#####> Valid Avg loss: 0.89221, Acc:0.46460, F1: 0.46460
+====> Epoch: 14 Train Avg loss: 0.54851, Acc: 0.57617, F1: 0.57617#####> Valid Avg loss: 0.89352, Acc:0.47345, F1: 0.47345
+===> Epoch: 14: Training loss decreased (0.55666 --> 0.54851), Acc: (0.56712 --> 0.57617), F1: (0.56712 --> 0.57617).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 15 Train Avg loss: 0.54662, Acc: 0.56637, F1: 0.56637#####> Valid Avg loss: 0.81591, Acc:0.45575, F1: 0.45575
+===> Epoch: 15: Training loss decreased (0.54851 --> 0.54662), Acc: (0.57617 --> 0.56637), F1: (0.57617 --> 0.56637).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 16 Train Avg loss: 0.55213, Acc: 0.56486, F1: 0.56486#####> Valid Avg loss: 0.80683, Acc:0.42035, F1: 0.42035
+====> Epoch: 17 Train Avg loss: 0.53724, Acc: 0.57692, F1: 0.57692#####> Valid Avg loss: 0.87519, Acc:0.37611, F1: 0.37611
+===> Epoch: 17: Training loss decreased (0.54662 --> 0.53724), Acc: (0.56637 --> 0.57692), F1: (0.56637 --> 0.57692).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 18 Train Avg loss: 0.52965, Acc: 0.57768, F1: 0.57768#####> Valid Avg loss: 0.84356, Acc:0.43363, F1: 0.43363
+===> Epoch: 18: Training loss decreased (0.53724 --> 0.52965), Acc: (0.57692 --> 0.57768), F1: (0.57692 --> 0.57768).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 19 Train Avg loss: 0.51313, Acc: 0.59804, F1: 0.59804#####> Valid Avg loss: 0.82964, Acc:0.42035, F1: 0.42035
+===> Epoch: 19: Training loss decreased (0.52965 --> 0.51313), Acc: (0.57768 --> 0.59804), F1: (0.57768 --> 0.59804).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 20 Train Avg loss: 0.51156, Acc: 0.60483, F1: 0.60483#####> Valid Avg loss: 1.13350, Acc:0.45133, F1: 0.45133
+===> Epoch: 20: Training loss decreased (0.51313 --> 0.51156), Acc: (0.59804 --> 0.60483), F1: (0.59804 --> 0.60483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 21 Train Avg loss: 0.50016, Acc: 0.60332, F1: 0.60332#####> Valid Avg loss: 0.98043, Acc:0.46018, F1: 0.46018
+===> Epoch: 21: Training loss decreased (0.51156 --> 0.50016), Acc: (0.60483 --> 0.60332), F1: (0.60483 --> 0.60332).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 22 Train Avg loss: 0.49696, Acc: 0.59955, F1: 0.59955#####> Valid Avg loss: 1.20369, Acc:0.46460, F1: 0.46460
+===> Epoch: 22: Training loss decreased (0.50016 --> 0.49696), Acc: (0.60332 --> 0.59955), F1: (0.60332 --> 0.59955).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 23 Train Avg loss: 0.48485, Acc: 0.60407, F1: 0.60407#####> Valid Avg loss: 1.07418, Acc:0.45133, F1: 0.45133
+===> Epoch: 23: Training loss decreased (0.49696 --> 0.48485), Acc: (0.59955 --> 0.60407), F1: (0.59955 --> 0.60407).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 24 Train Avg loss: 0.47069, Acc: 0.62821, F1: 0.62821#####> Valid Avg loss: 0.93793, Acc:0.30973, F1: 0.30973
+===> Epoch: 24: Training loss decreased (0.48485 --> 0.47069), Acc: (0.60407 --> 0.62821), F1: (0.60407 --> 0.62821).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 25 Train Avg loss: 0.47240, Acc: 0.60935, F1: 0.60935#####> Valid Avg loss: 0.92845, Acc:0.43363, F1: 0.43363
+====> Epoch: 26 Train Avg loss: 0.46079, Acc: 0.63047, F1: 0.63047#####> Valid Avg loss: 1.17684, Acc:0.45575, F1: 0.45575
+===> Epoch: 26: Training loss decreased (0.47069 --> 0.46079), Acc: (0.62821 --> 0.63047), F1: (0.62821 --> 0.63047).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 27 Train Avg loss: 0.44799, Acc: 0.62670, F1: 0.62670#####> Valid Avg loss: 1.53424, Acc:0.43363, F1: 0.43363
+===> Epoch: 27: Training loss decreased (0.46079 --> 0.44799), Acc: (0.63047 --> 0.62670), F1: (0.63047 --> 0.62670).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 28 Train Avg loss: 0.43888, Acc: 0.62745, F1: 0.62745#####> Valid Avg loss: 1.10634, Acc:0.38496, F1: 0.38496
+===> Epoch: 28: Training loss decreased (0.44799 --> 0.43888), Acc: (0.62670 --> 0.62745), F1: (0.62670 --> 0.62745).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 29 Train Avg loss: 0.43029, Acc: 0.64253, F1: 0.64253#####> Valid Avg loss: 1.21552, Acc:0.31416, F1: 0.31416
+===> Epoch: 29: Training loss decreased (0.43888 --> 0.43029), Acc: (0.62745 --> 0.64253), F1: (0.62745 --> 0.64253).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 30 Train Avg loss: 0.42962, Acc: 0.63952, F1: 0.63952#####> Valid Avg loss: 1.30812, Acc:0.40265, F1: 0.40265
+===> Epoch: 30: Training loss decreased (0.43029 --> 0.42962), Acc: (0.64253 --> 0.63952), F1: (0.64253 --> 0.63952).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 31 Train Avg loss: 0.41064, Acc: 0.66667, F1: 0.66667#####> Valid Avg loss: 1.26155, Acc:0.41150, F1: 0.41150
+===> Epoch: 31: Training loss decreased (0.42962 --> 0.41064), Acc: (0.63952 --> 0.66667), F1: (0.63952 --> 0.66667).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 32 Train Avg loss: 0.40718, Acc: 0.66516, F1: 0.66516#####> Valid Avg loss: 1.32574, Acc:0.43805, F1: 0.43805
+===> Epoch: 32: Training loss decreased (0.41064 --> 0.40718), Acc: (0.66667 --> 0.66516), F1: (0.66667 --> 0.66516).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 33 Train Avg loss: 0.38403, Acc: 0.67572, F1: 0.67572#####> Valid Avg loss: 1.66723, Acc:0.44248, F1: 0.44248
+===> Epoch: 33: Training loss decreased (0.40718 --> 0.38403), Acc: (0.66516 --> 0.67572), F1: (0.66516 --> 0.67572).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 34 Train Avg loss: 0.37658, Acc: 0.68703, F1: 0.68703#####> Valid Avg loss: 1.36098, Acc:0.44248, F1: 0.44248
+===> Epoch: 34: Training loss decreased (0.38403 --> 0.37658), Acc: (0.67572 --> 0.68703), F1: (0.67572 --> 0.68703).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 35 Train Avg loss: 0.35384, Acc: 0.69457, F1: 0.69457#####> Valid Avg loss: 1.53037, Acc:0.42920, F1: 0.42920
+===> Epoch: 35: Training loss decreased (0.37658 --> 0.35384), Acc: (0.68703 --> 0.69457), F1: (0.68703 --> 0.69457).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 36 Train Avg loss: 0.34978, Acc: 0.68552, F1: 0.68552#####> Valid Avg loss: 1.81942, Acc:0.46903, F1: 0.46903
+===> Epoch: 36: Training loss decreased (0.35384 --> 0.34978), Acc: (0.69457 --> 0.68552), F1: (0.69457 --> 0.68552).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 37 Train Avg loss: 0.32804, Acc: 0.72247, F1: 0.72247#####> Valid Avg loss: 1.57002, Acc:0.37168, F1: 0.37168
+===> Epoch: 37: Training loss decreased (0.34978 --> 0.32804), Acc: (0.68552 --> 0.72247), F1: (0.68552 --> 0.72247).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 38 Train Avg loss: 0.33218, Acc: 0.71342, F1: 0.71342#####> Valid Avg loss: 1.35093, Acc:0.42035, F1: 0.42035
+====> Epoch: 39 Train Avg loss: 0.31606, Acc: 0.73605, F1: 0.73605#####> Valid Avg loss: 1.64233, Acc:0.37611, F1: 0.37611
+===> Epoch: 39: Training loss decreased (0.32804 --> 0.31606), Acc: (0.72247 --> 0.73605), F1: (0.72247 --> 0.73605).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 40 Train Avg loss: 0.29286, Acc: 0.75113, F1: 0.75113#####> Valid Avg loss: 1.66679, Acc:0.35398, F1: 0.35398
+===> Epoch: 40: Training loss decreased (0.31606 --> 0.29286), Acc: (0.73605 --> 0.75113), F1: (0.73605 --> 0.75113).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 41 Train Avg loss: 0.26128, Acc: 0.77225, F1: 0.77225#####> Valid Avg loss: 1.91686, Acc:0.42920, F1: 0.42920
+===> Epoch: 41: Training loss decreased (0.29286 --> 0.26128), Acc: (0.75113 --> 0.77225), F1: (0.75113 --> 0.77225).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 42 Train Avg loss: 0.25844, Acc: 0.79186, F1: 0.79186#####> Valid Avg loss: 1.90574, Acc:0.38938, F1: 0.38938
+===> Epoch: 42: Training loss decreased (0.26128 --> 0.25844), Acc: (0.77225 --> 0.79186), F1: (0.77225 --> 0.79186).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 43 Train Avg loss: 0.23622, Acc: 0.81071, F1: 0.81071#####> Valid Avg loss: 2.16036, Acc:0.42035, F1: 0.42035
+===> Epoch: 43: Training loss decreased (0.25844 --> 0.23622), Acc: (0.79186 --> 0.81071), F1: (0.79186 --> 0.81071).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 44 Train Avg loss: 0.20914, Acc: 0.82805, F1: 0.82805#####> Valid Avg loss: 2.31656, Acc:0.39381, F1: 0.39381
+===> Epoch: 44: Training loss decreased (0.23622 --> 0.20914), Acc: (0.81071 --> 0.82805), F1: (0.81071 --> 0.82805).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 45 Train Avg loss: 0.18799, Acc: 0.84087, F1: 0.84087#####> Valid Avg loss: 2.49262, Acc:0.37611, F1: 0.37611
+===> Epoch: 45: Training loss decreased (0.20914 --> 0.18799), Acc: (0.82805 --> 0.84087), F1: (0.82805 --> 0.84087).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 46 Train Avg loss: 0.17993, Acc: 0.84917, F1: 0.84917#####> Valid Avg loss: 2.85551, Acc:0.43363, F1: 0.43363
+===> Epoch: 46: Training loss decreased (0.18799 --> 0.17993), Acc: (0.84087 --> 0.84917), F1: (0.84087 --> 0.84917).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 47 Train Avg loss: 0.15014, Acc: 0.87406, F1: 0.87406#####> Valid Avg loss: 2.93735, Acc:0.39823, F1: 0.39823
+===> Epoch: 47: Training loss decreased (0.17993 --> 0.15014), Acc: (0.84917 --> 0.87406), F1: (0.84917 --> 0.87406).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 48 Train Avg loss: 0.16823, Acc: 0.86350, F1: 0.86350#####> Valid Avg loss: 3.06406, Acc:0.41150, F1: 0.41150
+====> Epoch: 49 Train Avg loss: 0.14264, Acc: 0.88763, F1: 0.88763#####> Valid Avg loss: 2.99395, Acc:0.39381, F1: 0.39381
+===> Epoch: 49: Training loss decreased (0.15014 --> 0.14264), Acc: (0.87406 --> 0.88763), F1: (0.87406 --> 0.88763).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 50 Train Avg loss: 0.12402, Acc: 0.90422, F1: 0.90422#####> Valid Avg loss: 3.12383, Acc:0.36283, F1: 0.36283
+===> Epoch: 50: Training loss decreased (0.14264 --> 0.12402), Acc: (0.88763 --> 0.90422), F1: (0.88763 --> 0.90422).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 51 Train Avg loss: 0.11577, Acc: 0.91176, F1: 0.91176#####> Valid Avg loss: 3.46610, Acc:0.41593, F1: 0.41593
+===> Epoch: 51: Training loss decreased (0.12402 --> 0.11577), Acc: (0.90422 --> 0.91176), F1: (0.90422 --> 0.91176).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 52 Train Avg loss: 0.10076, Acc: 0.92911, F1: 0.92911#####> Valid Avg loss: 3.54359, Acc:0.42920, F1: 0.42920
+===> Epoch: 52: Training loss decreased (0.11577 --> 0.10076), Acc: (0.91176 --> 0.92911), F1: (0.91176 --> 0.92911).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 53 Train Avg loss: 0.09325, Acc: 0.93062, F1: 0.93062#####> Valid Avg loss: 3.53541, Acc:0.38053, F1: 0.38053
+===> Epoch: 53: Training loss decreased (0.10076 --> 0.09325), Acc: (0.92911 --> 0.93062), F1: (0.92911 --> 0.93062).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 54 Train Avg loss: 0.07816, Acc: 0.94193, F1: 0.94193#####> Valid Avg loss: 3.31878, Acc:0.37611, F1: 0.37611
+===> Epoch: 54: Training loss decreased (0.09325 --> 0.07816), Acc: (0.93062 --> 0.94193), F1: (0.93062 --> 0.94193).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 55 Train Avg loss: 0.07263, Acc: 0.94419, F1: 0.94419#####> Valid Avg loss: 3.88374, Acc:0.40708, F1: 0.40708
+===> Epoch: 55: Training loss decreased (0.07816 --> 0.07263), Acc: (0.94193 --> 0.94419), F1: (0.94193 --> 0.94419).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 56 Train Avg loss: 0.06709, Acc: 0.94646, F1: 0.94646#####> Valid Avg loss: 3.92209, Acc:0.38053, F1: 0.38053
+===> Epoch: 56: Training loss decreased (0.07263 --> 0.06709), Acc: (0.94419 --> 0.94646), F1: (0.94419 --> 0.94646).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 57 Train Avg loss: 0.05632, Acc: 0.96003, F1: 0.96003#####> Valid Avg loss: 4.01158, Acc:0.39381, F1: 0.39381
+===> Epoch: 57: Training loss decreased (0.06709 --> 0.05632), Acc: (0.94646 --> 0.96003), F1: (0.94646 --> 0.96003).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+====> Epoch: 58 Train Avg loss: 0.03884, Acc: 0.97285, F1: 0.97285#####> Valid Avg loss: 4.22701, Acc:0.39381, F1: 0.39381
+===> Epoch: 58: Training loss decreased (0.05632 --> 0.03884), Acc: (0.96003 --> 0.97285), F1: (0.96003 --> 0.97285).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_3
+
+##### Epoch: 58: Training cycle break due to early stop, patience51
+#####> Valid Avg loss: 3.62138, Acc:0.43317, F1: 0.43317
+
+
+$$$$$$> Test it 3: (from train best model) Final Test Avg loss:3.62138, Acc:0.43317, F1:0.43317\n
+#####> Valid Avg loss: 0.98996, Acc:0.44307, F1: 0.44307
+
+
+$$$$$$> Test it 3: (from max acc valid model) Final Test Avg loss:0.98996, Acc:0.44307, F1:0.44307\n
+#####> Valid Avg loss: 0.76275, Acc:0.43069, F1: 0.43069
+
+
+$$$$$$> Test it 3: (from min loss valid model) Final Test Avg loss:0.76275, Acc:0.43069, F1:0.43069\n
+
+
+	Start execution training validation it 4 
+
+train_dataloader len: 725
+valid_dataloader len: 113
+test_dataloader len: 140
+train performers ids: [2, 4, 6]
+valid performers ids: [1]
+test performers ids: [5]
+train dataset len: 1450, train dataloader len: 725
+valid dataset len: 226, valid dataloader len: 113
+valid dataset len: 280, test dataloader len: 113
+====> Epoch: 1 Train Avg loss: 0.73914, Acc: 0.43517, F1: 0.43517#####> Valid Avg loss: 0.81451, Acc:0.47345, F1: 0.47345
+===> Epoch: 1: Training loss decreased (inf --> 0.73914), Acc: (0.00000 --> 0.43517), F1: (0.00000 --> 0.43517).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 1: validation loss decreased (inf --> 0.81451), Acc: (0.00000 --> 0.47345), F1: (0.00000 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 1: validation acc increase (inf --> 0.81451), Acc: (0.00000 --> 0.47345), F1: (0.00000 --> 0.47345).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 2 Train Avg loss: 0.68290, Acc: 0.47103, F1: 0.47103#####> Valid Avg loss: 0.75398, Acc:0.47345, F1: 0.47345
+===> Epoch: 2: Training loss decreased (0.73914 --> 0.68290), Acc: (0.43517 --> 0.47103), F1: (0.43517 --> 0.47103).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 2: validation loss decreased (0.81451 --> 0.75398), Acc: (0.47345 --> 0.47345), F1: (0.47345 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 3 Train Avg loss: 0.66911, Acc: 0.47379, F1: 0.47379#####> Valid Avg loss: 0.70303, Acc:0.47345, F1: 0.47345
+===> Epoch: 3: Training loss decreased (0.68290 --> 0.66911), Acc: (0.47103 --> 0.47379), F1: (0.47103 --> 0.47379).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 3: validation loss decreased (0.75398 --> 0.70303), Acc: (0.47345 --> 0.47345), F1: (0.47345 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 4 Train Avg loss: 0.65681, Acc: 0.47034, F1: 0.47034#####> Valid Avg loss: 0.74144, Acc:0.48230, F1: 0.48230
+===> Epoch: 4: Training loss decreased (0.66911 --> 0.65681), Acc: (0.47379 --> 0.47034), F1: (0.47379 --> 0.47034).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 4: validation acc increase (0.81451 --> 0.74144), Acc: (0.47345 --> 0.48230), F1: (0.47345 --> 0.48230).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 5 Train Avg loss: 0.64331, Acc: 0.50621, F1: 0.50621#####> Valid Avg loss: 0.75115, Acc:0.47345, F1: 0.47345
+===> Epoch: 5: Training loss decreased (0.65681 --> 0.64331), Acc: (0.47034 --> 0.50621), F1: (0.47034 --> 0.50621).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 6 Train Avg loss: 0.64516, Acc: 0.48552, F1: 0.48552#####> Valid Avg loss: 0.77749, Acc:0.47345, F1: 0.47345
+====> Epoch: 7 Train Avg loss: 0.64198, Acc: 0.47862, F1: 0.47862#####> Valid Avg loss: 0.72168, Acc:0.47345, F1: 0.47345
+===> Epoch: 7: Training loss decreased (0.64331 --> 0.64198), Acc: (0.50621 --> 0.47862), F1: (0.50621 --> 0.47862).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 8 Train Avg loss: 0.62979, Acc: 0.50345, F1: 0.50345#####> Valid Avg loss: 0.72301, Acc:0.41593, F1: 0.41593
+===> Epoch: 8: Training loss decreased (0.64198 --> 0.62979), Acc: (0.47862 --> 0.50345), F1: (0.47862 --> 0.50345).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 9 Train Avg loss: 0.62586, Acc: 0.50690, F1: 0.50690#####> Valid Avg loss: 0.76494, Acc:0.47788, F1: 0.47788
+===> Epoch: 9: Training loss decreased (0.62979 --> 0.62586), Acc: (0.50345 --> 0.50690), F1: (0.50345 --> 0.50690).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 10 Train Avg loss: 0.61710, Acc: 0.50345, F1: 0.50345#####> Valid Avg loss: 0.69301, Acc:0.48673, F1: 0.48673
+===> Epoch: 10: Training loss decreased (0.62586 --> 0.61710), Acc: (0.50690 --> 0.50345), F1: (0.50690 --> 0.50345).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 10: validation loss decreased (0.70303 --> 0.69301), Acc: (0.47345 --> 0.48673), F1: (0.47345 --> 0.48673).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_4
+
+####> Epoch: 10: validation acc increase (0.74144 --> 0.69301), Acc: (0.48230 --> 0.48673), F1: (0.48230 --> 0.48673).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 11 Train Avg loss: 0.61361, Acc: 0.52276, F1: 0.52276#####> Valid Avg loss: 0.69483, Acc:0.45575, F1: 0.45575
+===> Epoch: 11: Training loss decreased (0.61710 --> 0.61361), Acc: (0.50345 --> 0.52276), F1: (0.50345 --> 0.52276).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 12 Train Avg loss: 0.60092, Acc: 0.52207, F1: 0.52207#####> Valid Avg loss: 0.87802, Acc:0.47788, F1: 0.47788
+===> Epoch: 12: Training loss decreased (0.61361 --> 0.60092), Acc: (0.52276 --> 0.52207), F1: (0.52276 --> 0.52207).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 13 Train Avg loss: 0.59459, Acc: 0.52759, F1: 0.52759#####> Valid Avg loss: 0.92104, Acc:0.47345, F1: 0.47345
+===> Epoch: 13: Training loss decreased (0.60092 --> 0.59459), Acc: (0.52207 --> 0.52759), F1: (0.52207 --> 0.52759).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 14 Train Avg loss: 0.59550, Acc: 0.52621, F1: 0.52621#####> Valid Avg loss: 0.73339, Acc:0.47345, F1: 0.47345
+====> Epoch: 15 Train Avg loss: 0.59010, Acc: 0.52483, F1: 0.52483#####> Valid Avg loss: 0.72149, Acc:0.46018, F1: 0.46018
+===> Epoch: 15: Training loss decreased (0.59459 --> 0.59010), Acc: (0.52759 --> 0.52483), F1: (0.52759 --> 0.52483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 16 Train Avg loss: 0.57504, Acc: 0.53241, F1: 0.53241#####> Valid Avg loss: 0.81391, Acc:0.46460, F1: 0.46460
+===> Epoch: 16: Training loss decreased (0.59010 --> 0.57504), Acc: (0.52483 --> 0.53241), F1: (0.52483 --> 0.53241).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 17 Train Avg loss: 0.57363, Acc: 0.54483, F1: 0.54483#####> Valid Avg loss: 0.81979, Acc:0.47345, F1: 0.47345
+===> Epoch: 17: Training loss decreased (0.57504 --> 0.57363), Acc: (0.53241 --> 0.54483), F1: (0.53241 --> 0.54483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 18 Train Avg loss: 0.56262, Acc: 0.56276, F1: 0.56276#####> Valid Avg loss: 0.84186, Acc:0.46018, F1: 0.46018
+===> Epoch: 18: Training loss decreased (0.57363 --> 0.56262), Acc: (0.54483 --> 0.56276), F1: (0.54483 --> 0.56276).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 19 Train Avg loss: 0.54934, Acc: 0.55862, F1: 0.55862#####> Valid Avg loss: 0.79645, Acc:0.47345, F1: 0.47345
+===> Epoch: 19: Training loss decreased (0.56262 --> 0.54934), Acc: (0.56276 --> 0.55862), F1: (0.56276 --> 0.55862).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 20 Train Avg loss: 0.54551, Acc: 0.56897, F1: 0.56897#####> Valid Avg loss: 0.82115, Acc:0.46460, F1: 0.46460
+===> Epoch: 20: Training loss decreased (0.54934 --> 0.54551), Acc: (0.55862 --> 0.56897), F1: (0.55862 --> 0.56897).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 21 Train Avg loss: 0.54346, Acc: 0.56069, F1: 0.56069#####> Valid Avg loss: 0.77262, Acc:0.44690, F1: 0.44690
+===> Epoch: 21: Training loss decreased (0.54551 --> 0.54346), Acc: (0.56897 --> 0.56069), F1: (0.56897 --> 0.56069).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 22 Train Avg loss: 0.53088, Acc: 0.57241, F1: 0.57241#####> Valid Avg loss: 0.82831, Acc:0.46018, F1: 0.46018
+===> Epoch: 22: Training loss decreased (0.54346 --> 0.53088), Acc: (0.56069 --> 0.57241), F1: (0.56069 --> 0.57241).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 23 Train Avg loss: 0.51887, Acc: 0.58690, F1: 0.58690#####> Valid Avg loss: 0.85690, Acc:0.46903, F1: 0.46903
+===> Epoch: 23: Training loss decreased (0.53088 --> 0.51887), Acc: (0.57241 --> 0.58690), F1: (0.57241 --> 0.58690).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 24 Train Avg loss: 0.51781, Acc: 0.58483, F1: 0.58483#####> Valid Avg loss: 0.86586, Acc:0.46018, F1: 0.46018
+===> Epoch: 24: Training loss decreased (0.51887 --> 0.51781), Acc: (0.58690 --> 0.58483), F1: (0.58690 --> 0.58483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 25 Train Avg loss: 0.50797, Acc: 0.58690, F1: 0.58690#####> Valid Avg loss: 0.84070, Acc:0.46460, F1: 0.46460
+===> Epoch: 25: Training loss decreased (0.51781 --> 0.50797), Acc: (0.58483 --> 0.58690), F1: (0.58483 --> 0.58690).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 26 Train Avg loss: 0.48766, Acc: 0.60897, F1: 0.60897#####> Valid Avg loss: 1.00298, Acc:0.45133, F1: 0.45133
+===> Epoch: 26: Training loss decreased (0.50797 --> 0.48766), Acc: (0.58690 --> 0.60897), F1: (0.58690 --> 0.60897).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 27 Train Avg loss: 0.47391, Acc: 0.62966, F1: 0.62966#####> Valid Avg loss: 0.97708, Acc:0.45575, F1: 0.45575
+===> Epoch: 27: Training loss decreased (0.48766 --> 0.47391), Acc: (0.60897 --> 0.62966), F1: (0.60897 --> 0.62966).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 28 Train Avg loss: 0.47152, Acc: 0.60621, F1: 0.60621#####> Valid Avg loss: 0.90561, Acc:0.40265, F1: 0.40265
+===> Epoch: 28: Training loss decreased (0.47391 --> 0.47152), Acc: (0.62966 --> 0.60621), F1: (0.62966 --> 0.60621).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 29 Train Avg loss: 0.45919, Acc: 0.63103, F1: 0.63103#####> Valid Avg loss: 0.99439, Acc:0.43805, F1: 0.43805
+===> Epoch: 29: Training loss decreased (0.47152 --> 0.45919), Acc: (0.60621 --> 0.63103), F1: (0.60621 --> 0.63103).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 30 Train Avg loss: 0.43948, Acc: 0.64069, F1: 0.64069#####> Valid Avg loss: 1.07009, Acc:0.41593, F1: 0.41593
+===> Epoch: 30: Training loss decreased (0.45919 --> 0.43948), Acc: (0.63103 --> 0.64069), F1: (0.63103 --> 0.64069).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 31 Train Avg loss: 0.44198, Acc: 0.63724, F1: 0.63724#####> Valid Avg loss: 1.02463, Acc:0.41150, F1: 0.41150
+====> Epoch: 32 Train Avg loss: 0.42133, Acc: 0.66138, F1: 0.66138#####> Valid Avg loss: 1.12775, Acc:0.46018, F1: 0.46018
+===> Epoch: 32: Training loss decreased (0.43948 --> 0.42133), Acc: (0.64069 --> 0.66138), F1: (0.64069 --> 0.66138).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 33 Train Avg loss: 0.41959, Acc: 0.67241, F1: 0.67241#####> Valid Avg loss: 1.09717, Acc:0.45133, F1: 0.45133
+===> Epoch: 33: Training loss decreased (0.42133 --> 0.41959), Acc: (0.66138 --> 0.67241), F1: (0.66138 --> 0.67241).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 34 Train Avg loss: 0.38839, Acc: 0.67172, F1: 0.67172#####> Valid Avg loss: 0.97886, Acc:0.46018, F1: 0.46018
+===> Epoch: 34: Training loss decreased (0.41959 --> 0.38839), Acc: (0.67241 --> 0.67172), F1: (0.67241 --> 0.67172).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 35 Train Avg loss: 0.38431, Acc: 0.69793, F1: 0.69793#####> Valid Avg loss: 1.18958, Acc:0.43805, F1: 0.43805
+===> Epoch: 35: Training loss decreased (0.38839 --> 0.38431), Acc: (0.67172 --> 0.69793), F1: (0.67172 --> 0.69793).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 36 Train Avg loss: 0.38431, Acc: 0.68690, F1: 0.68690#####> Valid Avg loss: 1.13602, Acc:0.42920, F1: 0.42920
+===> Epoch: 36: Training loss decreased (0.38431 --> 0.38431), Acc: (0.69793 --> 0.68690), F1: (0.69793 --> 0.68690).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 37 Train Avg loss: 0.35444, Acc: 0.71448, F1: 0.71448#####> Valid Avg loss: 1.14025, Acc:0.42478, F1: 0.42478
+===> Epoch: 37: Training loss decreased (0.38431 --> 0.35444), Acc: (0.68690 --> 0.71448), F1: (0.68690 --> 0.71448).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 38 Train Avg loss: 0.34222, Acc: 0.71172, F1: 0.71172#####> Valid Avg loss: 1.22630, Acc:0.41150, F1: 0.41150
+===> Epoch: 38: Training loss decreased (0.35444 --> 0.34222), Acc: (0.71448 --> 0.71172), F1: (0.71448 --> 0.71172).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 39 Train Avg loss: 0.32161, Acc: 0.73172, F1: 0.73172#####> Valid Avg loss: 1.48076, Acc:0.43805, F1: 0.43805
+===> Epoch: 39: Training loss decreased (0.34222 --> 0.32161), Acc: (0.71172 --> 0.73172), F1: (0.71172 --> 0.73172).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 40 Train Avg loss: 0.31607, Acc: 0.74621, F1: 0.74621#####> Valid Avg loss: 1.45950, Acc:0.38938, F1: 0.38938
+===> Epoch: 40: Training loss decreased (0.32161 --> 0.31607), Acc: (0.73172 --> 0.74621), F1: (0.73172 --> 0.74621).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 41 Train Avg loss: 0.28880, Acc: 0.77241, F1: 0.77241#####> Valid Avg loss: 1.59944, Acc:0.41593, F1: 0.41593
+===> Epoch: 41: Training loss decreased (0.31607 --> 0.28880), Acc: (0.74621 --> 0.77241), F1: (0.74621 --> 0.77241).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 42 Train Avg loss: 0.26852, Acc: 0.77862, F1: 0.77862#####> Valid Avg loss: 1.60115, Acc:0.42035, F1: 0.42035
+===> Epoch: 42: Training loss decreased (0.28880 --> 0.26852), Acc: (0.77241 --> 0.77862), F1: (0.77241 --> 0.77862).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 43 Train Avg loss: 0.26143, Acc: 0.79103, F1: 0.79103#####> Valid Avg loss: 1.55490, Acc:0.36726, F1: 0.36726
+===> Epoch: 43: Training loss decreased (0.26852 --> 0.26143), Acc: (0.77862 --> 0.79103), F1: (0.77862 --> 0.79103).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 44 Train Avg loss: 0.24228, Acc: 0.80000, F1: 0.80000#####> Valid Avg loss: 1.80561, Acc:0.33628, F1: 0.33628
+===> Epoch: 44: Training loss decreased (0.26143 --> 0.24228), Acc: (0.79103 --> 0.80000), F1: (0.79103 --> 0.80000).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 45 Train Avg loss: 0.22129, Acc: 0.81724, F1: 0.81724#####> Valid Avg loss: 2.13585, Acc:0.40708, F1: 0.40708
+===> Epoch: 45: Training loss decreased (0.24228 --> 0.22129), Acc: (0.80000 --> 0.81724), F1: (0.80000 --> 0.81724).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 46 Train Avg loss: 0.22097, Acc: 0.84138, F1: 0.84138#####> Valid Avg loss: 1.61452, Acc:0.42920, F1: 0.42920
+===> Epoch: 46: Training loss decreased (0.22129 --> 0.22097), Acc: (0.81724 --> 0.84138), F1: (0.81724 --> 0.84138).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 47 Train Avg loss: 0.20695, Acc: 0.83448, F1: 0.83448#####> Valid Avg loss: 2.35027, Acc:0.41150, F1: 0.41150
+===> Epoch: 47: Training loss decreased (0.22097 --> 0.20695), Acc: (0.84138 --> 0.83448), F1: (0.84138 --> 0.83448).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 48 Train Avg loss: 0.18693, Acc: 0.85862, F1: 0.85862#####> Valid Avg loss: 2.17196, Acc:0.42035, F1: 0.42035
+===> Epoch: 48: Training loss decreased (0.20695 --> 0.18693), Acc: (0.83448 --> 0.85862), F1: (0.83448 --> 0.85862).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 49 Train Avg loss: 0.16172, Acc: 0.87241, F1: 0.87241#####> Valid Avg loss: 2.33257, Acc:0.42478, F1: 0.42478
+===> Epoch: 49: Training loss decreased (0.18693 --> 0.16172), Acc: (0.85862 --> 0.87241), F1: (0.85862 --> 0.87241).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 50 Train Avg loss: 0.15068, Acc: 0.88345, F1: 0.88345#####> Valid Avg loss: 2.29392, Acc:0.41150, F1: 0.41150
+===> Epoch: 50: Training loss decreased (0.16172 --> 0.15068), Acc: (0.87241 --> 0.88345), F1: (0.87241 --> 0.88345).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 51 Train Avg loss: 0.12540, Acc: 0.90345, F1: 0.90345#####> Valid Avg loss: 2.49451, Acc:0.39823, F1: 0.39823
+===> Epoch: 51: Training loss decreased (0.15068 --> 0.12540), Acc: (0.88345 --> 0.90345), F1: (0.88345 --> 0.90345).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 52 Train Avg loss: 0.14445, Acc: 0.87517, F1: 0.87517#####> Valid Avg loss: 2.08297, Acc:0.30973, F1: 0.30973
+====> Epoch: 53 Train Avg loss: 0.10657, Acc: 0.91379, F1: 0.91379#####> Valid Avg loss: 2.62937, Acc:0.38496, F1: 0.38496
+===> Epoch: 53: Training loss decreased (0.12540 --> 0.10657), Acc: (0.90345 --> 0.91379), F1: (0.90345 --> 0.91379).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 54 Train Avg loss: 0.12360, Acc: 0.90345, F1: 0.90345#####> Valid Avg loss: 2.55269, Acc:0.41150, F1: 0.41150
+====> Epoch: 55 Train Avg loss: 0.09615, Acc: 0.92483, F1: 0.92483#####> Valid Avg loss: 3.12787, Acc:0.41593, F1: 0.41593
+===> Epoch: 55: Training loss decreased (0.10657 --> 0.09615), Acc: (0.91379 --> 0.92483), F1: (0.91379 --> 0.92483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 56 Train Avg loss: 0.07608, Acc: 0.94552, F1: 0.94552#####> Valid Avg loss: 3.00502, Acc:0.40265, F1: 0.40265
+===> Epoch: 56: Training loss decreased (0.09615 --> 0.07608), Acc: (0.92483 --> 0.94552), F1: (0.92483 --> 0.94552).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 57 Train Avg loss: 0.07525, Acc: 0.94207, F1: 0.94207#####> Valid Avg loss: 3.29712, Acc:0.39823, F1: 0.39823
+===> Epoch: 57: Training loss decreased (0.07608 --> 0.07525), Acc: (0.94552 --> 0.94207), F1: (0.94552 --> 0.94207).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 58 Train Avg loss: 0.08145, Acc: 0.93586, F1: 0.93586#####> Valid Avg loss: 3.62810, Acc:0.40708, F1: 0.40708
+====> Epoch: 59 Train Avg loss: 0.06598, Acc: 0.94966, F1: 0.94966#####> Valid Avg loss: 3.63702, Acc:0.42920, F1: 0.42920
+===> Epoch: 59: Training loss decreased (0.07525 --> 0.06598), Acc: (0.94207 --> 0.94966), F1: (0.94207 --> 0.94966).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 60 Train Avg loss: 0.07305, Acc: 0.93517, F1: 0.93517#####> Valid Avg loss: 3.62684, Acc:0.41150, F1: 0.41150
+====> Epoch: 61 Train Avg loss: 0.04657, Acc: 0.96000, F1: 0.96000#####> Valid Avg loss: 4.21530, Acc:0.42920, F1: 0.42920
+===> Epoch: 61: Training loss decreased (0.06598 --> 0.04657), Acc: (0.94966 --> 0.96000), F1: (0.94966 --> 0.96000).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 62 Train Avg loss: 0.05040, Acc: 0.96000, F1: 0.96000#####> Valid Avg loss: 3.78807, Acc:0.39823, F1: 0.39823
+====> Epoch: 63 Train Avg loss: 0.04415, Acc: 0.96552, F1: 0.96552#####> Valid Avg loss: 4.01098, Acc:0.42920, F1: 0.42920
+===> Epoch: 63: Training loss decreased (0.04657 --> 0.04415), Acc: (0.96000 --> 0.96552), F1: (0.96000 --> 0.96552).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 64 Train Avg loss: 0.04107, Acc: 0.96483, F1: 0.96483#####> Valid Avg loss: 4.10748, Acc:0.38053, F1: 0.38053
+===> Epoch: 64: Training loss decreased (0.04415 --> 0.04107), Acc: (0.96552 --> 0.96483), F1: (0.96552 --> 0.96483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 65 Train Avg loss: 0.04579, Acc: 0.95931, F1: 0.95931#####> Valid Avg loss: 4.20676, Acc:0.42035, F1: 0.42035
+====> Epoch: 66 Train Avg loss: 0.02536, Acc: 0.97655, F1: 0.97655#####> Valid Avg loss: 4.37274, Acc:0.41593, F1: 0.41593
+===> Epoch: 66: Training loss decreased (0.04107 --> 0.02536), Acc: (0.96483 --> 0.97655), F1: (0.96483 --> 0.97655).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 67 Train Avg loss: 0.03999, Acc: 0.96621, F1: 0.96621#####> Valid Avg loss: 4.20214, Acc:0.40708, F1: 0.40708
+====> Epoch: 68 Train Avg loss: 0.02701, Acc: 0.97517, F1: 0.97517#####> Valid Avg loss: 3.95455, Acc:0.39823, F1: 0.39823
+====> Epoch: 69 Train Avg loss: 0.02060, Acc: 0.98207, F1: 0.98207#####> Valid Avg loss: 4.40038, Acc:0.40265, F1: 0.40265
+===> Epoch: 69: Training loss decreased (0.02536 --> 0.02060), Acc: (0.97655 --> 0.98207), F1: (0.97655 --> 0.98207).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 70 Train Avg loss: 0.03924, Acc: 0.96828, F1: 0.96828#####> Valid Avg loss: 4.72696, Acc:0.41150, F1: 0.41150
+====> Epoch: 71 Train Avg loss: 0.02682, Acc: 0.97517, F1: 0.97517#####> Valid Avg loss: 4.30952, Acc:0.40708, F1: 0.40708
+====> Epoch: 72 Train Avg loss: 0.01927, Acc: 0.98069, F1: 0.98069#####> Valid Avg loss: 4.15452, Acc:0.38496, F1: 0.38496
+===> Epoch: 72: Training loss decreased (0.02060 --> 0.01927), Acc: (0.98207 --> 0.98069), F1: (0.98207 --> 0.98069).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+====> Epoch: 73 Train Avg loss: 0.01787, Acc: 0.98069, F1: 0.98069#####> Valid Avg loss: 4.12333, Acc:0.40265, F1: 0.40265
+===> Epoch: 73: Training loss decreased (0.01927 --> 0.01787), Acc: (0.98069 --> 0.98069), F1: (0.98069 --> 0.98069).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_4
+
+##### Epoch: 73: Training cycle break due to early stop, patience51
+#####> Valid Avg loss: 3.00812, Acc:0.44643, F1: 0.44643
+
+
+$$$$$$> Test it 4: (from train best model) Final Test Avg loss:3.00812, Acc:0.44643, F1:0.44643\n
+#####> Valid Avg loss: 0.54373, Acc:0.70000, F1: 0.70000
+
+
+$$$$$$> Test it 4: (from max acc valid model) Final Test Avg loss:0.54373, Acc:0.70000, F1:0.70000\n
+#####> Valid Avg loss: 0.54373, Acc:0.70000, F1: 0.70000
+
+
+$$$$$$> Test it 4: (from min loss valid model) Final Test Avg loss:0.54373, Acc:0.70000, F1:0.70000\n
+
+
+	Start execution training validation it 5 
+
+train_dataloader len: 786
+valid_dataloader len: 113
+test_dataloader len: 79
+train performers ids: [2, 4, 5]
+valid performers ids: [1]
+test performers ids: [6]
+train dataset len: 1572, train dataloader len: 786
+valid dataset len: 226, valid dataloader len: 113
+valid dataset len: 158, test dataloader len: 113
+====> Epoch: 1 Train Avg loss: 0.74687, Acc: 0.45229, F1: 0.45229#####> Valid Avg loss: 0.71157, Acc:0.25221, F1: 0.25221
+===> Epoch: 1: Training loss decreased (inf --> 0.74687), Acc: (0.00000 --> 0.45229), F1: (0.00000 --> 0.45229).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 1: validation loss decreased (inf --> 0.71157), Acc: (0.00000 --> 0.25221), F1: (0.00000 --> 0.25221).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 1: validation acc increase (inf --> 0.71157), Acc: (0.00000 --> 0.25221), F1: (0.00000 --> 0.25221).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 2 Train Avg loss: 0.67816, Acc: 0.46756, F1: 0.46756#####> Valid Avg loss: 0.70578, Acc:0.47345, F1: 0.47345
+===> Epoch: 2: Training loss decreased (0.74687 --> 0.67816), Acc: (0.45229 --> 0.46756), F1: (0.45229 --> 0.46756).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 2: validation loss decreased (0.71157 --> 0.70578), Acc: (0.25221 --> 0.47345), F1: (0.25221 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 2: validation acc increase (0.71157 --> 0.70578), Acc: (0.25221 --> 0.47345), F1: (0.25221 --> 0.47345).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 3 Train Avg loss: 0.65806, Acc: 0.49427, F1: 0.49427#####> Valid Avg loss: 0.72823, Acc:0.47345, F1: 0.47345
+===> Epoch: 3: Training loss decreased (0.67816 --> 0.65806), Acc: (0.46756 --> 0.49427), F1: (0.46756 --> 0.49427).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 4 Train Avg loss: 0.66416, Acc: 0.49046, F1: 0.49046#####> Valid Avg loss: 0.70281, Acc:0.47345, F1: 0.47345
+
+####> Epoch: 4: validation loss decreased (0.70578 --> 0.70281), Acc: (0.47345 --> 0.47345), F1: (0.47345 --> 0.47345).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 5 Train Avg loss: 0.64847, Acc: 0.49873, F1: 0.49873#####> Valid Avg loss: 0.70991, Acc:0.47345, F1: 0.47345
+===> Epoch: 5: Training loss decreased (0.65806 --> 0.64847), Acc: (0.49427 --> 0.49873), F1: (0.49427 --> 0.49873).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 6 Train Avg loss: 0.63720, Acc: 0.49682, F1: 0.49682#####> Valid Avg loss: 0.72756, Acc:0.49558, F1: 0.49558
+===> Epoch: 6: Training loss decreased (0.64847 --> 0.63720), Acc: (0.49873 --> 0.49682), F1: (0.49873 --> 0.49682).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 6: validation acc increase (0.70578 --> 0.72756), Acc: (0.47345 --> 0.49558), F1: (0.47345 --> 0.49558).  Saving model ...
+Best valid model (acc) save to best_acc_metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 7 Train Avg loss: 0.63239, Acc: 0.50573, F1: 0.50573#####> Valid Avg loss: 0.69324, Acc:0.44248, F1: 0.44248
+===> Epoch: 7: Training loss decreased (0.63720 --> 0.63239), Acc: (0.49682 --> 0.50573), F1: (0.49682 --> 0.50573).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+
+####> Epoch: 7: validation loss decreased (0.70281 --> 0.69324), Acc: (0.47345 --> 0.44248), F1: (0.47345 --> 0.44248).  Saving model ...
+Best valid model save to best_metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 8 Train Avg loss: 0.62118, Acc: 0.51718, F1: 0.51718#####> Valid Avg loss: 0.74901, Acc:0.44690, F1: 0.44690
+===> Epoch: 8: Training loss decreased (0.63239 --> 0.62118), Acc: (0.50573 --> 0.51718), F1: (0.50573 --> 0.51718).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 9 Train Avg loss: 0.61913, Acc: 0.51527, F1: 0.51527#####> Valid Avg loss: 0.70814, Acc:0.44248, F1: 0.44248
+===> Epoch: 9: Training loss decreased (0.62118 --> 0.61913), Acc: (0.51718 --> 0.51527), F1: (0.51718 --> 0.51527).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 10 Train Avg loss: 0.60992, Acc: 0.49618, F1: 0.49618#####> Valid Avg loss: 0.76399, Acc:0.43363, F1: 0.43363
+===> Epoch: 10: Training loss decreased (0.61913 --> 0.60992), Acc: (0.51527 --> 0.49618), F1: (0.51527 --> 0.49618).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 11 Train Avg loss: 0.60612, Acc: 0.51718, F1: 0.51718#####> Valid Avg loss: 0.74568, Acc:0.46460, F1: 0.46460
+===> Epoch: 11: Training loss decreased (0.60992 --> 0.60612), Acc: (0.49618 --> 0.51718), F1: (0.49618 --> 0.51718).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 12 Train Avg loss: 0.59855, Acc: 0.51972, F1: 0.51972#####> Valid Avg loss: 0.75461, Acc:0.47345, F1: 0.47345
+===> Epoch: 12: Training loss decreased (0.60612 --> 0.59855), Acc: (0.51718 --> 0.51972), F1: (0.51718 --> 0.51972).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 13 Train Avg loss: 0.58861, Acc: 0.52545, F1: 0.52545#####> Valid Avg loss: 0.80445, Acc:0.47345, F1: 0.47345
+===> Epoch: 13: Training loss decreased (0.59855 --> 0.58861), Acc: (0.51972 --> 0.52545), F1: (0.51972 --> 0.52545).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 14 Train Avg loss: 0.59199, Acc: 0.51399, F1: 0.51399#####> Valid Avg loss: 0.76957, Acc:0.47788, F1: 0.47788
+====> Epoch: 15 Train Avg loss: 0.58222, Acc: 0.53435, F1: 0.53435#####> Valid Avg loss: 0.81727, Acc:0.46018, F1: 0.46018
+===> Epoch: 15: Training loss decreased (0.58861 --> 0.58222), Acc: (0.52545 --> 0.53435), F1: (0.52545 --> 0.53435).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 16 Train Avg loss: 0.57045, Acc: 0.53562, F1: 0.53562#####> Valid Avg loss: 0.75401, Acc:0.42478, F1: 0.42478
+===> Epoch: 16: Training loss decreased (0.58222 --> 0.57045), Acc: (0.53435 --> 0.53562), F1: (0.53435 --> 0.53562).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 17 Train Avg loss: 0.57226, Acc: 0.53944, F1: 0.53944#####> Valid Avg loss: 0.76980, Acc:0.47788, F1: 0.47788
+====> Epoch: 18 Train Avg loss: 0.55832, Acc: 0.55344, F1: 0.55344#####> Valid Avg loss: 0.87689, Acc:0.47345, F1: 0.47345
+===> Epoch: 18: Training loss decreased (0.57045 --> 0.55832), Acc: (0.53562 --> 0.55344), F1: (0.53562 --> 0.55344).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 19 Train Avg loss: 0.55977, Acc: 0.56107, F1: 0.56107#####> Valid Avg loss: 0.82747, Acc:0.44690, F1: 0.44690
+====> Epoch: 20 Train Avg loss: 0.54683, Acc: 0.55916, F1: 0.55916#####> Valid Avg loss: 0.92430, Acc:0.46460, F1: 0.46460
+===> Epoch: 20: Training loss decreased (0.55832 --> 0.54683), Acc: (0.55344 --> 0.55916), F1: (0.55344 --> 0.55916).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 21 Train Avg loss: 0.53329, Acc: 0.56679, F1: 0.56679#####> Valid Avg loss: 1.02115, Acc:0.46018, F1: 0.46018
+===> Epoch: 21: Training loss decreased (0.54683 --> 0.53329), Acc: (0.55916 --> 0.56679), F1: (0.55916 --> 0.56679).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 22 Train Avg loss: 0.53191, Acc: 0.57125, F1: 0.57125#####> Valid Avg loss: 0.96162, Acc:0.46903, F1: 0.46903
+===> Epoch: 22: Training loss decreased (0.53329 --> 0.53191), Acc: (0.56679 --> 0.57125), F1: (0.56679 --> 0.57125).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 23 Train Avg loss: 0.52418, Acc: 0.57761, F1: 0.57761#####> Valid Avg loss: 1.02934, Acc:0.46903, F1: 0.46903
+===> Epoch: 23: Training loss decreased (0.53191 --> 0.52418), Acc: (0.57125 --> 0.57761), F1: (0.57125 --> 0.57761).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 24 Train Avg loss: 0.52047, Acc: 0.56489, F1: 0.56489#####> Valid Avg loss: 0.96168, Acc:0.44690, F1: 0.44690
+===> Epoch: 24: Training loss decreased (0.52418 --> 0.52047), Acc: (0.57761 --> 0.56489), F1: (0.57761 --> 0.56489).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 25 Train Avg loss: 0.50920, Acc: 0.57697, F1: 0.57697#####> Valid Avg loss: 0.92464, Acc:0.45575, F1: 0.45575
+===> Epoch: 25: Training loss decreased (0.52047 --> 0.50920), Acc: (0.56489 --> 0.57697), F1: (0.56489 --> 0.57697).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 26 Train Avg loss: 0.50097, Acc: 0.60242, F1: 0.60242#####> Valid Avg loss: 1.07169, Acc:0.43805, F1: 0.43805
+===> Epoch: 26: Training loss decreased (0.50920 --> 0.50097), Acc: (0.57697 --> 0.60242), F1: (0.57697 --> 0.60242).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 27 Train Avg loss: 0.49535, Acc: 0.60369, F1: 0.60369#####> Valid Avg loss: 0.86914, Acc:0.44248, F1: 0.44248
+===> Epoch: 27: Training loss decreased (0.50097 --> 0.49535), Acc: (0.60242 --> 0.60369), F1: (0.60242 --> 0.60369).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 28 Train Avg loss: 0.46891, Acc: 0.61196, F1: 0.61196#####> Valid Avg loss: 1.03195, Acc:0.43363, F1: 0.43363
+===> Epoch: 28: Training loss decreased (0.49535 --> 0.46891), Acc: (0.60369 --> 0.61196), F1: (0.60369 --> 0.61196).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 29 Train Avg loss: 0.47178, Acc: 0.60305, F1: 0.60305#####> Valid Avg loss: 1.10329, Acc:0.46903, F1: 0.46903
+====> Epoch: 30 Train Avg loss: 0.46671, Acc: 0.61005, F1: 0.61005#####> Valid Avg loss: 1.01717, Acc:0.41593, F1: 0.41593
+===> Epoch: 30: Training loss decreased (0.46891 --> 0.46671), Acc: (0.61196 --> 0.61005), F1: (0.61196 --> 0.61005).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 31 Train Avg loss: 0.44209, Acc: 0.62977, F1: 0.62977#####> Valid Avg loss: 1.07766, Acc:0.45575, F1: 0.45575
+===> Epoch: 31: Training loss decreased (0.46671 --> 0.44209), Acc: (0.61005 --> 0.62977), F1: (0.61005 --> 0.62977).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 32 Train Avg loss: 0.43730, Acc: 0.64504, F1: 0.64504#####> Valid Avg loss: 1.06223, Acc:0.46903, F1: 0.46903
+===> Epoch: 32: Training loss decreased (0.44209 --> 0.43730), Acc: (0.62977 --> 0.64504), F1: (0.62977 --> 0.64504).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 33 Train Avg loss: 0.42180, Acc: 0.65840, F1: 0.65840#####> Valid Avg loss: 1.12689, Acc:0.45133, F1: 0.45133
+===> Epoch: 33: Training loss decreased (0.43730 --> 0.42180), Acc: (0.64504 --> 0.65840), F1: (0.64504 --> 0.65840).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 34 Train Avg loss: 0.40883, Acc: 0.66603, F1: 0.66603#####> Valid Avg loss: 1.21108, Acc:0.45133, F1: 0.45133
+===> Epoch: 34: Training loss decreased (0.42180 --> 0.40883), Acc: (0.65840 --> 0.66603), F1: (0.65840 --> 0.66603).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 35 Train Avg loss: 0.40291, Acc: 0.66476, F1: 0.66476#####> Valid Avg loss: 1.23182, Acc:0.42478, F1: 0.42478
+===> Epoch: 35: Training loss decreased (0.40883 --> 0.40291), Acc: (0.66603 --> 0.66476), F1: (0.66603 --> 0.66476).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 36 Train Avg loss: 0.39227, Acc: 0.68066, F1: 0.68066#####> Valid Avg loss: 1.50476, Acc:0.42035, F1: 0.42035
+===> Epoch: 36: Training loss decreased (0.40291 --> 0.39227), Acc: (0.66476 --> 0.68066), F1: (0.66476 --> 0.68066).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 37 Train Avg loss: 0.37567, Acc: 0.68893, F1: 0.68893#####> Valid Avg loss: 1.32484, Acc:0.45575, F1: 0.45575
+===> Epoch: 37: Training loss decreased (0.39227 --> 0.37567), Acc: (0.68066 --> 0.68893), F1: (0.68066 --> 0.68893).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 38 Train Avg loss: 0.35859, Acc: 0.70483, F1: 0.70483#####> Valid Avg loss: 1.40405, Acc:0.45133, F1: 0.45133
+===> Epoch: 38: Training loss decreased (0.37567 --> 0.35859), Acc: (0.68893 --> 0.70483), F1: (0.68893 --> 0.70483).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 39 Train Avg loss: 0.34091, Acc: 0.71183, F1: 0.71183#####> Valid Avg loss: 1.43530, Acc:0.44248, F1: 0.44248
+===> Epoch: 39: Training loss decreased (0.35859 --> 0.34091), Acc: (0.70483 --> 0.71183), F1: (0.70483 --> 0.71183).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 40 Train Avg loss: 0.32941, Acc: 0.73028, F1: 0.73028#####> Valid Avg loss: 1.64930, Acc:0.42478, F1: 0.42478
+===> Epoch: 40: Training loss decreased (0.34091 --> 0.32941), Acc: (0.71183 --> 0.73028), F1: (0.71183 --> 0.73028).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 41 Train Avg loss: 0.29822, Acc: 0.74873, F1: 0.74873#####> Valid Avg loss: 1.79655, Acc:0.42478, F1: 0.42478
+===> Epoch: 41: Training loss decreased (0.32941 --> 0.29822), Acc: (0.73028 --> 0.74873), F1: (0.73028 --> 0.74873).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 42 Train Avg loss: 0.27002, Acc: 0.78181, F1: 0.78181#####> Valid Avg loss: 1.46624, Acc:0.47345, F1: 0.47345
+===> Epoch: 42: Training loss decreased (0.29822 --> 0.27002), Acc: (0.74873 --> 0.78181), F1: (0.74873 --> 0.78181).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 43 Train Avg loss: 0.27391, Acc: 0.76336, F1: 0.76336#####> Valid Avg loss: 1.98645, Acc:0.45575, F1: 0.45575
+====> Epoch: 44 Train Avg loss: 0.24860, Acc: 0.78435, F1: 0.78435#####> Valid Avg loss: 2.31930, Acc:0.41593, F1: 0.41593
+===> Epoch: 44: Training loss decreased (0.27002 --> 0.24860), Acc: (0.78181 --> 0.78435), F1: (0.78181 --> 0.78435).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 45 Train Avg loss: 0.22236, Acc: 0.81107, F1: 0.81107#####> Valid Avg loss: 1.95782, Acc:0.40708, F1: 0.40708
+===> Epoch: 45: Training loss decreased (0.24860 --> 0.22236), Acc: (0.78435 --> 0.81107), F1: (0.78435 --> 0.81107).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 46 Train Avg loss: 0.21561, Acc: 0.81934, F1: 0.81934#####> Valid Avg loss: 2.40883, Acc:0.44248, F1: 0.44248
+===> Epoch: 46: Training loss decreased (0.22236 --> 0.21561), Acc: (0.81107 --> 0.81934), F1: (0.81107 --> 0.81934).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 47 Train Avg loss: 0.18189, Acc: 0.85433, F1: 0.85433#####> Valid Avg loss: 2.53175, Acc:0.39823, F1: 0.39823
+===> Epoch: 47: Training loss decreased (0.21561 --> 0.18189), Acc: (0.81934 --> 0.85433), F1: (0.81934 --> 0.85433).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 48 Train Avg loss: 0.19220, Acc: 0.84415, F1: 0.84415#####> Valid Avg loss: 2.71913, Acc:0.40708, F1: 0.40708
+====> Epoch: 49 Train Avg loss: 0.16122, Acc: 0.87532, F1: 0.87532#####> Valid Avg loss: 2.87723, Acc:0.44690, F1: 0.44690
+===> Epoch: 49: Training loss decreased (0.18189 --> 0.16122), Acc: (0.85433 --> 0.87532), F1: (0.85433 --> 0.87532).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 50 Train Avg loss: 0.15754, Acc: 0.87023, F1: 0.87023#####> Valid Avg loss: 2.84920, Acc:0.42478, F1: 0.42478
+===> Epoch: 50: Training loss decreased (0.16122 --> 0.15754), Acc: (0.87532 --> 0.87023), F1: (0.87532 --> 0.87023).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 51 Train Avg loss: 0.13242, Acc: 0.88931, F1: 0.88931#####> Valid Avg loss: 2.84755, Acc:0.43805, F1: 0.43805
+===> Epoch: 51: Training loss decreased (0.15754 --> 0.13242), Acc: (0.87023 --> 0.88931), F1: (0.87023 --> 0.88931).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 52 Train Avg loss: 0.12963, Acc: 0.88995, F1: 0.88995#####> Valid Avg loss: 3.93236, Acc:0.44248, F1: 0.44248
+===> Epoch: 52: Training loss decreased (0.13242 --> 0.12963), Acc: (0.88931 --> 0.88995), F1: (0.88931 --> 0.88995).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 53 Train Avg loss: 0.11006, Acc: 0.91349, F1: 0.91349#####> Valid Avg loss: 3.07143, Acc:0.40708, F1: 0.40708
+===> Epoch: 53: Training loss decreased (0.12963 --> 0.11006), Acc: (0.88995 --> 0.91349), F1: (0.88995 --> 0.91349).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 54 Train Avg loss: 0.11192, Acc: 0.91221, F1: 0.91221#####> Valid Avg loss: 3.32802, Acc:0.44248, F1: 0.44248
+====> Epoch: 55 Train Avg loss: 0.08932, Acc: 0.92430, F1: 0.92430#####> Valid Avg loss: 3.43290, Acc:0.43363, F1: 0.43363
+===> Epoch: 55: Training loss decreased (0.11006 --> 0.08932), Acc: (0.91349 --> 0.92430), F1: (0.91349 --> 0.92430).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 56 Train Avg loss: 0.08012, Acc: 0.93193, F1: 0.93193#####> Valid Avg loss: 3.34601, Acc:0.38938, F1: 0.38938
+===> Epoch: 56: Training loss decreased (0.08932 --> 0.08012), Acc: (0.92430 --> 0.93193), F1: (0.92430 --> 0.93193).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 57 Train Avg loss: 0.09024, Acc: 0.92303, F1: 0.92303#####> Valid Avg loss: 3.94131, Acc:0.43363, F1: 0.43363
+====> Epoch: 58 Train Avg loss: 0.06739, Acc: 0.94847, F1: 0.94847#####> Valid Avg loss: 3.45393, Acc:0.42920, F1: 0.42920
+===> Epoch: 58: Training loss decreased (0.08012 --> 0.06739), Acc: (0.93193 --> 0.94847), F1: (0.93193 --> 0.94847).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 59 Train Avg loss: 0.05554, Acc: 0.95865, F1: 0.95865#####> Valid Avg loss: 4.41293, Acc:0.43805, F1: 0.43805
+===> Epoch: 59: Training loss decreased (0.06739 --> 0.05554), Acc: (0.94847 --> 0.95865), F1: (0.94847 --> 0.95865).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 60 Train Avg loss: 0.07936, Acc: 0.94020, F1: 0.94020#####> Valid Avg loss: 3.78827, Acc:0.42035, F1: 0.42035
+====> Epoch: 61 Train Avg loss: 0.04524, Acc: 0.95992, F1: 0.95992#####> Valid Avg loss: 4.29489, Acc:0.44690, F1: 0.44690
+===> Epoch: 61: Training loss decreased (0.05554 --> 0.04524), Acc: (0.95865 --> 0.95992), F1: (0.95865 --> 0.95992).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 62 Train Avg loss: 0.05546, Acc: 0.95674, F1: 0.95674#####> Valid Avg loss: 4.45276, Acc:0.42035, F1: 0.42035
+====> Epoch: 63 Train Avg loss: 0.04475, Acc: 0.96120, F1: 0.96120#####> Valid Avg loss: 4.79519, Acc:0.43363, F1: 0.43363
+===> Epoch: 63: Training loss decreased (0.04524 --> 0.04475), Acc: (0.95992 --> 0.96120), F1: (0.95992 --> 0.96120).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 64 Train Avg loss: 0.04745, Acc: 0.96565, F1: 0.96565#####> Valid Avg loss: 4.83813, Acc:0.44248, F1: 0.44248
+====> Epoch: 65 Train Avg loss: 0.03633, Acc: 0.97265, F1: 0.97265#####> Valid Avg loss: 4.65838, Acc:0.42920, F1: 0.42920
+===> Epoch: 65: Training loss decreased (0.04475 --> 0.03633), Acc: (0.96120 --> 0.97265), F1: (0.96120 --> 0.97265).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 66 Train Avg loss: 0.03304, Acc: 0.97137, F1: 0.97137#####> Valid Avg loss: 4.81695, Acc:0.44690, F1: 0.44690
+===> Epoch: 66: Training loss decreased (0.03633 --> 0.03304), Acc: (0.97265 --> 0.97137), F1: (0.97265 --> 0.97137).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 67 Train Avg loss: 0.02671, Acc: 0.97392, F1: 0.97392#####> Valid Avg loss: 5.31042, Acc:0.43363, F1: 0.43363
+===> Epoch: 67: Training loss decreased (0.03304 --> 0.02671), Acc: (0.97137 --> 0.97392), F1: (0.97137 --> 0.97392).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 68 Train Avg loss: 0.02446, Acc: 0.97583, F1: 0.97583#####> Valid Avg loss: 5.22772, Acc:0.43363, F1: 0.43363
+===> Epoch: 68: Training loss decreased (0.02671 --> 0.02446), Acc: (0.97392 --> 0.97583), F1: (0.97392 --> 0.97583).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+====> Epoch: 69 Train Avg loss: 0.03388, Acc: 0.96756, F1: 0.96756#####> Valid Avg loss: 5.16250, Acc:0.45133, F1: 0.45133
+====> Epoch: 70 Train Avg loss: 0.04485, Acc: 0.96183, F1: 0.96183#####> Valid Avg loss: 5.04877, Acc:0.42920, F1: 0.42920
+====> Epoch: 71 Train Avg loss: 0.01940, Acc: 0.97774, F1: 0.97774#####> Valid Avg loss: 4.99020, Acc:0.42920, F1: 0.42920
+===> Epoch: 71: Training loss decreased (0.02446 --> 0.01940), Acc: (0.97583 --> 0.97774), F1: (0.97583 --> 0.97774).  Saving model ...
+model saved to metro_h2_pt_1585634521.943179.pth_5
+
+##### Epoch: 71: Training cycle break due to early stop, patience51
+#####> Valid Avg loss: 2.63110, Acc:0.55063, F1: 0.55063
+
+
+$$$$$$> Test it 5: (from train best model) Final Test Avg loss:2.63110, Acc:0.55063, F1:0.55063\n
+#####> Valid Avg loss: 0.51600, Acc:0.69620, F1: 0.69620
+
+
+$$$$$$> Test it 5: (from max acc valid model) Final Test Avg loss:0.51600, Acc:0.69620, F1:0.69620\n
+#####> Valid Avg loss: 0.54527, Acc:0.60127, F1: 0.60127
+
+
+$$$$$$> Test it 5: (from min loss valid model) Final Test Avg loss:0.54527, Acc:0.60127, F1:0.60127\n
+
+
+ Final average test accuracy:0.5336496114730835, avg f1_score 0.5336496114726413 
+

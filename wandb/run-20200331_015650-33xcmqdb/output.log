@@ -1,0 +1,6 @@
+  0%|                                                                           | 0/500 [00:00<?, ?it/s]  0%|                                                                           | 0/500 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "../metro_training.py", line 429, in <module>
+  File "/home/huron/repo/METRO/src/utils/model_training_utlis_wtensorboard.py", line 229, in train_model
+    100. * batch_idx / len(train_dataloader), loss.item() / len(batch)))
+UnboundLocalError: local variable 'batch' referenced before assignment

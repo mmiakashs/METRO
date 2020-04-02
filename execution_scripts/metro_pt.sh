@@ -1,0 +1,25 @@
+python3 ../metro_training.py \
+-tvp 1 \
+-lr 0.0003 \
+-ng 1 \
+-cdn 1 \
+-sml 60 \
+-bs 2 \
+-ep 500 \
+-enl 2 \
+-fes 128 \
+-lhs 128 \
+-menh 2 \
+-lld 0.4 \
+-uld 0.4 \
+-cout 64 \
+-mmattn_type 'concat' \
+-logbd 'log' \
+-logf 'exe_metro_h2_pt_dp4_fe128_nma_re.log' \
+-tbl \
+-tb_wn 'tb_runs/metro_h2_pt_dp4_fe128_nma_re' \
+-mcp 'metro_h2_pt_dp4_fe128_nma_re' \
+-vpi 0 \
+-ipf \
+-wln 'metro_h2_pt_dp4_fe128_nma_re' \
+-esp 200

@@ -49,8 +49,8 @@ src/model/job_status.sh
 src/model/*log
 src/model/*.log.*
 trained_model
-log
-tb_runs
-tb*
+#log
+#tb_runs
+#tb*
 venv
 screenlog*

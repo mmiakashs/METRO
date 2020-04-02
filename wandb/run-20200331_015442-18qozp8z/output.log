@@ -1,0 +1,6 @@
+  0%|                                                                           | 0/500 [00:00<?, ?it/s]  0%|                                                                           | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "../metro_training.py", line 429, in <module>
+  File "/home/huron/repo/METRO/src/utils/model_training_utlis_wtensorboard.py", line 268, in train_model
+    batch[config.activity_tag] = batch['label'].to(device)
+KeyError: 'label'

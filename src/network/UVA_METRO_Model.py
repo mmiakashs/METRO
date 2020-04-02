@@ -9,8 +9,6 @@ from ..utils import config
 class UVA_METRO_Model(nn.Module):
     def __init__(self, mm_module_properties,
                  modalities,
-                 num_joints,
-                 num_attribs,
                  num_activity_types,
                  window_size, window_stride,
                  modality_embedding_size,
@@ -25,8 +23,6 @@ class UVA_METRO_Model(nn.Module):
         self.mm_module_properties = mm_module_properties
         self.modalities = modalities
         self.num_modality = len(modalities)
-        self.num_joints = num_joints
-        self.num_attribs = num_attribs
         self.num_activity_types = num_activity_types
         self.batch_first = batch_first
 
@@ -66,6 +62,8 @@ class UVA_METRO_Model(nn.Module):
                                                       'feature_pooling_stride'],
                                                   pool_fe_type=self.mm_module_properties[modality][
                                                       'feature_pooling_type'],
+                                                  is_attention = self.mm_module_properties[modality][
+                                                      'is_attention'],
                                                   is_pretrained_fe = self.is_pretrained_fe)
 
             if (self.mm_module_properties[modality]['lstm_bidirectional']):
@@ -75,14 +73,6 @@ class UVA_METRO_Model(nn.Module):
             self.modality_embedding_size = 2 * self.modality_embedding_size
 
         self.mm_embeddings_bn =nn.BatchNorm1d(self.num_modality)
-
-        self.mm_mhattn = nn.MultiheadAttention(embed_dim=self.modality_embedding_size,
-                                               num_heads=self.mm_final_fusion_mhattn_nhead,
-                                               dropout=self.dropout)
-
-        self.mm_mhattn_bn = nn.BatchNorm1d(self.total_fusing_modality_combo)
-        self.mm_mhattn_relu = nn.ReLU()
-        self.mm_mhattn_dropout = nn.Dropout(p=self.dropout)
 
         if (self.mm_embedding_attn_merge_type == 'sum'):
             if (self.lstm_bidirectional):
@@ -125,7 +115,7 @@ class UVA_METRO_Model(nn.Module):
         mm_module_output = {}
         for modality in self.modalities:
             tm_attn_output, self.module_attn_weights[modality] = self.mm_module[modality](input[modality],
-                                                                                          input[modality + config.modality_mask_tag],
+                                                                                          input[modality + config.modality_mask_suffix_tag],
                                                                                           input[modality + config.modality_seq_len_tag])
             mm_module_output[modality] = tm_attn_output
 
@@ -140,7 +130,7 @@ class UVA_METRO_Model(nn.Module):
         if(self.mm_embedding_attn_merge_type=='sum'):
             mattn_output = torch.sum(mm_embeddings, dim=1).squeeze(dim=1)
 
-        mattn_output = mattn_output.contiguous().view(nbatches, -1)
+        mattn_output = mm_embeddings.contiguous().view(nbatches, -1).contiguous()
 
         if (self.lstm_bidirectional):
             output = self.fc_output1(mattn_output)

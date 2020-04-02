@@ -1,0 +1,10 @@
+  0%|                                                                           | 0/500 [00:00<?, ?it/s]  0%|                                                                           | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "../metro_training.py", line 429, in <module>
+  File "/home/huron/repo/METRO/src/utils/model_training_utlis_wtensorboard.py", line 210, in train_model
+    outputs = model(batch)
+  File "/home/huron/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/huron/repo/METRO/src/network/UVA_METRO_Model.py", line 116, in forward
+    input[modality + config.modality_mask_tag],
+KeyError: 'insidemodality_mask'

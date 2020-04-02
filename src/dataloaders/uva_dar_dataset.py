@@ -146,7 +146,7 @@ class UVA_DAR_Dataset(Dataset):
             filename = f'{self.data.loc[idx, modality][:-4]}.pt'
             activity = self.data.loc[idx, config.activity_tag]
             data_filepath = f'{self.embed_dir_base_path}/{activity}/{filename}'
-            seq = torch.load(data_filepath).detach()
+            seq = torch.load(data_filepath, map_location='cpu').detach()
             seq_len = seq.size(0)
         else:
             filename = self.data.loc[idx, modality]

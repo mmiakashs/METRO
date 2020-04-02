@@ -48,68 +48,6 @@ def load_model(model=None,
 
     return model, optimizer, attrib_dict
 
-
-def test_model(model, optimizer, valid_dataloader,
-               loss_function, device,
-               modalities,
-               model_save_base_dir,
-               model_checkpoint_filename,
-               checkpoint_attribs, validation_iteration,
-               log_base_dir,
-               log_filename,
-               show_checkpoint_info=False,
-               is_ntu=False):
-    valid_loss = 0.0
-    valid_acc = 0.0
-    valid_corrects = 0.0
-    f1_scores = []
-    preds_all = np.zeros(0)
-    targets_all = np.zeros(0)
-
-    model, optimizer = load_model(model=model, optimizer=optimizer,
-                                  model_save_base_dir=model_save_base_dir,
-                                  model_checkpoint_filename=model_checkpoint_filename,
-                                  checkpoint_attribs=checkpoint_attribs, show_checkpoint_info=show_checkpoint_info)
-
-    with torch.no_grad():
-        for batch_idx, batch in enumerate(valid_dataloader):
-
-            mask_graph = dict()
-            for modality in modalities:
-                batch[modality] = batch[modality].to(device)
-                batch[modality + '_mask'] = batch[modality + '_mask'].to(device)
-                mask_graph[modality] = batch['modality_mask'].to(device)
-
-            if (is_ntu):
-                batch['indi_sk_mask'] = batch['indi_sk_mask'].to(device)
-
-            batch['modality_mask'] = batch['modality_mask'].to(device)
-            batch['modality_mask_graph'] = mask_graph
-            batch['label'] = batch['label'].to(device)
-            labels = batch['label']
-
-            outputs = model(batch)
-            _, preds = torch.max(outputs, 1)
-
-            valid_corrects += torch.sum(preds == labels.data)
-            f1_scores.append(f1_score(preds.cpu().data.numpy(), labels.cpu().data.numpy(), average='micro'))
-            preds_all = np.append(preds_all, preds.cpu().data.numpy())
-            targets_all = np.append(targets_all, labels.cpu().data.numpy())
-
-            loss = loss_function(outputs, labels)
-            valid_loss += loss.item()
-
-    valid_loss = valid_loss / len(valid_dataloader.dataset)
-    valid_acc = valid_corrects / len(valid_dataloader.dataset)
-    print('Valid it[{}] Avg loss: {:.5f}, Acc:{:.5f}, F1:{:.5f}'.format(validation_iteration, valid_loss, valid_acc,
-                                                                        statistics.mean(f1_scores)))
-    log_execution(log_base_dir, log_filename,
-                  '\n\n#####> Valid Avg loss: {:.5f}, Acc:{:.5f}, F1: {:.5f}\n\n'.format(valid_loss, valid_acc,
-                                                                                         statistics.mean(f1_scores)))
-
-    return valid_acc, statistics.mean(f1_scores), preds_all, targets_all
-
-
 def model_validation(model, optimizer, valid_dataloader,
                      loss_function, device,
                      modalities,
@@ -140,13 +78,13 @@ def model_validation(model, optimizer, valid_dataloader,
         for modality in modalities:
             batch[modality] = batch[modality].to(device)
             batch[modality + config.modality_seq_len_tag] = batch[modality + config.modality_seq_len_tag].to(device)
-            batch[modality + config.modality_mask_tag] = batch[modality + config.modality_mask_tag].to(device)
+            batch[modality + config.modality_mask_suffix_tag] = batch[modality + config.modality_mask_suffix_tag].to(device)
             mask_graph[modality] = batch['modality_mask'].to(device)
 
         batch['modality_mask'] = batch['modality_mask'].to(device)
         batch['modality_mask_graph'] = mask_graph
-        batch['label'] = batch['label'].to(device)
-        labels = batch['label']
+        batch[config.activity_tag] = batch[config.activity_tag].to(device)
+        labels = batch[config.activity_tag]
 
         outputs = model(batch)
         _, preds = torch.max(outputs, 1)
@@ -260,14 +198,14 @@ def train_model(model, optimizer, scheduler,
             for modality in modalities:
                 batch[modality] = batch[modality].to(device)
                 batch[modality + config.modality_seq_len_tag] = batch[modality + config.modality_seq_len_tag].to(device)
-                batch[modality + config.modality_mask_tag] = batch[modality + config.modality_mask_tag].to(device)
+                batch[modality + config.modality_mask_suffix_tag] = batch[modality + config.modality_mask_suffix_tag].to(device)
                 mask_graph[modality] = batch['modality_mask'].to(device)
 
             batch['modality_mask'] = batch['modality_mask'].to(device)
             batch['modality_mask_graph'] = mask_graph
-            batch['label'] = batch['label'].to(device)
-            labels = batch['label']
-            batch_size = batch['label'].size(0)
+            batch[config.activity_tag] = batch[config.activity_tag].to(device)
+            labels = batch[config.activity_tag]
+            batch_size = batch[config.activity_tag].size(0)
 
             outputs = model(batch)
             _, preds = torch.max(outputs, 1)
@@ -287,8 +225,8 @@ def train_model(model, optimizer, scheduler,
 
             if batch_idx % 10 == 0:
                 print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                    epoch, (batch_idx + 1) * batch_size, len(train_dataloader.dataset),
-                           100. * batch_idx / len(train_dataloader), loss.item() / len(batch)))
+                    epoch, (batch_idx + 1), len(train_dataloader),
+                           100. * batch_idx / len(train_dataloader), loss.item() / batch_size))
 
         train_loss = train_loss / len(train_dataloader.dataset)
         train_acc = train_corrects / len(train_dataloader.dataset)
@@ -437,8 +375,7 @@ def train_model(model, optimizer, scheduler,
                                                     is_load=True)
     wandb.log({'test_loss(train_best_model)': test_loss,
                'test_acc(train_best_model)': test_acc,
-               'test_f1(train_best_model)': test_f1,
-               'validation_iteration': validation_iteration}, step=validation_iteration)
+               'test_f1(train_best_model)': test_f1}, step=validation_iteration)
     if (tensorboard_writer):
         tensorboard_writer.add_scalar(config.tbw_test_loss + "_train_best_model", test_loss, validation_iteration)
         tensorboard_writer.add_scalar(config.tbw_test_acc + "_train_best_model", test_acc, validation_iteration)
@@ -464,8 +401,7 @@ def train_model(model, optimizer, scheduler,
                                                                                is_load=True)
     wandb.log({'test_loss(valid_best_acc_model)': test_loss_ba_model,
                'test_acc(valid_best_acc_model)': test_acc_ba_model,
-               'test_f1(valid_best_acc_model)': test_f1_ba_model,
-               'validation_iteration': validation_iteration}, step=validation_iteration)
+               'test_f1(valid_best_acc_model)': test_f1_ba_model}, step=validation_iteration)
 
     if (tensorboard_writer):
         tensorboard_writer.add_scalar(config.tbw_test_loss + "_ba_model", test_loss_ba_model, validation_iteration)
@@ -492,8 +428,7 @@ def train_model(model, optimizer, scheduler,
                                                     is_load=True)
     wandb.log({'test_loss(valid_best_loss_model)': test_loss,
                'test_acc(valid_best_loss_model)': test_acc,
-               'test_f1(valid_best_loss_model)': test_f1,
-               'validation_iteration': validation_iteration}, step=validation_iteration)
+               'test_f1(valid_best_loss_model)': test_f1}, step=validation_iteration)
 
     if (tensorboard_writer):
         tensorboard_writer.add_scalar(config.tbw_test_loss, test_loss, validation_iteration)
