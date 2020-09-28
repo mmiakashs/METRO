@@ -13,8 +13,8 @@ from torch.utils.data.sampler import SubsetRandomSampler
 from src.dataloaders.uva_dar_dataset import *
 from src.utils import config
 
-data_dir_base_path = '/data/research_data/driver_activity/data/train'
-embed_dir_base_path='/data/research_data/driver_activity/fe_embed'
+data_dir_base_path = '/project/Driver_in_the_loop/all_data/'
+embed_dir_base_path='/project/Driver_in_the_loop/all_data/fe_embed'
 
 # Debugging
 # rgb_transforms = transforms.Compose([

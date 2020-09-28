@@ -1,0 +1,164 @@
+  0%|                                                                                                                                                                             | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/683 (0%)]	Loss: 0.318690
+Train Epoch: 1 [11/683 (1%)]	Loss: 0.185178
+Train Epoch: 1 [21/683 (3%)]	Loss: 0.202242
+Train Epoch: 1 [31/683 (4%)]	Loss: 0.167731
+Train Epoch: 1 [41/683 (6%)]	Loss: 0.268948
+Train Epoch: 1 [51/683 (7%)]	Loss: 0.306854
+Train Epoch: 1 [61/683 (9%)]	Loss: 0.185502
+Train Epoch: 1 [71/683 (10%)]	Loss: 0.224053
+Train Epoch: 1 [81/683 (12%)]	Loss: 0.156867
+Train Epoch: 1 [91/683 (13%)]	Loss: 0.160298
+Train Epoch: 1 [101/683 (15%)]	Loss: 0.144652
+Train Epoch: 1 [111/683 (16%)]	Loss: 0.193290
+Train Epoch: 1 [121/683 (18%)]	Loss: 0.240616
+Train Epoch: 1 [131/683 (19%)]	Loss: 0.192982
+Train Epoch: 1 [141/683 (20%)]	Loss: 0.210411
+Train Epoch: 1 [151/683 (22%)]	Loss: 0.162203
+Train Epoch: 1 [161/683 (23%)]	Loss: 0.232312
+Train Epoch: 1 [171/683 (25%)]	Loss: 0.184768
+Train Epoch: 1 [181/683 (26%)]	Loss: 0.189127
+Train Epoch: 1 [191/683 (28%)]	Loss: 0.229418
+Train Epoch: 1 [201/683 (29%)]	Loss: 0.132011
+Train Epoch: 1 [211/683 (31%)]	Loss: 0.288230
+Train Epoch: 1 [221/683 (32%)]	Loss: 0.203864
+Train Epoch: 1 [231/683 (34%)]	Loss: 0.160337
+Train Epoch: 1 [241/683 (35%)]	Loss: 0.184411
+Train Epoch: 1 [251/683 (37%)]	Loss: 0.181680
+Train Epoch: 1 [261/683 (38%)]	Loss: 0.169802
+Train Epoch: 1 [271/683 (40%)]	Loss: 0.161734
+Train Epoch: 1 [281/683 (41%)]	Loss: 0.203096
+Train Epoch: 1 [291/683 (42%)]	Loss: 0.259873
+Train Epoch: 1 [301/683 (44%)]	Loss: 0.189062
+Train Epoch: 1 [311/683 (45%)]	Loss: 0.181221
+Train Epoch: 1 [321/683 (47%)]	Loss: 0.156702
+Train Epoch: 1 [331/683 (48%)]	Loss: 0.194874
+Train Epoch: 1 [341/683 (50%)]	Loss: 0.179365
+Train Epoch: 1 [351/683 (51%)]	Loss: 0.199874
+Train Epoch: 1 [361/683 (53%)]	Loss: 0.183001
+Train Epoch: 1 [371/683 (54%)]	Loss: 0.194776
+Train Epoch: 1 [381/683 (56%)]	Loss: 0.132009
+Train Epoch: 1 [391/683 (57%)]	Loss: 0.139837
+Train Epoch: 1 [401/683 (59%)]	Loss: 0.179987
+Train Epoch: 1 [411/683 (60%)]	Loss: 0.153565
+Train Epoch: 1 [421/683 (61%)]	Loss: 0.217202
+Train Epoch: 1 [431/683 (63%)]	Loss: 0.147531
+Train Epoch: 1 [441/683 (64%)]	Loss: 0.222773
+Train Epoch: 1 [451/683 (66%)]	Loss: 0.079564
+Train Epoch: 1 [461/683 (67%)]	Loss: 0.233788
+Train Epoch: 1 [471/683 (69%)]	Loss: 0.150817
+Train Epoch: 1 [481/683 (70%)]	Loss: 0.284524
+Train Epoch: 1 [491/683 (72%)]	Loss: 0.134691
+Train Epoch: 1 [501/683 (73%)]	Loss: 0.112707
+Train Epoch: 1 [511/683 (75%)]	Loss: 0.179710
+Train Epoch: 1 [521/683 (76%)]	Loss: 0.117167
+Train Epoch: 1 [531/683 (78%)]	Loss: 0.157684
+Train Epoch: 1 [541/683 (79%)]	Loss: 0.162056
+Train Epoch: 1 [551/683 (81%)]	Loss: 0.081423
+Train Epoch: 1 [561/683 (82%)]	Loss: 0.106699
+Train Epoch: 1 [571/683 (83%)]	Loss: 0.148103
+Train Epoch: 1 [581/683 (85%)]	Loss: 0.195671
+Train Epoch: 1 [591/683 (86%)]	Loss: 0.163231
+Train Epoch: 1 [601/683 (88%)]	Loss: 0.113595
+Train Epoch: 1 [611/683 (89%)]	Loss: 0.079311
+Train Epoch: 1 [621/683 (91%)]	Loss: 0.129130
+Train Epoch: 1 [631/683 (92%)]	Loss: 0.201342
+Train Epoch: 1 [641/683 (94%)]	Loss: 0.143324
+Train Epoch: 1 [651/683 (95%)]	Loss: 0.233876
+Train Epoch: 1 [661/683 (97%)]	Loss: 0.166122
+Train Epoch: 1 [671/683 (98%)]	Loss: 0.118790
+Train Epoch: 1 [681/683 (100%)]	Loss: 0.184563
+====> Epoch: 1 Train Avg loss: 0.17930, Acc: 0.45925, F1: 0.45930
+tensor board log 1
+#####> Valid Avg loss: 0.35130, Acc:0.33105, F1: 0.33124
+
+===> Epoch: 1: Training loss decreased (inf --> 0.17930), Acc: (0.00000 --> 0.45925), F1: (0.00000 --> 0.45930).  Saving model ...
+
+model saved to metro_h2_pt_dp4_fe128_nma_re_1596778686.030659.pth_1
+
+
+####> Epoch: 1: validation loss decreased (inf --> 0.35130), Acc: (0.00000 --> 0.33105), F1: (0.00000 --> 0.33124).  Saving model ...
+
+Best valid model save to best_metro_h2_pt_dp4_fe128_nma_re_1596778686.030659.pth_1
+
+
+####> Epoch: 1: validation acc increase (inf --> 0.35130), Acc: (0.00000 --> 0.33105), F1: (0.00000 --> 0.33124).  Saving model ...
+
+Best valid model (acc) save to best_acc_metro_h2_pt_dp4_fe128_nma_re_1596778686.030659.pth_1
+
+  0%|▎                                                                                                                                                          | 1/500 [3:30:03<1746:56:48, 12603.22s/it]Train Epoch: 2 [1/683 (0%)]	Loss: 0.123888
+Train Epoch: 2 [11/683 (1%)]	Loss: 0.134833
+Train Epoch: 2 [21/683 (3%)]	Loss: 0.146976
+Train Epoch: 2 [31/683 (4%)]	Loss: 0.123522
+Train Epoch: 2 [41/683 (6%)]	Loss: 0.138327
+Train Epoch: 2 [51/683 (7%)]	Loss: 0.196199
+Train Epoch: 2 [61/683 (9%)]	Loss: 0.200642
+Train Epoch: 2 [71/683 (10%)]	Loss: 0.085760
+Train Epoch: 2 [81/683 (12%)]	Loss: 0.098506
+Train Epoch: 2 [91/683 (13%)]	Loss: 0.180405
+Train Epoch: 2 [101/683 (15%)]	Loss: 0.114317
+Train Epoch: 2 [111/683 (16%)]	Loss: 0.106784
+Train Epoch: 2 [121/683 (18%)]	Loss: 0.111333
+Train Epoch: 2 [131/683 (19%)]	Loss: 0.263284
+Train Epoch: 2 [141/683 (20%)]	Loss: 0.168804
+Train Epoch: 2 [151/683 (22%)]	Loss: 0.200612
+Train Epoch: 2 [161/683 (23%)]	Loss: 0.140931
+Train Epoch: 2 [171/683 (25%)]	Loss: 0.182822
+Train Epoch: 2 [181/683 (26%)]	Loss: 0.204207
+Train Epoch: 2 [191/683 (28%)]	Loss: 0.186898
+Train Epoch: 2 [201/683 (29%)]	Loss: 0.166998
+Train Epoch: 2 [211/683 (31%)]	Loss: 0.182012
+Train Epoch: 2 [221/683 (32%)]	Loss: 0.085196
+Train Epoch: 2 [231/683 (34%)]	Loss: 0.152853
+Train Epoch: 2 [241/683 (35%)]	Loss: 0.201890
+Train Epoch: 2 [251/683 (37%)]	Loss: 0.167308
+Train Epoch: 2 [261/683 (38%)]	Loss: 0.139541
+Train Epoch: 2 [271/683 (40%)]	Loss: 0.136698
+Train Epoch: 2 [281/683 (41%)]	Loss: 0.151240
+Train Epoch: 2 [291/683 (42%)]	Loss: 0.188840
+Train Epoch: 2 [301/683 (44%)]	Loss: 0.249112
+  0%|▎                                                                                                                                                          | 1/500 [4:51:37<2425:23:09, 17497.77s/it]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 193, in train_model
+    for batch_idx, batch in enumerate(train_dataloader):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 856, in _next_data
+    return self._process_data(data)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 881, in _process_data
+    data.reraise()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/_utils.py", line 395, in reraise
+    raise self.exc_type(msg)
+OSError: Caught OSError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/worker.py", line 178, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 181, in __getitem__
+    seq, seq_len = self.get_video_data(idx, modality)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 162, in get_video_data
+    seq_max_len=self.seq_max_len)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 22, in __init__
+    self.container = imageio.get_reader(path, 'ffmpeg')
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/functions.py", line 186, in get_reader
+    return format.get_reader(request)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/format.py", line 170, in get_reader
+    return self.Reader(self, request)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/format.py", line 221, in __init__
+    self._open(**self.request.kwargs.copy())
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/plugins/ffmpeg.py", line 323, in _open
+    self._initialize()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/plugins/ffmpeg.py", line 468, in _initialize
+    self._meta.update(self._read_gen.__next__())
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio_ffmpeg/_io.py", line 149, in read_frames
+    **_popen_kwargs(prevent_sigint=True)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/subprocess.py", line 729, in __init__
+    restore_signals, start_new_session)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/subprocess.py", line 1295, in _execute_child
+    restore_signals, start_new_session, preexec_fn)
+OSError: [Errno 12] Cannot allocate memory
+

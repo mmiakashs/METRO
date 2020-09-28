@@ -38,7 +38,7 @@ parser.add_argument("-ng", "--no_gpus", help="number of gpus",
 parser.add_argument("-cdn", "--cuda_device_no", help="cuda device no",
                     type=int, default=0)
 parser.add_argument("-ws", "--window_size", help="windows size",
-                    type=int, default=5)
+                    type=int, default=4)
 parser.add_argument("-wst", "--window_stride", help="windows stride",
                     type=int, default=5)
 parser.add_argument("-ks", "--kernel_size", help="kernel size",
@@ -62,27 +62,27 @@ parser.add_argument("-vt", "--validation_type", help="validation_type",
 parser.add_argument("-tvp", "--total_valid_persons", help="Total valid persons",
                     type=int, default=1)
 parser.add_argument("-dfp", "--data_file_dir_base_path", help="data_file_dir_base_path",
-                    default='/data/research_data/driver_activity/data/train')
+                    default='/project/Driver_in_the_loop/all_data')
 parser.add_argument("-edbp", "--embed_dir_base_path", help="embed_dir_base_path",
-                    default='/data/research_data/driver_activity/fe_embed')
+                    default='/project/Driver_in_the_loop/all_data/fe_embed')
 parser.add_argument("-cout", "--cnn_out_channel", help="CNN out channel size",
                     type=int, default=16)
 parser.add_argument("-fes", "--feature_embed_size", help="CNN feature embedding size",
-                    type=int, default=256)
+                    type=int, default=32)
 parser.add_argument("-lhs", "--lstm_hidden_size", help="LSTM hidden embedding size",
                     type=int, default=256)
 parser.add_argument("-lld", "--lower_layer_dropout", help="lower layer dropout",
-                    type=float, default=0.2)
+                    type=float, default=0.6)
 parser.add_argument("-uld", "--upper_layer_dropout", help="upper layer dropout",
-                    type=float, default=0.2)
+                    type=float, default=0.6)
 parser.add_argument("-menh", "--module_embedding_nhead", help="module embedding multi-head attention nhead",
                     type=int, default=4)
-parser.add_argument("-enl", "--encoder_num_layers", help="LSTM encoder layer",
+parser.add_argument( "-enl", "--encoder_num_layers", help="LSTM encoder layer",
                     type=int, default=2)
 parser.add_argument("-lstm_bi", "--lstm_bidirectional", help="LSTM bidirectional [True/False]",
                     action="store_true", default=False)
 parser.add_argument("-fine_tune", "--fine_tune", help="Visual feature extractor fine tunning",
-                    action="store_true", default=False)
+                    action="store_true", default=True)
 parser.add_argument("-img_w", "--image_width", help="transform to image width",
                     type=int, default=config.image_width)
 parser.add_argument("-img_h", "--image_height", help="transform to image height",
@@ -96,10 +96,10 @@ parser.add_argument("-rcf", "--resume_checkpoint_filename", help="resume checkpo
                     default=None)
 
 parser.add_argument("-mattn", "--is_module_attention", help="is_module_attention",
-                    action="store_true", default=False)
+                    action="store_true", default=True)
 parser.add_argument("-mmattn_type", "--mm_embedding_attn_merge_type",
                     help="mm_embedding_attn_merge_type [concat/sum]",
-                    default='sum')
+                    default='concat')
 parser.add_argument("-logf", "--log_filename", help="execution log filename",
                     default='exe_utd_mhad.log')
 parser.add_argument("-logbd", "--log_base_dir", help="execution log base dir",
@@ -126,7 +126,7 @@ parser.add_argument("-cm", "--cycle_mul", help="total number of executed iterati
 parser.add_argument("-vpi", "--valid_person_index", help="valid person index",
                     type=int, default=0)
 parser.add_argument("-ipf", "--is_pretrained_fe", help="is_pretrained_fe",
-                    action="store_true", default=False)
+                    action="store_true", default=True)
 
 args = parser.parse_args()
 cuda_device_no = args.cuda_device_no
@@ -258,7 +258,7 @@ for modality in modalities:
     mm_module_properties[modality]['feature_pooling_kernel'] = None
     mm_module_properties[modality]['feature_pooling_stride'] = None
     mm_module_properties[modality]['feature_pooling_type'] = 'max'
-    mm_module_properties[modality]['lstm_dropout'] = 0.0
+    mm_module_properties[modality]['lstm_dropout'] = 0.05
     mm_module_properties[modality]['is_attention'] = args.is_module_attention
 
 Dataset = UVA_DAR_Dataset
@@ -273,7 +273,9 @@ mm_har_train = Dataset(data_dir_base_path=data_file_dir_base_path,
                        transforms_modalities=transforms_modalities,
                        is_pretrained_fe=args.is_pretrained_fe)
 
+print(mm_har_train.data)
 person_ids = mm_har_train.data.person_ID.unique()
+
 num_activity_types = mm_har_train.num_activities
 log_execution(log_base_dir, log_filename, f'total_activities: {num_activity_types}')
 log_execution(log_base_dir, log_filename, f'train person_ids: {person_ids}')
@@ -282,15 +284,15 @@ mm_har_train = None
 loov = LeaveOneOut()
 split_ids = person_ids
 loov.get_n_splits(split_ids)
-
 accuracy = []
 f1_scores = []
 validation_iteration = 1
+print(loov)
 
 for train_ids, test_ids in loov.split(split_ids):
-
     if (executed_number_it != -1 and validation_iteration <= executed_number_it):
         validation_iteration = validation_iteration + 1
+        print("arasharasharash")
         continue
 
     model = UVA_METRO_Model(mm_module_properties=mm_module_properties,
@@ -304,11 +306,12 @@ for train_ids, test_ids in loov.split(split_ids):
                             dropout=upper_layer_dropout,
                             is_pretrained_fe=args.is_pretrained_fe)
 
-    if (no_gpus > 1):
+    if (no_gpus > 0):
         gpu_list = list(range(torch.cuda.device_count()))
         model = nn.DataParallel(model, device_ids=gpu_list)
 
     # print(model)
+
     if (log_model_archi):
         log_execution(log_base_dir, log_filename, f'\n############ Model ############\n {str(model)}\n',
                       print_console=False)
@@ -332,6 +335,7 @@ for train_ids, test_ids in loov.split(split_ids):
                            window_stride=window_stride,
                            transforms_modalities=transforms_modalities,
                            is_pretrained_fe=args.is_pretrained_fe)
+
 
     train_dataloader = DataLoader(mm_har_train, batch_size=batch_size,
                                   shuffle=True, drop_last=False,
@@ -362,6 +366,7 @@ for train_ids, test_ids in loov.split(split_ids):
     ##################### Load Testing Data #####################
     allowed_test_id = get_ids_from_split(split_ids, test_ids)
 
+
     mm_har_test = Dataset(data_dir_base_path=data_file_dir_base_path,
                           embed_dir_base_path=args.embed_dir_base_path,
                           modalities=modalities,
@@ -372,6 +377,7 @@ for train_ids, test_ids in loov.split(split_ids):
                           window_stride=window_stride,
                           transforms_modalities=transforms_modalities,
                           is_pretrained_fe=args.is_pretrained_fe)
+    
 
     test_dataloader = DataLoader(mm_har_test, batch_size=batch_size,
                                  shuffle=False, drop_last=False,
@@ -398,7 +404,7 @@ for train_ids, test_ids in loov.split(split_ids):
     log_execution(log_base_dir, log_filename,
                   f'valid dataset len: {len(test_dataloader.dataset)}, test dataloader len: {len(valid_dataloader)}\n')
 
-    model_save_base_dir = 'trained_model'
+    model_save_base_dir = '/project/Driver_in_the_loop/ORIEL/Metro-Master/trained_model'
 
     if (resume_checkpoint_filename is not None):
         resume_checkpoint_filepath = f'{model_save_base_dir}/{resume_checkpoint_filename}_{validation_iteration}'
@@ -442,6 +448,7 @@ for train_ids, test_ids in loov.split(split_ids):
     accuracy.append(float(test_acc))
     f1_scores.append(float(test_f1))
     validation_iteration = validation_iteration + 1
+
 
 mean_accuracy = statistics.mean(accuracy)
 mean_f1_score = statistics.mean(f1_scores)

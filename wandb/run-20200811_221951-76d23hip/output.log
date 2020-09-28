@@ -1,0 +1,13 @@
+  0%|                                                                                                                                                                                                  | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                                                                                  | 0/500 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 220, in train_model
+    optimizer.step()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/optim/lr_scheduler.py", line 67, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/autograd/grad_mode.py", line 15, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/optim/adamw.py", line 112, in step
+    denom = (exp_avg_sq.sqrt() / math.sqrt(bias_correction2)).add_(group['eps'])
+RuntimeError: CUDA out of memory. Tried to allocate 20.00 MiB (GPU 0; 11.17 GiB total capacity; 741.03 MiB already allocated; 10.12 MiB free; 772.00 MiB reserved in total by PyTorch)

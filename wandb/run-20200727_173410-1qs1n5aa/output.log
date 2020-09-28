@@ -1,0 +1,24 @@
+  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]/scratch/at5cf/ann/checking_speed_stack/20200302_090813_ER.mp4_13_14_ID_21.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200302_090813_EF.mp4_13_14_ID_21.MP4 True
+/scratch/at5cf/ann/working_with_phone/20200120_123642_ER.mp4_73_74_ID_20.MP4 True
+/scratch/at5cf/ann/working_with_phone/20200120_123642_EF.mp4_73_74_ID_20.MP4 True
+  0%|                                                                                                                                                                             | 0/200 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "ORIEL/Metro-Master/metro_training.py", line 438, in <module>
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 210, in train_model
+    outputs = model(batch)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 153, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/network/UVA_METRO_Model.py", line 140, in forward
+    output = self.fc_output1(mattn_output)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/linear.py", line 87, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/functional.py", line 1610, in linear
+    ret = torch.addmm(bias, input, weight.t())
+RuntimeError: size mismatch, m1: [2 x 512], m2: [256 x 128] at /pytorch/aten/src/THC/generic/THCTensorMathBlas.cu:283

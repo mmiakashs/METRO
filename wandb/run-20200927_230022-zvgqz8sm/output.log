@@ -1,0 +1,40 @@
+  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 194, in train_model
+    for batch_idx, batch in enumerate(train_dataloader):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 856, in _next_data
+    return self._process_data(data)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 881, in _process_data
+    data.reraise()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/_utils.py", line 395, in reraise
+    raise self.exc_type(msg)
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/worker.py", line 178, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 224, in __getitem__
+    seq,seq_len = self.get_gaze_data(idx,modality)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 191, in get_gaze_data
+    gaze_file = pd.read_csv(data_filepath)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/pandas/io/parsers.py", line 676, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/pandas/io/parsers.py", line 448, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/pandas/io/parsers.py", line 880, in __init__
+    self._make_engine(self.engine)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/pandas/io/parsers.py", line 1114, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/pandas/io/parsers.py", line 1891, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 374, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File /project/Driver_in_the_loop/all_data/checking_mirror_middle/2019_0609_155854_102B.MP4_251_253_ID_4_gaze does not exist: '/project/Driver_in_the_loop/all_data/checking_mirror_middle/2019_0609_155854_102B.MP4_251_253_ID_4_gaze'
+

@@ -1,0 +1,285 @@
+  0%|                                                                                                                                                         | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/683 (0%)]	Loss: 0.454646
+Train Epoch: 1 [11/683 (1%)]	Loss: 0.376760
+Train Epoch: 1 [21/683 (3%)]	Loss: 0.298748
+Train Epoch: 1 [31/683 (4%)]	Loss: 0.326574
+Train Epoch: 1 [41/683 (6%)]	Loss: 0.306450
+Train Epoch: 1 [51/683 (7%)]	Loss: 0.327753
+Train Epoch: 1 [61/683 (9%)]	Loss: 0.305338
+Train Epoch: 1 [71/683 (10%)]	Loss: 0.242442
+Train Epoch: 1 [81/683 (12%)]	Loss: 0.300575
+Train Epoch: 1 [91/683 (13%)]	Loss: 0.229391
+Train Epoch: 1 [101/683 (15%)]	Loss: 0.264064
+Train Epoch: 1 [111/683 (16%)]	Loss: 0.275684
+Train Epoch: 1 [121/683 (18%)]	Loss: 0.248997
+Train Epoch: 1 [131/683 (19%)]	Loss: 0.267075
+Train Epoch: 1 [141/683 (20%)]	Loss: 0.272296
+Train Epoch: 1 [151/683 (22%)]	Loss: 0.215768
+Train Epoch: 1 [161/683 (23%)]	Loss: 0.199069
+Train Epoch: 1 [171/683 (25%)]	Loss: 0.286321
+Train Epoch: 1 [181/683 (26%)]	Loss: 0.299689
+Train Epoch: 1 [191/683 (28%)]	Loss: 0.258859
+Train Epoch: 1 [201/683 (29%)]	Loss: 0.234794
+Train Epoch: 1 [211/683 (31%)]	Loss: 0.282176
+Train Epoch: 1 [221/683 (32%)]	Loss: 0.207170
+Train Epoch: 1 [231/683 (34%)]	Loss: 0.213219
+Train Epoch: 1 [241/683 (35%)]	Loss: 0.164104
+Train Epoch: 1 [251/683 (37%)]	Loss: 0.217080
+Train Epoch: 1 [261/683 (38%)]	Loss: 0.214182
+Train Epoch: 1 [271/683 (40%)]	Loss: 0.288600
+Train Epoch: 1 [281/683 (41%)]	Loss: 0.267903
+Train Epoch: 1 [291/683 (42%)]	Loss: 0.184811
+Train Epoch: 1 [301/683 (44%)]	Loss: 0.222837
+Train Epoch: 1 [311/683 (45%)]	Loss: 0.301199
+Train Epoch: 1 [321/683 (47%)]	Loss: 0.223450
+Train Epoch: 1 [331/683 (48%)]	Loss: 0.204103
+Train Epoch: 1 [341/683 (50%)]	Loss: 0.315307
+Train Epoch: 1 [351/683 (51%)]	Loss: 0.330054
+Train Epoch: 1 [361/683 (53%)]	Loss: 0.239215
+Train Epoch: 1 [371/683 (54%)]	Loss: 0.259832
+Train Epoch: 1 [381/683 (56%)]	Loss: 0.289610
+Train Epoch: 1 [391/683 (57%)]	Loss: 0.255464
+Train Epoch: 1 [401/683 (59%)]	Loss: 0.257324
+Train Epoch: 1 [411/683 (60%)]	Loss: 0.231390
+Train Epoch: 1 [421/683 (61%)]	Loss: 0.257056
+Train Epoch: 1 [431/683 (63%)]	Loss: 0.295139
+Train Epoch: 1 [441/683 (64%)]	Loss: 0.222419
+Train Epoch: 1 [451/683 (66%)]	Loss: 0.246027
+Train Epoch: 1 [461/683 (67%)]	Loss: 0.220081
+Train Epoch: 1 [471/683 (69%)]	Loss: 0.268710
+Train Epoch: 1 [481/683 (70%)]	Loss: 0.195479
+Train Epoch: 1 [491/683 (72%)]	Loss: 0.288496
+Train Epoch: 1 [501/683 (73%)]	Loss: 0.245289
+Train Epoch: 1 [511/683 (75%)]	Loss: 0.188916
+Train Epoch: 1 [521/683 (76%)]	Loss: 0.314088
+Train Epoch: 1 [531/683 (78%)]	Loss: 0.200188
+Train Epoch: 1 [541/683 (79%)]	Loss: 0.245117
+Train Epoch: 1 [551/683 (81%)]	Loss: 0.176488
+Train Epoch: 1 [561/683 (82%)]	Loss: 0.251045
+Train Epoch: 1 [571/683 (83%)]	Loss: 0.285736
+Train Epoch: 1 [581/683 (85%)]	Loss: 0.232211
+Train Epoch: 1 [591/683 (86%)]	Loss: 0.227796
+Train Epoch: 1 [601/683 (88%)]	Loss: 0.318921
+Train Epoch: 1 [611/683 (89%)]	Loss: 0.202990
+Train Epoch: 1 [621/683 (91%)]	Loss: 0.248169
+Train Epoch: 1 [631/683 (92%)]	Loss: 0.241335
+Train Epoch: 1 [641/683 (94%)]	Loss: 0.219175
+Train Epoch: 1 [651/683 (95%)]	Loss: 0.273464
+Train Epoch: 1 [661/683 (97%)]	Loss: 0.212644
+Train Epoch: 1 [671/683 (98%)]	Loss: 0.221318
+Train Epoch: 1 [681/683 (100%)]	Loss: 0.294645
+====> Epoch: 1 Train Avg loss: 0.25898, Acc: 0.20111, F1: 0.20088
+tensor board log 1
+#####> Valid Avg loss: 0.28014, Acc:0.39008, F1: 0.39022
+
+===> Epoch: 1: Training loss decreased (inf --> 0.25898), Acc: (0.00000 --> 0.20111), F1: (0.00000 --> 0.20088).  Saving model ...
+
+model saved to metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+
+####> Epoch: 1: validation loss decreased (inf --> 0.28014), Acc: (0.00000 --> 0.39008), F1: (0.00000 --> 0.39022).  Saving model ...
+
+Best valid model save to best_metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+
+####> Epoch: 1: validation acc increase (inf --> 0.28014), Acc: (0.00000 --> 0.39008), F1: (0.00000 --> 0.39022).  Saving model ...
+
+Best valid model (acc) save to best_acc_metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+  0%|▎                                                                                                                                            | 1/500 [06:06<50:48:47, 366.59s/it]Train Epoch: 2 [1/683 (0%)]	Loss: 0.239230
+Train Epoch: 2 [11/683 (1%)]	Loss: 0.314505
+Train Epoch: 2 [21/683 (3%)]	Loss: 0.207062
+Train Epoch: 2 [31/683 (4%)]	Loss: 0.240260
+Train Epoch: 2 [41/683 (6%)]	Loss: 0.246582
+Train Epoch: 2 [51/683 (7%)]	Loss: 0.257484
+Train Epoch: 2 [61/683 (9%)]	Loss: 0.251371
+Train Epoch: 2 [71/683 (10%)]	Loss: 0.241585
+Train Epoch: 2 [81/683 (12%)]	Loss: 0.283345
+Train Epoch: 2 [91/683 (13%)]	Loss: 0.267847
+Train Epoch: 2 [101/683 (15%)]	Loss: 0.221466
+Train Epoch: 2 [111/683 (16%)]	Loss: 0.255131
+Train Epoch: 2 [121/683 (18%)]	Loss: 0.210244
+Train Epoch: 2 [131/683 (19%)]	Loss: 0.211294
+Train Epoch: 2 [141/683 (20%)]	Loss: 0.285244
+Train Epoch: 2 [151/683 (22%)]	Loss: 0.205129
+Train Epoch: 2 [161/683 (23%)]	Loss: 0.264886
+Train Epoch: 2 [171/683 (25%)]	Loss: 0.262435
+Train Epoch: 2 [181/683 (26%)]	Loss: 0.305066
+Train Epoch: 2 [191/683 (28%)]	Loss: 0.183796
+Train Epoch: 2 [201/683 (29%)]	Loss: 0.250350
+Train Epoch: 2 [211/683 (31%)]	Loss: 0.299841
+Train Epoch: 2 [221/683 (32%)]	Loss: 0.233132
+Train Epoch: 2 [231/683 (34%)]	Loss: 0.246906
+Train Epoch: 2 [241/683 (35%)]	Loss: 0.250111
+Train Epoch: 2 [251/683 (37%)]	Loss: 0.263585
+Train Epoch: 2 [261/683 (38%)]	Loss: 0.278328
+Train Epoch: 2 [271/683 (40%)]	Loss: 0.224861
+Train Epoch: 2 [281/683 (41%)]	Loss: 0.224361
+Train Epoch: 2 [291/683 (42%)]	Loss: 0.260786
+Train Epoch: 2 [301/683 (44%)]	Loss: 0.229804
+Train Epoch: 2 [311/683 (45%)]	Loss: 0.274696
+Train Epoch: 2 [321/683 (47%)]	Loss: 0.226045
+Train Epoch: 2 [331/683 (48%)]	Loss: 0.311684
+Train Epoch: 2 [341/683 (50%)]	Loss: 0.232874
+Train Epoch: 2 [351/683 (51%)]	Loss: 0.184995
+Train Epoch: 2 [361/683 (53%)]	Loss: 0.241750
+Train Epoch: 2 [371/683 (54%)]	Loss: 0.286652
+Train Epoch: 2 [381/683 (56%)]	Loss: 0.256824
+Train Epoch: 2 [391/683 (57%)]	Loss: 0.244479
+Train Epoch: 2 [401/683 (59%)]	Loss: 0.292486
+Train Epoch: 2 [411/683 (60%)]	Loss: 0.201433
+Train Epoch: 2 [421/683 (61%)]	Loss: 0.205728
+Train Epoch: 2 [431/683 (63%)]	Loss: 0.203461
+Train Epoch: 2 [441/683 (64%)]	Loss: 0.184377
+Train Epoch: 2 [451/683 (66%)]	Loss: 0.210211
+Train Epoch: 2 [461/683 (67%)]	Loss: 0.275286
+Train Epoch: 2 [471/683 (69%)]	Loss: 0.266240
+Train Epoch: 2 [481/683 (70%)]	Loss: 0.218085
+Train Epoch: 2 [491/683 (72%)]	Loss: 0.227753
+Train Epoch: 2 [501/683 (73%)]	Loss: 0.261485
+Train Epoch: 2 [511/683 (75%)]	Loss: 0.174996
+Train Epoch: 2 [521/683 (76%)]	Loss: 0.220655
+Train Epoch: 2 [531/683 (78%)]	Loss: 0.247441
+Train Epoch: 2 [541/683 (79%)]	Loss: 0.266296
+Train Epoch: 2 [551/683 (81%)]	Loss: 0.224123
+Train Epoch: 2 [561/683 (82%)]	Loss: 0.181633
+Train Epoch: 2 [571/683 (83%)]	Loss: 0.205744
+Train Epoch: 2 [581/683 (85%)]	Loss: 0.225890
+Train Epoch: 2 [591/683 (86%)]	Loss: 0.249002
+Train Epoch: 2 [601/683 (88%)]	Loss: 0.278179
+Train Epoch: 2 [611/683 (89%)]	Loss: 0.253331
+Train Epoch: 2 [621/683 (91%)]	Loss: 0.226778
+Train Epoch: 2 [631/683 (92%)]	Loss: 0.291306
+Train Epoch: 2 [641/683 (94%)]	Loss: 0.227785
+Train Epoch: 2 [651/683 (95%)]	Loss: 0.196797
+Train Epoch: 2 [661/683 (97%)]	Loss: 0.221723
+Train Epoch: 2 [671/683 (98%)]	Loss: 0.309793
+Train Epoch: 2 [681/683 (100%)]	Loss: 0.212272
+====> Epoch: 2 Train Avg loss: 0.23672, Acc: 0.20962, F1: 0.20937
+tensor board log 2
+#####> Valid Avg loss: 0.27858, Acc:0.39008, F1: 0.39022
+
+===> Epoch: 2: Training loss decreased (0.25898 --> 0.23672), Acc: (0.20111 --> 0.20962), F1: (0.20088 --> 0.20937).  Saving model ...
+
+model saved to metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+
+####> Epoch: 2: validation loss decreased (0.28014 --> 0.27858), Acc: (0.39008 --> 0.39008), F1: (0.39022 --> 0.39022).  Saving model ...
+
+Best valid model save to best_metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+  0%|▌                                                                                                                                            | 2/500 [11:59<50:08:59, 362.53s/it]Train Epoch: 3 [1/683 (0%)]	Loss: 0.253982
+Train Epoch: 3 [11/683 (1%)]	Loss: 0.247440
+Train Epoch: 3 [21/683 (3%)]	Loss: 0.207228
+Train Epoch: 3 [31/683 (4%)]	Loss: 0.245873
+Train Epoch: 3 [41/683 (6%)]	Loss: 0.225078
+Train Epoch: 3 [51/683 (7%)]	Loss: 0.320092
+Train Epoch: 3 [61/683 (9%)]	Loss: 0.257561
+Train Epoch: 3 [71/683 (10%)]	Loss: 0.222506
+Train Epoch: 3 [81/683 (12%)]	Loss: 0.246803
+Train Epoch: 3 [91/683 (13%)]	Loss: 0.221889
+Train Epoch: 3 [101/683 (15%)]	Loss: 0.236403
+Train Epoch: 3 [111/683 (16%)]	Loss: 0.222682
+Train Epoch: 3 [121/683 (18%)]	Loss: 0.200134
+Train Epoch: 3 [131/683 (19%)]	Loss: 0.200213
+Train Epoch: 3 [141/683 (20%)]	Loss: 0.208469
+Train Epoch: 3 [151/683 (22%)]	Loss: 0.197663
+Train Epoch: 3 [161/683 (23%)]	Loss: 0.297661
+Train Epoch: 3 [171/683 (25%)]	Loss: 0.263007
+Train Epoch: 3 [181/683 (26%)]	Loss: 0.213587
+Train Epoch: 3 [191/683 (28%)]	Loss: 0.244301
+Train Epoch: 3 [201/683 (29%)]	Loss: 0.225857
+Train Epoch: 3 [211/683 (31%)]	Loss: 0.249137
+Train Epoch: 3 [221/683 (32%)]	Loss: 0.197849
+Train Epoch: 3 [231/683 (34%)]	Loss: 0.193784
+Train Epoch: 3 [241/683 (35%)]	Loss: 0.193740
+Train Epoch: 3 [251/683 (37%)]	Loss: 0.186775
+Train Epoch: 3 [261/683 (38%)]	Loss: 0.193440
+Train Epoch: 3 [271/683 (40%)]	Loss: 0.216366
+Train Epoch: 3 [281/683 (41%)]	Loss: 0.240625
+Train Epoch: 3 [291/683 (42%)]	Loss: 0.249645
+Train Epoch: 3 [301/683 (44%)]	Loss: 0.205029
+Train Epoch: 3 [311/683 (45%)]	Loss: 0.229363
+Train Epoch: 3 [321/683 (47%)]	Loss: 0.216150
+Train Epoch: 3 [331/683 (48%)]	Loss: 0.210825
+Train Epoch: 3 [341/683 (50%)]	Loss: 0.238507
+Train Epoch: 3 [351/683 (51%)]	Loss: 0.208932
+Train Epoch: 3 [361/683 (53%)]	Loss: 0.287260
+Train Epoch: 3 [371/683 (54%)]	Loss: 0.282284
+Train Epoch: 3 [381/683 (56%)]	Loss: 0.305784
+Train Epoch: 3 [391/683 (57%)]	Loss: 0.220570
+Train Epoch: 3 [401/683 (59%)]	Loss: 0.216278
+Train Epoch: 3 [411/683 (60%)]	Loss: 0.216129
+Train Epoch: 3 [421/683 (61%)]	Loss: 0.348599
+Train Epoch: 3 [431/683 (63%)]	Loss: 0.185285
+Train Epoch: 3 [441/683 (64%)]	Loss: 0.191467
+Train Epoch: 3 [451/683 (66%)]	Loss: 0.205815
+Train Epoch: 3 [461/683 (67%)]	Loss: 0.199312
+Train Epoch: 3 [471/683 (69%)]	Loss: 0.276277
+Train Epoch: 3 [481/683 (70%)]	Loss: 0.215697
+Train Epoch: 3 [491/683 (72%)]	Loss: 0.195634
+Train Epoch: 3 [501/683 (73%)]	Loss: 0.179074
+Train Epoch: 3 [511/683 (75%)]	Loss: 0.160782
+Train Epoch: 3 [521/683 (76%)]	Loss: 0.236893
+Train Epoch: 3 [531/683 (78%)]	Loss: 0.229459
+Train Epoch: 3 [541/683 (79%)]	Loss: 0.301838
+Train Epoch: 3 [551/683 (81%)]	Loss: 0.227211
+Train Epoch: 3 [561/683 (82%)]	Loss: 0.228454
+Train Epoch: 3 [571/683 (83%)]	Loss: 0.212083
+Train Epoch: 3 [581/683 (85%)]	Loss: 0.206314
+Train Epoch: 3 [591/683 (86%)]	Loss: 0.197436
+Train Epoch: 3 [601/683 (88%)]	Loss: 0.192900
+Train Epoch: 3 [611/683 (89%)]	Loss: 0.231254
+Train Epoch: 3 [621/683 (91%)]	Loss: 0.240946
+Train Epoch: 3 [631/683 (92%)]	Loss: 0.231003
+Train Epoch: 3 [641/683 (94%)]	Loss: 0.205508
+Train Epoch: 3 [651/683 (95%)]	Loss: 0.193130
+Train Epoch: 3 [661/683 (97%)]	Loss: 0.191320
+Train Epoch: 3 [671/683 (98%)]	Loss: 0.193372
+Train Epoch: 3 [681/683 (100%)]	Loss: 0.206382
+====> Epoch: 3 Train Avg loss: 0.22699, Acc: 0.21225, F1: 0.21259
+tensor board log 3
+#####> Valid Avg loss: 0.28747, Acc:0.00000, F1: 0.00000
+
+===> Epoch: 3: Training loss decreased (0.23672 --> 0.22699), Acc: (0.20962 --> 0.21225), F1: (0.20937 --> 0.21259).  Saving model ...
+
+model saved to metro_h2_pt_dp4_fe128_nma_re_1597210549.093508.pth_1
+
+  1%|▊                                                                                                                                            | 3/500 [17:52<49:38:54, 359.63s/it]Train Epoch: 4 [1/683 (0%)]	Loss: 0.263578
+Train Epoch: 4 [11/683 (1%)]	Loss: 0.190119
+Train Epoch: 4 [21/683 (3%)]	Loss: 0.199941
+Train Epoch: 4 [31/683 (4%)]	Loss: 0.234066
+Train Epoch: 4 [41/683 (6%)]	Loss: 0.265608
+Train Epoch: 4 [51/683 (7%)]	Loss: 0.234052
+Train Epoch: 4 [61/683 (9%)]	Loss: 0.239812
+Train Epoch: 4 [71/683 (10%)]	Loss: 0.239160
+Train Epoch: 4 [81/683 (12%)]	Loss: 0.191670
+Train Epoch: 4 [91/683 (13%)]	Loss: 0.238362
+Train Epoch: 4 [101/683 (15%)]	Loss: 0.265972
+Train Epoch: 4 [111/683 (16%)]	Loss: 0.229467
+Train Epoch: 4 [121/683 (18%)]	Loss: 0.189502
+Train Epoch: 4 [131/683 (19%)]	Loss: 0.255087
+Train Epoch: 4 [141/683 (20%)]	Loss: 0.270256
+Train Epoch: 4 [151/683 (22%)]	Loss: 0.215868
+Train Epoch: 4 [161/683 (23%)]	Loss: 0.257890
+Train Epoch: 4 [171/683 (25%)]	Loss: 0.196784
+Train Epoch: 4 [181/683 (26%)]	Loss: 0.234089
+Train Epoch: 4 [191/683 (28%)]	Loss: 0.241377
+Train Epoch: 4 [201/683 (29%)]	Loss: 0.246110
+Train Epoch: 4 [211/683 (31%)]	Loss: 0.227809
+Train Epoch: 4 [221/683 (32%)]	Loss: 0.215407
+Train Epoch: 4 [231/683 (34%)]	Loss: 0.253505
+Train Epoch: 4 [241/683 (35%)]	Loss: 0.205006
+Train Epoch: 4 [251/683 (37%)]	Loss: 0.255909
+Train Epoch: 4 [261/683 (38%)]	Loss: 0.226209
+Train Epoch: 4 [271/683 (40%)]	Loss: 0.199070
+Train Epoch: 4 [281/683 (41%)]	Loss: 0.298258
+Train Epoch: 4 [291/683 (42%)]	Loss: 0.220043
+Train Epoch: 4 [301/683 (44%)]	Loss: 0.190562
+Train Epoch: 4 [311/683 (45%)]	Loss: 0.270811
+Train Epoch: 4 [321/683 (47%)]	Loss: 0.226483
+Train Epoch: 4 [331/683 (48%)]	Loss: 0.241108
+Train Epoch: 4 [341/683 (50%)]	Loss: 0.272494
+Train Epoch: 4 [351/683 (51%)]	Loss: 0.246862
+Train Epoch: 4 [361/683 (53%)]	Loss: 0.239585
+Train Epoch: 4 [371/683 (54%)]	Loss: 0.271878
+Train Epoch: 4 [381/683 (56%)]	Loss: 0.197117

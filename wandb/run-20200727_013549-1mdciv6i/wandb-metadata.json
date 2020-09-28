@@ -1,0 +1,19 @@
+{
+    "root": "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master",
+    "program": "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\metro_training.py",
+    "startedAt": "2020-07-27T05:35:49.617193",
+    "host": "DESKTOP-I2O602S",
+    "username": "Arsalan",
+    "executable": "C:\\Program Files\\Python\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.6.5",
+    "gpu": "GeForce GTX 1080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "args": [],
+    "state": "running",
+    "jobType": null,
+    "mode": "dryrun",
+    "name": "wandb_log_default_vi_1",
+    "heartbeatAt": "2020-07-27T05:35:50.429046"
+}

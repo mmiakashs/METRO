@@ -68,7 +68,6 @@ class Video:
     def __len__(self):
         return self.length
 
-
 class UVA_DAR_Dataset(Dataset):
 
     def __init__(self, data_dir_base_path,
@@ -108,23 +107,40 @@ class UVA_DAR_Dataset(Dataset):
         self.data = pd.read_csv(self.data_dir_base_path+'/'+self.metadata_filename)
         if(self.is_pretrained_fe):
             data_dir_base_path = self.embed_dir_base_path
+            data_dir_base_path_csv = self.data_dir_base_path
             file_ext = '.pt'
+            file_ext_csv = ".csv"
         else:
             data_dir_base_path=self.data_dir_base_path
             file_ext = '.MP4'
+            file_ext_csv = ".csv"
 
         for i, row in self.data.iterrows():
-            tm_filename = row[config.inside_modality_tag][:-4]
+            tm_filename = row[config.inside_modality_tag]
             tm_filename = f'{tm_filename}{file_ext}'
             if (not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')):
                 self.data.at[i, config.activity_tag] = 'MISSING'
-                # print('missing inside file:',row[config.inside_modality_tag], row[config.activity_tag])
+                #print('missing inside file:',row[config.inside_modality_tag], row[config.activity_tag])
 
-            tm_filename = row[config.outside_modality_tag][:-4]
+            tm_filename = row[config.outside_modality_tag]
             tm_filename = f'{tm_filename}{file_ext}'
             if ((not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}'))):
                 self.data.at[i, config.activity_tag] = 'MISSING'
-                # print('missing outside file:',row[config.outside_modality_tag], row[config.activity_tag])
+                #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
+                #print('missing outside file:',row[config.outside_modality_tag], row[config.activity_tag])
+            
+            tm_filename = row[config.gaze_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+
+            tm_filename = row[config.pose_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing pose file:',row[config.pose_modality_tag], row[config.activity_tag])
 
         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
         if (self.restricted_ids is not None):
@@ -143,15 +159,20 @@ class UVA_DAR_Dataset(Dataset):
     
     def get_video_data(self, idx, modality):
         if (self.is_pretrained_fe):
-            filename = f'{self.data.loc[idx, modality][:-4]}.pt'
+            filename = f'{self.data.loc[idx, modality]}.pt'
             activity = self.data.loc[idx, config.activity_tag]
             data_filepath = f'{self.embed_dir_base_path}/{activity}/{filename}'
             seq = torch.load(data_filepath, map_location='cpu').detach()
             seq_len = seq.size(0)
         else:
-            filename = self.data.loc[idx, modality]
+            filename = f'{self.data.loc[idx, modality]}.MP4'
             activity = self.data.loc[idx, config.activity_tag]
             data_filepath = f'{self.data_dir_base_path}/{activity}/{filename}'
+
+            if not os.path.exists(data_filepath):
+                print("the path is not exist")
+
+            print(data_filepath, os.path.exists(data_filepath))
             frame_parser = Video(path=data_filepath,
                                  transforms=self.transforms_modalities[modality],
                                  seq_max_len=self.seq_max_len)
@@ -163,6 +184,33 @@ class UVA_DAR_Dataset(Dataset):
 
         return seq, seq_len
 
+    def get_gaze_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.data_dir_base_path}/{activity}/{filename}'
+        gaze_file = pd.read_csv(data_filepath)
+        gaze_file.drop(columns=["frame"," face_id"," timestamp"," confidence"," success","Timestamp Begin","Timestamp End","Event","ID"],inplace=True)
+        seq_1 = gaze_file.to_numpy()
+        seq = seq_1[:,:,np.newaxis]
+        seq = torch.tensor(seq)
+        seq_len = seq.size(0)
+        return seq,seq_len
+
+
+    def get_pose_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.data_dir_base_path}/{activity}/{filename}'
+        pose_file = pd.read_csv(data_filepath)
+        pose_file.drop(columns=["frame","timestamp","Timestamp Begin","Timestamp End","Event","ID"],inplace=True)
+        seq_1 = pose_file.to_numpy()
+        seq = seq_1[:,:,np.newaxis]
+        seq=torch.tensor(seq)
+        seq_len = seq.size(0)
+        return seq,seq_len
+
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
@@ -173,10 +221,21 @@ class UVA_DAR_Dataset(Dataset):
         
         # print(f'************ Start Data Loader for {idx} ************')
         for modality in self.modalities:
-            seq, seq_len = self.get_video_data(idx, modality)
-            data[modality] = seq
-            data[modality + config.modality_seq_len_tag] = seq_len
-            modality_mask.append(True if seq_len == 0 else False)
+            if modality in ["inside","outside"]:
+                seq, seq_len = self.get_video_data(idx, modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+            if modality=="gaze":
+                seq,seq_len = self.get_gaze_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+            if modality=="pose":
+                seq,seq_len = self.get_pose_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
 
         modality_mask = torch.from_numpy(np.array(modality_mask)).bool()
         data[config.activity_tag] = self.activity_name_id[str(data_label)]
@@ -201,7 +260,8 @@ def get_ids_from_split(split_ids, split_index):
     return person_ids
 
 modalities = [config.inside_modality_tag,
-              config.outside_modality_tag]
+              config.gaze_modality_tag,
+              config.pose_modality_tag]
 
 def gen_mask(seq_len, max_len):
     return torch.arange(max_len) > seq_len
@@ -213,8 +273,8 @@ def pad_collate(batch):
     for modality in modalities:
         data[modality] = pad_sequence([batch[bin][modality] for bin in range(batch_size)], batch_first=True)
         data[modality + config.modality_seq_len_tag] = torch.tensor(
-               [batch[bin][modality + config.modality_seq_len_tag] for bin in range(batch_size)],
-               dtype=torch.float)
+            [batch[bin][modality + config.modality_seq_len_tag] for bin in range(batch_size)],
+            dtype=torch.float)
         
 #         print(f'{modality} seq lengths: ',data[modality + config.modality_seq_len_tag])
 

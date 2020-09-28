@@ -1,0 +1,15 @@
+  0%|                                                                                                                                                                             | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                                                             | 0/500 [00:42<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 210, in train_model
+    outputs = model(batch)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 155, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 165, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/parallel_apply.py", line 85, in parallel_apply
+    output.reraise()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/_utils.py", 

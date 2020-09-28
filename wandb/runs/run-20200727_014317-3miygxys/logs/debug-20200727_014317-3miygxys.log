@@ -1,0 +1,22 @@
+2020-07-27 01:43:17,369 INFO    MainThread:3668 [wandb_init.py:_log_setup():335] Logging user logs to .\wandb\runs\run-20200727_014317-3miygxys\logs\debug-20200727_014317-3miygxys.log
+2020-07-27 01:43:17,369 INFO    MainThread:3668 [wandb_init.py:_log_setup():336] Logging internal logs to .\wandb\runs\run-20200727_014317-3miygxys\logs\debug-internal-20200727_014317-3miygxys.log
+2020-07-27 01:43:17,370 INFO    MainThread:3668 [wandb_setup.py:_flush():68] setting env: {}
+2020-07-27 01:43:17,370 INFO    MainThread:3668 [wandb_setup.py:_flush():68] multiprocessing start_methods=spawn
+2020-07-27 01:43:17,370 WARNING MainThread:3668 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:43:17,371 WARNING MainThread:3668 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:43:17,372 WARNING MainThread:3668 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:43:47,489 ERROR   MainThread:3668 [wandb_init.py:init():577] we got issues
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 571, in init
+    run = wi.init()
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 485, in init
+    run._set_run_obj(ret.run)
+AttributeError: 'NoneType' object has no attribute 'run'
+2020-07-27 01:43:47,490 WARNING MainThread:3668 [wandb_init.py:_atexit_cleanup():340] process exited without backend configured
+2020-07-27 01:43:47,490 ERROR   MainThread:3668 [wandb_init.py:init():590] error
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 571, in init
+    run = wi.init()
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 485, in init
+    run._set_run_obj(ret.run)
+AttributeError: 'NoneType' object has no attribute 'run'

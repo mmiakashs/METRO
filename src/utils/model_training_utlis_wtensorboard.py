@@ -133,7 +133,7 @@ def train_model(model, optimizer, scheduler,
                 wandb_log_name='wandb_log_default'):
     model.to(device)
     wandb.init(name=f'{wandb_log_name}_vi_{validation_iteration}',
-               config=args)
+               config=args,entity="arashtavakoli")
     wandb.watch(model)
 
     train_loss_min = np.Inf
@@ -175,7 +175,8 @@ def train_model(model, optimizer, scheduler,
         log_execution(log_base_dir, log_filename,
                       f'Resume training successfully from resume chekpoint filename: {resume_checkpoint_filename}\n model_checkpoint_filename {model_checkpoint_filename}\n')
 
-    loss_function = nn.CrossEntropyLoss()
+    #weights = torch.FloatTensor([0.2,0.2,0.01,0.2,0.2,0.4,0.9,0.8,0.7]).cuda()
+    loss_function = nn.CrossEntropyLoss() #(weight=weights)
     improvement_it = 0
     train_dataloader_len = len(train_dataloader)
 

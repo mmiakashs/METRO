@@ -1,0 +1,36 @@
+  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]/scratch/at5cf/ann/checking_speed_stack/20191127_105025_ER.mp4_136_137_ID_14.MP4 True
+/scratch/at5cf/ann/singing/20191223_160216_NR.mp4_87_89_ID_16.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20191127_105025_EF.mp4_136_137_ID_14.MP4 True
+/scratch/at5cf/ann/singing/20191223_160216_NF.mp4_87_89_ID_16.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/20191202_154315_NR.MP4_43_45_ID_11.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/20200228_123245_NR.MP4_43_44_ID_19.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/20200228_123245_NF.mp4_43_44_ID_19.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/20191202_154315_NF.mp4_43_45_ID_11.MP4 True
+/scratch/at5cf/ann/working_with_phone/2019_0612_165526_370B.MP4_37_39_ID_4.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2018_0106_203734_352B.MP4_229_230_ID_5.MP4 True
+/scratch/at5cf/ann/working_with_phone/2019_0612_165526_369A.MP4_37_39_ID_4.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2018_0106_203734_351A.MP4_229_230_ID_5.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200302_123359_ER.mp4_102_103_ID_21.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2019_0611_165453_270B.MP4_149_150_ID_4.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200302_123359_EF.mp4_102_103_ID_21.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2019_0611_165453_269A.MP4_149_150_ID_4.MP4 True
+  0%|                                                                                                                                                                             | 0/200 [00:20<?, ?it/s]
+Traceback (most recent call last):
+  File "ORIEL/Metro-Master/metro_training.py", line 438, in <module>
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 210, in train_model
+    outputs = model(batch)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 153, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/network/UVA_METRO_Model.py", line 140, in forward
+    output = self.fc_output1(mattn_output)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/linear.py", line 87, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/functional.py", line 1610, in linear
+    ret = torch.addmm(bias, input, weight.t())
+RuntimeError: size mismatch, m1: [2 x 512], m2: [256 x 128] at /pytorch/aten/src/THC/generic/THCTensorMathBlas.cu:283

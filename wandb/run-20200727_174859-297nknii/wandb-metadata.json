@@ -1,0 +1,20 @@
+{
+    "root": "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master",
+    "program": "ORIEL/Metro-Master/metro_training.py",
+    "startedAt": "2020-07-27T21:48:59.942250",
+    "host": "udc-ba26-24",
+    "username": "at5cf",
+    "executable": "/home/at5cf/.conda/envs/oriel/bin/python",
+    "os": "Linux-3.10.0-1062.18.1.el7.x86_64-x86_64-with-centos-7.7.1908-Core",
+    "python": "3.6.10",
+    "gpu": "Tesla K80",
+    "gpu_count": 8,
+    "cpu_count": 28,
+    "args": [],
+    "state": "failed",
+    "jobType": null,
+    "mode": "run",
+    "name": "wandb_log_default_vi_1",
+    "heartbeatAt": "2020-07-27T21:49:25.111909",
+    "exitcode": 1
+}

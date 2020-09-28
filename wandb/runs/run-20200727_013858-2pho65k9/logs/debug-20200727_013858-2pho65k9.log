@@ -1,0 +1,22 @@
+2020-07-27 01:38:58,844 INFO    MainThread:21336 [wandb_init.py:_log_setup():335] Logging user logs to .\wandb\runs\run-20200727_013858-2pho65k9\logs\debug-20200727_013858-2pho65k9.log
+2020-07-27 01:38:58,844 INFO    MainThread:21336 [wandb_init.py:_log_setup():336] Logging internal logs to .\wandb\runs\run-20200727_013858-2pho65k9\logs\debug-internal-20200727_013858-2pho65k9.log
+2020-07-27 01:38:58,844 INFO    MainThread:21336 [wandb_setup.py:_flush():68] setting env: {}
+2020-07-27 01:38:58,844 INFO    MainThread:21336 [wandb_setup.py:_flush():68] multiprocessing start_methods=spawn
+2020-07-27 01:38:58,845 WARNING MainThread:21336 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:38:58,845 WARNING MainThread:21336 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:38:58,846 WARNING MainThread:21336 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 01:39:28,973 ERROR   MainThread:21336 [wandb_init.py:init():577] we got issues
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 571, in init
+    run = wi.init()
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 485, in init
+    run._set_run_obj(ret.run)
+AttributeError: 'NoneType' object has no attribute 'run'
+2020-07-27 01:39:28,973 WARNING MainThread:21336 [wandb_init.py:_atexit_cleanup():340] process exited without backend configured
+2020-07-27 01:39:28,974 ERROR   MainThread:21336 [wandb_init.py:init():590] error
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 571, in init
+    run = wi.init()
+  File "C:\Program Files\Python\lib\site-packages\wandb\sdk\wandb_init.py", line 485, in init
+    run._set_run_obj(ret.run)
+AttributeError: 'NoneType' object has no attribute 'run'

@@ -70,3 +70,7 @@
 0.5542044460773468, 0.5542044381204366, final,64, 3, 32, 32, 2,0.4, 0.4, 2,concat2, 0.0003, 500, 60, 5, 5, /data/research_data/driver_activity/data/train, metro_h2_pt_dp4_fe32_np_re_vi_6.pth, log, exe_metro_h2_pt_dp4_fe32_re.log
 0.7278481125831604, 0.7278481012658228, 5,64, 3, 128, 128, 2,0.4, 0.4, 2,concat2, 0.0003, 500, 60, 5, 5, /data/research_data/driver_activity/data/train, metro_h2_pt_dp4_fe128_re_vi_5.pth, log, exe_metro_h2_pt_dp4_fe128_re.log
 0.5662709295749664, 0.5662709293904677, final,64, 3, 128, 128, 2,0.4, 0.4, 2,concat2, 0.0003, 500, 60, 5, 5, /data/research_data/driver_activity/data/train, metro_h2_pt_dp4_fe128_re_vi_6.pth, log, exe_metro_h2_pt_dp4_fe128_re.log
+0.38476189970970154, 0.38476190476190475, 1,64, 3, 128, 128, 2,0.4, 0.4, 2,concat2, 0.0003, 500, 60, 5, 5, /scratch/at5cf/ann, metro_h2_pt_dp4_fe128_nma_re_vi_1.pth, log, exe_metro_h2_pt_dp4_fe128_nma_re.log
+0.27047619223594666, 0.2704761904761905, 1,64, 3, 128, 128, 2,0.75, 0.75, 2,concat2, 0.0003, 500, 60, 4, 5, /scratch/at5cf/ann, metro_h2_pt_dp4_fe128_nma_re_vi_1.pth, log, exe_metro_h2_pt_dp4_fe128_nma_re.log
+0.2983802258968353, 0.30056497175141245, 1,64, 3, 256, 256, 2,0.6, 0.6, 2,concat10, 0.0003, 500, 60, 4, 5, /scratch/at5cf/ann, metro_h2_pt_dp4_fe128_nma_re_vi_1.pth, log, exe_metro_h2_pt_dp4_fe128_nma_re.log
+0.558411180973053, 0.5584112149532711, 1,128, 3, 256, 256, 2,0.4, 0.4, 2,concat2, 0.0003, 500, 150, 4, 5, /project/Driver_in_the_loop/ann, metro_h2_pt_dp4_fe128_nma_re_vi_1.pth, log, exe_metro_h2_pt_dp4_fe128_nma_re.log

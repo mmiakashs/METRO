@@ -1,0 +1,12 @@
+  0%|                                                                                                                                                                             | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/683 (0%)]	Loss: 0.663954
+  0%|                                                                                                                                                                             | 0/500 [00:08<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 219, in train_model
+    loss.backward()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/tensor.py", line 198, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/autograd/__init__.py", line 100, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: CUDA out of memory. Tried to allocate 20.00 MiB (GPU 0; 11.17 GiB total capacity; 1.04 GiB already allocated; 16.00 MiB free; 1.07 GiB reserved in total by PyTorch)

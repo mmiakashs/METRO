@@ -1,0 +1,6 @@
+  0%|                                                                                                                                                                        | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/357 (0%)]	Loss: 1.628907
+Train Epoch: 1 [11/357 (3%)]	Loss: 1.510810
+Train Epoch: 1 [21/357 (6%)]	Loss: 1.500795
+Train Epoch: 1 [31/357 (8%)]	Loss: 1.395903
+Train Epoch: 1 [41/357 (11%)]	Loss: 0.990379
+Train Epoch: 1 [51/357 (14%)]	Loss: 0.947817

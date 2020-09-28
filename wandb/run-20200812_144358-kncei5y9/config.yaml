@@ -1,0 +1,145 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.9.4
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.6.10
+batch_size:
+  desc: null
+  value: 5
+cnn_out_channel:
+  desc: null
+  value: 64
+cuda_device_no:
+  desc: null
+  value: 0
+cycle_length:
+  desc: null
+  value: 100
+cycle_mul:
+  desc: null
+  value: 2
+data_file_dir_base_path:
+  desc: null
+  value: /scratch/at5cf/ann
+early_stop_patience:
+  desc: null
+  value: 200
+embed_dir_base_path:
+  desc: null
+  value: /scratch/at5cf/ann/fe_embed
+encoder_num_layers:
+  desc: null
+  value: 2
+epochs:
+  desc: null
+  value: 500
+executed_number_it:
+  desc: null
+  value: -1
+feature_embed_size:
+  desc: null
+  value: 32
+final_log_filename:
+  desc: null
+  value: final_results_hma_utd_mhad.log
+fine_tune:
+  desc: null
+  value: true
+first_time_training:
+  desc: null
+  value: false
+image_height:
+  desc: null
+  value: 224
+image_width:
+  desc: null
+  value: 224
+is_module_attention:
+  desc: null
+  value: true
+is_pretrained_fe:
+  desc: null
+  value: true
+kernel_size:
+  desc: null
+  value: 3
+learning_rate:
+  desc: null
+  value: 0.0003
+log_base_dir:
+  desc: null
+  value: log
+log_filename:
+  desc: null
+  value: exe_metro_h2_pt_dp4_fe128_nma_re.log
+log_model_archi:
+  desc: null
+  value: false
+lower_layer_dropout:
+  desc: null
+  value: 0.5
+lstm_bidirectional:
+  desc: null
+  value: false
+lstm_hidden_size:
+  desc: null
+  value: 32
+mm_embedding_attn_merge_type:
+  desc: null
+  value: concat
+model_checkpoint_filename:
+  desc: null
+  value: null
+model_checkpoint_prefix:
+  desc: null
+  value: metro_h2_pt_dp4_fe128_nma_re
+module_embedding_nhead:
+  desc: null
+  value: 2
+no_gpus:
+  desc: null
+  value: 4
+resume_checkpoint_filename:
+  desc: null
+  value: null
+resume_training:
+  desc: null
+  value: false
+seq_max_len:
+  desc: null
+  value: 60
+strict_load:
+  desc: null
+  value: false
+tb_log:
+  desc: null
+  value: true
+tb_writer_name:
+  desc: null
+  value: tb_runs/metro_h2_pt_dp4_fe128_nma_re
+total_valid_persons:
+  desc: null
+  value: 1
+upper_layer_dropout:
+  desc: null
+  value: 0.5
+valid_person_index:
+  desc: null
+  value: 0
+validation_type:
+  desc: null
+  value: person
+wandb_log_name:
+  desc: null
+  value: metro_h2_pt_dp4_fe128_nma_re
+window_size:
+  desc: null
+  value: 4
+window_stride:
+  desc: null
+  value: 5

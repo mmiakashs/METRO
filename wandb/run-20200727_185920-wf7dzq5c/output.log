@@ -1,0 +1,41 @@
+  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]/scratch/at5cf/ann/checking_speed_stack/20191127_095649_ER.MP4_166_167_ID_12.MP4 True
+/scratch/at5cf/ann/unfasten_seatbelt/20200203_164351_ER.MP4_46_49_ID_19.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20191127_095649_EF.mp4_166_167_ID_12.MP4 True
+/scratch/at5cf/ann/unfasten_seatbelt/20200203_164351_EF.mp4_46_49_ID_19.MP4 True
+/scratch/at5cf/ann/singing/2019_0702_154157_164B.MP4_298_300_ID_6.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200119_155121_ER.mp4_169_170_ID_19.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200119_155121_EF.mp4_169_170_ID_19.MP4 True
+/scratch/at5cf/ann/singing/2019_0702_154157_163A.MP4_298_300_ID_6.MP4 True
+/scratch/at5cf/ann/working_with_phone/20191121_135617_NR.mp4_73_75_ID_15.MP4 True
+/scratch/at5cf/ann/singing/2019_0701_155705_156B.MP4_187_189_ID_6.MP4 True
+torch.Size([2, 512])
+Train Epoch: 1 [1/3412 (0%)]	Loss: 1.539360
+torch.Size([2, 512])
+/scratch/at5cf/ann/working_with_phone/20191121_135617_NF.mp4_73_75_ID_15.MP4 True
+/scratch/at5cf/ann/singing/2019_0701_155705_155A.MP4_187_189_ID_6.MP4 True
+/scratch/at5cf/ann/singing/20191223_160216_NR.mp4_69_71_ID_16.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2019_0612_165526_370B.MP4_167_168_ID_4.MP4 True
+/scratch/at5cf/ann/singing/20191223_160216_NF.mp4_69_71_ID_16.MP4 True
+/scratch/at5cf/ann/checking_mirror_middle/2019_0612_165526_369A.MP4_167_168_ID_4.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20191217_101950_NR.mp4_18_19_ID_18.MP4 True
+torch.Size([2, 512])
+/scratch/at5cf/ann/singing/2019_0702_154157_164B.MP4_48_50_ID_6.MP4 True
+torch.Size([2, 512])
+/scratch/at5cf/ann/checking_speed_stack/20191217_101950_NF.mp4_18_19_ID_18.MP4 True
+/scratch/at5cf/ann/singing/2019_0702_154157_163A.MP4_48_50_ID_6.MP4 True
+/scratch/at5cf/ann/working_with_phone/20200120_123642_ER.mp4_46_48_ID_20.MP4 True
+/scratch/at5cf/ann/eating/20191202_154015_NR.MP4_164_166_ID_11.MP4 True
+/scratch/at5cf/ann/working_with_phone/20200120_123642_EF.mp4_46_48_ID_20.MP4 True
+/scratch/at5cf/ann/eating/20191202_154015_NF.mp4_164_166_ID_11.MP4 True
+/scratch/at5cf/ann/working_with_phone/20191125_113628_NR.mp4_95_97_ID_15.MP4 True
+torch.Size([2, 512])
+/scratch/at5cf/ann/working_with_phone/20200120_123642_ER.mp4_97_99_ID_20.MP4 True
+torch.Size([2, 512])
+/scratch/at5cf/ann/working_with_phone/20191125_113628_NF.mp4_95_97_ID_15.MP4 True
+/scratch/at5cf/ann/working_with_phone/20200120_123642_EF.mp4_97_99_ID_20.MP4 True
+/scratch/at5cf/ann/eating/20191202_154315_NR.MP4_60_62_ID_11.MP4 True
+/scratch/at5cf/ann/working_with_phone/2019_0703_174114_202B.MP4_88_90_ID_6.MP4 True
+/scratch/at5cf/ann/eating/20191202_154315_NF.mp4_60_62_ID_11.MP4 True
+/scratch/at5cf/ann/working_with_phone/2019_0703_174114_201A.MP4_88_90_ID_6.MP4 True
+/scratch/at5cf/ann/checking_speed_stack/20200107_120753_NR.mp4_169_170_ID_20.MP4 True
+torch.Size([2, 512])

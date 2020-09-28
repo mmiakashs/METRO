@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 179, in train_model
+    loss_function = nn.CrossEntropyLoss(weigts=weights)
+TypeError: __init__() got an unexpected keyword argument 'weigts'

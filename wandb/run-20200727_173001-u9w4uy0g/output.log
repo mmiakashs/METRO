@@ -1,0 +1,38 @@
+  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]/scratch/at5cf/ann/center_stack/2019_1004_131741_140B.MP4_124_126_ID_9.MP4 True
+  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/plugins/ffmpeg.py", line 59, in _get_ffmpeg_api
+    import imageio_ffmpeg
+ModuleNotFoundError: No module named 'imageio_ffmpeg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ORIEL/Metro-Master/metro_training.py", line 438, in <module>
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 193, in train_model
+    for batch_idx, batch in enumerate(train_dataloader):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 385, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 181, in __getitem__
+    seq, seq_len = self.get_video_data(idx, modality)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 162, in get_video_data
+    seq_max_len=self.seq_max_len)
+  File "/sfs/lustre/bahamut/scratch/at5cf/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 22, in __init__
+    self.container = imageio.get_reader(path, 'ffmpeg')
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/functions.py", line 186, in get_reader
+    return format.get_reader(request)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/format.py", line 170, in get_reader
+    return self.Reader(self, request)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/core/format.py", line 221, in __init__
+    self._open(**self.request.kwargs.copy())
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/plugins/ffmpeg.py", line 257, in _open
+    self._ffmpeg_api = _get_ffmpeg_api()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/imageio/plugins/ffmpeg.py", line 62, in _get_ffmpeg_api
+    "To use the imageio ffmpeg plugin you need to "
+ImportError: To use the imageio ffmpeg plugin you need to 'pip install imageio-ffmpeg'

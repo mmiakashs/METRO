@@ -1,0 +1,34 @@
+  0%|                                                                                                                                                         | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/141 (0%)]	Loss: 0.263238
+Train Epoch: 1 [11/141 (7%)]	Loss: 0.169978
+Train Epoch: 1 [21/141 (14%)]	Loss: 0.142775
+Train Epoch: 1 [31/141 (21%)]	Loss: 0.196461
+Train Epoch: 1 [41/141 (28%)]	Loss: 0.163073
+Train Epoch: 1 [51/141 (35%)]	Loss: 0.157381
+Train Epoch: 1 [61/141 (43%)]	Loss: 0.171211
+Train Epoch: 1 [71/141 (50%)]	Loss: 0.152563
+Train Epoch: 1 [81/141 (57%)]	Loss: 0.090838
+Train Epoch: 1 [91/141 (64%)]	Loss: 0.155415
+Train Epoch: 1 [101/141 (71%)]	Loss: 0.118407
+Train Epoch: 1 [111/141 (78%)]	Loss: 0.087631
+Train Epoch: 1 [121/141 (85%)]	Loss: 0.093781
+Train Epoch: 1 [131/141 (92%)]	Loss: 0.136782
+Train Epoch: 1 [141/141 (99%)]	Loss: 0.476008
+====> Epoch: 1 Train Avg loss: 0.13518, Acc: 0.44437, F1: 0.44610
+tensor board log 1
+#####> Valid Avg loss: 0.08235, Acc:0.50110, F1: 0.50109
+
+===> Epoch: 1: Training loss decreased (inf --> 0.13518), Acc: (0.00000 --> 0.44437), F1: (0.00000 --> 0.44610).  Saving model ...
+
+model saved to metro_h2_pt_dp4_fe128_nma_re_1597209219.136674.pth_1
+
+
+####> Epoch: 1: validation loss decreased (inf --> 0.08235), Acc: (0.00000 --> 0.50110), F1: (0.00000 --> 0.50109).  Saving model ...
+
+Best valid model save to best_metro_h2_pt_dp4_fe128_nma_re_1597209219.136674.pth_1
+
+
+####> Epoch: 1: validation acc increase (inf --> 0.08235), Acc: (0.00000 --> 0.50110), F1: (0.00000 --> 0.50109).  Saving model ...
+
+Best valid model (acc) save to best_acc_metro_h2_pt_dp4_fe128_nma_re_1597209219.136674.pth_1
+
+  0%|▎                                                                                                                                             | 1/500 [01:31<12:44:04, 91.87s/it]Train Epoch: 2 [1/141 (0%)]	Loss: 0.128929

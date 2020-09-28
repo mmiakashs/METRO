@@ -1,0 +1,24 @@
+  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 194, in train_model
+    for batch_idx, batch in enumerate(train_dataloader):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
+    data = self._next_data()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 856, in _next_data
+    return self._process_data(data)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 881, in _process_data
+    data.reraise()
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/_utils.py", line 395, in reraise
+    raise self.exc_type(msg)
+UnboundLocalError: Caught UnboundLocalError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/worker.py", line 178, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 47, in fetch
+    return self.collate_fn(data)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/dataloaders/uva_dar_dataset.py", line 266, in pad_collate
+    if modality in ["inside","outside"]:
+UnboundLocalError: local variable 'modality' referenced before assignment
+

@@ -1,0 +1,19 @@
+  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "metro_training.py", line 438, in <module>
+    args=args)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 211, in train_model
+    outputs = model(batch)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 153, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/network/UVA_METRO_Model.py", line 120, in forward
+    input[modality + config.modality_seq_len_tag])
+  File "/home/at5cf/.conda/envs/oriel/lib/python3.6/site-packages/torch/nn/modules/module.py", line 550, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/network/Vis_Module.py", line 110, in forward
+    embed = embed.view(input.size(0), input.size(1), -1)
+RuntimeError: shape '[2, 60, -1]' is invalid for input of size 2

@@ -1,0 +1,47 @@
+2020-07-27 02:04:32,144 INFO    MainThread:2368 [wandb_init.py:_log_setup():335] Logging user logs to .\wandb\runs\run-20200727_020432-2vgu7f3n\logs\debug-20200727_020432-2vgu7f3n.log
+2020-07-27 02:04:32,144 INFO    MainThread:2368 [wandb_init.py:_log_setup():336] Logging internal logs to .\wandb\runs\run-20200727_020432-2vgu7f3n\logs\debug-internal-20200727_020432-2vgu7f3n.log
+2020-07-27 02:04:32,145 INFO    MainThread:2368 [wandb_setup.py:_flush():68] setting env: {}
+2020-07-27 02:04:32,145 INFO    MainThread:2368 [wandb_setup.py:_flush():68] multiprocessing start_methods=spawn
+2020-07-27 02:04:32,146 WARNING MainThread:2368 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 02:04:32,146 WARNING MainThread:2368 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 02:04:32,147 WARNING MainThread:2368 [wandb_setup.py:__init__():206] Ignoring settings passed to wandb.setup() which has already been configured.
+2020-07-27 02:04:33,864 INFO    MainThread:2368 [wandb_init.py:init():501] atexit reg
+2020-07-27 02:04:33,865 INFO    MainThread:2368 [wandb_init.py:_redirect():368] redirect: redirect
+2020-07-27 02:04:33,867 INFO    MainThread:2368 [wandb_init.py:_redirect():371] redirect1
+2020-07-27 02:04:33,867 INFO    MainThread:2368 [redirect.py:install():84] install start
+2020-07-27 02:04:33,868 INFO    MainThread:2368 [redirect.py:install():99] install stop
+2020-07-27 02:04:33,869 INFO    MainThread:2368 [redirect.py:install():84] install start
+2020-07-27 02:04:33,870 INFO    MainThread:2368 [redirect.py:install():99] install stop
+2020-07-27 02:04:33,870 INFO    MainThread:2368 [wandb_init.py:_redirect():385] redirect2
+2020-07-27 02:04:33,871 INFO    MainThread:2368 [wandb_watch.py:watch():31] Watching
+2020-07-27 02:04:33,882 INFO    stderr    :2368 [wandb_init.py:_callback():363] callback: stderr, b'\r  0%|          | 0/200 [00:00<?, ?it/s]'
+2020-07-27 02:04:34,153 INFO    stderr    :2368 [wandb_init.py:_callback():363] callback: stderr, b'\r\n'
+2020-07-27 02:04:34,154 INFO    stdout    :2368 [wandb_init.py:_callback():363] callback: stdout, b'except handle'
+2020-07-27 02:04:34,154 INFO    stdout    :2368 [wandb_init.py:_callback():363] callback: stdout, b'\r\n'
+2020-07-27 02:04:34,156 INFO    MainThread:2368 [wandb_init.py:_atexit_cleanup():347] got exitcode: 1
+2020-07-27 02:04:34,156 INFO    stderr    :2368 [wandb_init.py:_callback():363] callback: stderr, b'Traceback (most recent call last):\r\n'
+2020-07-27 02:04:34,157 INFO    stderr    :2368 [wandb_init.py:_callback():363] callback: stderr, b'  File "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\metro_training.py", line 438, in <module>\r\n    args=args)\r\n  File "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\src\\utils\\model_training_utlis_wtensorboard.py", line 193, in train_model\r\n    for batch_idx, batch in enumerate(train_dataloader):\r\n  File "C:\\Program Files\\Python\\lib\\site-packages\\torch\\utils\\data\\dataloader.py", line 345, in __next__\r\n    data = self._next_data()\r\n  File "C:\\Program Files\\Python\\lib\\site-packages\\torch\\utils\\data\\dataloader.py", line 385, in _next_data\r\n    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration\r\n  File "C:\\Program Files\\Python\\lib\\site-packages\\torch\\utils\\data\\_utils\\fetch.py", line 44, in fetch\r\n    data = [self.dataset[idx] for idx in possibly_batched_index]\r\n  File "C:\\Program Files\\Python\\lib\\site-packages\\torch\\utils\\data\\_utils\\fetch.py", line 44, in <listcomp>\r\n    data = [self.dataset[idx] for idx in possibly_batched_index]\r\n  File "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\src\\dataloaders\\uva_dar_dataset.py", line 176, in __getitem__\r\n    seq, seq_len = self.get_video_data(idx, modality)\r\n  File "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\src\\dataloaders\\uva_dar_dataset.py", line 157, in get_video_data\r\n    seq_max_len=self.seq_max_len)\r\n  File "C:\\Users\\Arsalan\\Downloads\\METRO-master\\METRO-master\\src\\dataloaders\\uva_dar_dataset.py", line 23, in __init__\r\n    self.length = self.container.count_frames()\r\nAttributeError: \'Reader\' object has no attribute \'count_frames\'\r\n'
+2020-07-27 02:04:34,159 INFO    MainThread:2368 [wandb_init.py:_atexit_cleanup():349] got exit ret: control {
+  req_resp: true
+}
+exit {
+  exit_code: 1
+}
+
+2020-07-27 02:04:34,160 INFO    MainThread:2368 [wandb_init.py:_restore():409] restore
+2020-07-27 02:04:34,160 INFO    MainThread:2368 [redirect.py:uninstall():102] uninstall start
+2020-07-27 02:04:34,160 INFO    MainThread:2368 [redirect.py:_stop():148] _stop: stdout
+2020-07-27 02:04:34,160 INFO    MainThread:2368 [redirect.py:_stop():154] _stop closed: stdout
+2020-07-27 02:04:34,160 INFO    stdout    :2368 [redirect.py:_pipe_relay():45] relay done saw last write: stdout
+2020-07-27 02:04:34,161 INFO    stdout    :2368 [redirect.py:_pipe_relay():59] relay done done: stdout
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():160] _stop joined: stdout
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():162] _stop rd closed: stdout
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:uninstall():105] uninstall done
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:uninstall():102] uninstall start
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():148] _stop: stderr
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():154] _stop closed: stderr
+2020-07-27 02:04:34,161 INFO    stderr    :2368 [redirect.py:_pipe_relay():45] relay done saw last write: stderr
+2020-07-27 02:04:34,161 INFO    stderr    :2368 [redirect.py:_pipe_relay():59] relay done done: stderr
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():160] _stop joined: stderr
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:_stop():162] _stop rd closed: stderr
+2020-07-27 02:04:34,161 INFO    MainThread:2368 [redirect.py:uninstall():105] uninstall done

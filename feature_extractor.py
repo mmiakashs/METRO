@@ -32,9 +32,9 @@ parser.add_argument("-sfn", "--start_file_num", help="start_file_num",
 parser.add_argument("-cdn", "--cuda_device_no", help="cuda device no",
                     type=int, default=0)
 parser.add_argument("-ddbp", "--data_dir_base_path", help="data_dir_base_path",
-                    default='/data/research_data/driver_activity/data/train')
+                    default='/project/Driver_in_the_loop/all_data/')
 parser.add_argument("-edbp", "--embed_dir_base_path", help="data_dir_base_path",
-                    default='/data/research_data/driver_activity/fe_embed')
+                    default='/project/Driver_in_the_loop/all_data/fe_embed')
 args = parser.parse_args()
 data_dir_base_path = args.data_dir_base_path
 embed_dir_base_path = args.embed_dir_base_path
@@ -53,8 +53,7 @@ device = torch.device(f'cuda:{args.cuda_device_no}')
 feature_extractor.to(device)
 feature_extractor.eval()
 # print(feature_extractor)
-activity_types = ['change_lane', 'checking_mirror_middle', 'checking_speed_stack',
-                  'checking_mirror_driver', 'checking_mirror_passenger']
+activity_types = ["drinking"]#"checking_mirror_middle","checking_mirror_driver","checking_mirror_passenger","eating","checking_speed_stack","center_stack","looking_at_center_stack","dancing","singing", "working_with_phone","looking_at_phone","looking_at_watch","unfasten_seatbelt","fasten_seatbelt","drinking"]
 for activity_type in activity_types:
     data_dir_path = f'{data_dir_base_path}/{activity_type}'
     total_parsing = 0

@@ -1,8 +1,7 @@
-python3 ../metro_training.py \
+python3 metro_training.py \
 -tvp 1 \
--lr 0.0003 \
+-lr 0.005 \
 -ng 1 \
--cdn 1 \
 -sml 60 \
 -bs 2 \
 -ep 500 \
@@ -10,8 +9,8 @@ python3 ../metro_training.py \
 -fes 128 \
 -lhs 128 \
 -menh 2 \
--lld 0.4 \
--uld 0.4 \
+-lld 0.7 \
+-uld 0.2 \
 -cout 64 \
 -mmattn_type 'concat' \
 -logbd 'log' \

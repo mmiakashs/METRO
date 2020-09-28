@@ -1,0 +1,2679 @@
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595632540.735818.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595632662.273967.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595632743.51248.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595792343.789408.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595808428.000087.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/data/research_data/driver_activity/data/train, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595808481.34215.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595808533.472295.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595808567.659831.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595808842.268072.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595809211.414188.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595835383.437802.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595835616.667569.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595835634.110443.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595835931.084942.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595836100.420744.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595836489.185025.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: /data/research_data/driver_activity/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595836621.711215.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595836701.256629.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595836811.066862.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837097.232706.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837280.564608.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837310.572952.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837389.519801.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837420.170483.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837568.34409.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837586.457264.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837590.787293.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837626.210024.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837669.518995.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837700.637021.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837717.100766.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837744.811005.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837762.706689.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837767.819642.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837787.188942.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837837.575943.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837870.226775.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595837975.679915.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595838569.936163.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595838976.27063.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595839829.930055.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595840375.906671.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595840631.955765.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595840702.491234.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595840752.249253.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595840777.960297.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841001.2814.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841093.923291.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841117.905722.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841174.319729.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841255.385019.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841415.720699.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841617.797562.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595841912.425453.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595842537.399282.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595842725.481597.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595842983.985034.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595843445.791325.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595843510.607835.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595843527.726778.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595843830.036857.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595843981.818093.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844006.838005.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 0train person_ids: []validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844061.790817.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844079.152376.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844116.777533.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844258.70246.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844474.237013.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595844864.987674.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595845127.265421.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595845189.96098.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595845399.302133.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595845416.341274.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595881577.778254.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595882150.140666.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595882220.528589.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595882297.720832.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.4.0
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data, modalities:['inside', 'outside']
+embed_dir_base: C:/Users/Arsalan/Downloads/METRO-master/METRO-master/data/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595898386.617814.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595898554.395237.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595898681.23119.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595899291.24481.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595899790.467192.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595899828.160834.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595900040.299837.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595900319.287912.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595900928.805302.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595902584.240275.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595902777.09912.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:10
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595903633.562741.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 683
+valid_dataloader len: 117
+test_dataloader len: 118
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 683
+valid dataset len: 1169, valid dataloader len: 117
+valid dataset len: 1174, test dataloader len: 117
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595903970.154128.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:sum
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595904703.979306.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:concat
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595905149.486513.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:concat
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595905265.222291.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 5, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:concat
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1595905330.601923.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1
+total_activities: 14train person_ids: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
+
+	Start execution training validation it 1 
+
+train_dataloader len: 3412
+valid_dataloader len: 585
+test_dataloader len: 587
+train performers ids: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+valid performers ids: [2]
+test performers ids: [1]
+train dataset len: 6823, train dataloader len: 3412
+valid dataset len: 1169, valid dataloader len: 585
+valid dataset len: 1174, test dataloader len: 585
+validation type: person, valid_person_index:0
+window size: 4, window_stride: 5, seq_max_len:200
+is_pretrained_fe:False,early_stop_patience: 50, cycle_length:100, cycle_mul: 2
+image_width: 224, image_height: 224
+kernel size: 3, lr:0.0003, epoch:200, batch_size:2
+cnn_out_channel: 16, feature_embed_size:256
+lstm_hidden_size: 256
+lower_layer_dropout:0.2, upper_layer_dropout: 0.2
+module_embedding_nhead:4
+is_module_attention:False,mm_embedding_attention_type:concat
+encoder_num_layers: 2, resume training:False
+data_file_dir_base_path:/scratch/at5cf/ann, modalities:['inside', 'outside']
+embed_dir_base: /scratch/at5cf/ann/fe_embed
+modalities:['inside', 'outside']
+executed_number_its: -1
+log_filename: exe_utd_mhad.log
+model_checkpoint_prefix:utd_mhad
+model_checkpoint_filename:utd_mhad_1596186021.296057.pth, resume_checkpoint_filename:None
+log_model_archi: False
+tb_log: False
+tb_writer_name: tb_runs/tb_utd_mhad_hma, wandb_log_name: wandb_log_default
+pytorch version: 1.5.1
+GPU Availability: cuda:0, no_gpus: 1

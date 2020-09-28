@@ -9,12 +9,12 @@ class Vis_Module(nn.Module):
     def __init__(self, feature_embed_size, lstm_hidden_size,
                  fine_tune=False, kernel_size=3, cnn_in_channel=3,
                  batch_first=True, window_size=1, window_stride=1, n_head=4,
-                 dropout=0.1, activation="relu", encoder_num_layers=2,
+                 dropout=0.6, activation="relu", encoder_num_layers=2,
                  pool_fe_kernel=None, pool_fe_stride=None, pool_fe_type='max',
                  lstm_bidirectional=False, lstm_dropout=0.1,
                  adaptive_pool_tar_squze_mul=None,
                  attention_type='mm',
-                 is_attention=False,
+                 is_attention=True,
                  is_pretrained_fe = False):
 
         super(Vis_Module, self).__init__()
@@ -84,7 +84,7 @@ class Vis_Module(nn.Module):
 
         self.self_attn_weight = None
         self.module_fe_relu = nn.ReLU()
-        self.module_fe_dropout = nn.Dropout(p=0)
+        self.module_fe_dropout = nn.Dropout(p=self.dropout)
 
     def set_parameter_requires_grad(self, model, fine_tune):
         for param in model.parameters():
@@ -108,6 +108,7 @@ class Vis_Module(nn.Module):
             x = input.view(-1, input.size(-3), input.size(-2), input.size(-1)).contiguous()
             embed = self.fe_pool(x)
             embed = embed.view(input.size(0), input.size(1), -1)
+            print(f'###### type {type(embed)}')
             embed = self.fe_fc(embed)
 
         if(self.pool_fe_kernel):
