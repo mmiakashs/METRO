@@ -1,5 +1,0 @@
-  0%|                                                                                                                                                                             | 0/200 [00:00<?, ?it/s]torch.Size([2, 512])
-Train Epoch: 1 [1/3412 (0%)]	Loss: 1.885635
-torch.Size([2, 512])
-torch.Size([2, 512])
-torch.Size([2, 512])

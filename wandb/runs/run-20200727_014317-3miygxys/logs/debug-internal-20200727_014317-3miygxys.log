@@ -1,9 +1,0 @@
-2020-07-27 01:43:18,336 DEBUG   MainThread:22632 [util.py:is_cygwin_git():314] Failed checking if running in CYGWIN due to: FileNotFoundError(2, 'The system cannot find the file specified', None, 2, None)
-2020-07-27 01:43:18,337 DEBUG   MainThread:22632 [git_repo.py:repo():28] git repository is invalid
-2020-07-27 01:43:18,339 DEBUG   MainThread:22632 [connectionpool.py:_new_conn():824] Starting new HTTPS connection (1): pypi.org
-2020-07-27 01:43:18,933 DEBUG   MainThread:22632 [connectionpool.py:_make_request():396] https://pypi.org:443 "GET /pypi/wandb-ng/json HTTP/1.1" 200 11346
-2020-07-27 01:43:18,943 INFO    wandb_write:22632 [datastore.py:open_for_write():76] open: .\wandb\runs\run-20200727_014317-3miygxys\run-20200727_014317-3miygxys.wandb
-2020-07-27 01:43:18,963 DEBUG   wandb_send:22632 [connectionpool.py:_new_conn():824] Starting new HTTPS connection (1): api.wandb.ai
-2020-07-27 01:43:19,083 DEBUG   wandb_send:22632 [connectionpool.py:_make_request():396] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 401 None
-2020-07-27 01:43:19,087 ERROR   wandb_send:22632 [internal_api.py:execute():118] 401 response executing GraphQL.
-2020-07-27 01:43:19,089 ERROR   wandb_send:22632 [internal_api.py:execute():119] {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}

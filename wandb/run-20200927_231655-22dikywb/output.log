@@ -1,7 +1,0 @@
-  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]  0%|                                                                                                                                         | 0/500 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "metro_training.py", line 438, in <module>
-    args=args)
-  File "/sfs/qumulo/qproject/Driver_in_the_loop/ORIEL/Metro-Master/src/utils/model_training_utlis_wtensorboard.py", line 200, in train_model
-    batch[modality] = batch[modality].to(device)
-KeyError: 'gaze'

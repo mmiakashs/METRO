@@ -1,635 +1,0 @@
-  0%|                                                                                                                                                                        | 0/500 [00:00<?, ?it/s]Train Epoch: 1 [1/32 (0%)]	Loss: 1.501188
-Train Epoch: 1 [11/32 (31%)]	Loss: 1.999775
-Train Epoch: 1 [21/32 (62%)]	Loss: 1.603530
-Train Epoch: 1 [31/32 (94%)]	Loss: 1.673899
-====> Epoch: 1 Train Avg loss: 1.39150, Acc: 0.12500, F1: 0.12500
-tensor board log 1
-#####> Valid Avg loss: 1.53672, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 1: Training loss decreased (inf --> 1.39150), Acc: (0.00000 --> 0.12500), F1: (0.00000 --> 0.12500).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-
-####> Epoch: 1: validation loss decreased (inf --> 1.53672), Acc: (0.00000 --> 0.00000), F1: (0.00000 --> 0.00000).  Saving model ...
-
-Best valid model save to best_metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  0%|▎                                                                                                                                                               | 1/500 [00:01<16:32,  1.99s/it]Train Epoch: 2 [1/32 (0%)]	Loss: 1.310502
-Train Epoch: 2 [11/32 (31%)]	Loss: 1.597622
-Train Epoch: 2 [21/32 (62%)]	Loss: 0.964908
-Train Epoch: 2 [31/32 (94%)]	Loss: 0.695449
-====> Epoch: 2 Train Avg loss: 1.29477, Acc: 0.23438, F1: 0.23438
-tensor board log 2
-#####> Valid Avg loss: 1.67903, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 2: Training loss decreased (1.39150 --> 1.29477), Acc: (0.12500 --> 0.23438), F1: (0.12500 --> 0.23438).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  0%|▋                                                                                                                                                               | 2/500 [00:03<14:57,  1.80s/it]Train Epoch: 3 [1/32 (0%)]	Loss: 0.559809
-Train Epoch: 3 [11/32 (31%)]	Loss: 0.890881
-Train Epoch: 3 [21/32 (62%)]	Loss: 0.831049
-Train Epoch: 3 [31/32 (94%)]	Loss: 2.040694
-====> Epoch: 3 Train Avg loss: 1.17893, Acc: 0.23438, F1: 0.23438
-tensor board log 3
-#####> Valid Avg loss: 1.64106, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 3: Training loss decreased (1.29477 --> 1.17893), Acc: (0.23438 --> 0.23438), F1: (0.23438 --> 0.23438).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  1%|▉                                                                                                                                                               | 3/500 [00:04<13:52,  1.68s/it]Train Epoch: 4 [1/32 (0%)]	Loss: 1.224251
-Train Epoch: 4 [11/32 (31%)]	Loss: 1.406113
-Train Epoch: 4 [21/32 (62%)]	Loss: 1.100207
-Train Epoch: 4 [31/32 (94%)]	Loss: 1.529939
-====> Epoch: 4 Train Avg loss: 1.19482, Acc: 0.20312, F1: 0.20312
-tensor board log 4
-#####> Valid Avg loss: 1.69931, Acc:0.00000, F1: 0.00000
-
-  1%|█▎                                                                                                                                                              | 4/500 [00:05<11:55,  1.44s/it]Train Epoch: 5 [1/32 (0%)]	Loss: 0.970401
-Train Epoch: 5 [11/32 (31%)]	Loss: 0.838653
-Train Epoch: 5 [21/32 (62%)]	Loss: 1.344860
-Train Epoch: 5 [31/32 (94%)]	Loss: 1.004432
-====> Epoch: 5 Train Avg loss: 1.24495, Acc: 0.10938, F1: 0.10938
-tensor board log 5
-#####> Valid Avg loss: 1.70927, Acc:0.00000, F1: 0.00000
-
-  1%|█▌                                                                                                                                                              | 5/500 [00:06<10:34,  1.28s/it]Train Epoch: 6 [1/32 (0%)]	Loss: 1.385622
-Train Epoch: 6 [11/32 (31%)]	Loss: 0.718683
-Train Epoch: 6 [21/32 (62%)]	Loss: 1.128086
-Train Epoch: 6 [31/32 (94%)]	Loss: 0.987696
-====> Epoch: 6 Train Avg loss: 1.07222, Acc: 0.20312, F1: 0.20312
-tensor board log 6
-#####> Valid Avg loss: 1.70845, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 6: Training loss decreased (1.17893 --> 1.07222), Acc: (0.23438 --> 0.20312), F1: (0.23438 --> 0.20312).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  1%|█▉                                                                                                                                                              | 6/500 [00:08<11:38,  1.41s/it]Train Epoch: 7 [1/32 (0%)]	Loss: 1.266746
-Train Epoch: 7 [11/32 (31%)]	Loss: 1.260706
-Train Epoch: 7 [21/32 (62%)]	Loss: 1.294646
-Train Epoch: 7 [31/32 (94%)]	Loss: 1.329368
-====> Epoch: 7 Train Avg loss: 1.26356, Acc: 0.12500, F1: 0.12500
-tensor board log 7
-#####> Valid Avg loss: 1.69636, Acc:0.00000, F1: 0.00000
-
-  1%|██▏                                                                                                                                                             | 7/500 [00:09<10:22,  1.26s/it]Train Epoch: 8 [1/32 (0%)]	Loss: 0.642058
-Train Epoch: 8 [11/32 (31%)]	Loss: 1.113846
-Train Epoch: 8 [21/32 (62%)]	Loss: 0.744519
-Train Epoch: 8 [31/32 (94%)]	Loss: 1.096736
-====> Epoch: 8 Train Avg loss: 1.11404, Acc: 0.26562, F1: 0.26562
-tensor board log 8
-#####> Valid Avg loss: 1.65516, Acc:0.00000, F1: 0.00000
-
-  2%|██▌                                                                                                                                                             | 8/500 [00:10<09:28,  1.15s/it]Train Epoch: 9 [1/32 (0%)]	Loss: 0.631153
-Train Epoch: 9 [11/32 (31%)]	Loss: 0.747901
-Train Epoch: 9 [21/32 (62%)]	Loss: 1.314816
-Train Epoch: 9 [31/32 (94%)]	Loss: 1.093012
-====> Epoch: 9 Train Avg loss: 1.27415, Acc: 0.15625, F1: 0.15625
-tensor board log 9
-#####> Valid Avg loss: 1.72795, Acc:0.00000, F1: 0.00000
-
-  2%|██▉                                                                                                                                                             | 9/500 [00:10<08:50,  1.08s/it]Train Epoch: 10 [1/32 (0%)]	Loss: 1.148677
-Train Epoch: 10 [11/32 (31%)]	Loss: 0.657812
-Train Epoch: 10 [21/32 (62%)]	Loss: 1.174985
-Train Epoch: 10 [31/32 (94%)]	Loss: 0.839991
-====> Epoch: 10 Train Avg loss: 1.21008, Acc: 0.20312, F1: 0.20312
-tensor board log 10
-#####> Valid Avg loss: 1.64025, Acc:0.00000, F1: 0.00000
-
-  2%|███▏                                                                                                                                                           | 10/500 [00:11<08:23,  1.03s/it]Train Epoch: 11 [1/32 (0%)]	Loss: 0.965348
-Train Epoch: 11 [11/32 (31%)]	Loss: 1.161515
-Train Epoch: 11 [21/32 (62%)]	Loss: 1.053068
-Train Epoch: 11 [31/32 (94%)]	Loss: 1.807671
-====> Epoch: 11 Train Avg loss: 1.18321, Acc: 0.20312, F1: 0.20312
-tensor board log 11
-#####> Valid Avg loss: 1.69456, Acc:0.00000, F1: 0.00000
-
-  2%|███▍                                                                                                                                                           | 11/500 [00:12<08:03,  1.01it/s]Train Epoch: 12 [1/32 (0%)]	Loss: 0.586802
-Train Epoch: 12 [11/32 (31%)]	Loss: 1.296325
-Train Epoch: 12 [21/32 (62%)]	Loss: 0.968116
-Train Epoch: 12 [31/32 (94%)]	Loss: 1.467559
-====> Epoch: 12 Train Avg loss: 1.18074, Acc: 0.14062, F1: 0.14062
-tensor board log 12
-#####> Valid Avg loss: 1.65130, Acc:0.00000, F1: 0.00000
-
-  2%|███▊                                                                                                                                                           | 12/500 [00:13<07:50,  1.04it/s]Train Epoch: 13 [1/32 (0%)]	Loss: 1.159488
-Train Epoch: 13 [11/32 (31%)]	Loss: 1.599876
-Train Epoch: 13 [21/32 (62%)]	Loss: 1.494386
-Train Epoch: 13 [31/32 (94%)]	Loss: 1.860098
-====> Epoch: 13 Train Avg loss: 1.22863, Acc: 0.21875, F1: 0.21875
-tensor board log 13
-#####> Valid Avg loss: 1.65279, Acc:0.00000, F1: 0.00000
-
-  3%|████▏                                                                                                                                                          | 13/500 [00:14<07:39,  1.06it/s]Train Epoch: 14 [1/32 (0%)]	Loss: 1.042547
-Train Epoch: 14 [11/32 (31%)]	Loss: 1.191613
-Train Epoch: 14 [21/32 (62%)]	Loss: 0.808305
-Train Epoch: 14 [31/32 (94%)]	Loss: 2.024600
-====> Epoch: 14 Train Avg loss: 1.24687, Acc: 0.17188, F1: 0.17188
-tensor board log 14
-#####> Valid Avg loss: 1.68197, Acc:0.00000, F1: 0.00000
-
-  3%|████▍                                                                                                                                                          | 14/500 [00:15<07:32,  1.07it/s]Train Epoch: 15 [1/32 (0%)]	Loss: 1.085515
-Train Epoch: 15 [11/32 (31%)]	Loss: 0.885319
-Train Epoch: 15 [21/32 (62%)]	Loss: 1.476241
-Train Epoch: 15 [31/32 (94%)]	Loss: 0.896403
-====> Epoch: 15 Train Avg loss: 1.19611, Acc: 0.31250, F1: 0.31250
-tensor board log 15
-#####> Valid Avg loss: 1.64229, Acc:0.00000, F1: 0.00000
-
-  3%|████▊                                                                                                                                                          | 15/500 [00:16<07:27,  1.08it/s]Train Epoch: 16 [1/32 (0%)]	Loss: 0.898001
-Train Epoch: 16 [11/32 (31%)]	Loss: 1.248555
-Train Epoch: 16 [21/32 (62%)]	Loss: 1.199187
-Train Epoch: 16 [31/32 (94%)]	Loss: 0.909483
-====> Epoch: 16 Train Avg loss: 1.13198, Acc: 0.18750, F1: 0.18750
-tensor board log 16
-#####> Valid Avg loss: 1.64042, Acc:0.00000, F1: 0.00000
-
-  3%|█████                                                                                                                                                          | 16/500 [00:17<07:24,  1.09it/s]Train Epoch: 17 [1/32 (0%)]	Loss: 0.926775
-Train Epoch: 17 [11/32 (31%)]	Loss: 0.975774
-Train Epoch: 17 [21/32 (62%)]	Loss: 1.512139
-Train Epoch: 17 [31/32 (94%)]	Loss: 1.243875
-====> Epoch: 17 Train Avg loss: 1.13998, Acc: 0.29688, F1: 0.29688
-tensor board log 17
-#####> Valid Avg loss: 1.65703, Acc:0.00000, F1: 0.00000
-
-  3%|█████▍                                                                                                                                                         | 17/500 [00:18<07:21,  1.10it/s]Train Epoch: 18 [1/32 (0%)]	Loss: 1.543517
-Train Epoch: 18 [11/32 (31%)]	Loss: 1.020544
-Train Epoch: 18 [21/32 (62%)]	Loss: 1.104624
-Train Epoch: 18 [31/32 (94%)]	Loss: 1.332908
-====> Epoch: 18 Train Avg loss: 1.13265, Acc: 0.21875, F1: 0.21875
-tensor board log 18
-#####> Valid Avg loss: 1.67841, Acc:0.00000, F1: 0.00000
-
-  4%|█████▋                                                                                                                                                         | 18/500 [00:19<07:20,  1.09it/s]Train Epoch: 19 [1/32 (0%)]	Loss: 0.869931
-Train Epoch: 19 [11/32 (31%)]	Loss: 2.022079
-Train Epoch: 19 [21/32 (62%)]	Loss: 0.835448
-Train Epoch: 19 [31/32 (94%)]	Loss: 1.673173
-====> Epoch: 19 Train Avg loss: 1.18437, Acc: 0.20312, F1: 0.20312
-tensor board log 19
-#####> Valid Avg loss: 1.66400, Acc:0.00000, F1: 0.00000
-
-  4%|██████                                                                                                                                                         | 19/500 [00:20<07:18,  1.10it/s]Train Epoch: 20 [1/32 (0%)]	Loss: 1.406363
-Train Epoch: 20 [11/32 (31%)]	Loss: 1.305056
-Train Epoch: 20 [21/32 (62%)]	Loss: 1.457788
-Train Epoch: 20 [31/32 (94%)]	Loss: 0.966840
-====> Epoch: 20 Train Avg loss: 1.22889, Acc: 0.23438, F1: 0.23438
-tensor board log 20
-#####> Valid Avg loss: 1.67031, Acc:0.00000, F1: 0.00000
-
-  4%|██████▎                                                                                                                                                        | 20/500 [00:20<07:15,  1.10it/s]Train Epoch: 21 [1/32 (0%)]	Loss: 1.332474
-Train Epoch: 21 [11/32 (31%)]	Loss: 0.608087
-Train Epoch: 21 [21/32 (62%)]	Loss: 1.530531
-Train Epoch: 21 [31/32 (94%)]	Loss: 1.290399
-====> Epoch: 21 Train Avg loss: 1.21744, Acc: 0.20312, F1: 0.20312
-tensor board log 21
-#####> Valid Avg loss: 1.69524, Acc:0.00000, F1: 0.00000
-
-  4%|██████▋                                                                                                                                                        | 21/500 [00:21<07:14,  1.10it/s]Train Epoch: 22 [1/32 (0%)]	Loss: 1.355492
-Train Epoch: 22 [11/32 (31%)]	Loss: 1.163320
-Train Epoch: 22 [21/32 (62%)]	Loss: 1.027462
-Train Epoch: 22 [31/32 (94%)]	Loss: 1.345659
-====> Epoch: 22 Train Avg loss: 1.05146, Acc: 0.25000, F1: 0.25000
-tensor board log 22
-#####> Valid Avg loss: 1.66217, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 22: Training loss decreased (1.07222 --> 1.05146), Acc: (0.20312 --> 0.25000), F1: (0.20312 --> 0.25000).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  4%|██████▉                                                                                                                                                        | 22/500 [00:23<08:20,  1.05s/it]Train Epoch: 23 [1/32 (0%)]	Loss: 0.815875
-Train Epoch: 23 [11/32 (31%)]	Loss: 1.626343
-Train Epoch: 23 [21/32 (62%)]	Loss: 0.779516
-Train Epoch: 23 [31/32 (94%)]	Loss: 1.180174
-====> Epoch: 23 Train Avg loss: 1.08136, Acc: 0.28125, F1: 0.28125
-tensor board log 23
-#####> Valid Avg loss: 1.65228, Acc:0.00000, F1: 0.00000
-
-  5%|███████▎                                                                                                                                                       | 23/500 [00:24<07:59,  1.00s/it]Train Epoch: 24 [1/32 (0%)]	Loss: 1.365869
-Train Epoch: 24 [11/32 (31%)]	Loss: 0.546285
-Train Epoch: 24 [21/32 (62%)]	Loss: 0.807279
-Train Epoch: 24 [31/32 (94%)]	Loss: 0.832292
-====> Epoch: 24 Train Avg loss: 1.07600, Acc: 0.26562, F1: 0.26562
-tensor board log 24
-#####> Valid Avg loss: 1.65765, Acc:0.00000, F1: 0.00000
-
-  5%|███████▋                                                                                                                                                       | 24/500 [00:24<07:41,  1.03it/s]Train Epoch: 25 [1/32 (0%)]	Loss: 0.423893
-Train Epoch: 25 [11/32 (31%)]	Loss: 0.845011
-Train Epoch: 25 [21/32 (62%)]	Loss: 1.129079
-Train Epoch: 25 [31/32 (94%)]	Loss: 1.397730
-====> Epoch: 25 Train Avg loss: 1.13589, Acc: 0.34375, F1: 0.34375
-tensor board log 25
-#####> Valid Avg loss: 1.68194, Acc:0.00000, F1: 0.00000
-
-  5%|███████▉                                                                                                                                                       | 25/500 [00:25<07:29,  1.06it/s]Train Epoch: 26 [1/32 (0%)]	Loss: 1.186698
-Train Epoch: 26 [11/32 (31%)]	Loss: 0.841282
-Train Epoch: 26 [21/32 (62%)]	Loss: 1.113736
-Train Epoch: 26 [31/32 (94%)]	Loss: 1.635687
-====> Epoch: 26 Train Avg loss: 1.18490, Acc: 0.23438, F1: 0.23438
-tensor board log 26
-#####> Valid Avg loss: 1.66610, Acc:0.00000, F1: 0.00000
-
-  5%|████████▎                                                                                                                                                      | 26/500 [00:26<07:20,  1.08it/s]Train Epoch: 27 [1/32 (0%)]	Loss: 0.879723
-Train Epoch: 27 [11/32 (31%)]	Loss: 2.061446
-Train Epoch: 27 [21/32 (62%)]	Loss: 1.368438
-Train Epoch: 27 [31/32 (94%)]	Loss: 1.379275
-====> Epoch: 27 Train Avg loss: 1.13619, Acc: 0.25000, F1: 0.25000
-tensor board log 27
-#####> Valid Avg loss: 1.68919, Acc:0.00000, F1: 0.00000
-
-  5%|████████▌                                                                                                                                                      | 27/500 [00:27<07:14,  1.09it/s]Train Epoch: 28 [1/32 (0%)]	Loss: 1.066773
-Train Epoch: 28 [11/32 (31%)]	Loss: 1.390987
-Train Epoch: 28 [21/32 (62%)]	Loss: 2.099512
-Train Epoch: 28 [31/32 (94%)]	Loss: 1.005181
-====> Epoch: 28 Train Avg loss: 1.12258, Acc: 0.29688, F1: 0.29688
-tensor board log 28
-#####> Valid Avg loss: 1.66715, Acc:0.00000, F1: 0.00000
-
-  6%|████████▉                                                                                                                                                      | 28/500 [00:28<07:11,  1.09it/s]Train Epoch: 29 [1/32 (0%)]	Loss: 1.034153
-Train Epoch: 29 [11/32 (31%)]	Loss: 0.982769
-Train Epoch: 29 [21/32 (62%)]	Loss: 0.970806
-Train Epoch: 29 [31/32 (94%)]	Loss: 1.096043
-====> Epoch: 29 Train Avg loss: 1.07957, Acc: 0.25000, F1: 0.25000
-tensor board log 29
-#####> Valid Avg loss: 1.66921, Acc:0.00000, F1: 0.00000
-
-  6%|█████████▏                                                                                                                                                     | 29/500 [00:29<07:09,  1.10it/s]Train Epoch: 30 [1/32 (0%)]	Loss: 0.432913
-Train Epoch: 30 [11/32 (31%)]	Loss: 0.996752
-Train Epoch: 30 [21/32 (62%)]	Loss: 0.787552
-Train Epoch: 30 [31/32 (94%)]	Loss: 0.847208
-====> Epoch: 30 Train Avg loss: 1.02739, Acc: 0.28125, F1: 0.28125
-tensor board log 30
-#####> Valid Avg loss: 1.63070, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 30: Training loss decreased (1.05146 --> 1.02739), Acc: (0.25000 --> 0.28125), F1: (0.25000 --> 0.28125).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
-  6%|█████████▌                                                                                                                                                     | 30/500 [00:30<08:10,  1.04s/it]Train Epoch: 31 [1/32 (0%)]	Loss: 1.100611
-Train Epoch: 31 [11/32 (31%)]	Loss: 0.813798
-Train Epoch: 31 [21/32 (62%)]	Loss: 0.570677
-Train Epoch: 31 [31/32 (94%)]	Loss: 1.389752
-====> Epoch: 31 Train Avg loss: 1.12874, Acc: 0.21875, F1: 0.21875
-tensor board log 31
-#####> Valid Avg loss: 1.66912, Acc:0.00000, F1: 0.00000
-
-  6%|█████████▊                                                                                                                                                     | 31/500 [00:31<07:50,  1.00s/it]Train Epoch: 32 [1/32 (0%)]	Loss: 0.611153
-Train Epoch: 32 [11/32 (31%)]	Loss: 1.560027
-Train Epoch: 32 [21/32 (62%)]	Loss: 1.144878
-Train Epoch: 32 [31/32 (94%)]	Loss: 1.930329
-====> Epoch: 32 Train Avg loss: 1.16482, Acc: 0.18750, F1: 0.18750
-tensor board log 32
-#####> Valid Avg loss: 1.69042, Acc:0.00000, F1: 0.00000
-
-  6%|██████████▏                                                                                                                                                    | 32/500 [00:32<07:39,  1.02it/s]Train Epoch: 33 [1/32 (0%)]	Loss: 1.306358
-Train Epoch: 33 [11/32 (31%)]	Loss: 0.641495
-Train Epoch: 33 [21/32 (62%)]	Loss: 0.770178
-Train Epoch: 33 [31/32 (94%)]	Loss: 1.319436
-====> Epoch: 33 Train Avg loss: 1.06455, Acc: 0.31250, F1: 0.31250
-tensor board log 33
-#####> Valid Avg loss: 1.64524, Acc:0.00000, F1: 0.00000
-
-  7%|██████████▍                                                                                                                                                    | 33/500 [00:33<07:28,  1.04it/s]Train Epoch: 34 [1/32 (0%)]	Loss: 0.603942
-Train Epoch: 34 [11/32 (31%)]	Loss: 1.207033
-Train Epoch: 34 [21/32 (62%)]	Loss: 1.018863
-Train Epoch: 34 [31/32 (94%)]	Loss: 0.816923
-====> Epoch: 34 Train Avg loss: 1.13179, Acc: 0.29688, F1: 0.29688
-tensor board log 34
-#####> Valid Avg loss: 1.68687, Acc:0.00000, F1: 0.00000
-
-  7%|██████████▊                                                                                                                                                    | 34/500 [00:34<07:19,  1.06it/s]Train Epoch: 35 [1/32 (0%)]	Loss: 1.168694
-Train Epoch: 35 [11/32 (31%)]	Loss: 1.045561
-Train Epoch: 35 [21/32 (62%)]	Loss: 1.398617
-Train Epoch: 35 [31/32 (94%)]	Loss: 1.084040
-====> Epoch: 35 Train Avg loss: 1.13057, Acc: 0.25000, F1: 0.25000
-tensor board log 35
-#####> Valid Avg loss: 1.69839, Acc:0.00000, F1: 0.00000
-
-  7%|███████████▏                                                                                                                                                   | 35/500 [00:35<07:14,  1.07it/s]Train Epoch: 36 [1/32 (0%)]	Loss: 1.278717
-Train Epoch: 36 [11/32 (31%)]	Loss: 0.995956
-Train Epoch: 36 [21/32 (62%)]	Loss: 1.251406
-Train Epoch: 36 [31/32 (94%)]	Loss: 2.253805
-====> Epoch: 36 Train Avg loss: 1.15107, Acc: 0.32812, F1: 0.32812
-tensor board log 36
-#####> Valid Avg loss: 1.64705, Acc:0.00000, F1: 0.00000
-
-  7%|███████████▍                                                                                                                                                   | 36/500 [00:36<07:10,  1.08it/s]Train Epoch: 37 [1/32 (0%)]	Loss: 1.391563
-Train Epoch: 37 [11/32 (31%)]	Loss: 1.402323
-Train Epoch: 37 [21/32 (62%)]	Loss: 1.475980
-Train Epoch: 37 [31/32 (94%)]	Loss: 0.930953
-====> Epoch: 37 Train Avg loss: 1.15539, Acc: 0.28125, F1: 0.28125
-tensor board log 37
-#####> Valid Avg loss: 1.63894, Acc:0.00000, F1: 0.00000
-
-  7%|███████████▊                                                                                                                                                   | 37/500 [00:37<07:07,  1.08it/s]Train Epoch: 38 [1/32 (0%)]	Loss: 0.851524
-Train Epoch: 38 [11/32 (31%)]	Loss: 0.952757
-Train Epoch: 38 [21/32 (62%)]	Loss: 1.263829
-Train Epoch: 38 [31/32 (94%)]	Loss: 1.519673
-====> Epoch: 38 Train Avg loss: 1.05831, Acc: 0.29688, F1: 0.29688
-tensor board log 38
-#####> Valid Avg loss: 1.65814, Acc:0.00000, F1: 0.00000
-
-  8%|████████████                                                                                                                                                   | 38/500 [00:38<07:05,  1.09it/s]Train Epoch: 39 [1/32 (0%)]	Loss: 0.695918
-Train Epoch: 39 [11/32 (31%)]	Loss: 1.563063
-Train Epoch: 39 [21/32 (62%)]	Loss: 0.606706
-Train Epoch: 39 [31/32 (94%)]	Loss: 1.565861
-====> Epoch: 39 Train Avg loss: 1.14260, Acc: 0.21875, F1: 0.21875
-tensor board log 39
-#####> Valid Avg loss: 1.68114, Acc:0.00000, F1: 0.00000
-
-  8%|████████████▍                                                                                                                                                  | 39/500 [00:39<07:04,  1.09it/s]Train Epoch: 40 [1/32 (0%)]	Loss: 1.041828
-Train Epoch: 40 [11/32 (31%)]	Loss: 1.233635
-Train Epoch: 40 [21/32 (62%)]	Loss: 1.030445
-Train Epoch: 40 [31/32 (94%)]	Loss: 1.091879
-====> Epoch: 40 Train Avg loss: 1.09390, Acc: 0.21875, F1: 0.21875
-tensor board log 40
-#####> Valid Avg loss: 1.67593, Acc:0.00000, F1: 0.00000
-
-  8%|████████████▋                                                                                                                                                  | 40/500 [00:39<07:03,  1.09it/s]Train Epoch: 41 [1/32 (0%)]	Loss: 1.242136
-Train Epoch: 41 [11/32 (31%)]	Loss: 1.614405
-Train Epoch: 41 [21/32 (62%)]	Loss: 0.733201
-Train Epoch: 41 [31/32 (94%)]	Loss: 1.590845
-====> Epoch: 41 Train Avg loss: 1.21427, Acc: 0.14062, F1: 0.14062
-tensor board log 41
-#####> Valid Avg loss: 1.65294, Acc:0.00000, F1: 0.00000
-
-  8%|█████████████                                                                                                                                                  | 41/500 [00:40<07:02,  1.09it/s]Train Epoch: 42 [1/32 (0%)]	Loss: 0.945289
-Train Epoch: 42 [11/32 (31%)]	Loss: 1.580626
-Train Epoch: 42 [21/32 (62%)]	Loss: 1.183728
-Train Epoch: 42 [31/32 (94%)]	Loss: 0.778244
-====> Epoch: 42 Train Avg loss: 1.09232, Acc: 0.29688, F1: 0.29688
-tensor board log 42
-#####> Valid Avg loss: 1.67982, Acc:0.00000, F1: 0.00000
-
-  8%|█████████████▎                                                                                                                                                 | 42/500 [00:41<07:00,  1.09it/s]Train Epoch: 43 [1/32 (0%)]	Loss: 0.367996
-Train Epoch: 43 [11/32 (31%)]	Loss: 1.682342
-Train Epoch: 43 [21/32 (62%)]	Loss: 1.076518
-Train Epoch: 43 [31/32 (94%)]	Loss: 1.355257
-====> Epoch: 43 Train Avg loss: 1.03872, Acc: 0.26562, F1: 0.26562
-tensor board log 43
-#####> Valid Avg loss: 1.64050, Acc:0.00000, F1: 0.00000
-
-  9%|█████████████▋                                                                                                                                                 | 43/500 [00:42<06:59,  1.09it/s]Train Epoch: 44 [1/32 (0%)]	Loss: 1.198209
-Train Epoch: 44 [11/32 (31%)]	Loss: 1.152271
-Train Epoch: 44 [21/32 (62%)]	Loss: 0.988000
-Train Epoch: 44 [31/32 (94%)]	Loss: 0.865358
-====> Epoch: 44 Train Avg loss: 1.08689, Acc: 0.23438, F1: 0.23438
-tensor board log 44
-#####> Valid Avg loss: 1.68947, Acc:0.00000, F1: 0.00000
-
-  9%|█████████████▉                                                                                                                                                 | 44/500 [00:43<06:57,  1.09it/s]Train Epoch: 45 [1/32 (0%)]	Loss: 0.897916
-Train Epoch: 45 [11/32 (31%)]	Loss: 1.523845
-Train Epoch: 45 [21/32 (62%)]	Loss: 0.990166
-Train Epoch: 45 [31/32 (94%)]	Loss: 1.213003
-====> Epoch: 45 Train Avg loss: 1.14293, Acc: 0.21875, F1: 0.21875
-tensor board log 45
-#####> Valid Avg loss: 1.67791, Acc:0.00000, F1: 0.00000
-
-  9%|██████████████▎                                                                                                                                                | 45/500 [00:44<06:58,  1.09it/s]Train Epoch: 46 [1/32 (0%)]	Loss: 0.763429
-Train Epoch: 46 [11/32 (31%)]	Loss: 1.666265
-Train Epoch: 46 [21/32 (62%)]	Loss: 0.948092
-Train Epoch: 46 [31/32 (94%)]	Loss: 0.827878
-====> Epoch: 46 Train Avg loss: 1.17081, Acc: 0.31250, F1: 0.31250
-tensor board log 46
-#####> Valid Avg loss: 1.66544, Acc:0.00000, F1: 0.00000
-
-  9%|██████████████▋                                                                                                                                                | 46/500 [00:45<06:57,  1.09it/s]Train Epoch: 47 [1/32 (0%)]	Loss: 1.085714
-Train Epoch: 47 [11/32 (31%)]	Loss: 1.955905
-Train Epoch: 47 [21/32 (62%)]	Loss: 0.942337
-Train Epoch: 47 [31/32 (94%)]	Loss: 0.662178
-====> Epoch: 47 Train Avg loss: 1.20551, Acc: 0.26562, F1: 0.26562
-tensor board log 47
-#####> Valid Avg loss: 1.66628, Acc:0.00000, F1: 0.00000
-
-  9%|██████████████▉                                                                                                                                                | 47/500 [00:46<06:55,  1.09it/s]Train Epoch: 48 [1/32 (0%)]	Loss: 0.445919
-Train Epoch: 48 [11/32 (31%)]	Loss: 0.866985
-Train Epoch: 48 [21/32 (62%)]	Loss: 1.126981
-Train Epoch: 48 [31/32 (94%)]	Loss: 0.863635
-====> Epoch: 48 Train Avg loss: 1.05115, Acc: 0.29688, F1: 0.29688
-tensor board log 48
-#####> Valid Avg loss: 1.67038, Acc:0.00000, F1: 0.00000
-
- 10%|███████████████▎                                                                                                                                               | 48/500 [00:47<06:53,  1.09it/s]Train Epoch: 49 [1/32 (0%)]	Loss: 0.819609
-Train Epoch: 49 [11/32 (31%)]	Loss: 0.974229
-Train Epoch: 49 [21/32 (62%)]	Loss: 1.423125
-Train Epoch: 49 [31/32 (94%)]	Loss: 0.604471
-====> Epoch: 49 Train Avg loss: 1.06438, Acc: 0.29688, F1: 0.29688
-tensor board log 49
-#####> Valid Avg loss: 1.66549, Acc:0.00000, F1: 0.00000
-
- 10%|███████████████▌                                                                                                                                               | 49/500 [00:48<06:52,  1.09it/s]Train Epoch: 50 [1/32 (0%)]	Loss: 0.794106
-Train Epoch: 50 [11/32 (31%)]	Loss: 1.589963
-Train Epoch: 50 [21/32 (62%)]	Loss: 0.787407
-Train Epoch: 50 [31/32 (94%)]	Loss: 1.164259
-====> Epoch: 50 Train Avg loss: 1.12794, Acc: 0.29688, F1: 0.29688
-tensor board log 50
-#####> Valid Avg loss: 1.68535, Acc:0.00000, F1: 0.00000
-
- 10%|███████████████▉                                                                                                                                               | 50/500 [00:49<06:51,  1.09it/s]Train Epoch: 51 [1/32 (0%)]	Loss: 1.092108
-Train Epoch: 51 [11/32 (31%)]	Loss: 1.225551
-Train Epoch: 51 [21/32 (62%)]	Loss: 0.639777
-Train Epoch: 51 [31/32 (94%)]	Loss: 0.644323
-====> Epoch: 51 Train Avg loss: 1.05405, Acc: 0.31250, F1: 0.31250
-tensor board log 51
-#####> Valid Avg loss: 1.67175, Acc:0.00000, F1: 0.00000
-
- 10%|████████████████▏                                                                                                                                              | 51/500 [00:50<06:50,  1.09it/s]Train Epoch: 52 [1/32 (0%)]	Loss: 0.467586
-Train Epoch: 52 [11/32 (31%)]	Loss: 1.477356
-Train Epoch: 52 [21/32 (62%)]	Loss: 0.642923
-Train Epoch: 52 [31/32 (94%)]	Loss: 0.701683
-====> Epoch: 52 Train Avg loss: 1.04048, Acc: 0.34375, F1: 0.34375
-tensor board log 52
-#####> Valid Avg loss: 1.65920, Acc:0.00000, F1: 0.00000
-
- 10%|████████████████▌                                                                                                                                              | 52/500 [00:50<06:49,  1.09it/s]Train Epoch: 53 [1/32 (0%)]	Loss: 0.992241
-Train Epoch: 53 [11/32 (31%)]	Loss: 1.252468
-Train Epoch: 53 [21/32 (62%)]	Loss: 0.476269
-Train Epoch: 53 [31/32 (94%)]	Loss: 1.086135
-====> Epoch: 53 Train Avg loss: 1.09376, Acc: 0.25000, F1: 0.25000
-tensor board log 53
-#####> Valid Avg loss: 1.66420, Acc:0.00000, F1: 0.00000
-
- 11%|████████████████▊                                                                                                                                              | 53/500 [00:51<06:48,  1.09it/s]Train Epoch: 54 [1/32 (0%)]	Loss: 0.835275
-Train Epoch: 54 [11/32 (31%)]	Loss: 0.655731
-Train Epoch: 54 [21/32 (62%)]	Loss: 1.383711
-Train Epoch: 54 [31/32 (94%)]	Loss: 1.173372
-====> Epoch: 54 Train Avg loss: 1.10482, Acc: 0.26562, F1: 0.26562
-tensor board log 54
-#####> Valid Avg loss: 1.65157, Acc:0.00000, F1: 0.00000
-
- 11%|█████████████████▏                                                                                                                                             | 54/500 [00:52<06:47,  1.10it/s]Train Epoch: 55 [1/32 (0%)]	Loss: 0.485551
-Train Epoch: 55 [11/32 (31%)]	Loss: 1.205287
-Train Epoch: 55 [21/32 (62%)]	Loss: 0.739739
-Train Epoch: 55 [31/32 (94%)]	Loss: 0.809541
-====> Epoch: 55 Train Avg loss: 1.08885, Acc: 0.18750, F1: 0.18750
-tensor board log 55
-#####> Valid Avg loss: 1.66761, Acc:0.00000, F1: 0.00000
-
- 11%|█████████████████▍                                                                                                                                             | 55/500 [00:53<06:45,  1.10it/s]Train Epoch: 56 [1/32 (0%)]	Loss: 0.931431
-Train Epoch: 56 [11/32 (31%)]	Loss: 1.769331
-Train Epoch: 56 [21/32 (62%)]	Loss: 0.887689
-Train Epoch: 56 [31/32 (94%)]	Loss: 1.267826
-====> Epoch: 56 Train Avg loss: 1.13113, Acc: 0.25000, F1: 0.25000
-tensor board log 56
-#####> Valid Avg loss: 1.67861, Acc:0.00000, F1: 0.00000
-
- 11%|█████████████████▊                                                                                                                                             | 56/500 [00:54<06:44,  1.10it/s]Train Epoch: 57 [1/32 (0%)]	Loss: 0.933161
-Train Epoch: 57 [11/32 (31%)]	Loss: 1.316443
-Train Epoch: 57 [21/32 (62%)]	Loss: 0.993683
-Train Epoch: 57 [31/32 (94%)]	Loss: 0.921093
-====> Epoch: 57 Train Avg loss: 1.10607, Acc: 0.21875, F1: 0.21875
-tensor board log 57
-#####> Valid Avg loss: 1.67594, Acc:0.00000, F1: 0.00000
-
- 11%|██████████████████▏                                                                                                                                            | 57/500 [00:55<06:44,  1.10it/s]Train Epoch: 58 [1/32 (0%)]	Loss: 0.989457
-Train Epoch: 58 [11/32 (31%)]	Loss: 0.648907
-Train Epoch: 58 [21/32 (62%)]	Loss: 1.235996
-Train Epoch: 58 [31/32 (94%)]	Loss: 0.934395
-====> Epoch: 58 Train Avg loss: 1.16298, Acc: 0.25000, F1: 0.25000
-tensor board log 58
-#####> Valid Avg loss: 1.64215, Acc:0.00000, F1: 0.00000
-
- 12%|██████████████████▍                                                                                                                                            | 58/500 [00:56<06:43,  1.09it/s]Train Epoch: 59 [1/32 (0%)]	Loss: 0.864580
-Train Epoch: 59 [11/32 (31%)]	Loss: 0.972735
-Train Epoch: 59 [21/32 (62%)]	Loss: 0.851838
-Train Epoch: 59 [31/32 (94%)]	Loss: 1.130066
-====> Epoch: 59 Train Avg loss: 1.18653, Acc: 0.23438, F1: 0.23438
-tensor board log 59
-#####> Valid Avg loss: 1.66145, Acc:0.00000, F1: 0.00000
-
- 12%|██████████████████▊                                                                                                                                            | 59/500 [00:57<07:10,  1.03it/s]Train Epoch: 60 [1/32 (0%)]	Loss: 1.209851
-Train Epoch: 60 [11/32 (31%)]	Loss: 1.106896
-Train Epoch: 60 [21/32 (62%)]	Loss: 1.297262
-Train Epoch: 60 [31/32 (94%)]	Loss: 1.610753
-====> Epoch: 60 Train Avg loss: 1.11578, Acc: 0.32812, F1: 0.32812
-tensor board log 60
-#####> Valid Avg loss: 1.64387, Acc:0.00000, F1: 0.00000
-
- 12%|███████████████████                                                                                                                                            | 60/500 [00:58<07:01,  1.04it/s]Train Epoch: 61 [1/32 (0%)]	Loss: 1.068555
-Train Epoch: 61 [11/32 (31%)]	Loss: 0.611007
-Train Epoch: 61 [21/32 (62%)]	Loss: 1.198878
-Train Epoch: 61 [31/32 (94%)]	Loss: 1.385116
-====> Epoch: 61 Train Avg loss: 0.96038, Acc: 0.25000, F1: 0.25000
-tensor board log 61
-#####> Valid Avg loss: 1.62436, Acc:0.00000, F1: 0.00000
-
-===> Epoch: 61: Training loss decreased (1.02739 --> 0.96038), Acc: (0.28125 --> 0.25000), F1: (0.28125 --> 0.25000).  Saving model ...
-
-model saved to metro_h2_pt_dp4_fe128_nma_re_1600147526.541391.pth_1
-
- 12%|███████████████████▍                                                                                                                                           | 61/500 [00:59<07:51,  1.07s/it]Train Epoch: 62 [1/32 (0%)]	Loss: 1.247171
-Train Epoch: 62 [11/32 (31%)]	Loss: 0.726619
-Train Epoch: 62 [21/32 (62%)]	Loss: 2.126380
-Train Epoch: 62 [31/32 (94%)]	Loss: 0.605563
-====> Epoch: 62 Train Avg loss: 1.20391, Acc: 0.28125, F1: 0.28125
-tensor board log 62
-#####> Valid Avg loss: 1.69198, Acc:0.00000, F1: 0.00000
-
- 12%|███████████████████▋                                                                                                                                           | 62/500 [01:00<07:27,  1.02s/it]Train Epoch: 63 [1/32 (0%)]	Loss: 1.561080
-Train Epoch: 63 [11/32 (31%)]	Loss: 0.636887
-Train Epoch: 63 [21/32 (62%)]	Loss: 1.318888
-Train Epoch: 63 [31/32 (94%)]	Loss: 0.700802
-====> Epoch: 63 Train Avg loss: 1.11358, Acc: 0.23438, F1: 0.23438
-tensor board log 63
-#####> Valid Avg loss: 1.65104, Acc:0.00000, F1: 0.00000
-
- 13%|████████████████████                                                                                                                                           | 63/500 [01:01<07:13,  1.01it/s]Train Epoch: 64 [1/32 (0%)]	Loss: 1.290315
-Train Epoch: 64 [11/32 (31%)]	Loss: 2.162045
-Train Epoch: 64 [21/32 (62%)]	Loss: 0.934413
-Train Epoch: 64 [31/32 (94%)]	Loss: 1.437971
-====> Epoch: 64 Train Avg loss: 1.17324, Acc: 0.26562, F1: 0.26562
-tensor board log 64
-#####> Valid Avg loss: 1.64802, Acc:0.00000, F1: 0.00000
-
- 13%|████████████████████▎                                                                                                                                          | 64/500 [01:02<07:02,  1.03it/s]Train Epoch: 65 [1/32 (0%)]	Loss: 0.981660
-Train Epoch: 65 [11/32 (31%)]	Loss: 0.897751
-Train Epoch: 65 [21/32 (62%)]	Loss: 1.253221
-Train Epoch: 65 [31/32 (94%)]	Loss: 0.913073
-====> Epoch: 65 Train Avg loss: 1.14601, Acc: 0.25000, F1: 0.25000
-tensor board log 65
-#####> Valid Avg loss: 1.68914, Acc:0.00000, F1: 0.00000
-
- 13%|████████████████████▋                                                                                                                                          | 65/500 [01:03<06:54,  1.05it/s]Train Epoch: 66 [1/32 (0%)]	Loss: 1.266644
-Train Epoch: 66 [11/32 (31%)]	Loss: 1.042037
-Train Epoch: 66 [21/32 (62%)]	Loss: 0.404115
-Train Epoch: 66 [31/32 (94%)]	Loss: 1.077661
-====> Epoch: 66 Train Avg loss: 1.08603, Acc: 0.17188, F1: 0.17188
-tensor board log 66
-#####> Valid Avg loss: 1.66188, Acc:0.00000, F1: 0.00000
-
- 13%|████████████████████▉                                                                                                                                          | 66/500 [01:04<06:47,  1.06it/s]Train Epoch: 67 [1/32 (0%)]	Loss: 1.137151
-Train Epoch: 67 [11/32 (31%)]	Loss: 0.985341
-Train Epoch: 67 [21/32 (62%)]	Loss: 1.230808
-Train Epoch: 67 [31/32 (94%)]	Loss: 1.358437
-====> Epoch: 67 Train Avg loss: 1.12306, Acc: 0.12500, F1: 0.12500
-tensor board log 67
-#####> Valid Avg loss: 1.70813, Acc:0.00000, F1: 0.00000
-
- 13%|█████████████████████▎                                                                                                                                         | 67/500 [01:05<06:42,  1.08it/s]Train Epoch: 68 [1/32 (0%)]	Loss: 1.429125
-Train Epoch: 68 [11/32 (31%)]	Loss: 0.491022
-Train Epoch: 68 [21/32 (62%)]	Loss: 0.704110
-Train Epoch: 68 [31/32 (94%)]	Loss: 0.674209
-====> Epoch: 68 Train Avg loss: 1.13317, Acc: 0.28125, F1: 0.28125
-tensor board log 68
-#####> Valid Avg loss: 1.65194, Acc:0.00000, F1: 0.00000
-
- 14%|█████████████████████▌                                                                                                                                         | 68/500 [01:06<06:39,  1.08it/s]Train Epoch: 69 [1/32 (0%)]	Loss: 0.675542
-Train Epoch: 69 [11/32 (31%)]	Loss: 0.620330
-Train Epoch: 69 [21/32 (62%)]	Loss: 1.393489
-Train Epoch: 69 [31/32 (94%)]	Loss: 1.516724
-====> Epoch: 69 Train Avg loss: 0.99954, Acc: 0.31250, F1: 0.31250
-tensor board log 69
-#####> Valid Avg loss: 1.69545, Acc:0.00000, F1: 0.00000
-
- 14%|█████████████████████▉                                                                                                                                         | 69/500 [01:07<06:35,  1.09it/s]Train Epoch: 70 [1/32 (0%)]	Loss: 1.208576
-Train Epoch: 70 [11/32 (31%)]	Loss: 0.708810
-Train Epoch: 70 [21/32 (62%)]	Loss: 2.000692
-Train Epoch: 70 [31/32 (94%)]	Loss: 1.214030
-====> Epoch: 70 Train Avg loss: 1.13333, Acc: 0.26562, F1: 0.26562
-tensor board log 70
-#####> Valid Avg loss: 1.68299, Acc:0.00000, F1: 0.00000
-
- 14%|██████████████████████▎                                                                                                                                        | 70/500 [01:08<06:34,  1.09it/s]Train Epoch: 71 [1/32 (0%)]	Loss: 0.998987
-Train Epoch: 71 [11/32 (31%)]	Loss: 0.683625
-Train Epoch: 71 [21/32 (62%)]	Loss: 1.391277
-Train Epoch: 71 [31/32 (94%)]	Loss: 1.153273
-====> Epoch: 71 Train Avg loss: 1.09301, Acc: 0.32812, F1: 0.32812
-tensor board log 71
-#####> Valid Avg loss: 1.67799, Acc:0.00000, F1: 0.00000
-
- 14%|██████████████████████▌                                                                                                                                        | 71/500 [01:08<06:31,  1.10it/s]Train Epoch: 72 [1/32 (0%)]	Loss: 0.869787
-Train Epoch: 72 [11/32 (31%)]	Loss: 1.443115
-Train Epoch: 72 [21/32 (62%)]	Loss: 1.850409
-Train Epoch: 72 [31/32 (94%)]	Loss: 1.197463
-====> Epoch: 72 Train Avg loss: 1.09749, Acc: 0.20312, F1: 0.20312
-tensor board log 72
-#####> Valid Avg loss: 1.68728, Acc:0.00000, F1: 0.00000
-
- 14%|██████████████████████▉                                                                                                                                        | 72/500 [01:09<06:30,  1.10it/s]Train Epoch: 73 [1/32 (0%)]	Loss: 1.247618
-Train Epoch: 73 [11/32 (31%)]	Loss: 0.949673
-Train Epoch: 73 [21/32 (62%)]	Loss: 0.958607
-Train Epoch: 73 [31/32 (94%)]	Loss: 1.081601
-====> Epoch: 73 Train Avg loss: 1.02880, Acc: 0.31250, F1: 0.31250
-tensor board log 73
-#####> Valid Avg loss: 1.74023, Acc:0.00000, F1: 0.00000
-
- 15%|███████████████████████▏                                                                                                                                       | 73/500 [01:10<06:29,  1.10it/s]Train Epoch: 74 [1/32 (0%)]	Loss: 0.496105
-Train Epoch: 74 [11/32 (31%)]	Loss: 0.913669
-Train Epoch: 74 [21/32 (62%)]	Loss: 0.872929
-Train Epoch: 74 [31/32 (94%)]	Loss: 0.882605
-====> Epoch: 74 Train Avg loss: 1.20325, Acc: 0.28125, F1: 0.28125
-tensor board log 74
-#####> Valid Avg loss: 1.67402, Acc:0.00000, F1: 0.00000
-
- 15%|███████████████████████▌                                                                                                                                       | 74/500 [01:11<06:27,  1.10it/s]Train Epoch: 75 [1/32 (0%)]	Loss: 0.448669
-Train Epoch: 75 [11/32 (31%)]	Loss: 1.065415
-Train Epoch: 75 [21/32 (62%)]	Loss: 1.074993
-Train Epoch: 75 [31/32 (94%)]	Loss: 0.469662
-====> Epoch: 75 Train Avg loss: 1.08069, Acc: 0.25000, F1: 0.25000
-tensor board log 75
-#####> Valid Avg loss: 1.65314, Acc:0.00000, F1: 0.00000
-
- 15%|███████████████████████▊                                                                                                                                       | 75/500 [01:12<06:27,  1.10it/s]Train Epoch: 76 [1/32 (0%)]	Loss: 1.237800
-Train Epoch: 76 [11/32 (31%)]	Loss: 0.630850
