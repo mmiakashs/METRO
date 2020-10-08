@@ -84,7 +84,7 @@ class Vis_Module(nn.Module):
 
         self.self_attn_weight = None
         self.module_fe_relu = nn.ReLU()
-        self.module_fe_dropout = nn.Dropout(p=0)
+        self.module_fe_dropout = nn.Dropout(p=self.dropout)
 
     def set_parameter_requires_grad(self, model, fine_tune):
         for param in model.parameters():

@@ -73,6 +73,7 @@ class UVA_METRO_Model(nn.Module):
             self.modality_embedding_size = 2 * self.modality_embedding_size
 
         self.mm_embeddings_bn =nn.BatchNorm1d(self.num_modality)
+        self.mm_embeddings_dropout = nn.Dropout(p=self.dropout)
 
         if (self.mm_embedding_attn_merge_type == 'sum'):
             if (self.lstm_bidirectional):
@@ -124,7 +125,7 @@ class UVA_METRO_Model(nn.Module):
             mm_embeddings.append(mm_module_output[tm_modality])
 
         mm_embeddings = torch.stack(mm_embeddings, dim=1).contiguous()
-        mm_embeddings = F.relu(self.mm_embeddings_bn(mm_embeddings))
+        mm_embeddings = self.mm_embeddings_dropout(F.relu(self.mm_embeddings_bn(mm_embeddings)))
         nbatches = mm_embeddings.shape[0]
 
         if(self.mm_embedding_attn_merge_type=='sum'):
@@ -134,10 +135,10 @@ class UVA_METRO_Model(nn.Module):
 
         if (self.lstm_bidirectional):
             output = self.fc_output1(mattn_output)
-            output = self.fc_output2(output)
-            output = self.fc_output3(output)
+            # output = self.fc_output2(output)
+            # output = self.fc_output3(output)
         else:
-            output = self.fc_output1(mattn_output)
-            output = self.fc_output2(output)
+            output = F.relu(self.fc_output1(mattn_output))
+            # output = self.fc_output2(output)
 
         return F.log_softmax(output, dim=1)
