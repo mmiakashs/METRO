@@ -1,0 +1,125 @@
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214251.444928.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214313.625288.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214355.432902.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214390.549718.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214437.780152.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214534.667437.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214567.734788.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214606.336011.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214687.145178.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214746.20932.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214820.536992.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214929.364462.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 1train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602214993.195057.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 0train subject: []model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215024.149754.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 0train subject: []model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215114.032488.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 0train subject: []model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215219.005514.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 0train subject: []model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215333.310267.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215399.492717.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215801.677157.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602215887.808033.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216052.330006.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216099.20049.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216170.728513.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216428.170483.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216622.476671.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216684.20916.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216756.837752.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602216878.423068.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602217015.782437.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602217082.088266.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]model_checkpoint_prefix:mhad
+model_checkpoint_filename:mhad_1602220363.937669.pth, resume_checkpoint_filename:None
+pytorch version: 1.3.1
+GPU Availability: cpu, gpus: 0
+total_activities: 15train subject: [ 1  2  3  4  5  6  7  8  9 10 11 12 14 13 15 18 17 16 19 20 21]
