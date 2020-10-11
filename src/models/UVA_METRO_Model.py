@@ -1,5 +1,7 @@
-import pytorch_lightning as pl
+import torch
 import torch.nn as nn
+import torch.nn.functional as F
+import pytorch_lightning as pl
 from torch.utils.data import random_split
 from torch.utils.data import DataLoader
 from pytorch_lightning.overrides.data_parallel import (
@@ -48,20 +50,20 @@ class UVA_METRO_Model(pl.LightningModule):
                             'f1_scores': 'max',
                             'precision': 'max',
                             'recall_scores': 'max'}
-        train_metrics_save_ckpt_mode = {'epoch_train_loss': True}
-        valid_metrics_save_ckpt_mode = {'epoch_valid_loss': True,
-                                    'epoch_valid_accuracy': True,
-                                    'epoch_valid_f1_scores': True}
+        train_metrics_save_ckpt_mode = {'train_loss': True}
+        valid_metrics_save_ckpt_mode = {'valid_loss': True,
+                                    'valid_accuracy': True,
+                                    'valid_f1_scores': True}
         train_metrics_mode_dict = {}
         valid_metrics_mode_dict = {}
         train_metrics = []
         valid_metrics = []
 
         for metric in metrics_mode_dict:
-            train_metrics.append(f'epoch_train_{metric}')
-            valid_metrics.append(f'epoch_valid_{metric}')
-            train_metrics_mode_dict[f'epoch_train_{metric}'] = metrics_mode_dict[metric]
-            valid_metrics_mode_dict[f'epoch_valid_{metric}'] = metrics_mode_dict[metric]
+            train_metrics.append(f'train_{metric}')
+            valid_metrics.append(f'valid_{metric}')
+            train_metrics_mode_dict[f'train_{metric}'] = metrics_mode_dict[metric]
+            valid_metrics_mode_dict[f'valid_{metric}'] = metrics_mode_dict[metric]
         
         self.txt_logger = TextLogger(self.hparams.log_base_dir, 
                                     self.hparams.log_filename,
@@ -95,8 +97,6 @@ class UVA_METRO_Model(pl.LightningModule):
     def training_step(self, batch, batch_idx, optimizer_idx=0):
 
         labels = batch['label']
-        is_noisy = batch['is_noisy']
-        noisy_modality = batch['noisy_modality']
         batch_size = batch['label'].size(0)
             
         output = self(batch)
@@ -127,6 +127,7 @@ class UVA_METRO_Model(pl.LightningModule):
         is_dp_module = isinstance(self, (LightningDistributedDataParallel,
                                          LightningDataParallel))
         model = self.module if is_dp_module else self
+        print(results)
         self.train_model_checkpointing.update_metric_save_ckpt(results, model)
         return full_results
 
@@ -154,8 +155,6 @@ class UVA_METRO_Model(pl.LightningModule):
     def eval_step(self, batch, batch_idx):
 
         labels = batch['label']
-        is_noisy = batch['is_noisy']
-        noisy_modality = batch['noisy_modality']
         batch_size = batch['label'].size(0)
 
         output = self(batch)
@@ -259,24 +258,21 @@ class UVA_METRO_Model(pl.LightningModule):
                                             restricted_ids = self.hparams.train_restricted_ids,
                                             restricted_labels = self.hparams.train_restricted_labels,
                                             allowed_ids=self.hparams.train_allowed_ids,
-                                            allowed_labels=self.hparams.train_allowed_labels,
-                                            noisy_sampler = train_noisy_sampler)
+                                            allowed_labels=self.hparams.train_allowed_labels)
 
             self.valid_dataset = self.Dataset(hparams=self.hparams,
                                             dataset_type='valid',
                                             restricted_ids = self.hparams.valid_restricted_ids,
                                             restricted_labels = self.hparams.valid_restricted_labels,
                                             allowed_ids=self.hparams.valid_allowed_ids,
-                                            allowed_labels=self.hparams.valid_allowed_labels,
-                                            noisy_sampler = valid_noisy_sampler)
+                                            allowed_labels=self.hparams.valid_allowed_labels)
 
             self.test_dataset = self.Dataset(hparams=self.hparams,
                                             dataset_type='test',
                                             restricted_ids = self.hparams.test_restricted_ids,
                                             restricted_labels = self.hparams.test_restricted_labels,
                                             allowed_ids=self.hparams.test_allowed_ids,
-                                            allowed_labels=self.hparams.test_allowed_labels,
-                                            noisy_sampler = test_noisy_sampler)
+                                            allowed_labels=self.hparams.test_allowed_labels)
         
         elif (self.hparams.data_split_type=='cross_subject' or self.hparams.data_split_type=='fixed_subject') and self.hparams.share_train_dataset:
             self.train_dataset = self.Dataset(hparams=self.hparams,
@@ -284,8 +280,7 @@ class UVA_METRO_Model(pl.LightningModule):
                                             restricted_ids = self.hparams.train_restricted_ids,
                                             restricted_labels = self.hparams.train_restricted_labels,
                                             allowed_ids=self.hparams.train_allowed_ids,
-                                            allowed_labels=self.hparams.train_allowed_labels,
-                                            noisy_sampler = train_noisy_sampler)
+                                            allowed_labels=self.hparams.train_allowed_labels)
 
             dataset_len = len(self.train_dataset)
             self.hparams.dataset_len = dataset_len
@@ -301,8 +296,7 @@ class UVA_METRO_Model(pl.LightningModule):
                                             restricted_ids = self.hparams.test_restricted_ids,
                                             restricted_labels = self.hparams.test_restricted_labels,
                                             allowed_ids=self.hparams.test_allowed_ids,
-                                            allowed_labels=self.hparams.test_allowed_labels,
-                                            noisy_sampler = test_noisy_sampler)
+                                            allowed_labels=self.hparams.test_allowed_labels)
         
         # self.txt_logger.log(f'train subject ids: {sorted(self.train_dataset.data[self.hparams.train_element_tag].unique())}\n')
         # self.txt_logger.log(f'valid subject ids: {sorted(self.valid_dataset.data[self.hparams.train_element_tag].unique())}\n')

@@ -48,6 +48,8 @@ class DatasetPropGen:
         modality_prop[config.gaze_modality_tag]['is_rand_starting'] = False
         modality_prop[config.gaze_modality_tag]['seq_max_len'] = None
 
+        
+
         for modality in hparams.modalities:
             
             modality_prop[modality]['cnn_in_channel'] = 3

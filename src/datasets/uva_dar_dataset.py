@@ -39,7 +39,7 @@ class UVA_DAR_Dataset(Dataset):
         self.num_activity_types, self.activity_name_id, self.activity_id_name = self.get_activity_name_id(self.activity_names)
 
     def load_data(self):
-        print(self.base_dir+'/'+self.dataset_filename)
+
         self.data = pd.read_csv(self.base_dir+'/'+self.dataset_filename)
         if self.modality_prop['is_pretrained_fe']:
             base_dir = self.embed_dir_base
@@ -55,8 +55,8 @@ class UVA_DAR_Dataset(Dataset):
                 
                 if (not os.path.exists(f'{base_dir}/{row[config.activity_tag]}/{tm_filename}')):
                     self.data.at[i, config.activity_tag] = 'MISSING'
-                    print(row[modality])
-                    print(f'{base_dir}/{row[config.activity_tag]}/{tm_filename}')
+                    # print(row[modality])
+                    # print(f'{base_dir}/{row[config.activity_tag]}/{tm_filename}')
                     print(f'missing {modality} file:',row[modality], row[config.activity_tag])
         
         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
@@ -77,7 +77,7 @@ class UVA_DAR_Dataset(Dataset):
     
     def get_video_data(self, idx, modality):
         if self.modality_prop[modality]['is_pretrained_fe']:
-            filename = f'{self.data.loc[idx, modality][:-4]}.pt'
+            filename = f'{self.data.loc[idx, modality]}.pt'
             activity = self.data.loc[idx, config.activity_tag]
             data_filepath = f'{self.embed_dir_base}/{activity}/{filename}'
             seq = torch.load(data_filepath, map_location='cpu').detach()

@@ -4,7 +4,7 @@ python3 ../train_model.py \
 --share_train_dataset \
 --valid_split_pct 0.10 \
 --modalities 'inside,outside' \
---exe_mode 'dl_test' \
+--exe_mode 'train' \
 --val_percent_check 1 \
 --num_sanity_val_steps 0 \
 --train_percent_check 1 \
@@ -23,6 +23,7 @@ python3 ../train_model.py \
 -cimg_w 224 \
 -cimg_h 224 \
 -sml 60 \
+-ipf \
 --skip_frame_len 1 \
 --pt_vis_encoder_archi_type 'resnet18' \
 --modality_encoder_type 'mm_attn_encoder' \

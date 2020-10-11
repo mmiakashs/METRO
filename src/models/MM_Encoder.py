@@ -57,8 +57,6 @@ class MM_Encoder(nn.Module):
 
             else:
                 tm_is_pretrained_fe = self.is_pretrained_fe
-                if (modality == config.utd_mhad_depth_tag):
-                    tm_is_pretrained_fe = False
                 self.mm_module[modality] = Vis_Module(
                     cnn_in_channel=self.modality_prop[modality]['cnn_in_channel'],
                     feature_embed_size=self.modality_prop[modality]['feature_embed_size'],
@@ -173,10 +171,7 @@ class MM_Encoder(nn.Module):
         # nn.init.constant_(self.fc_output2.bias, 0.)
     
     def is_sensor_modality(self, modality):
-        if self.hparams.dataset_name=='utd_mhad':
-            if modality== config.utd_mhad_skeletons_tag or modality== config.utd_mhad_inertial_tag:
-                return True
-        elif self.hparams.dataset_name=='mmact':
-            if (config.cam_mod_tag not in modality):
+        if self.hparams.dataset_name=='uva_dar':
+            if modality== config.gaze_modality_tag or modality== config.pose_modality_tag:
                 return True
         return False
