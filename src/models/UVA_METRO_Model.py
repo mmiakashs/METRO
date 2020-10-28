@@ -216,7 +216,7 @@ class UVA_METRO_Model(pl.LightningModule):
         return results
 
     def configure_optimizers(self):
-        self.loss_fn = nn.CrossEntropyLoss(weight=torch.FloatTensor(self.weights_loss))
+        self.loss_fn = nn.CrossEntropyLoss()#(weight=torch.FloatTensor(self.weights_loss))
         # model_params = list(self.mm_encoder.parameters()) + list(self.har_classification.parameters())
         model_params = self.parameters()
         optimizer = torch.optim.AdamW(model_params, lr=self.hparams.learning_rate)
