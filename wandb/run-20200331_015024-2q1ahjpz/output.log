@@ -1,23 +1,0 @@
-  0%|                                                                           | 0/500 [00:00<?, ?it/s]  0%|                                                                           | 0/500 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "../metro_training.py", line 456, in <module>
-  File "/home/huron/repo/METRO/src/utils/model_training_utlis_wtensorboard.py", line 255, in train_model
-    for batch_idx, batch in enumerate(train_dataloader):
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 345, in __next__
-    data = self._next_data()
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 856, in _next_data
-    return self._process_data(data)
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 881, in _process_data
-    data.reraise()
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/_utils.py", line 394, in reraise
-    raise self.exc_type(msg)
-KeyError: Caught KeyError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 178, in _worker_loop
-    data = fetcher.fetch(index)
-  File "/home/huron/.local/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 47, in fetch
-    return self.collate_fn(data)
-  File "../metro_training.py", line 56, in pad_collate
-  File "../metro_training.py", line 56, in <listcomp>
-KeyError: 'label'
-
