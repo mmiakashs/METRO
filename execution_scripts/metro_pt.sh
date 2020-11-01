@@ -1,0 +1,58 @@
+python3 ../train_model.py \
+--dataset_name 'uva_dar' \
+--data_split_type 'cross_subject' \
+--share_train_dataset \
+--valid_split_pct 0.10 \
+--modalities 'pose,gaze,inside,outside' \
+--exe_mode 'train' \
+--val_percent_check 1 \
+--num_sanity_val_steps 0 \
+--train_percent_check 1 \
+--compute_mode 'gpu' \
+-distributed_backend 'ddp_spawn' \
+--float_precision 32 \
+--num_workers 2 \
+--gpus "0" \
+-bs 10 \
+-ep 200 \
+-lr 0.0003 \
+-cm 2 \
+-cl 30 \
+-rimg_w 224 \
+-rimg_h 224 \
+-cimg_w 224 \
+-cimg_h 224 \
+-sml 60 \
+-ipf \
+--skip_frame_len 1 \
+--pt_vis_encoder_archi_type 'resnet18' \
+--modality_encoder_type 'mm_attn_encoder' \
+-enl 2 \
+-cout 64 \
+-fes 256 \
+-lhs 256 \
+--unimodal_attention_type 'keyless' \
+--indi_modality_embedding_size 256 \
+-menh 1 \
+-mmnh 2 \
+-lld 0.5 \
+-uld 0.5 \
+--lstm_dropout 0.4 \
+--mm_fusion_attention_type 'keyless' \
+--mm_fusion_dropout 0.2 \
+-mmattn_type 'concat' \
+--layer_norm_type 'batch_norm' \
+-dfp '/project/Driver_in_the_loop/all_data' \
+-edbp '/project/Driver_in_the_loop/all_data/fe_embed' \
+-msbd 'trained_model/mhad' \
+-mcp 'mhad' \
+-logbd 'log/mhad' \
+--log_model_archi \
+-logf 'rc_dar_rds_v10.log' \
+--is_test \
+-wdbln 'Pose,gaze,inside,outside' \
+-tb_wn 'tb_runs/dar/rc' \
+# --dataset_filename 'mirror.csv'\
+
+# --only_testing \
+# -rcf 'best_train_loss_mhad_1603739235.09346.pth_vi_1' \
