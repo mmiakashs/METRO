@@ -171,7 +171,7 @@ class UVA_DAR_Dataset(Dataset):
         seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
         seq_len = seq.size(0)
         seq = seq[:,:,np.newaxis,:]
-        seq = seq.type(torch.cuda.FloatTensor)
+        seq = seq.type(torch.FloatTensor)
         return seq,seq_len
 
 
@@ -214,7 +214,7 @@ class UVA_DAR_Dataset(Dataset):
         seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
         seq_len = seq.size(0)
         #seq = seq[:,np.newaxis,np.newaxis,:,:]
-        seq = seq.type(torch.cuda.FloatTensor)
+        seq = seq.type(torch.FloatTensor)
         return seq,seq_len
 
     def __getitem__(self, idx):

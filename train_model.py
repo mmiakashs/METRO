@@ -3,13 +3,15 @@
 # coding: utf-8
 from argparse import ArgumentParser
 from datetime import datetime
-
-from pytorch_lightning import loggers, Trainer
+import torch
+import wandb
+from pytorch_lightning import loggers, Trainer, seed_everything
 from sklearn.model_selection import LeaveOneOut
 
 from src.datasets.dataset_prop_gen import DatasetPropGen
 from src.datasets.uva_dar_dataset import *
-from src.models.UVA_METRO_Model import UVA_METRO_Model
+from src.datasets.METRODataModule import *
+from src.models.UVA_METRO_Model import *
 from src.utils.model_saving import *
 from src.utils.debug_utils import *
 from src.utils.log import TextLogger
@@ -21,11 +23,7 @@ import json
 test_metrics = {}
 
 def main(args):
-    print('current directory', os.getcwd())
-    abspath = os.path.abspath(__file__)
-    dir_name = os.path.dirname(abspath)
-    os.chdir(dir_name)
-    print(f'cwd change to: {os.getcwd()}')
+    seed_everything(33)
 
     txt_logger = TextLogger(args.log_base_dir, 
                             args.log_filename,
@@ -101,7 +99,9 @@ def main(args):
                                     name=f'{args.tb_writer_name}_vi_{validation_iteration}'))
             if (args.wandb_log_name is not None) and (args.exe_mode=='train'):
                 loggers_list.append(loggers.WandbLogger(save_dir=args.log_base_dir, 
-                                    name=f'{args.wandb_log_name}_vi_{validation_iteration}'))
+                                    name=f'{args.wandb_log_name}_vi_{validation_iteration}',
+                                    entity=f'{args.wandb_entity}',
+                                    project='METRO'))
 
             restricted_ids = get_ids_from_split(split_ids, test_ids)
             # restricted_ids.append(split_ids[train_ids[args.valid_person_index]])
@@ -153,7 +153,9 @@ def main(args):
                                 name=f'{args.tb_writer_name}'))
         if (args.wandb_log_name is not None) and (args.exe_mode=='train'):
             loggers_list.append(loggers.WandbLogger(save_dir=args.log_base_dir, 
-                                name=f'{args.wandb_log_name}'))
+                                name=f'{args.wandb_log_name}',
+                                entity=f'{args.wandb_entity}',
+                                project='METRO'))
 
         args.train_restricted_ids = None
         args.train_restricted_labels = None
@@ -176,15 +178,15 @@ def main(args):
 
         start_training(args, txt_logger, loggers_list)
     
-    for test_model in args.test_models:
-        for test_metric in args.test_metrics:
-            test_metrics[f'{test_model}'][f'test_{test_metric}'] = np.mean(test_metrics[f'{test_model}'][f'test_{test_metric}'])
-    txt_logger.log(f'\n\nfinal test result: {str(test_metrics)}\n')
+    # for test_model in args.test_models:
+    #     for test_metric in args.test_metrics:
+    #         test_metrics[f'{test_model}'][f'test_{test_metric}'] = np.mean(test_metrics[f'{test_model}'][f'test_{test_metric}'])
+    # txt_logger.log(f'\n\nfinal test result: {str(test_metrics)}\n')
 
 def start_training(args, txt_logger, loggers=None):
 
     txt_logger.log(f"\n\n$$$$$$$$$ Start training $$$$$$$$$\n\n")
-
+    dataModule = METRODataModule(args)
     model = UVA_METRO_Model(hparams=args)
     if args.log_model_archi:
         txt_logger.log(str(model))
@@ -194,18 +196,19 @@ def start_training(args, txt_logger, loggers=None):
         txt_logger.log(f'Reload model from chekpoint: {args.resume_checkpoint_filename}\n model_checkpoint_filename: {args.model_checkpoint_filename}\n')
 
     if args.compute_mode=='gpu':
-        trainer = Trainer(gpus=args.gpus, 
+        trainer = Trainer.from_argparse_args(args,gpus=args.gpus, 
                     distributed_backend=args.distributed_backend,
                     max_epochs=args.epochs,
                     logger=loggers,
                     checkpoint_callback=False,
                     precision=args.float_precision,
-                    train_percent_check=args.train_percent_check,
+                    limit_train_batches=args.train_percent_check,
                     num_sanity_val_steps=args.num_sanity_val_steps,
-                    val_percent_check=args.val_percent_check)
+                    limit_val_batches=args.val_percent_check,
+                    fast_dev_run=args.fast_dev_run)
 
     if args.only_testing:
-        trainer.test(model)
+        trainer.test(model, datamodule=dataModule)
     else:
         if args.lr_find:
             print('Start Learning rate finder')
@@ -217,35 +220,35 @@ def start_training(args, txt_logger, loggers=None):
             txt_logger.log(str(new_lr))
             model.hparams.learning_rate = new_lr
 
-        trainer.fit(model)
+        trainer.fit(model, datamodule=dataModule)
         if args.is_test:
             txt_logger.log(f"\n\n$$$$$$$$$ Start testing $$$$$$$$$\n\n")
             for test_model in args.test_models:
                 trainer = None
                 model = None 
-                trainer = Trainer(gpus=args.gpus, 
+                trainer = Trainer.from_argparse_args(args,gpus=args.gpus, 
                             distributed_backend=None,
                             max_epochs=args.epochs,
                             logger=None,
                             checkpoint_callback=False,
-                            precision=args.float_precision,
-                            train_percent_check=args.train_percent_check,
-                            num_sanity_val_steps=args.num_sanity_val_steps,
-                            val_percent_check=args.val_percent_check)
+                            precision=args.float_precision)
 
                 model = UVA_METRO_Model(hparams=args)
-                ckpt_filename = f'best_{test_model}_{args.model_checkpoint_filename}'
+                ckpt_filename = f'best_epoch_{test_model}_{args.model_checkpoint_filename}'
                 ckpt_filepath = f'{args.model_save_base_dir}/{ckpt_filename}'
                 if not os.path.exists(ckpt_filepath):
                     txt_logger.log(f'Skip testing model for chekpoint({ckpt_filepath}) is not found\n')
                     continue 
-                model, _ = load_model(model, ckpt_filepath, strict_load=False)
+                #model, _ = load_model(model, ckpt_filepath, strict_load=False)
+                model = UVA_METRO_Model.load_from_checkpoint(ckpt_filepath)
+                model.eval()
                 txt_logger.log(f'Reload testing model from chekpoint: {ckpt_filepath}\n')
                 txt_logger.log(f'{test_model}')
-                trainer.test(model)
-                test_log = model.test_log 
-                for test_metric in args.test_metrics:
-                    test_metrics[f'{test_model}'][f'test_{test_metric}'].append(test_log[f'test_{test_metric}'])
+                trainer.test(model, datamodule=dataModule)
+                
+                # test_log = model.test_log 
+                # for test_metric in args.test_metrics:
+                #     test_metrics[f'{test_model}'][f'test_{test_metric}'].append(test_log[f'test_{test_metric}'])
                 
                 trainer = None
                 model = None
@@ -261,6 +264,8 @@ if __name__ == '__main__':
 
     parser.add_argument("-compute_mode", "--compute_mode", help="compute_mode",
                         default='gpu')
+    parser.add_argument("--fast_dev_run", help="fast_dev_run",
+                        action="store_true", default=False)    
     parser.add_argument("-num_nodes", "--num_nodes", help="num_nodes",
                         type=int, default=1)
     parser.add_argument("-distributed_backend", "--distributed_backend", help="distributed_backend",
@@ -361,6 +366,8 @@ if __name__ == '__main__':
                         default=None)
     parser.add_argument("-wdbln", "--wandb_log_name", help="wandb_log_name",
                         default=None)
+    parser.add_argument("--wandb_entity", help="wandb_entity",
+                        default='crg')
     parser.add_argument("--log_model_archi", help="log model",
                         action="store_true", default=False)
 

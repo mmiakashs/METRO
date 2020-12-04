@@ -50,3 +50,7 @@ tbw_train_recall = 'Recall/Train'
 tbw_valid_recall = 'Recall/Valid'
 tbw_test_recall = 'Recall/Test'
 
+uva_dar_train_ids = ['4', '5', '6', '7', '8', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21']
+uva_dar_valid_ids = ['']
+uva_dar_test_ids = ['1', '2', '3', '9']
+

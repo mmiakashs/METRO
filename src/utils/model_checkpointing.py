@@ -22,19 +22,19 @@ class ModelCheckpointing:
             tm_init_value = np.Inf if self.metrics_mode_dict[metric]=='min' else 0
             self.best_metrics_score[metric] = tm_init_value
     
-    def update_metric_save_ckpt(self, results, model):
+    def update_metric_save_ckpt(self, results, model, epoch, trainer=None):
 
         # save checkpoints and logging
-        epoch = results['epoch']
+        # epoch = results['epoch']
         for metric in self.metrics:
             if (metric not in results) or (metric not in self.metrics_save_ckpt_mode):
                 continue
             if self._is_best_score(metric, results[metric]):
                 if self.metrics_save_ckpt_mode[metric]:
                     ckpt = {'state_dict': model.state_dict(),
-                        'stat': results}
+                        'stat': str(results)}
                     ckpt_filepath = f'{self.ckpt_base_dir}/best_{metric}_{self.ckpt_filename}'
-                    self._save_model(ckpt_filepath, ckpt)
+                    self._save_model(ckpt_filepath, ckpt, trainer)
                     self.logger.log(f'Model save to {ckpt_filepath}')
                 
                 if self.logger is not None:
@@ -55,9 +55,12 @@ class ModelCheckpointing:
             if self._is_best_score(metric, results[metric]):
                 self.best_metrics_score[metric]=results[metric]
     
-    def _save_model(self, ckpt_filepath, checkpoint):
+    def _save_model(self, ckpt_filepath, checkpoint, trainer):
         os.makedirs(os.path.dirname(ckpt_filepath), exist_ok=True)
-        torch.save(checkpoint, ckpt_filepath)
+        if trainer is not None:
+            trainer.save_checkpoint(ckpt_filepath)
+        else:
+            torch.save(checkpoint, ckpt_filepath)
 
     def _is_best_score(self, metric, result):
         if self.metrics_mode_dict[metric]=='min':

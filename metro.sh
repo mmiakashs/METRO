@@ -1,20 +1,20 @@
-python3 ../train_model.py \
+singularity exec --nv /project/CollabRoboGroup/pl-1.0.8_latest.sif python train_model.py \
 --dataset_name 'uva_dar' \
---data_split_type 'cross_subject' \
+--data_split_type 'fixed_subject' \
 --share_train_dataset \
---valid_split_pct 0.10 \
---modalities 'pose,gaze,inside,outside' \
+--valid_split_pct 0.20 \
+--modalities 'inside,pose,gaze' \
 --exe_mode 'train' \
---val_percent_check 1 \
---num_sanity_val_steps 0 \
---train_percent_check 1 \
+--val_percent_check 0.1 \
+--num_sanity_val_steps 1 \
+--train_percent_check 0.001 \
 --compute_mode 'gpu' \
 -distributed_backend 'ddp_spawn' \
 --float_precision 32 \
 --num_workers 2 \
---gpus "0" \
--bs 10 \
--ep 200 \
+--gpus "-1" \
+-bs 2 \
+-ep 2 \
 -lr 0.0003 \
 -cm 2 \
 -cl 30 \
@@ -22,7 +22,7 @@ python3 ../train_model.py \
 -rimg_h 224 \
 -cimg_w 224 \
 -cimg_h 224 \
--sml 60 \
+-sml 100 \
 -ipf \
 --skip_frame_len 1 \
 --pt_vis_encoder_archi_type 'resnet18' \
@@ -38,21 +38,21 @@ python3 ../train_model.py \
 -lld 0.5 \
 -uld 0.5 \
 --lstm_dropout 0.4 \
---mm_fusion_attention_type 'keyless' \
+--mm_fusion_attention_type 'multi_head' \
 --mm_fusion_dropout 0.2 \
 -mmattn_type 'concat' \
 --layer_norm_type 'batch_norm' \
--dfp '/project/Driver_in_the_loop/all_data' \
--edbp '/project/Driver_in_the_loop/all_data/fe_embed' \
--msbd 'trained_model/mhad' \
--mcp 'mhad' \
--logbd 'log/mhad' \
+-dfp '/project/Driver_in_the_loop/All_data_11252020' \
+-edbp '/project/Driver_in_the_loop/All_data_11252020/fe_embed' \
+-msbd 'trained_model/metro/debug' \
+-mcp 'metro' \
+-logbd 'log/metro/debug' \
 --log_model_archi \
--logf 'rc_dar_rds_v10.log' \
+-logf 'rc_dar_ipg_v10_new.log' \
 --is_test \
--wdbln 'Pose,gaze,inside,outside' \
--tb_wn 'tb_runs/dar/rc' \
+-wdbln 'debug_pl1.0' \
+--wandb_entity 'driver-in-the-loop' \
+##-tb_wn 'tb_runs/dar/rc' \
 # --dataset_filename 'mirror.csv'\
-
 # --only_testing \
 # -rcf 'best_train_loss_mhad_1603739235.09346.pth_vi_1' \
