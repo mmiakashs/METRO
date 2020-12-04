@@ -1,4 +1,20 @@
-singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python train_model.py \
+#!/bin/bash -l
+
+#SBATCH -A collabrobogroup_paid
+#SBATCH --ntasks=1
+#SBATCH -t 34:00:00
+#SBATCH -p gpu
+#SBATCH --gres=gpu:2
+#SBATCH -N 1
+#SBATCH --output=log/slurm/metro-%A.log
+#SBATCH -J metro
+#SBATCH --exclude=udc-ba25-[23,27,28],udc-ba26-[23,24,25],udc-ba27-[23,24]
+
+module purge
+module load singularity pytorch
+
+
+srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python train_model.py \
 --dataset_name 'uva_dar' \
 --data_split_type 'fixed_subject' \
 --share_train_dataset \
