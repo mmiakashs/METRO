@@ -43,12 +43,19 @@ class DatasetPropGen:
         modality_prop[config.outside_modality_tag]['seq_max_len'] = 60
         modality_prop[config.outside_modality_tag]['is_pretrained_fe'] = hparams.is_pretrained_fe
 
-        modality_prop[config.gaze_modality_tag][config.skip_frame_tag] = None
-        modality_prop[config.gaze_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
-        modality_prop[config.gaze_modality_tag]['is_rand_starting'] = False
-        modality_prop[config.gaze_modality_tag]['seq_max_len'] = 60
-        modality_prop[config.gaze_modality_tag]['window_size'] = 4
-        modality_prop[config.gaze_modality_tag]['window_stride'] = 1
+        modality_prop[config.gaze_angle_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.gaze_angle_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.gaze_angle_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.gaze_angle_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.gaze_angle_modality_tag]['window_size'] = 4
+        modality_prop[config.gaze_angle_modality_tag]['window_stride'] = 1
+        
+        modality_prop[config.gaze_vector_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.gaze_vector_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.gaze_vector_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.gaze_vector_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.gaze_vector_modality_tag]['window_size'] = 4
+        modality_prop[config.gaze_vector_modality_tag]['window_stride'] = 1
         
         modality_prop[config.pose_modality_tag][config.skip_frame_tag] = None
         modality_prop[config.pose_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
@@ -56,6 +63,36 @@ class DatasetPropGen:
         modality_prop[config.pose_modality_tag]['seq_max_len'] = 60
         modality_prop[config.pose_modality_tag]['window_size'] = 4
         modality_prop[config.pose_modality_tag]['window_stride'] = 1
+        
+        modality_prop[config.pose_dist_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.pose_dist_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.pose_dist_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.pose_dist_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.pose_dist_modality_tag]['window_size'] = 4
+        modality_prop[config.pose_dist_modality_tag]['window_stride'] = 1
+        
+        modality_prop[config.pose_rot_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.pose_rot_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.pose_rot_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.pose_rot_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.pose_rot_modality_tag]['window_size'] = 4
+        modality_prop[config.pose_rot_modality_tag]['window_stride'] = 1
+        
+        modality_prop[config.landmark_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.landmark_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.landmark_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.landmark_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.landmark_modality_tag]['window_size'] = 4
+        modality_prop[config.landmark_modality_tag]['window_stride'] = 1
+        
+        modality_prop[config.eye_landmark_modality_tag][config.skip_frame_tag] = None
+        modality_prop[config.eye_landmark_modality_tag]['skip_frame_len'] = hparams.skip_frame_len
+        modality_prop[config.eye_landmark_modality_tag]['is_rand_starting'] = False
+        modality_prop[config.eye_landmark_modality_tag]['seq_max_len'] = 60
+        modality_prop[config.eye_landmark_modality_tag]['window_size'] = 4
+        modality_prop[config.eye_landmark_modality_tag]['window_stride'] = 1
+        
+        
 
         
 
@@ -77,7 +114,7 @@ class DatasetPropGen:
             modality_prop[modality]['feature_pooling_type'] = None
             modality_prop[modality]['lstm_dropout'] = hparams.lstm_dropout
 
-            if modality == config.gaze_modality_tag:
+            if modality == config.gaze_angle_modality_tag:
                 modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
                 modality_prop[modality]['window_size'] = hparams.window_size
                 modality_prop[modality]['window_stride'] = hparams.window_stride
@@ -86,8 +123,21 @@ class DatasetPropGen:
                 modality_prop[modality]['feature_pooling_type'] = 'max'
                 modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
 
-                if modality == config.gaze_modality_tag:
-                    modality_prop[modality]['num_joints'] = 9#config.utd_mhad_num_joints
+                if modality == config.gaze_angle_modality_tag:
+                    modality_prop[modality]['num_joints'] = 3#config.utd_mhad_num_joints
+                    modality_prop[modality]['num_attribs'] = 1#config.utd_mhad_num_joint_attribs
+                    
+            if modality == config.gaze_vector_modality_tag:
+                modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
+                modality_prop[modality]['window_size'] = hparams.window_size
+                modality_prop[modality]['window_stride'] = hparams.window_stride
+                modality_prop[modality]['feature_pooling_kernel'] = None
+                modality_prop[modality]['feature_pooling_stride'] = None
+                modality_prop[modality]['feature_pooling_type'] = 'max'
+                modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
+
+                if modality == config.gaze_vector_modality_tag:
+                    modality_prop[modality]['num_joints'] = 4#config.utd_mhad_num_joints
                     modality_prop[modality]['num_attribs'] = 1#config.utd_mhad_num_joint_attribs
             if modality == config.pose_modality_tag:
                 modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
@@ -101,6 +151,58 @@ class DatasetPropGen:
                 if modality == config.pose_modality_tag:
                     modality_prop[modality]['num_joints'] = 25#config.utd_mhad_num_joints
                     modality_prop[modality]['num_attribs'] = 3#config.utd_mhad_num_joint_attribs
+                    
+            if modality == config.pose_dist_modality_tag:
+                modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
+                modality_prop[modality]['window_size'] = hparams.window_size
+                modality_prop[modality]['window_stride'] = hparams.window_stride
+                modality_prop[modality]['feature_pooling_kernel'] = None
+                modality_prop[modality]['feature_pooling_stride'] = None
+                modality_prop[modality]['feature_pooling_type'] = 'max'
+                modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
+
+                if modality == config.pose_dist_modality_tag:
+                    modality_prop[modality]['num_joints'] = 1#config.utd_mhad_num_joints
+                    modality_prop[modality]['num_attribs'] = 3#config.utd_mhad_num_joint_attribs
+                    
+            if modality == config.pose_rot_modality_tag:
+                modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
+                modality_prop[modality]['window_size'] = hparams.window_size
+                modality_prop[modality]['window_stride'] = hparams.window_stride
+                modality_prop[modality]['feature_pooling_kernel'] = None
+                modality_prop[modality]['feature_pooling_stride'] = None
+                modality_prop[modality]['feature_pooling_type'] = 'max'
+                modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
+
+                if modality == config.pose_rot_modality_tag:
+                    modality_prop[modality]['num_joints'] = 1#config.utd_mhad_num_joints
+                    modality_prop[modality]['num_attribs'] = 3#config.utd_mhad_num_joint_attribs
+                    
+            if modality == config.landmark_modality_tag:
+                modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
+                modality_prop[modality]['window_size'] = hparams.window_size
+                modality_prop[modality]['window_stride'] = hparams.window_stride
+                modality_prop[modality]['feature_pooling_kernel'] = None
+                modality_prop[modality]['feature_pooling_stride'] = None
+                modality_prop[modality]['feature_pooling_type'] = 'max'
+                modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
+
+                if modality == config.landmark_modality_tag:
+                    modality_prop[modality]['num_joints'] = 68#config.utd_mhad_num_joints
+                    modality_prop[modality]['num_attribs'] = 2#config.utd_mhad_num_joint_attribs
+                    
+            if modality == config.eye_landmark_modality_tag:
+                modality_prop[modality]['kernel_size'] = (1, hparams.kernel_size)
+                modality_prop[modality]['window_size'] = hparams.window_size
+                modality_prop[modality]['window_stride'] = hparams.window_stride
+                modality_prop[modality]['feature_pooling_kernel'] = None
+                modality_prop[modality]['feature_pooling_stride'] = None
+                modality_prop[modality]['feature_pooling_type'] = 'max'
+                modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
+
+                if modality == config.eye_landmark_modality_tag:
+                    modality_prop[modality]['num_joints'] = 56#config.utd_mhad_num_joints
+                    modality_prop[modality]['num_attribs'] = 2#config.utd_mhad_num_joint_attribs
 
         
         return modality_prop, transforms_modalities

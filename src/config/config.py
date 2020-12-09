@@ -11,8 +11,14 @@ modality_mask_tag = '_modality_mask'
 
 inside_modality_tag = 'inside'
 outside_modality_tag = 'outside'
-gaze_modality_tag = 'gaze'
+gaze_angle_modality_tag = 'gaze'
+gaze_vector_modality_tag = 'gaze_vec'
 pose_modality_tag = 'pose'
+pose_dist_modality_tag = 'pose_dist'
+pose_rot_modality_tag = 'pose_rot'
+landmark_modality_tag = 'landmark'
+eye_landmark_modality_tag = 'eye_landmark'
+
 
 activity_tag = 'activity'
 

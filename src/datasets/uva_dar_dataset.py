@@ -65,7 +65,13 @@ class UVA_DAR_Dataset(Dataset):
                 #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
                 #print('missing outside file:',row[config.outside_modality_tag], row[config.activity_tag])
             
-            tm_filename = row[config.gaze_modality_tag]
+            tm_filename = row[config.gaze_angle_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+                
+            tm_filename = row[config.gaze_vector_modality_tag]
             tm_filename = f'{tm_filename}{file_ext_csv}'
             if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
                 self.data.at[i, config.activity_tag] = 'MISSING'
@@ -77,6 +83,32 @@ class UVA_DAR_Dataset(Dataset):
                 #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
                 self.data.at[i, config.activity_tag] = 'MISSING'
                 #print('missing pose file:',row[config.pose_modality_tag], row[config.activity_tag])
+                
+            tm_filename = row[config.pose_dist_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+                
+            tm_filename = row[config.pose_rot_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+                
+            tm_filename = row[config.landmark_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+                
+            tm_filename = row[config.eye_landmark_modality_tag]
+            tm_filename = f'{tm_filename}{file_ext_csv}'
+            if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
+                self.data.at[i, config.activity_tag] = 'MISSING'
+                #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+                
+            
 
         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
         if (self.restricted_ids is not None):
@@ -94,33 +126,6 @@ class UVA_DAR_Dataset(Dataset):
         
         self.data["labeled"] = self.data["activity"].map(temp_dict_type_id)
         self.data.reset_index(inplace=True)
-#         if self.modality_prop['is_pretrained_fe']:
-#             base_dir = self.embed_dir_base
-#             file_ext = '.pt'
-#         else:
-#             base_dir=self.base_dir
-#             file_ext = '.MP4'
-
-#         for i, row in self.data.iterrows():
-#             for modality in self.modalities:
-#                 tm_filename = row[modality]
-#                 tm_filename = f'{tm_filename}{file_ext}'
-                
-#                 if (not os.path.exists(f'{base_dir}/{row[config.activity_tag]}/{tm_filename}')):
-#                     self.data.at[i, config.activity_tag] = 'MISSING'
-#                     # print(row[modality])
-#                     # print(f'{base_dir}/{row[config.activity_tag]}/{tm_filename}')
-#                     print(f'missing {modality} file:',row[modality], row[config.activity_tag])
-        
-#         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
-
-#         if (self.restricted_ids is not None):
-#             self.data = self.data[~self.data[self.restricted_labels].isin(self.restricted_ids)]
-
-#         if (self.allowed_ids is not None):
-#             self.data = self.data[self.data[self.allowed_labels].isin(self.allowed_ids)]
-
-#         self.data.reset_index(inplace=True)
 
     def __len__(self):
         return len(self.data)
@@ -153,12 +158,12 @@ class UVA_DAR_Dataset(Dataset):
 
         return seq, seq_len
 
-    def get_gaze_data(self,idx,modality):
+    def get_gaze_angle_data(self,idx,modality):
         file_ext_csv = ".csv"
         filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
         activity = self.data.loc[idx, config.activity_tag]
         data_filepath = f'{self.base_dir}/{activity}/{filename}'
-        gaze_file = pd.read_csv(data_filepath,usecols=[' confidence', " gaze_0_x"," gaze_0_y", " gaze_0_z"," gaze_angle_x"," gaze_angle_y"," p_rx"," p_ry"," p_rz"])
+        gaze_file = pd.read_csv(data_filepath,usecols=[' confidence'," gaze_angle_x"," gaze_angle_y"])
         seq = gaze_file.to_numpy()
         seq_len = seq.shape[0]
         if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
@@ -173,8 +178,28 @@ class UVA_DAR_Dataset(Dataset):
         seq = seq[:,:,np.newaxis,:]
         seq = seq.type(torch.FloatTensor)
         return seq,seq_len
-
-
+    
+    def get_gaze_vector_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.base_dir}/{activity}/{filename}'
+        gaze_file = pd.read_csv(data_filepath,usecols=[' confidence', " gaze_0_x"," gaze_0_y", " gaze_0_z"])
+        seq = gaze_file.to_numpy()
+        seq_len = seq.shape[0]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
+            seq = seq[:self.modality_prop[modality]['seq_max_len'], :]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len < self.modality_prop[modality]['seq_max_len']):
+            temp = np.zeros((self.modality_prop[modality]['seq_max_len'],seq.shape[1]))
+            temp[:seq.shape[0],:] = seq
+            seq = temp.copy()
+        seq = torch.from_numpy(seq)#torch.cuda.FloatTensor(seq)
+        seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
+        seq_len = seq.size(0)
+        seq = seq[:,:,np.newaxis,:]
+        seq = seq.type(torch.FloatTensor)
+        return seq,seq_len
+    
     def get_pose_data(self,idx,modality):
         file_ext_csv = ".csv"
         filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
@@ -216,6 +241,130 @@ class UVA_DAR_Dataset(Dataset):
         #seq = seq[:,np.newaxis,np.newaxis,:,:]
         seq = seq.type(torch.FloatTensor)
         return seq,seq_len
+    
+    def get_landmark_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.base_dir}/{activity}/{filename}'
+        landmark_file = pd.read_csv(data_filepath)
+        X_cols = [col for col in landmark_file if col.startswith(' x')]
+        Y_cols = [col for col in landmark_file if col.startswith(' y')]
+        X_land = landmark_file[X_cols]
+        Y_land = landmark_file[Y_cols]
+        X_land = X_land.to_numpy()
+        Y_land = Y_land.to_numpy()
+        seq = np.stack((X_land,Y_land),axis=-1)
+        seq_len = seq.shape[0]
+#         print(seq)
+#         print(seq_len)
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
+            seq = seq[:self.modality_prop[modality]['seq_max_len'], :]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len < self.modality_prop[modality]['seq_max_len']):
+            temp = np.zeros((self.modality_prop[modality]['seq_max_len'],seq.shape[1],seq.shape[2]))
+            temp[:seq.shape[0],:] = seq
+            seq = temp.copy()
+        seq = torch.from_numpy(seq)#torch.cuda.FloatTensor(seq)
+        #print(seq.shape)
+        seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
+        seq_len = seq.size(0)
+        #seq = seq[:,np.newaxis,np.newaxis,:,:]
+        seq = seq.type(torch.FloatTensor)
+        return seq,seq_len
+    
+    
+    def get_pose_dist_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.base_dir}/{activity}/{filename}'
+        pose_dist_file = pd.read_csv(data_filepath)
+        #print(pose_dist_file)
+        X_cols = [col for col in pose_dist_file if col.startswith(' pose_Tx')]
+        Y_cols = [col for col in pose_dist_file if col.startswith(' pose_Ty')]
+        Z_cols = [col for col in pose_dist_file if col.startswith(' pose_Tz')]
+        X_pose_dist = pose_dist_file[X_cols]
+        Y_pose_dist = pose_dist_file[Y_cols]
+        Z_pose_dist = pose_dist_file[Z_cols]
+        X_pose_dist = X_pose_dist.to_numpy()
+        Y_pose_dist = Y_pose_dist.to_numpy()
+        Z_pose_dist = Z_pose_dist.to_numpy()
+        seq = np.stack((X_pose_dist,Y_pose_dist,Z_pose_dist),axis=-1)
+        #print(seq)
+        seq_len = seq.shape[0]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
+            seq = seq[:self.modality_prop[modality]['seq_max_len'], :]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len < self.modality_prop[modality]['seq_max_len']):
+            temp = np.zeros((self.modality_prop[modality]['seq_max_len'],seq.shape[1],seq.shape[2]))
+            temp[:seq.shape[0],:] = seq
+            seq = temp.copy()
+        seq = torch.from_numpy(seq)#torch.cuda.FloatTensor(seq)
+        seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
+        seq_len = seq.size(0)
+        seq = seq[:,np.newaxis,:,:]
+        seq = seq.type(torch.FloatTensor)
+        return seq,seq_len
+    
+    def get_pose_rot_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.base_dir}/{activity}/{filename}'
+        pose_rot_file = pd.read_csv(data_filepath)
+        X_cols_rot = [col for col in pose_rot_file if col.startswith(' pose_Rx')]
+        Y_cols_rot = [col for col in pose_rot_file if col.startswith(' pose_Ry')]
+        Z_cols_rot = [col for col in pose_rot_file if col.startswith(' pose_Rz')]
+        X_pose_rot = pose_rot_file[X_cols_rot]
+        Y_pose_rot = pose_rot_file[Y_cols_rot]
+        Z_pose_rot = pose_rot_file[Z_cols_rot]
+        X_pose_rot = X_pose_rot.to_numpy()
+        Y_pose_rot = Y_pose_rot.to_numpy()
+        Z_pose_rot = Z_pose_rot.to_numpy()
+        seq = np.stack((X_pose_rot,Y_pose_rot,Z_pose_rot),axis=-1)
+        seq_len = seq.shape[0]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
+            seq = seq[:self.modality_prop[modality]['seq_max_len'], :]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len < self.modality_prop[modality]['seq_max_len']):
+            temp = np.zeros((self.modality_prop[modality]['seq_max_len'],seq.shape[1],seq.shape[2]))
+            temp[:seq.shape[0],:] = seq
+            seq = temp.copy()
+        seq = torch.from_numpy(seq)#torch.cuda.FloatTensor(seq)
+        seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
+        seq_len = seq.size(0)
+        seq = seq[:,np.newaxis,:,:]
+        seq = seq.type(torch.FloatTensor)
+        return seq,seq_len
+    
+    
+    def get_eye_landmark_data(self,idx,modality):
+        file_ext_csv = ".csv"
+        filename = f'{self.data.loc[idx, modality]}{file_ext_csv}'
+        activity = self.data.loc[idx, config.activity_tag]
+        data_filepath = f'{self.base_dir}/{activity}/{filename}'
+        eye_landmark_file = pd.read_csv(data_filepath)
+        X_cols = [col for col in eye_landmark_file if col.startswith(' eye_lmk_x')]
+        Y_cols = [col for col in eye_landmark_file if col.startswith(' eye_lmk_y')]
+        X_eye_land = eye_landmark_file[X_cols]
+        Y_eye_land = eye_landmark_file[Y_cols]
+        X_eye_land = X_eye_land.to_numpy()
+        Y_eye_land = Y_eye_land.to_numpy()
+        seq = np.stack((X_eye_land,Y_eye_land),axis=-1)
+        seq_len = seq.shape[0]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len > self.modality_prop[modality]['seq_max_len']):
+            seq = seq[:self.modality_prop[modality]['seq_max_len'], :]
+        if (self.modality_prop[modality]['seq_max_len'] is not None) and (seq_len < self.modality_prop[modality]['seq_max_len']):
+            temp = np.zeros((self.modality_prop[modality]['seq_max_len'],seq.shape[1],seq.shape[2]))
+            temp[:seq.shape[0],:] = seq
+            seq = temp.copy()
+        seq = torch.from_numpy(seq)#torch.cuda.FloatTensor(seq)
+        seq = self.split_seq(seq,self.modality_prop[modality]['window_size'],self.modality_prop[modality]['window_stride'])
+        seq_len = seq.size(0)
+        #seq = seq[:,:,np.newaxis,:]
+        seq = seq.type(torch.FloatTensor)
+        return seq,seq_len
+
+
+    
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
@@ -233,12 +382,41 @@ class UVA_DAR_Dataset(Dataset):
                 data[modality + config.modality_seq_len_tag] = seq_len
                 modality_mask.append(True if seq_len == 0 else False)
             if modality=="gaze":
-                seq,seq_len = self.get_gaze_data(idx,modality)
+                seq,seq_len = self.get_gaze_angle_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+            if modality=="gaze_vec":
+                seq,seq_len = self.get_gaze_vector_data(idx,modality)
                 data[modality] = seq
                 data[modality + config.modality_seq_len_tag] = seq_len
                 modality_mask.append(True if seq_len == 0 else False)
             if modality=="pose":
                 seq,seq_len = self.get_pose_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+                
+            if modality=="pose_dist":
+                seq,seq_len = self.get_pose_dist_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+                
+            if modality=="pose_rot":
+                seq,seq_len = self.get_pose_rot_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+                
+            if modality=="landmark":
+                seq,seq_len = self.get_landmark_data(idx,modality)
+                data[modality] = seq
+                data[modality + config.modality_seq_len_tag] = seq_len
+                modality_mask.append(True if seq_len == 0 else False)
+                
+            if modality=="eye_landmark":
+                seq,seq_len = self.get_eye_landmark_data(idx,modality)
                 data[modality] = seq
                 data[modality + config.modality_seq_len_tag] = seq_len
                 modality_mask.append(True if seq_len == 0 else False)
@@ -278,7 +456,12 @@ def get_ids_from_split(split_ids, split_index):
 
 modalities = [config.inside_modality_tag,
               config.outside_modality_tag,
-              config.gaze_modality_tag]
+              config.gaze_angle_modality_tag,
+              config.gaze_vector_modality_tag,
+              config.pose_dist_modality_tag,
+              config.pose_rot_modality_tag,
+              config.landmark_modality_tag,
+              config.eye_landmark_modality_tag]
 
 def gen_mask(seq_len, max_len):
     return torch.arange(max_len) > seq_len

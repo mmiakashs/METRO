@@ -100,7 +100,7 @@ class METRODataModule(pl.LightningDataModule):
         if self.hparams.no_validation:
             return None
             
-        loader = DataLoader(self.test_dataset,
+        loader = DataLoader(self.valid_dataset,
                             batch_size=min(self.hparams.batch_size, 2),
                             collate_fn=self.collate_fn,
                             num_workers=self.hparams.num_workers,

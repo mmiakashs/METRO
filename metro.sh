@@ -3,7 +3,7 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 --data_split_type 'fixed_subject' \
 --share_train_dataset \
 --valid_split_pct 0.20 \
---modalities 'inside,pose,gaze' \
+--modalities 'landmark,pose,gaze,gaze_vec,pose_rot,pose_dist,eye_landmark' \
 --exe_mode 'train' \
 --val_percent_check 1 \
 --num_sanity_val_steps 1 \
@@ -13,8 +13,8 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 --float_precision 32 \
 --num_workers 2 \
 --gpus "-1" \
--bs 2 \
--ep 2 \
+-bs 10 \
+-ep 100 \
 -lr 0.0003 \
 -cm 2 \
 -cl 30 \
@@ -37,22 +37,29 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 -mmnh 2 \
 -lld 0.5 \
 -uld 0.5 \
---lstm_dropout 0.4 \
+--lstm_dropout 0.2 \
 --mm_fusion_attention_type 'multi_head' \
 --mm_fusion_dropout 0.2 \
 -mmattn_type 'concat' \
 --layer_norm_type 'batch_norm' \
 -dfp '/project/Driver_in_the_loop/All_data_11252020' \
--edbp '/project/Driver_in_the_loop/All_data_11252020/fe_embed' \
+-edbp '/project/Driver_in_the_loop/All_data_11252020/fe_embed_all/fe_embed' \
 -msbd 'trained_model/metro/debug' \
 -mcp 'metro' \
 -logbd 'log/metro/debug' \
 --log_model_archi \
 -logf 'rc_dar_ipg_v10_new.log' \
 --is_test \
--wdbln 'debug_pl1.0' \
+-wdbln 'secondary_activities_pose_gaze' \
 --wandb_entity 'driver-in-the-loop' \
-##-tb_wn 'tb_runs/dar/rc' \
-# --dataset_filename 'mirror.csv'\
+--dataset_filename 'secondary_activities.csv'\
+
+
+
+
 # --only_testing \
-# -rcf 'best_train_loss_mhad_1603739235.09346.pth_vi_1' \
+# -rcf 'best_epoch_train_loss_metro_1607460665.479737.pth' \
+# --dataset_filename 'mirror.csv'\
+
+
+##-tb_wn 'tb_runs/dar/rc' \

@@ -173,6 +173,6 @@ class MM_Encoder(nn.Module):
     
     def is_sensor_modality(self, modality):
         if self.hparams.dataset_name=='uva_dar':
-            if modality== config.gaze_modality_tag or modality== config.pose_modality_tag:
+            if modality== config.gaze_angle_modality_tag or modality== config.gaze_vector_modality_tag or modality== config.pose_modality_tag or modality == config.pose_dist_modality_tag or modality == config.pose_rot_modality_tag or modality==config.landmark_modality_tag or modality ==config.eye_landmark_modality_tag:
                 return True
         return False
