@@ -1,0 +1,56 @@
+python3 train_model.py \
+--dataset_name 'mit_ucsd' \
+--dataset_filename 'train' \
+--data_split_type 'subject' \
+--share_train_dataset \
+--valid_split_pct 0.10 \
+--modalities 'hnd,myo_emg,myo_imu' \
+--mit_ucsd_modality_features 'hnd_head,hnd_lshoulder,hnd_rshoulder,hnd_scanner,hnd_rwrist,hnd_rhand,hnd_lwrist,hnd_lhand,myo_emg,myo_imu' \
+--exe_mode 'dl_test' \
+--val_percent_check 1 \
+--num_sanity_val_steps 0 \
+--train_percent_check 1 \
+--compute_mode 'gpu' \
+-distributed_backend 'ddp_spawn' \
+--float_precision 32 \
+--num_workers 1 \
+--gpus "1" \
+-bs 16 \
+-ep 2110 \
+-lr 0.0003 \
+-cm 2 \
+-cl 200 \
+-rimg_w 224 \
+-rimg_h 224 \
+-cimg_w 224 \
+-cimg_h 224 \
+--window_size 5 \
+--window_stride 5 \
+-sml 100 \
+--skip_frame_len 1 \
+--pt_vis_encoder_archi_type 'resnet18' \
+--modality_encoder_type 'gat_attn_encoder' \
+-enl 2 \
+-cout 64 \
+-fes 128 \
+-lhs 128 \
+--unimodal_attention_type 'keyless' \
+--indi_modality_embedding_size 128 \
+-menh 1 \
+-mmnh 2 \
+-lld 0.5 \
+-uld 0.5 \
+--lstm_dropout 0.0 \
+-mmattn_type 'sum' \
+--layer_norm_type 'batch_norm' \
+-dfp '/home/huron/repo/mm_har_dataparse/data' \
+-msbd 'debug_trained_model/mit_ucsd' \
+-mcp 'mit_ucsd' \
+-logbd 'debug_log/mit_ucsd' \
+--log_model_archi \
+-logf 'train_lam_mit_ucsd_hie_srcr_sh_1_ch_1_se_2_e128_dp5_ldp0_testval_sum_ep2k.log' \
+--is_test \
+##-wdbln 'train_lam_mit_ucsd_hie_srcr_sh_1_ch_1_se_2_e128_dp5_ldp0_testval_sum_ep2k' \
+## -tb_wn 'tb_runs/mit_ucsd/lam' \
+## --mm_fusion_attention_type 'keyless' \
+## --mm_fusion_dropout 0.4 \

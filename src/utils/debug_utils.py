@@ -5,7 +5,7 @@ from src.config import config
 def debug_dataloader(dataset, collate_fn, args, last_batch=-1):
     train_dataloader = DataLoader(dataset,
                                   batch_size=args.batch_size,
-                                  shuffle=False, 
+                                  shuffle=True, 
                                   collate_fn=collate_fn,
                                   num_workers=args.num_workers)
     print(len(train_dataloader))
@@ -20,7 +20,11 @@ def debug_dataloader(dataset, collate_fn, args, last_batch=-1):
             # print(modality, mask)
         print(f'modality mask size:', batch['modality_mask'].size())
         print(f'label size:', batch['label'].size())
+        print(f'task label size:', batch['task_label'].size())
         print(batch["modality_mask"])
+
+        print(f'label:', batch['label'])
+        print(f'task label:', batch['task_label'])
 
         if (batch_id > last_batch) and last_batch!=-1:
             break

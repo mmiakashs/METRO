@@ -10,6 +10,7 @@ from sklearn.model_selection import LeaveOneOut
 
 from src.datasets.dataset_prop_gen import DatasetPropGen
 from src.datasets.uva_dar_dataset import *
+from src.datasets.mit_ucsd_dataset import *
 from src.datasets.METRODataModule import *
 from src.models.UVA_METRO_Model import *
 from src.utils.model_saving import *
@@ -38,6 +39,8 @@ def main(args):
 
     for test_model in args.test_models:
         test_metrics[f'{test_model}'] = defaultdict(list)
+    
+    # args.multi_task_config = json.loads(args.multi_task_config)
 
     txt_logger.log(f'model_checkpoint_prefix:{args.model_checkpoint_prefix}\n')
     txt_logger.log(f'model_checkpoint_filename:{args.model_checkpoint_filename}, resume_checkpoint_filename:{args.resume_checkpoint_filename}\n')
@@ -52,6 +55,11 @@ def main(args):
         Dataset = UVA_DAR_Dataset
         args.training_label = 'person_ID'
         collate_fn = UVA_DAR_Collator(args.modalities)
+    elif args.dataset_name=='mit_ucsd':
+        args.mit_ucsd_modality_features = args.mit_ucsd_modality_features.strip().split(',')
+        Dataset = MIT_UCSD_Dataset
+        args.training_label = 'person_id'
+        collate_fn = MIT_UCSD_Collator(args.modalities)
 
     datasetPropGen = DatasetPropGen(args.dataset_name)
     args.modality_prop, args.transforms_modalities = datasetPropGen.generate_dataset_prop(args)
@@ -63,6 +71,8 @@ def main(args):
 
     if(args.dataset_name=='uva_dar'):
         person_ids = train_dataset.data.person_ID.unique()
+    elif(args.dataset_name=='mit_ucsd'):
+        person_ids = train_dataset.data.person_id.unique()
 
     args.num_activity_types = train_dataset.num_activity_types
     txt_logger.log(f'total_activities: {args.num_activity_types}')
@@ -73,7 +83,75 @@ def main(args):
         return
     train_dataset = None
 
-    if args.dataset_name=='uva_dar' and args.data_split_type=='cross_subject':
+    if args.dataset_name=='mit_ucsd' and args.data_split_type=='cross_subject':
+        loov = LeaveOneOut()
+        split_ids = person_ids
+        loov.get_n_splits(split_ids)
+        validation_iteration = 1
+
+        for task_name in args.multi_task_config.keys():
+            
+            for train_ids, test_ids in loov.split(split_ids):
+
+                if validation_iteration <= args.executed_number_it:
+                    txt_logger.log(f"\n$$$>>> Skip perviously executed iteration {validation_iteration}\n")
+                    validation_iteration += 1
+                    continue
+
+                if args.resume_checkpoint_filename is not None:
+                    args.resume_checkpoint_filepath = f'{args.model_save_base_dir}/{args.resume_checkpoint_filename}_vi_{validation_iteration}'
+                    if os.path.exists(args.resume_checkpoint_filepath):
+                        args.resume_training = True
+                    else:
+                        args.resume_training = False
+
+                loggers_list = []
+                if (args.tb_writer_name is not None) and (args.exe_mode=='train'):
+                    loggers_list.append(loggers.TensorBoardLogger(save_dir=args.log_base_dir, 
+                                        name=f'{args.tb_writer_name}_vi_{validation_iteration}'))
+                if (args.wandb_log_name is not None) and (args.exe_mode=='train'):
+                    loggers_list.append(loggers.WandbLogger(save_dir=args.log_base_dir, 
+                                        name=f'{args.wandb_log_name}_vi_{validation_iteration}',
+                                        entity=f'{args.wandb_entity}',
+                                        project='METRO'))
+
+                restricted_ids = get_ids_from_split(split_ids, test_ids)
+                # restricted_ids.append(split_ids[train_ids[args.valid_person_index]])
+                # if(args.total_valid_persons==2):
+                #     restricted_ids.append(split_ids[train_ids[args.valid_person_index+1]])
+                args.train_restricted_ids = restricted_ids
+                args.train_restricted_labels = args.training_label
+                args.train_allowed_ids = None
+                args.train_allowed_labels = None
+                args.train_element_tag = args.training_label
+
+                if(args.total_valid_persons==1):
+                    allowed_valid_ids = get_ids_from_split(split_ids, [train_ids[args.valid_person_index]])
+                else:
+                    allowed_valid_ids = get_ids_from_split(split_ids,
+                                                        [train_ids[args.valid_person_index],
+                                                            train_ids[args.valid_person_index+1]])
+                args.valid_restricted_ids = None
+                args.valid_restricted_labels = None
+                args.valid_allowed_ids = allowed_valid_ids
+                args.valid_allowed_labels = args.training_label
+
+                allowed_test_id = get_ids_from_split(split_ids, test_ids)
+                args.test_restricted_ids = None
+                args.test_restricted_labels = None
+                args.test_allowed_ids = allowed_test_id
+                args.test_allowed_labels = args.training_label
+
+                args.model_checkpoint_filename = f'{args.temp_model_checkpoint_filename}_vi_{validation_iteration}'
+                txt_logger.log(str(args), print_console=args.log_model_archi)
+
+                start_training(args, txt_logger, loggers_list)
+                
+                validation_iteration +=1
+                args.log_model_archi = False # print model only the first time
+            
+
+    elif args.dataset_name=='uva_dar' and args.data_split_type=='cross_subject':
         loov = LeaveOneOut()
         split_ids = person_ids
         loov.get_n_splits(split_ids)
@@ -414,6 +492,12 @@ if __name__ == '__main__':
     parser.add_argument("--share_train_dataset", help="share_train_dataset",
                         action="store_true", default=False)
 
+    # MIT_UCSD dataset specific properties
+    parser.add_argument("--motion_type", help="motion_type",
+                        default=None)
+    parser.add_argument("--mit_ucsd_modality_features", help="mit_ucsd_modality_features",
+                        default=None)
+
     # Optimization
     parser.add_argument("--lr_find", help="learning rate finder",
                         action="store_true", default=False)
@@ -451,6 +535,24 @@ if __name__ == '__main__':
                         action="store_true", default=False)
     parser.add_argument("--only_testing", help="Perform only test on the pretrained model",
                         action="store_true", default=False)
+
+    # Multi-task Config
+    parser.add_argument("--multi_task_config", help="multi_task_config",
+                        default=None)
+
+    # Noisy training prop
+    parser.add_argument("--train_noisy_sample_prob", help="train_noisy_sample_prob",
+                        type=float, default=None)
+    parser.add_argument("--valid_noisy_sample_prob", help="valid_noisy_sample_prob",
+                        type=float, default=None)
+    parser.add_argument("--test_noisy_sample_prob", help="test_noisy_sample_prob",
+                        type=float, default=None)
+    parser.add_argument("--noise_level", help="noise_level [json]",
+                        default=None)
+    parser.add_argument("--noise_type", help="noise_type [gaussian/random]",
+                        default='random')
+    parser.add_argument("--noisy_modalities", help="noisy_modalities",
+                        default=None)
 
     args = parser.parse_args()
     main(args=args)
