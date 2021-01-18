@@ -15,11 +15,6 @@ from src.config import config
 from src.utils.noises import *
 from src.utils.log import *
 
-# features, num_features
-# seq_max_len=2000
-# window_size=10, window_stride=None,
-# motion_type
-
 
 class MIT_UCSD_Dataset(Dataset):
 
@@ -113,7 +108,7 @@ class MIT_UCSD_Dataset(Dataset):
             tm_seq_len = 0
             if(pd.isna(self.data.loc[idx, feature])):
                 temp_seq = np.zeros((seq_max_len, len(feature_attributes)))
-                # print(f'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ {feature}, {modality}: no data')
+                # print(f'$$$$$$$$ {feature}, {modality}: no data: {temp_seq.shape}')
             else:
                 features_filename = os.path.join(self.base_dir, self.data.loc[idx, feature])
                 temp_seq = np.zeros((seq_max_len, len(feature_attributes)))
@@ -123,6 +118,8 @@ class MIT_UCSD_Dataset(Dataset):
                     temp_seq_df = temp_seq_df[feature_attributes]
                     temp_seq = np.array(temp_seq_df)
                     tm_seq_len = temp_seq.shape[0]
+
+                # print(f'$$$$$$$$ {feature}, {modality}: get data: {temp_seq.shape}')
 
             temp_seq = temp_seq.astype('float').reshape(-1, len(feature_attributes))
             feature_seqs[feature] = temp_seq
@@ -145,8 +142,8 @@ class MIT_UCSD_Dataset(Dataset):
             temp_seq = self.split_seq(temp_seq,
                                 window_size=self.modality_prop[motion_type]['window_size'],
                                 window_stride=self.modality_prop[motion_type]['window_stride'])
-
-            # print('##### after', self.data.loc[idx,['activity_type']], self.data.loc[idx,['motion_type']], modality, temp_seq.size())
+            if modality=='myo_emg' and temp_seq.shape[0]==1:
+                print('##### after', self.data.loc[idx,['activity_type']], self.data.loc[idx,['motion_type']], self.data.loc[idx,['myo_emg']], modality, temp_seq.size())
 
             if skip_frame_len_dict[modality] is not None:
                 start_idx = 0

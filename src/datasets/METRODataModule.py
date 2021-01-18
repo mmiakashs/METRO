@@ -1,5 +1,6 @@
 import pytorch_lightning as pl
 from src.datasets.uva_dar_dataset import *
+from src.datasets.mit_ucsd_dataset import *
 from src.utils.log import *
 from torch.utils.data import random_split
 from torch.utils.data import DataLoader
@@ -13,6 +14,10 @@ class METRODataModule(pl.LightningDataModule):
         if self.hparams.dataset_name=='uva_dar':
             self.Dataset = UVA_DAR_Dataset
             self.collate_fn = UVA_DAR_Collator(self.hparams.modalities)
+        
+        elif self.hparams.dataset_name=='mit_ucsd':
+            self.Dataset = MIT_UCSD_Dataset
+            self.collate_fn = MIT_UCSD_Collator(self.hparams.modalities)
 
         self.txt_logger = TextLogger(self.hparams.log_base_dir, 
                                     self.hparams.log_filename,

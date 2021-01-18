@@ -3,10 +3,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-class HAR_Classification(nn.Module):
+class Classifier(nn.Module):
     def __init__(self, mm_embed_size, num_activity_types):
 
-        super(HAR_Classification, self).__init__()
+        super(Classifier, self).__init__()
         self.mm_embed_size = mm_embed_size
         self.num_activity_types = num_activity_types
 

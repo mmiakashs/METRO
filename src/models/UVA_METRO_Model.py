@@ -11,9 +11,11 @@ from pytorch_lightning.overrides.data_parallel import (
 from sklearn.metrics import f1_score, precision_score, recall_score
 import math
 from src.datasets.uva_dar_dataset import *
+from src.datasets.mit_ucsd_dataset import *
 from src.utils.log import *
 from src.models.MM_Encoder import MM_Encoder
-from .HAR_Classification import HAR_Classification
+from .TaskClassifier import TaskClassifier
+from .TaskRouter import TaskRouter
 from src.utils.log import TextLogger
 from src.utils.model_checkpointing import ModelCheckpointing
 from src.utils.training_utils import *
@@ -39,14 +41,19 @@ class UVA_METRO_Model(pl.LightningModule):
         if self.hparams.dataset_name=='uva_dar':
             self.Dataset = UVA_DAR_Dataset
             self.collate_fn = UVA_DAR_Collator(self.hparams.modalities)
+        elif self.hparams.dataset_name=='mit_ucsd':
+            self.Dataset = MIT_UCSD_Dataset
+            self.collate_fn = MIT_UCSD_Collator(self.hparams.modalities)
 
         # build sub-module of the learning model
         if self.hparams.modality_encoder_type==config.mm_attn_encoder:
             self.mm_encoder = MM_Encoder(self.hparams)
 
-        self.har_classification = HAR_Classification(self.hparams.indi_modality_embedding_size, 
-                                            self.num_activity_types)
-        
+        self.task_classifier = TaskClassifier(self.hparams.indi_modality_embedding_size,
+                                        len(self.hparams.task_list))
+
+        self.task_router = TaskRouter(self.hparams)
+
         self.loss_fn = nn.CrossEntropyLoss()
 
         # define the metrics and the checkpointing mode
@@ -57,14 +64,13 @@ class UVA_METRO_Model(pl.LightningModule):
                             'recall_scores': 'max'}
         train_metrics_save_ckpt_mode = {'epoch_train_loss': True}
         valid_metrics_save_ckpt_mode = {'epoch_valid_loss': True,
-                                    'epoch_valid_accuracy': True,
-                                    'epoch_valid_f1_scores': True}
+                                    'epoch_valid_accuracy': True}
         train_metrics_mode_dict = {}
         valid_metrics_mode_dict = {}
         train_metrics = []
         valid_metrics = []
 
-        self.pl_metrics_list = ['accuracy', 'f1_scores', 'precision', 'recall_scores']
+        self.pl_metrics_list = ['accuracy']
         self.pl_metrics = nn.ModuleDict()
 
         for metric in self.metrics_mode_dict:
@@ -73,11 +79,12 @@ class UVA_METRO_Model(pl.LightningModule):
             train_metrics_mode_dict[f'epoch_train_{metric}'] = self.metrics_mode_dict[metric]
             valid_metrics_mode_dict[f'epoch_valid_{metric}'] = self.metrics_mode_dict[metric]
             
+        stages = ['train', 'valid', 'test']
         for metric in self.pl_metrics_list:
-            self.pl_metrics[f'train_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
-            self.pl_metrics[f'valid_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
-            self.pl_metrics[f'test_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
-        
+            for stage in stages:
+                self.pl_metrics[f'{stage}_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
+                self.pl_metrics[f'{stage}_task_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
+
         self.txt_logger = TextLogger(self.hparams.log_base_dir, 
                                     self.hparams.log_filename,
                                     print_console=True)
@@ -101,30 +108,23 @@ class UVA_METRO_Model(pl.LightningModule):
     def forward(self, batch):
         module_out, mm_embed = self.mm_encoder(batch)
         self.mm_embed = mm_embed
-        return self.har_classification(mm_embed)
+        task_pred = self.task_classifier(mm_embed)
+        task_id = torch.argmax(task_pred, axis=1)
+        task = config.mit_ucsd_id_task[task_id[0].item()]
+        logits = self.task_router(module_out, task)
+        return task_pred, logits
 
     def set_parameter_requires_grad(self, model, is_require):
         for param in model.parameters():
             param.requires_grad = is_require
 
     def training_step(self, batch, batch_idx, optimizer_idx=0):
-
-        labels = batch['label']
-        batch_size = batch['label'].size(0)
-            
-        output = self(batch)
-
-        metric_results = {}
-        for metric in self.pl_metrics_list:
-            metric_key = f'train_{metric}'
-            metric_results[metric_key] = self.pl_metrics[metric_key](output,labels)
-        loss = self.loss_fn(output, labels)
-        self.log(f'train_loss', loss)
-        return {'loss': loss} 
+        return self.eval_step(batch, batch_idx, pre_log_tag='train')
 
     def training_epoch_end(self, outputs):
         results = cal_metrics(outputs, self.pl_metrics_list, 
-                            self.pl_metrics, stage_tag='train',
+                            self.pl_metrics, 
+                            stage_tag='train',
                             trainer=self.trainer, device=self.device)
         self.log_metrics(results)
         model = self.get_model()
@@ -156,16 +156,27 @@ class UVA_METRO_Model(pl.LightningModule):
     def eval_step(self, batch, batch_idx, pre_log_tag):
         
         labels = batch['label']
+        task_labels = batch['task_label']
         batch_size = batch['label'].size(0)
 
-        output = self(batch)
+        task_pred, har_output = self(batch)
 
         metric_results = {}
         for metric in self.pl_metrics_list:
             metric_key = f'{pre_log_tag}_{metric}'
-            metric_results[metric_key] = self.pl_metrics[metric_key](output,labels)
-        
-        loss = self.loss_fn(output, labels)
+            if metric == 'accuracy':
+                task_acc = self.pl_metrics[f'{pre_log_tag}_task_accuracy'](task_pred, task_labels)
+                task_acc = task_acc.type(torch.LongTensor)
+                metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
+                                                                    labels,
+                                                                    task_acc)
+            else:
+                metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
+                                                                    labels)
+        task_loss = self.loss_fn(task_pred, task_labels)
+        har_loss = self.loss_fn(har_output, labels)
+        loss = har_loss + task_loss * har_loss
+
         self.log(f'{pre_log_tag}_loss', loss)
 
         return {'loss': loss}

@@ -79,8 +79,8 @@ class SK_WE(nn.Module):
                 input_mask, input_len, 
                 guided_context=None):
 
-        #print('########### Start SK MM_Module ###########')
-        #print('input shape', input.size())
+        # print('########### Start SK MM_Module ###########')
+        # print('input shape', input.size())
 
         x = input.view(-1, input.size(-3), input.size(-2), input.size(-1)).contiguous()
         x = x.transpose(1, 2).contiguous()

@@ -16,6 +16,8 @@ from src.models.UVA_METRO_Model import *
 from src.utils.model_saving import *
 from src.utils.debug_utils import *
 from src.utils.log import TextLogger
+from src.config import config
+
 from collections import defaultdict
 import numpy as np
 import torch
@@ -40,7 +42,6 @@ def main(args):
     for test_model in args.test_models:
         test_metrics[f'{test_model}'] = defaultdict(list)
     
-    # args.multi_task_config = json.loads(args.multi_task_config)
 
     txt_logger.log(f'model_checkpoint_prefix:{args.model_checkpoint_prefix}\n')
     txt_logger.log(f'model_checkpoint_filename:{args.model_checkpoint_filename}, resume_checkpoint_filename:{args.resume_checkpoint_filename}\n')
@@ -55,11 +56,18 @@ def main(args):
         Dataset = UVA_DAR_Dataset
         args.training_label = 'person_ID'
         collate_fn = UVA_DAR_Collator(args.modalities)
+    
     elif args.dataset_name=='mit_ucsd':
         args.mit_ucsd_modality_features = args.mit_ucsd_modality_features.strip().split(',')
         Dataset = MIT_UCSD_Dataset
         args.training_label = 'person_id'
         collate_fn = MIT_UCSD_Collator(args.modalities)
+        args.task_list = list(config.mit_ucsd_task_id.keys())
+        tm_total_activity = 0
+        for task in args.task_list:
+            tm_total_activity += len(config.mit_ucsd_task_activity[task])
+        args.total_activities = tm_total_activity
+
 
     datasetPropGen = DatasetPropGen(args.dataset_name)
     args.modality_prop, args.transforms_modalities = datasetPropGen.generate_dataset_prop(args)
@@ -89,66 +97,64 @@ def main(args):
         loov.get_n_splits(split_ids)
         validation_iteration = 1
 
-        for task_name in args.multi_task_config.keys():
-            
-            for train_ids, test_ids in loov.split(split_ids):
+        for train_ids, test_ids in loov.split(split_ids):
 
-                if validation_iteration <= args.executed_number_it:
-                    txt_logger.log(f"\n$$$>>> Skip perviously executed iteration {validation_iteration}\n")
-                    validation_iteration += 1
-                    continue
+            if validation_iteration <= args.executed_number_it:
+                txt_logger.log(f"\n$$$>>> Skip perviously executed iteration {validation_iteration}\n")
+                validation_iteration += 1
+                continue
 
-                if args.resume_checkpoint_filename is not None:
-                    args.resume_checkpoint_filepath = f'{args.model_save_base_dir}/{args.resume_checkpoint_filename}_vi_{validation_iteration}'
-                    if os.path.exists(args.resume_checkpoint_filepath):
-                        args.resume_training = True
-                    else:
-                        args.resume_training = False
-
-                loggers_list = []
-                if (args.tb_writer_name is not None) and (args.exe_mode=='train'):
-                    loggers_list.append(loggers.TensorBoardLogger(save_dir=args.log_base_dir, 
-                                        name=f'{args.tb_writer_name}_vi_{validation_iteration}'))
-                if (args.wandb_log_name is not None) and (args.exe_mode=='train'):
-                    loggers_list.append(loggers.WandbLogger(save_dir=args.log_base_dir, 
-                                        name=f'{args.wandb_log_name}_vi_{validation_iteration}',
-                                        entity=f'{args.wandb_entity}',
-                                        project='METRO'))
-
-                restricted_ids = get_ids_from_split(split_ids, test_ids)
-                # restricted_ids.append(split_ids[train_ids[args.valid_person_index]])
-                # if(args.total_valid_persons==2):
-                #     restricted_ids.append(split_ids[train_ids[args.valid_person_index+1]])
-                args.train_restricted_ids = restricted_ids
-                args.train_restricted_labels = args.training_label
-                args.train_allowed_ids = None
-                args.train_allowed_labels = None
-                args.train_element_tag = args.training_label
-
-                if(args.total_valid_persons==1):
-                    allowed_valid_ids = get_ids_from_split(split_ids, [train_ids[args.valid_person_index]])
+            if args.resume_checkpoint_filename is not None:
+                args.resume_checkpoint_filepath = f'{args.model_save_base_dir}/{args.resume_checkpoint_filename}_vi_{validation_iteration}'
+                if os.path.exists(args.resume_checkpoint_filepath):
+                    args.resume_training = True
                 else:
-                    allowed_valid_ids = get_ids_from_split(split_ids,
-                                                        [train_ids[args.valid_person_index],
-                                                            train_ids[args.valid_person_index+1]])
-                args.valid_restricted_ids = None
-                args.valid_restricted_labels = None
-                args.valid_allowed_ids = allowed_valid_ids
-                args.valid_allowed_labels = args.training_label
+                    args.resume_training = False
 
-                allowed_test_id = get_ids_from_split(split_ids, test_ids)
-                args.test_restricted_ids = None
-                args.test_restricted_labels = None
-                args.test_allowed_ids = allowed_test_id
-                args.test_allowed_labels = args.training_label
+            loggers_list = []
+            if (args.tb_writer_name is not None) and (args.exe_mode=='train'):
+                loggers_list.append(loggers.TensorBoardLogger(save_dir=args.log_base_dir, 
+                                    name=f'{args.tb_writer_name}_vi_{validation_iteration}'))
+            if (args.wandb_log_name is not None) and (args.exe_mode=='train'):
+                loggers_list.append(loggers.WandbLogger(save_dir=args.log_base_dir, 
+                                    name=f'{args.wandb_log_name}_vi_{validation_iteration}',
+                                    entity=f'{args.wandb_entity}',
+                                    project='METRO'))
 
-                args.model_checkpoint_filename = f'{args.temp_model_checkpoint_filename}_vi_{validation_iteration}'
-                txt_logger.log(str(args), print_console=args.log_model_archi)
+            restricted_ids = get_ids_from_split(split_ids, test_ids)
+            # restricted_ids.append(split_ids[train_ids[args.valid_person_index]])
+            # if(args.total_valid_persons==2):
+            #     restricted_ids.append(split_ids[train_ids[args.valid_person_index+1]])
+            args.train_restricted_ids = restricted_ids
+            args.train_restricted_labels = args.training_label
+            args.train_allowed_ids = None
+            args.train_allowed_labels = None
+            args.train_element_tag = args.training_label
 
-                start_training(args, txt_logger, loggers_list)
-                
-                validation_iteration +=1
-                args.log_model_archi = False # print model only the first time
+            if(args.total_valid_persons==1):
+                allowed_valid_ids = get_ids_from_split(split_ids, [train_ids[args.valid_person_index]])
+            else:
+                allowed_valid_ids = get_ids_from_split(split_ids,
+                                                    [train_ids[args.valid_person_index],
+                                                        train_ids[args.valid_person_index+1]])
+            args.valid_restricted_ids = None
+            args.valid_restricted_labels = None
+            args.valid_allowed_ids = allowed_valid_ids
+            args.valid_allowed_labels = args.training_label
+
+            allowed_test_id = get_ids_from_split(split_ids, test_ids)
+            args.test_restricted_ids = None
+            args.test_restricted_labels = None
+            args.test_allowed_ids = allowed_test_id
+            args.test_allowed_labels = args.training_label
+
+            args.model_checkpoint_filename = f'{args.temp_model_checkpoint_filename}_vi_{validation_iteration}'
+            txt_logger.log(str(args), print_console=args.log_model_archi)
+
+            start_training(args, txt_logger, loggers_list)
+            
+            validation_iteration +=1
+            args.log_model_archi = False # print model only the first time
             
 
     elif args.dataset_name=='uva_dar' and args.data_split_type=='cross_subject':
@@ -539,6 +545,10 @@ if __name__ == '__main__':
     # Multi-task Config
     parser.add_argument("--multi_task_config", help="multi_task_config",
                         default=None)
+    parser.add_argument("--task_head_mm_fusion_dropout", help="task_head_mm_fusion_dropout",
+                        type=float, default=0.2)
+    parser.add_argument("--task_pred_loss", help="task_pred_loss",
+                        type=float, default=None)
 
     # Noisy training prop
     parser.add_argument("--train_noisy_sample_prob", help="train_noisy_sample_prob",

@@ -1,21 +1,21 @@
 python3 train_model.py \
 --dataset_name 'mit_ucsd' \
 --dataset_filename 'train' \
---data_split_type 'subject' \
+--data_split_type 'cross_subject' \
 --share_train_dataset \
 --valid_split_pct 0.10 \
 --modalities 'hnd,myo_emg,myo_imu' \
 --mit_ucsd_modality_features 'hnd_head,hnd_lshoulder,hnd_rshoulder,hnd_scanner,hnd_rwrist,hnd_rhand,hnd_lwrist,hnd_lhand,myo_emg,myo_imu' \
---exe_mode 'dl_test' \
+--exe_mode 'train' \
 --val_percent_check 1 \
 --num_sanity_val_steps 0 \
 --train_percent_check 1 \
 --compute_mode 'gpu' \
 -distributed_backend 'ddp_spawn' \
 --float_precision 32 \
---num_workers 1 \
---gpus "1" \
--bs 16 \
+--num_workers 2 \
+--gpus "-1" \
+-bs 1 \
 -ep 2110 \
 -lr 0.0003 \
 -cm 2 \
@@ -24,18 +24,19 @@ python3 train_model.py \
 -rimg_h 224 \
 -cimg_w 224 \
 -cimg_h 224 \
---window_size 5 \
---window_stride 5 \
+--window_size 3 \
+--window_stride 3 \
 -sml 100 \
 --skip_frame_len 1 \
 --pt_vis_encoder_archi_type 'resnet18' \
---modality_encoder_type 'gat_attn_encoder' \
+--modality_encoder_type 'mm_attn_encoder' \
 -enl 2 \
--cout 64 \
--fes 128 \
--lhs 128 \
+-cout 32 \
+-fes 32 \
+-lhs 32 \
 --unimodal_attention_type 'keyless' \
---indi_modality_embedding_size 128 \
+--indi_modality_embedding_size 32 \
+--mm_fusion_attention_type 'keyless' \
 -menh 1 \
 -mmnh 2 \
 -lld 0.5 \
@@ -44,13 +45,14 @@ python3 train_model.py \
 -mmattn_type 'sum' \
 --layer_norm_type 'batch_norm' \
 -dfp '/home/huron/repo/mm_har_dataparse/data' \
--msbd 'debug_trained_model/mit_ucsd' \
--mcp 'mit_ucsd' \
--logbd 'debug_log/mit_ucsd' \
+-msbd 'trained_model/mit_ucsd' \
+-mcp 'mu' \
+-logbd 'log/mit_ucsd' \
 --log_model_archi \
--logf 'train_lam_mit_ucsd_hie_srcr_sh_1_ch_1_se_2_e128_dp5_ldp0_testval_sum_ep2k.log' \
+-logf 'lam_mu_hie_e32.log' \
 --is_test \
-##-wdbln 'train_lam_mit_ucsd_hie_srcr_sh_1_ch_1_se_2_e128_dp5_ldp0_testval_sum_ep2k' \
+-wdbln 'lam_mu_hie_e32' \
+--wandb_entity 'mmiakashs' \
 ## -tb_wn 'tb_runs/mit_ucsd/lam' \
 ## --mm_fusion_attention_type 'keyless' \
 ## --mm_fusion_dropout 0.4 \

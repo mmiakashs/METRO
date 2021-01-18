@@ -143,8 +143,8 @@ class DatasetPropGen:
             modality_prop[modality]['feature_pooling_type'] = 'max'
             modality_prop[modality]['lstm_dropout'] = hparams.lstm_dropout
 
-            # modality_prop[modality]['window_size'] = hparams.window_size
-            # modality_prop[modality]['window_stride'] = hparams.window_stride
+            modality_prop[modality]['window_size'] = hparams.window_size
+            modality_prop[modality]['window_stride'] = hparams.window_stride
             modality_prop[modality]['sk_window_embed'] = hparams.sk_window_embed
             
             modality_prop[modality]['num_joints'] = num_features[modality]
