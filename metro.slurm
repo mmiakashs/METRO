@@ -1,13 +1,15 @@
 #!/bin/bash -l
 
-#SBATCH -A collabrobogroup_paid
+#SBATCH -A brain_lab
 #SBATCH --ntasks=1
-#SBATCH -t 34:00:00
+#SBATCH -t 48:00:00
 #SBATCH -p gpu
 #SBATCH --gres=gpu:2
 #SBATCH -N 1
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=100GB
 #SBATCH --output=log/slurm/metro-%A.log
-#SBATCH -J metro
+#SBATCH -J metro-ipg
 #SBATCH --exclude=udc-ba25-[23,27,28],udc-ba26-[23,24,25],udc-ba27-[23,24]
 
 module purge
@@ -18,7 +20,7 @@ srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif pytho
 --dataset_name 'uva_dar' \
 --data_split_type 'fixed_subject' \
 --share_train_dataset \
---valid_split_pct 0.20 \
+--valid_split_pct 0.10 \
 --modalities 'inside,pose,gaze' \
 --exe_mode 'train' \
 --val_percent_check 1 \
@@ -30,10 +32,10 @@ srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif pytho
 --num_workers 2 \
 --gpus "-1" \
 -bs 2 \
--ep 2 \
+-ep 610 \
 -lr 0.0003 \
 -cm 2 \
--cl 30 \
+-cl 100 \
 -rimg_w 224 \
 -rimg_h 224 \
 -cimg_w 224 \
@@ -60,13 +62,13 @@ srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif pytho
 --layer_norm_type 'batch_norm' \
 -dfp '/project/Driver_in_the_loop/All_data_11252020' \
 -edbp '/project/Driver_in_the_loop/All_data_11252020/fe_embed' \
--msbd 'trained_model/metro/debug' \
+-msbd 'trained_model/metro' \
 -mcp 'metro' \
--logbd 'log/metro/debug' \
+-logbd 'log/metro' \
 --log_model_archi \
--logf 'rc_dar_ipg_v10_new.log' \
+-logf 'rc_dar_ipg_v10.log' \
 --is_test \
--wdbln 'debug_pl1.0' \
+-wdbln 'rc_dar_ipg_v10' \
 --wandb_entity 'driver-in-the-loop' \
 ##-tb_wn 'tb_runs/dar/rc' \
 # --dataset_filename 'mirror.csv'\
