@@ -3,20 +3,20 @@ python3 train_model.py \
 --dataset_filename 'train' \
 --data_split_type 'cross_subject' \
 --share_train_dataset \
---valid_split_pct 0.10 \
+--valid_split_pct 0.001 \
 --modalities 'hnd,myo_emg,myo_imu' \
 --mit_ucsd_modality_features 'hnd_head,hnd_lshoulder,hnd_rshoulder,hnd_scanner,hnd_rwrist,hnd_rhand,hnd_lwrist,hnd_lhand,myo_emg,myo_imu' \
 --exe_mode 'train' \
 --val_percent_check 1 \
---num_sanity_val_steps 0 \
+--num_sanity_val_steps 1 \
 --train_percent_check 1 \
 --compute_mode 'gpu' \
 -distributed_backend 'ddp_spawn' \
 --float_precision 32 \
 --num_workers 2 \
 --gpus "-1" \
--bs 1 \
--ep 2110 \
+-bs 32 \
+-ep 1000 \
 -lr 0.0003 \
 -cm 2 \
 -cl 200 \
@@ -26,32 +26,34 @@ python3 train_model.py \
 -cimg_h 224 \
 --window_size 3 \
 --window_stride 3 \
--sml 100 \
+-sml 200 \
 --skip_frame_len 1 \
 --pt_vis_encoder_archi_type 'resnet18' \
 --modality_encoder_type 'mm_attn_encoder' \
 -enl 2 \
--cout 32 \
--fes 32 \
--lhs 32 \
+-cout 64 \
+-fes 128 \
+-lhs 128 \
 --unimodal_attention_type 'keyless' \
---indi_modality_embedding_size 32 \
+--indi_modality_embedding_size 128 \
 --mm_fusion_attention_type 'keyless' \
+--task_fusion_attention_type 'multi_head' \
 -menh 1 \
--mmnh 2 \
--lld 0.5 \
--uld 0.5 \
---lstm_dropout 0.0 \
+-mmnh 1 \
+-lld 0.4 \
+-uld 0.4 \
+--lstm_dropout 0.2 \
 -mmattn_type 'sum' \
+-tattn_type 'sum' \
 --layer_norm_type 'batch_norm' \
 -dfp '/home/huron/repo/mm_har_dataparse/data' \
 -msbd 'trained_model/mit_ucsd' \
 -mcp 'mu' \
 -logbd 'log/mit_ucsd' \
 --log_model_archi \
--logf 'lam_mu_hie_e32.log' \
+-logf 'lam_mu_hie_e128_ss_tc.log' \
 --is_test \
--wdbln 'lam_mu_hie_e32' \
+-wdbln 'lam_mu_hie_e128_ss_tc' \
 --wandb_entity 'mmiakashs' \
 ## -tb_wn 'tb_runs/mit_ucsd/lam' \
 ## --mm_fusion_attention_type 'keyless' \

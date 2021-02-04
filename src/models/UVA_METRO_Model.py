@@ -83,7 +83,6 @@ class UVA_METRO_Model(pl.LightningModule):
         for metric in self.pl_metrics_list:
             for stage in stages:
                 self.pl_metrics[f'{stage}_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
-                self.pl_metrics[f'{stage}_task_{metric}'] = get_pl_metrics(metric, self.hparams.num_activity_types)
 
         self.txt_logger = TextLogger(self.hparams.log_base_dir, 
                                     self.hparams.log_filename,
@@ -109,9 +108,7 @@ class UVA_METRO_Model(pl.LightningModule):
         module_out, mm_embed = self.mm_encoder(batch)
         self.mm_embed = mm_embed
         task_pred = self.task_classifier(mm_embed)
-        task_id = torch.argmax(task_pred, axis=1)
-        task = config.mit_ucsd_id_task[task_id[0].item()]
-        logits = self.task_router(module_out, task)
+        logits = self.task_router(module_out, mm_embed)
         return task_pred, logits
 
     def set_parameter_requires_grad(self, model, is_require):
@@ -164,18 +161,11 @@ class UVA_METRO_Model(pl.LightningModule):
         metric_results = {}
         for metric in self.pl_metrics_list:
             metric_key = f'{pre_log_tag}_{metric}'
-            if metric == 'accuracy':
-                task_acc = self.pl_metrics[f'{pre_log_tag}_task_accuracy'](task_pred, task_labels)
-                task_acc = task_acc.type(torch.LongTensor)
-                metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
-                                                                    labels,
-                                                                    task_acc)
-            else:
-                metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
+            metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
                                                                     labels)
         task_loss = self.loss_fn(task_pred, task_labels)
         har_loss = self.loss_fn(har_output, labels)
-        loss = har_loss + task_loss * har_loss
+        loss = har_loss + task_loss * 0.3
 
         self.log(f'{pre_log_tag}_loss', loss)
 

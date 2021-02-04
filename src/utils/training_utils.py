@@ -3,8 +3,8 @@ import pytorch_lightning as pl
 
 def get_pl_metrics(metric, num_classes):
     if metric=='accuracy':
-        # return pl.metrics.Accuracy()
-        return Accuracy()
+        return pl.metrics.Accuracy()
+        # return Accuracy()
     elif metric=='f1_scores':
         return pl.metrics.F1(num_classes)
     elif metric=='precision':

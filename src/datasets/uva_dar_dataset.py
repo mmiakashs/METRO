@@ -244,7 +244,11 @@ class UVA_DAR_Dataset(Dataset):
                 modality_mask.append(True if seq_len == 0 else False)
 
         modality_mask = torch.from_numpy(np.array(modality_mask)).bool()
-        data['label'] = self.activity_name_id[str(data_label)]
+        task_type = config.uva_metro_activity_task[str(data_label)]
+        task_type_id = config.uva_metro_task_id[task_type]
+
+        data['label'] = config.uva_metro_activity_id[str(data_label)]
+        data['task_label'] = task_type_id
         data['modality_mask'] = modality_mask
         #data[config.activity_tag] = self.activity_name_id[str(data_label)]
         #data[config.modality_mask_tag] = modality_mask
@@ -306,6 +310,8 @@ class UVA_DAR_Collator:
             data[modality + config.modality_mask_suffix_tag] = seq_mask
         
         data['label'] = torch.tensor([batch[bin]['label'] for bin in range(batch_size)],
+                                    dtype=torch.long)
+        data['task_label'] = torch.tensor([batch[bin]['task_label'] for bin in range(batch_size)],
                                     dtype=torch.long)
         data['modality_mask'] = torch.stack([batch[bin]['modality_mask'] for bin in range(batch_size)], dim=0).bool()
         return data

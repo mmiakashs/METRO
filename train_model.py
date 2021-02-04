@@ -429,6 +429,9 @@ if __name__ == '__main__':
     parser.add_argument("--mm_fusion_attention_type",
                         help="mm_fusion_attention_type [multi_head/keyless]",
                         default=None)
+    parser.add_argument("--task_fusion_attention_type",
+                        help="task_fusion_attention_type [multi_head/keyless]",
+                        default=None)
     parser.add_argument("--mm_fusion_attention_nhead",help="mm_fusion_attention_nhead",
                         type=int, default=1)
     parser.add_argument("--mm_fusion_attention_dropout",help="mm_fusion_attention_dropout",
@@ -437,6 +440,9 @@ if __name__ == '__main__':
                         type=float, default=0.1)
 
     parser.add_argument("-mmattn_type", "--mm_embedding_attn_merge_type",
+                        help="mm_embedding_attn_merge_type [concat/sum]",
+                        default='sum')
+    parser.add_argument("-tattn_type", "--task_embedding_attn_merge_type",
                         help="mm_embedding_attn_merge_type [concat/sum]",
                         default='sum')
 

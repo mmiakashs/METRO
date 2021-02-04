@@ -16,7 +16,7 @@ class TaskClassifier(nn.Module):
     
     def forward(self, mm_embed): 
         logits = self.classifier(mm_embed)
-        return F.gumbel_softmax(logits, tau=1, hard=True)
+        return logits
 
     def init_weights(self, m):
         if type(m) == nn.Linear:
