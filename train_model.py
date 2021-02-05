@@ -56,6 +56,11 @@ def main(args):
         Dataset = UVA_DAR_Dataset
         args.training_label = 'person_ID'
         collate_fn = UVA_DAR_Collator(args.modalities)
+        args.task_list = list(config.uva_metro_task_id.keys())
+        tm_total_activity = 0
+        for task in args.task_list:
+            tm_total_activity += len(config.uva_metro_task_activity[task])
+        args.total_activities = tm_total_activity
     
     elif args.dataset_name=='mit_ucsd':
         args.mit_ucsd_modality_features = args.mit_ucsd_modality_features.strip().split(',')

@@ -1,5 +1,6 @@
 singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python train_model.py \
 --dataset_name 'uva_dar' \
+--dataset_filename 'mirror_phone_center_seatbelt.csv' \
 --data_split_type 'fixed_subject' \
 --share_train_dataset \
 --valid_split_pct 0.20 \
@@ -43,8 +44,8 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 -mmattn_type 'sum' \
 -tattn_type 'sum' \
 --layer_norm_type 'batch_norm' \
--dfp '/project/Driver_in_the_loop/All_data_11252020' \
--edbp '/project/Driver_in_the_loop/All_data_11252020/fe_embed' \
+-dfp '/project/Driver_in_the_loop/UVA_METRO_Data/Ver_1_0' \
+-edbp '/project/Driver_in_the_loop/UVA_METRO_Data/Ver_1_0/fe_embed_all/fe_embed' \
 -msbd 'trained_model_debug/metro/debug' \
 -mcp 'metro' \
 -logbd 'log_debug/metro' \

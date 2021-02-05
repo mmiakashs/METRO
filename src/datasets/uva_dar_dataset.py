@@ -41,6 +41,7 @@ class UVA_DAR_Dataset(Dataset):
     def load_data(self):
 
         self.data = pd.read_csv(self.base_dir+'/'+self.dataset_filename)
+#         print('dataframe shape', self.data.shape)
         if self.modality_prop['is_pretrained_fe']:
             data_dir_base_path = self.embed_dir_base
             data_dir_base_path_csv = self.base_dir
@@ -56,7 +57,7 @@ class UVA_DAR_Dataset(Dataset):
             tm_filename = f'{tm_filename}{file_ext}'
             if (not os.path.exists(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')):
                 self.data.at[i, config.activity_tag] = 'MISSING'
-                #print('missing inside file:',row[config.inside_modality_tag], row[config.activity_tag])
+#                 print('missing inside file:', f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
 
             tm_filename = row[config.outside_modality_tag]
             tm_filename = f'{tm_filename}{file_ext}'
@@ -64,12 +65,14 @@ class UVA_DAR_Dataset(Dataset):
                 self.data.at[i, config.activity_tag] = 'MISSING'
                 #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
                 #print('missing outside file:',row[config.outside_modality_tag], row[config.activity_tag])
+#                 print('missing outside file:', f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
             
             tm_filename = row[config.gaze_modality_tag]
             tm_filename = f'{tm_filename}{file_ext_csv}'
             if ((not os.path.exists(f'{data_dir_base_path_csv}/{row[config.activity_tag]}/{tm_filename}'))):
                 self.data.at[i, config.activity_tag] = 'MISSING'
                 #print('missing gaze file:',row[config.gaze_modality_tag], row[config.activity_tag])
+#                 print('missing gaze file:', f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
 
             tm_filename = row[config.pose_modality_tag]
             tm_filename = f'{tm_filename}{file_ext_csv}'
@@ -77,7 +80,8 @@ class UVA_DAR_Dataset(Dataset):
                 #print(f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
                 self.data.at[i, config.activity_tag] = 'MISSING'
                 #print('missing pose file:',row[config.pose_modality_tag], row[config.activity_tag])
-
+#                 print('missing pose file:', f'{data_dir_base_path}/{row[config.activity_tag]}/{tm_filename}')
+        
         self.data = self.data[self.data[config.activity_tag] != 'MISSING']
         if (self.restricted_ids is not None):
             self.data = self.data[~self.data[self.restricted_labels].isin(self.restricted_ids)]
@@ -85,7 +89,7 @@ class UVA_DAR_Dataset(Dataset):
         if (self.allowed_ids is not None):
             self.data = self.data[self.data[self.allowed_labels].isin(self.allowed_ids)]
 
-        
+        print('dataframe shape', self.data.shape)
         activity_names = self.data["activity"].unique()
         activity_names = sorted(activity_names)
         num_labels = len(activity_names)
