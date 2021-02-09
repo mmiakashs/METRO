@@ -76,7 +76,7 @@ srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif pytho
 --log_model_archi \
 -logf 'rc_dar_'${modality_ac[${SLURM_ARRAY_TASK_ID}]}'_'${en_name[${SLURM_ARRAY_TASK_ID}]}'_'${merge_type[${SLURM_ARRAY_TASK_ID}]}'_'${SLURM_ARRAY_JOB_ID}'_'${SLURM_ARRAY_TASK_ID}'.log' \
 --is_test \
--wdbln 'rc_dar_'${modality_ac[${SLURM_ARRAY_TASK_ID}]}'_'${en_name[${SLURM_ARRAY_TASK_ID}]}'_'${merge_type[${SLURM_ARRAY_TASK_ID}]}'' \
+-wdbln 'rc_dar_'${modality_ac[${SLURM_ARRAY_TASK_ID}]}'_'${en_name[${SLURM_ARRAY_TASK_ID}]}'_'${merge_type[${SLURM_ARRAY_TASK_ID}]}'_'${SLURM_ARRAY_JOB_ID}'_'${SLURM_ARRAY_TASK_ID}'' \
 --wandb_entity 'mmiakashs' \
 ##-tb_wn 'tb_runs/dar/rc' \
 # --dataset_filename 'mirror.csv'\

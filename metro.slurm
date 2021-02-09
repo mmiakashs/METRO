@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #SBATCH -A brain_lab
-#SBATCH --array=0-7
+#SBATCH --array=0-2
 #SBATCH --ntasks=1
 #SBATCH -t 48:00:00
 #SBATCH -p gpu
@@ -16,11 +16,11 @@
 module purge
 module load singularity
 
-modality_com=('inside,pose,gaze' 'inside,pose' 'inside,gaze' 'pose,gaze' 'inside,pose,gaze' 'inside,pose' 'inside,gaze' 'pose,gaze')
-modality_ac=('ipg' 'ip' 'ig' 'pg' 'ipg' 'ip' 'ig' 'pg')
-cycle_mul=(2 2 2 2 2 2 2 2)
-cycle_len=(30 30 30 30 100 100 100 100)
-epoch=(400 400 400 400 800 800 800 800)
+modality_com=('inside,pose,gaze' 'inside,pose,gaze' 'inside,pose')
+modality_ac=('ipg' 'ipg' 'ip')
+cycle_mul=(2 2 2)
+cycle_len=(30 100 100)
+epoch=(400 800 800)
 
 srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python train_model.py \
 --dataset_name 'uva_dar' \
@@ -39,7 +39,7 @@ srun singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif pytho
 --num_workers 2 \
 --gpus "-1" \
 -bs 2 \
--ep ${en_type[${SLURM_ARRAY_TASK_ID}]} \
+-ep ${epoch[${SLURM_ARRAY_TASK_ID}]} \
 -lr 0.0003 \
 -cm ${cycle_mul[${SLURM_ARRAY_TASK_ID}]} \
 -cl ${cycle_len[${SLURM_ARRAY_TASK_ID}]} \

@@ -173,6 +173,10 @@ def main(args):
 
         for train_ids, test_ids in loov.split(split_ids):
 
+            if validation_iteration >= args.end_val_it:
+                txt_logger.log(f"\n$$$>>> End val it {validation_iteration}\n")
+                break
+
             if validation_iteration <= args.executed_number_it:
                 txt_logger.log(f"\n$$$>>> Skip perviously executed iteration {validation_iteration}\n")
                 validation_iteration += 1
@@ -470,6 +474,8 @@ if __name__ == '__main__':
                         action="store_true", default=False)
 
     parser.add_argument("--executed_number_it", help="total number of executed iteration",
+                        type=int, default=-1)
+    parser.add_argument("--end_val_it", help="end_val_it",
                         type=int, default=-1)
     parser.add_argument("-vpi", "--valid_person_index", help="valid person index",
                         type=int, default=0)

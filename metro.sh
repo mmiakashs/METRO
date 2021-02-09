@@ -60,3 +60,8 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 # --dataset_filename 'mirror.csv'\
 # --only_testing \
 # -rcf 'best_train_loss_mhad_1603739235.09346.pth_vi_1' \
+# modality_com=('inside,pose,gaze' 'inside,pose' 'inside,gaze' 'pose,gaze' 'inside,pose,gaze' 'inside,pose' 'inside,gaze' 'pose,gaze')
+# modality_ac=('ipg' 'ip' 'ig' 'pg' 'ipg' 'ip' 'ig' 'pg')
+# cycle_mul=(2 2 2 2 2 2 2 2)
+# cycle_len=(30 30 30 30 100 100 100 100)
+# epoch=(400 400 400 400 800 800 800 800)
