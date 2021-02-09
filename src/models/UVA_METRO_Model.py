@@ -16,6 +16,7 @@ from src.utils.log import *
 from src.models.MM_Encoder import MM_Encoder
 from .TaskClassifier import TaskClassifier
 from .TaskRouter import TaskRouter
+from .Classifier import Classifier
 from src.utils.log import TextLogger
 from src.utils.model_checkpointing import ModelCheckpointing
 from src.utils.training_utils import *
@@ -48,9 +49,15 @@ class UVA_METRO_Model(pl.LightningModule):
         # build sub-module of the learning model
         if self.hparams.modality_encoder_type==config.mm_attn_encoder:
             self.mm_encoder = MM_Encoder(self.hparams)
+        else:
+            self.mm_encoder = MM_Encoder(self.hparams)
 
-        self.task_classifier = TaskClassifier(self.hparams.indi_modality_embedding_size,
-                                        len(self.hparams.task_list))
+        if self.hparams.modality_encoder_type==config.mm_attn_encoder:
+            self.task_classifier = TaskClassifier(self.hparams.indi_modality_embedding_size,
+                                            len(self.hparams.task_list))
+        else:
+            self.har_classifier = Classifier(self.hparams.indi_modality_embedding_size, 
+                                        self.hparams.total_activities)
 
         self.task_router = TaskRouter(self.hparams)
 
@@ -107,9 +114,12 @@ class UVA_METRO_Model(pl.LightningModule):
     def forward(self, batch):
         module_out, mm_embed = self.mm_encoder(batch)
         self.mm_embed = mm_embed
-        task_pred = self.task_classifier(mm_embed)
-        logits = self.task_router(module_out, mm_embed)
-        return task_pred, logits
+        if self.hparams.modality_encoder_type==config.mm_attn_encoder:
+            task_pred = self.task_classifier(mm_embed)
+            logits = self.task_router(module_out, mm_embed)
+            return task_pred, logits
+        else:
+            return self.har_classifier(mm_embed)
 
     def set_parameter_requires_grad(self, model, is_require):
         for param in model.parameters():
@@ -156,16 +166,21 @@ class UVA_METRO_Model(pl.LightningModule):
         task_labels = batch['task_label']
         batch_size = batch['label'].size(0)
 
-        task_pred, har_output = self(batch)
+        if self.hparams.modality_encoder_type==config.mm_attn_encoder:
+            task_pred, har_output = self(batch)
+
+            task_loss = self.loss_fn(task_pred, task_labels)
+            har_loss = self.loss_fn(har_output, labels)
+            loss = har_loss + task_loss * 0.3
+        else:
+            har_output = self(batch)
+            loss = self.loss_fn(har_output, labels)
 
         metric_results = {}
         for metric in self.pl_metrics_list:
             metric_key = f'{pre_log_tag}_{metric}'
             metric_results[metric_key] = self.pl_metrics[metric_key](har_output,
                                                                     labels)
-        task_loss = self.loss_fn(task_pred, task_labels)
-        har_loss = self.loss_fn(har_output, labels)
-        loss = har_loss + task_loss * 0.3
 
         self.log(f'{pre_log_tag}_loss', loss)
 

@@ -15,7 +15,7 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 --num_workers 2 \
 --gpus "-1" \
 -bs 2 \
--ep 2 \
+-ep 200 \
 -lr 0.0003 \
 -cm 2 \
 -cl 30 \
@@ -52,6 +52,8 @@ singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python tra
 --log_model_archi \
 -logf 'rc_dar_ipg_v10_new.log' \
 --is_test \
+--only_testing \
+-rcf 'best_epoch_valid_accuracy_metro_1612510786.711669.pth' \
 ##-wdbln 'debug_pl1.0' \
 ##--wandb_entity 'driver-in-the-loop' \
 ##-tb_wn 'tb_runs/dar/rc' \

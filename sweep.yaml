@@ -1,0 +1,98 @@
+command:
+  - ${env}
+  - singularity exec --nv /project/Driver_in_the_loop/pl-1.0.8_latest.sif python
+  - ${program}
+  - ${args}
+controller:
+  type: local
+project: 'METRO_Sweep'
+entity: 'mmiakashs'
+program: train_model.py
+method: bayes
+metric:
+  name: epoch_valid_accuracy
+  goal: maximize
+parameters:
+  learning_rate:
+    min: 0.0001
+    max: 0.1
+  cycle_mul:
+    min: 1
+    max: 5
+  cycle_length:
+    min: 20
+    max: 100
+  modalities:
+    values: ['inside,pose,gaze','inside,gaze','inside,pose','pose,gaze']
+  seq_max_len:
+    values: [100,200]
+  encoder_num_layers:
+    values: [1,2]
+  indi_modality_embedding_size:
+    values: [64,128,256]
+  lower_layer_dropout:
+    min: 0.2
+    max: 0.5
+  upper_layer_dropout:
+    min: 0.2
+    max: 0.5
+  lstm_dropout:
+    min: 0.1
+    max: 0.4
+dataset_name:
+  distribution: constant
+  value: 'uva_dar'
+dataset_filename:
+  distribution: constant
+  value: 'mirror_phone_center_seatbelt.csv'
+data_split_type:
+  distribution: constant
+  value: 'fixed_subject'
+share_train_dataset:
+  distribution: constant
+  value: true
+valid_split_pct:
+  distribution: constant
+  value: 0.10
+modality_encoder_type:
+  distribution: constant
+  value: 'mm_attn_encoder'
+unimodal_attention_type:
+  distribution: constant
+  value: 'keyless'
+mm_fusion_attention_type:
+  distribution: constant
+  value: 'keyless'
+task_fusion_attention_type:
+  distribution: constant
+  value: 'multi_head'
+mm_embedding_attn_merge_type:
+  distribution: constant
+  value: 'sum'
+task_embedding_attn_merge_type:
+  distribution: constant
+  value: 'sum'
+data_file_dir_base_path:
+  distribution: constant
+  value: '/project/Driver_in_the_loop/UVA_METRO_Data/Ver_1_0'
+embed_dir_base_path:
+  distribution: constant
+  value: '/project/Driver_in_the_loop/UVA_METRO_Data/Ver_1_0/fe_embed_all/fe_embed'
+model_save_base_dir:
+  distribution: constant
+  value: 'trained_model_debug/metro/debug'
+model_checkpoint_prefix:
+  distribution: constant
+  value: 'metro'
+log_base_dir:
+  distribution: constant
+  value: 'log_debug/metro'
+log_filename:
+  distribution: constant
+  value: 'rc_dar_ipg_v10_new.log'
+wandb_log_name:
+  distribution: constant
+  value: 'sweep_debug.log'
+wandb_entity:
+  distribution: constant
+  value: 'mmiakashs'

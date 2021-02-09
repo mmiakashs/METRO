@@ -138,7 +138,7 @@ class MM_Encoder(nn.Module):
         mm_embeddings = F.relu(self.mm_embeddings_bn(mm_embeddings))
         nbatches = mm_embeddings.shape[0]
         
-        if self.num_modality>1 and self.hparams.mm_fusion_attention_type is not None:
+        if self.num_modality>1 and (self.hparams.mm_fusion_attention_type=='multi_head' or self.hparams.mm_fusion_attention_type=='keyless' ):
             if self.hparams.mm_fusion_attention_type=='multi_head':
                 # transpose batch and sequence (B x S x ..) --> (S x B x ..)
                 mm_embeddings = mm_embeddings.transpose(0, 1).contiguous()
@@ -164,7 +164,7 @@ class MM_Encoder(nn.Module):
 
             mm_embeddings = self.mm_mhattn_dropout(self.mm_mhattn_relu(mm_embeddings))
         
-        if (self.mm_embedding_attn_merge_type == 'sum'):
+        if self.mm_embedding_attn_merge_type == 'sum':
             mm_embeddings = torch.sum(mm_embeddings, dim=1).squeeze(dim=1)
 
         mm_embeddings = mm_embeddings.contiguous().view(nbatches, -1)

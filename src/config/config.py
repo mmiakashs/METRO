@@ -27,6 +27,8 @@ image_channels = 3
 
 # Model tag
 mm_attn_encoder = 'mm_attn_encoder'
+hamlet_encoder = 'hamlet_encoder'
+keyless_encoder = 'keyless_encoder'
 
 
 #Logging config

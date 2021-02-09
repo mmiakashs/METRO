@@ -32,6 +32,9 @@ def main(args):
                             args.log_filename,
                             print_console=True)
 
+    args.feature_embed_size = args.indi_modality_embedding_size
+    args.lstm_hidden_size = args.indi_modality_embedding_size
+
     if args.model_checkpoint_filename is None:
         args.model_checkpoint_filename = f'{args.model_checkpoint_prefix}_{datetime.utcnow().timestamp()}.pth'
     
@@ -358,7 +361,7 @@ if __name__ == '__main__':
     parser.add_argument("-num_nodes", "--num_nodes", help="num_nodes",
                         type=int, default=1)
     parser.add_argument("-distributed_backend", "--distributed_backend", help="distributed_backend",
-                        default=None)
+                        default='ddp_spawn')
     parser.add_argument("--gpus", help="number of gpus or gpus list",
                         default="-1")
     parser.add_argument("--float_precision", help="float precision",
@@ -396,9 +399,9 @@ if __name__ == '__main__':
     parser.add_argument("-edbp", "--embed_dir_base_path", help="embed_dir_base_path",
                         default=None)
     parser.add_argument("--pt_vis_encoder_archi_type", help="pt_vis_encoder_archi_type",
-                        default='resnet50')
+                        default='resnet18')
     parser.add_argument("-cout", "--cnn_out_channel", help="CNN out channel size",
-                        type=int, default=16)
+                        type=int, default=64)
     parser.add_argument("-fes", "--feature_embed_size", help="CNN feature embedding size",
                         type=int, default=256)
     parser.add_argument("-lhs", "--lstm_hidden_size", help="LSTM hidden embedding size",
@@ -408,9 +411,9 @@ if __name__ == '__main__':
     parser.add_argument("-madf", "--matn_dim_feedforward", help="matn_dim_feedforward",
                         type=int, default=256)
     parser.add_argument("-menh", "--module_embedding_nhead", help="module embedding multi-head attention nhead",
-                        type=int, default=4)
+                        type=int, default=1)
     parser.add_argument("-mmnh", "--multi_modal_nhead", help="multi-modal embeddings multi-head attention nhead",
-                        type=int, default=4)
+                        type=int, default=1)
     parser.add_argument("-enl", "--encoder_num_layers", help="LSTM encoder layer",
                         type=int, default=2)
     parser.add_argument("-lstm_bi", "--lstm_bidirectional", help="LSTM bidirectional [True/False]",
@@ -448,7 +451,7 @@ if __name__ == '__main__':
                         help="mm_embedding_attn_merge_type [concat/sum]",
                         default='sum')
     parser.add_argument("-tattn_type", "--task_embedding_attn_merge_type",
-                        help="mm_embedding_attn_merge_type [concat/sum]",
+                        help="task_embedding_attn_merge_type [concat/sum]",
                         default='sum')
 
     parser.add_argument("-logf", "--log_filename", help="execution log filename",
@@ -475,7 +478,7 @@ if __name__ == '__main__':
     parser.add_argument("-msbd", "--model_save_base_dir", help="model_save_base_dir",
                         default="trained_model")
     parser.add_argument("-exe_mode", "--exe_mode", help="exe_mode[dl_test/train]",
-                        default=None)
+                        default='train')
     parser.add_argument("--train_percent_check", help="train_percent_check",
                         type=float, default=1.0)
     parser.add_argument("--num_sanity_val_steps", help="num_sanity_val_steps",
@@ -497,7 +500,7 @@ if __name__ == '__main__':
     parser.add_argument("--test_split_pct", help="test_split_pct",
                         type=float, default=0.2)
     parser.add_argument("--skip_frame_len", help="skip_frame_len",
-                        type=int, default=2)
+                        type=int, default=1)
     parser.add_argument("-rimg_w", "--resize_image_width", help="resize to image width",
                         type=int, default=config.image_width)
     parser.add_argument("-rimg_h", "--resize_image_height", help="resize to image height",
