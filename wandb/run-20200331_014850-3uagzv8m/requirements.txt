@@ -138,7 +138,7 @@ pywavelets==0.5.1
 pyxdg==0.25
 pyyaml==5.3.1
 pyzmq==18.1.1
-reportlab==3.4.0
+reportlab==3.5.55
 requests-unixsocket==0.1.5
 requests==2.23.0
 scikit-cuda==0.5.3
