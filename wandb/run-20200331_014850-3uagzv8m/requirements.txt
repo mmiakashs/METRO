@@ -151,7 +151,7 @@ seaborn==0.10.0
 secretstorage==2.3.1
 send2trash==1.5.0
 sentry-sdk==0.14.3
-setuptools==45.2.0
+setuptools==65.5.1
 shortuuid==1.0.1
 simplegeneric==0.8.1
 simplejson==3.13.2
